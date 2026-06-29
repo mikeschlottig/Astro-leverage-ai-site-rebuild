@@ -1,0 +1,16 @@
+---
+import { primaryNavigation } from "../../data/navigation";
+---
+
+<header class="section">
+  <div class="shell split">
+    <a href="/" aria-label="Leverage AI home"><strong>Leverage AI</strong></a>
+    <nav aria-label="Primary">
+      <ul class="meta-list">
+        {primaryNavigation.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>

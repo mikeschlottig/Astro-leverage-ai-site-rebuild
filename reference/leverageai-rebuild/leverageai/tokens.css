@@ -1,0 +1,109 @@
+/* ============================================================
+   LEVERAGE AI — Design Tokens
+   Palette: Committed. One electric amber owns the brand.
+   Scene: Founder-operator + $50K prospect. Precise, capable, zero fluff.
+   Fonts: Familjen Grotesk (display) + Barlow (body)
+   Color system: OKLCH throughout
+   ============================================================ */
+
+:root {
+  /* ── Core palette ── */
+  --ink:         oklch(0.96 0.005 80);      /* near-white, warm-tinted */
+  --ink-muted:   oklch(0.65 0.008 80);      /* secondary text */
+  --ink-faint:   oklch(0.40 0.006 80);      /* tertiary / dividers */
+
+  --bg:          oklch(0.10 0.008 265);     /* deep blue-black, not pure */
+  --surface:     oklch(0.13 0.008 265);     /* card / panel surface */
+  --surface-alt: oklch(0.16 0.007 265);     /* raised surface */
+  --border:      oklch(0.22 0.007 265);     /* subtle border */
+
+  --amber:       oklch(0.74 0.165 68);      /* electric amber — the brand */
+  --amber-dim:   oklch(0.62 0.140 68);      /* hover / pressed */
+  --amber-glow:  oklch(0.74 0.165 68 / 0.12); /* ambient glow */
+  --amber-line:  oklch(0.74 0.165 68 / 0.3);  /* divider / border accent */
+
+  /* ── Type scale (fluid) ── */
+  --t-hero:   clamp(3rem, 7vw, 5.5rem);
+  --t-xl:     clamp(2rem, 4vw, 3.2rem);
+  --t-lg:     clamp(1.4rem, 2.5vw, 2rem);
+  --t-md:     clamp(1.1rem, 1.8vw, 1.3rem);
+  --t-base:   1rem;
+  --t-sm:     0.875rem;
+  --t-xs:     0.75rem;
+
+  /* ── Spacing scale ── */
+  --s-1:  0.25rem;
+  --s-2:  0.5rem;
+  --s-3:  0.75rem;
+  --s-4:  1rem;
+  --s-6:  1.5rem;
+  --s-8:  2rem;
+  --s-10: 2.5rem;
+  --s-12: 3rem;
+  --s-16: 4rem;
+  --s-20: 5rem;
+  --s-24: 6rem;
+  --s-32: 8rem;
+
+  /* ── Motion ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --dur-fast: 150ms;
+  --dur-base: 280ms;
+  --dur-slow: 500ms;
+
+  /* ── Layout ── */
+  --max-w: 1200px;
+  --max-w-prose: 68ch;
+  --radius: 3px;
+  --radius-lg: 8px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Barlow', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, video { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+
+/* ── Typography ── */
+.display { font-family: 'Familjen Grotesk', sans-serif; }
+
+h1, h2, h3, h4 {
+  font-family: 'Familjen Grotesk', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+p { max-width: var(--max-w-prose); text-wrap: pretty; }
+
+/* ── Utilities ── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+.amber { color: var(--amber); }
+.muted { color: var(--ink-muted); }
+.faint  { color: var(--ink-faint); }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { webpageGraph } from "../../lib/schema";
+
+const reports = (await getCollection("reports")).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
+);
+
+const featuredLinks = [
+  {
+    href: "/pricing",
+    label: "Conversion Surface",
+    title: "Diagnostic-Audit Pricing",
+    description: "The reports should all route back to diagnosis, not end in passive reading.",
+  },
+  {
+    href: "/locations",
+    label: "Cluster Hub",
+    title: "Oregon Locations",
+    description: "The Oregon reports now support a real city cluster instead of sitting in isolation.",
+  },
+  {
+    href: "/services/lead-capture-ai-follow-up",
+    label: "Service",
+    title: "Lead Capture And AI Follow-Up",
+    description: "Speed, routing, and revenue-loss reports should reinforce this service directly.",
+  },
+  {
+    href: "/services/search-data-architecture",
+    label: "Service",
+    title: "Search And Data Architecture",
+    description: "Competitive research, entity clarity, and report-driven authority should reinforce this service directly.",
+  },
+];
+---
+
+<BaseLayout
+  title="Reports"
+  description="Research-backed reports that support the site's claims about local demand, response speed, trust, and technical execution."
+  schema={webpageGraph("/reports", "Reports", "Research-backed reports that support the site's claims about local demand, response speed, trust, and technical execution.")}
+>
+  <section class="hero">
+    <div class="shell stack">
+      <div class="hero-panel">
+        <p class="eyebrow">Research And Market Authority</p>
+        <h1>Reports that strengthen the service story instead of floating beside it.</h1>
+        <p>
+          This hub is where the site makes its operating arguments explicit: why response speed
+          changes revenue, why Oregon markets need different playbooks, and why infrastructure beats
+          generic agency theater.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">Report Cluster</p>
+          <h2>The best reports should help buyers understand the problem before they see the offer.</h2>
+        </div>
+        <p>
+          These pieces are not meant to become detached thought leadership. Each one should support a
+          service page, a market page, a proof surface, or the diagnostic-audit conversation.
+        </p>
+      </div>
+
+      <div class="grid">
+        {reports.map((entry) => (
+          <article class="surface stack">
+            <p class="eyebrow">Report</p>
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+            <ul class="location-card__signals">
+              {entry.data.tldr.slice(0, 2).map((item) => <li>{item}</li>)}
+            </ul>
+            <a class="button secondary" href={`/reports/${entry.id}`}>Read the report</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-links">
+        {featuredLinks.map((card) => (
+          <a class="case-study-link-card" href={card.href}>
+            <span>{card.label}</span>
+            <strong>{card.title}</strong>
+            <p>{card.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

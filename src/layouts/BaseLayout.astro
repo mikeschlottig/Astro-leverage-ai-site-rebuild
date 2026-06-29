@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+import SiteHeader from "../components/site/SiteHeader.astro";
+import SiteFooter from "../components/site/SiteFooter.astro";
+import { SITE } from "../lib/site";
+import { absoluteUrl, pageTitle } from "../lib/seo";
+
+type Props = {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  schema?: Record<string, unknown>[] | Record<string, unknown>;
+};
+
+const {
+  title,
+  description = SITE.description,
+  canonicalPath = Astro.url.pathname,
+  schema = [],
+} = Astro.props;
+
+const schemaGraph = Array.isArray(schema) ? schema : [schema];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>{pageTitle(title)}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={absoluteUrl(canonicalPath)} />
+    {schemaGraph.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@graph": schemaGraph })} />
+    )}
+  </head>
+  <body>
+    <SiteHeader />
+    <main>
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

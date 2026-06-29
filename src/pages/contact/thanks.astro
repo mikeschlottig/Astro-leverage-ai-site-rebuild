@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { webpageGraph } from "../../lib/schema";
+---
+
+<BaseLayout
+  title="Contact Received"
+  description="Your request has been received and will be reviewed directly."
+  canonicalPath="/contact/thanks"
+  schema={webpageGraph("/contact/thanks", "Contact Received", "Confirmation that a diagnostic audit request has been received.")}
+>
+  <section class="section">
+    <div class="shell">
+      <section class="case-study-cta">
+        <div class="stack">
+          <p class="eyebrow">Request Received</p>
+          <h1>Thanks. The request is in.</h1>
+          <p>
+            You should receive a direct follow-up after the audit request is reviewed. If the
+            issue is urgent, email <a href="mailto:mike@leverageai.network">mike@leverageai.network</a>
+            directly.
+          </p>
+        </div>
+        <div class="button-row">
+          <a class="button primary" href="/pricing">Review the diagnostic path</a>
+          <a class="button secondary" href="/reports">Read supporting reports</a>
+        </div>
+      </section>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,243 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getLocationBySlug, locations } from "../../data/locations";
+import { webpageGraph } from "../../lib/schema";
+
+const serviceCards = {
+  "local-visibility": {
+    href: "/services/local-visibility",
+    label: "Service",
+    title: "Local Visibility Systems",
+    description: "Improve map-pack relevance, service-area clarity, and local search coverage.",
+  },
+  "custom-web-design": {
+    href: "/services/custom-web-design",
+    label: "Service",
+    title: "Custom Web Design",
+    description: "Turn traffic into trust faster with a cleaner, sharper public surface.",
+  },
+  "lead-capture-ai-follow-up": {
+    href: "/services/lead-capture-ai-follow-up",
+    label: "Service",
+    title: "Lead Capture And AI Follow-Up",
+    description: "Shorten reply lag and keep hot leads from going cold after the click.",
+  },
+  "search-data-architecture": {
+    href: "/services/search-data-architecture",
+    label: "Service",
+    title: "Search And Data Architecture",
+    description: "Measure what is working, strengthen schema, and keep the strategy honest.",
+  },
+} as const;
+
+const reportCards = {
+  "oregon-market-intel-infrastructure-report": {
+    href: "/reports/oregon-market-intel-infrastructure-report",
+    label: "Report",
+    title: "Oregon Market Intel Report",
+    description: "The source logic for the opportunity tiers, diagnostic framing, and market differences.",
+  },
+  "how-oregon-markets-differ-for-local-service-businesses": {
+    href: "/reports/how-oregon-markets-differ-for-local-service-businesses",
+    label: "Report",
+    title: "How Oregon Markets Differ",
+    description: "A sharper look at how Tier 2 and Tier 3 markets search, compare, and decide who to trust.",
+  },
+  "why-speed-wins": {
+    href: "/reports/why-speed-wins",
+    label: "Report",
+    title: "Why Speed Wins",
+    description: "Use this when response time is the hidden leak hurting otherwise good local demand.",
+  },
+  "web-agents-intelligence-report": {
+    href: "/reports/web-agents-intelligence-report",
+    label: "Report",
+    title: "Web Agents Intelligence Report",
+    description: "A supporting authority asset for technical buyers who need to see infrastructure depth.",
+  },
+} as const;
+
+const caseStudyCards = {
+  "daley-organics": {
+    href: "/portfolio/daley-organics",
+    label: "Case Study",
+    title: "Daley Organics",
+    description: "Proof that smaller-market intent and local infrastructure can outperform vanity traffic.",
+  },
+  "oregon-smb-directory": {
+    href: "/portfolio/oregon-smb-directory",
+    label: "Case Study",
+    title: "Oregon SMB Directory",
+    description: "An authority-building asset that supports local trust, links, and regional relevance.",
+  },
+} as const;
+
+export async function getStaticPaths() {
+  return locations.map((location) => ({
+    params: { slug: location.slug },
+    props: { location },
+  }));
+}
+
+const { location } = Astro.props;
+
+const nearbyMarkets = location.nearbyMarkets
+  .map((slug: string) => getLocationBySlug(slug))
+  .flatMap((market) => (market ? [market] : []));
+
+const relatedLinks = [
+  ...location.recommendedServices.map((slug: keyof typeof serviceCards) => serviceCards[slug]),
+  ...location.relatedReports.map((slug: keyof typeof reportCards) => reportCards[slug]),
+  ...location.relatedCaseStudies.map((slug: keyof typeof caseStudyCards) => caseStudyCards[slug]),
+];
+---
+
+<BaseLayout
+  title={`${location.name} Local Growth Systems`}
+  description={`Local visibility, trust architecture, and lead-response systems for service businesses in ${location.name}, Oregon.`}
+  canonicalPath={`/locations/${location.slug}`}
+  schema={webpageGraph(`/locations/${location.slug}`, `${location.name} Local Growth Systems`, `Local visibility, trust architecture, and lead-response systems for service businesses in ${location.name}, Oregon.`)}
+>
+  <section class="hero">
+    <div class="shell stack">
+      <div class="location-page-hero">
+        <article class="location-page-hero__panel">
+          <div class="location-page-hero__copy stack">
+            <div class="case-study-chip-row">
+              <span class="case-study-chip">{location.tierLabel}</span>
+              <span class="case-study-chip">{location.region}</span>
+            </div>
+            <p class="eyebrow">Oregon Location Page</p>
+            <h1>{location.name} demand systems built for how this market actually buys.</h1>
+            <p class="location-page-hero__lead">{location.marketSummary}</p>
+            <p>{location.buyerDynamics}</p>
+            <div class="button-row">
+              <a class="button primary" href="/pricing">Start with the diagnostic audit</a>
+              <a class="button secondary" href="/reports/oregon-market-intel-infrastructure-report">See the market logic</a>
+            </div>
+          </div>
+
+          <aside class="location-page-sidecar">
+            <div class="stack">
+              <p class="location-page-sidecar__label">Best fit</p>
+              <p>{location.idealFor}</p>
+            </div>
+            <div class="stack">
+              <p class="location-page-sidecar__label">Diagnostic focus</p>
+              <p>{location.diagnosticFocus}</p>
+            </div>
+            <div class="stack">
+              <p class="location-page-sidecar__label">Avoid the generic playbook</p>
+              <p>{location.caution}</p>
+            </div>
+          </aside>
+        </article>
+      </div>
+
+      <div class="case-study-stat-band">
+        {location.signals.map((signal) => (
+          <article class="case-study-stat">
+            <p class="case-study-stat__value">{signal.value}</p>
+            <p class="case-study-stat__label">{signal.label}</p>
+            <p class="case-study-stat__detail">{signal.detail}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">Market Posture</p>
+          <h2>What usually wins in {location.name}.</h2>
+        </div>
+        <p>
+          The right strategy here is usually less about stacking tactics and more about building the
+          correct sequence: get found, look credible fast, respond before intent fades, and measure
+          the handoff points honestly.
+        </p>
+      </div>
+      <div class="location-page-grid">
+        <article class="surface stack">
+          <p class="location-page-block__label">Primary opportunity</p>
+          <h3>{location.opportunity}</h3>
+          <p>{location.marketSummary}</p>
+        </article>
+        <article class="surface stack">
+          <p class="location-page-block__label">Why buyers move</p>
+          <h3>Trust and convenience do a lot of the selling work.</h3>
+          <p>{location.buyerDynamics}</p>
+        </article>
+      </div>
+      <div class="location-page-priorities surface">
+        <div class="stack">
+          <p class="location-page-block__label">Priority moves</p>
+          <h3>Where the first wins usually come from.</h3>
+        </div>
+        <ul class="case-study-checklist">
+          {location.priorityMoves.map((move) => <li>{move}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">Cluster Links</p>
+          <h2>The pages and services that should support this market.</h2>
+        </div>
+        <p>
+          Location pages should not work alone. They should route buyers and crawlers into the
+          service pages, proof assets, and reports that make the local story more believable.
+        </p>
+      </div>
+      <div class="case-study-links">
+        {relatedLinks.map((card) => (
+          <a class="case-study-link-card" href={card.href}>
+            <span>{card.label}</span>
+            <strong>{card.title}</strong>
+            <p>{card.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-callout case-study-callout--ink">
+        <div class="stack">
+          <h2>Start with diagnosis before expanding the build.</h2>
+          <p>
+            The pricing surface for this site starts with a paid diagnostic audit so we can verify
+            which parts of the visibility, trust, and response system are actually leaking in
+            {location.name}.
+          </p>
+        </div>
+        <div class="case-study-callout__badge">
+          <span>$500+</span>
+          <small>Audit starting range</small>
+        </div>
+      </div>
+
+      <div class="location-page-nearby">
+        <div class="stack">
+          <p class="case-study-kicker">Nearby Markets</p>
+          <h2>Adjacent Oregon markets worth linking with {location.name}.</h2>
+        </div>
+        <div class="location-page-nearby__grid">
+          {nearbyMarkets.map((market) => (
+            <a class="location-page-nearby__card" href={`/locations/${market.slug}`}>
+              <strong>{market.name}</strong>
+              <p>{market.marketSummary}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

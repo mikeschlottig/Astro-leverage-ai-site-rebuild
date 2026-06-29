@@ -1,0 +1,272 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+import { locations } from "../../data/locations";
+import { serviceGraph } from "../../lib/schema";
+
+type LinkCard = {
+  kind: "Report" | "Knowledge Base" | "Case Study" | "Location";
+  href: string;
+  title: string;
+  description: string;
+};
+
+export async function getStaticPaths() {
+  const services = await getCollection("services");
+  return services.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const servicePath = `/services/${entry.id}`;
+const allReports = await getCollection("reports");
+const allKnowledgeBaseEntries = await getCollection("knowledgeBase");
+const allCaseStudies = await getCollection("caseStudies");
+
+const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
+  const report = allReports.find((candidate) => candidate.id === slug);
+  return report
+    ? [
+        {
+          kind: "Report",
+          href: `/reports/${report.id}`,
+          title: report.data.title,
+          description: report.data.description,
+        },
+      ]
+    : [];
+});
+
+const relatedKnowledgeBase: LinkCard[] = entry.data.relatedKnowledgeBase.flatMap((slug) => {
+  const resource = allKnowledgeBaseEntries.find((candidate) => candidate.id === slug);
+  return resource
+    ? [
+        {
+          kind: "Knowledge Base",
+          href: `/knowledge-base/${resource.id}`,
+          title: resource.data.title,
+          description: resource.data.description,
+        },
+      ]
+    : [];
+});
+
+const relatedCaseStudies: LinkCard[] = entry.data.relatedCaseStudies.flatMap((slug) => {
+  const caseStudy = allCaseStudies.find((candidate) => candidate.id === slug);
+  return caseStudy
+    ? [
+        {
+          kind: "Case Study",
+          href: `/portfolio/${caseStudy.id}`,
+          title: caseStudy.data.title,
+          description: caseStudy.data.description,
+        },
+      ]
+    : [];
+});
+
+const relatedLocations: LinkCard[] = entry.data.relatedLocations.flatMap((slug) => {
+  const location = locations.find((candidate) => candidate.slug === slug);
+  return location
+    ? [
+        {
+          kind: "Location",
+          href: `/locations/${location.slug}`,
+          title: `${location.name} market page`,
+          description: location.opportunity,
+        },
+      ]
+    : [];
+});
+
+const supportLinks = [
+  ...relatedReports,
+  ...relatedKnowledgeBase,
+  ...relatedCaseStudies,
+  ...relatedLocations,
+];
+const primaryReport = relatedReports[0];
+const primaryCaseStudy = relatedCaseStudies[0];
+const renderedEntry = entry.body?.trim() ? await render(entry) : null;
+const Content = renderedEntry?.Content;
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonicalPath={servicePath}
+  schema={serviceGraph(servicePath, entry.data.title, entry.data.description, entry.data.faqs)}
+>
+  <section class="hero service-hero">
+    <div class="shell stack">
+      <div class="service-hero__panel">
+        <div class="service-hero__copy stack">
+          <p class="eyebrow">Service Detail</p>
+          <h1>{entry.data.heroTitle ?? entry.data.title}</h1>
+          <p class="service-hero__lead">{entry.data.description}</p>
+          {entry.data.outcomes.length > 0 && (
+            <div class="case-study-chip-row" aria-label="Service outcomes">
+              {entry.data.outcomes.map((outcome) => <span class="case-study-chip">{outcome}</span>)}
+            </div>
+          )}
+          <div class="button-row">
+            <a class="button primary" href="/contact">Request the diagnostic audit</a>
+            <a class="button secondary" href="/pricing">Review pricing structure</a>
+          </div>
+        </div>
+        <aside class="service-sidecar">
+          <p class="service-sidecar__label">Capabilities</p>
+          <ul class="service-checklist">
+            {entry.data.capabilities.map((capability) => <li>{capability}</li>)}
+          </ul>
+        </aside>
+      </div>
+
+      {entry.data.proofPoints.length > 0 && (
+        <div class="service-proof-grid">
+          {entry.data.proofPoints.map((point) => (
+            <article class="service-proof-card">
+              <p>{point}</p>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">{entry.data.title}</p>
+          <h2>{entry.data.summary}</h2>
+        </div>
+        <p>
+          This route should help a buyer understand what this layer fixes, how it connects to the
+          rest of the system, and what evidence supports acting on it now.
+        </p>
+      </div>
+
+      <div class="split">
+        {Content && (
+          <article class="surface stack prose">
+            <Content />
+          </article>
+        )}
+        <aside class="stack">
+          {entry.data.proofPoints.length > 0 && (
+            <section class="surface stack">
+              <p class="eyebrow">What Strong Work Looks Like</p>
+              <h2>Signals this service should improve.</h2>
+              <ul class="case-study-result-list">
+                {entry.data.proofPoints.map((point) => <li>{point}</li>)}
+              </ul>
+            </section>
+          )}
+
+          {entry.data.faqs.length > 0 && (
+            <section class="surface stack">
+              <p class="eyebrow">Quick Answers</p>
+              <h2>Questions buyers usually ask first.</h2>
+              <div class="service-faq-list">
+                {entry.data.faqs.map((faq) => (
+                  <details class="service-faq-item">
+                    <summary>{faq.question}</summary>
+                    <p>{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
+        </aside>
+      </div>
+
+      {(entry.data.diagnosticQuestions.length > 0 || entry.data.deliverables.length > 0) && (
+        <div class="split">
+          {entry.data.diagnosticQuestions.length > 0 && (
+            <section class="surface stack">
+              <p class="eyebrow">Diagnostic Focus</p>
+              <h2>What the audit checks first on this layer.</h2>
+              <ul class="case-study-result-list">
+                {entry.data.diagnosticQuestions.map((question) => <li>{question}</li>)}
+              </ul>
+            </section>
+          )}
+
+          {entry.data.deliverables.length > 0 && (
+            <section class="surface stack">
+              <p class="eyebrow">Implementation Moves</p>
+              <h2>What usually gets built, cleaned up, or tightened.</h2>
+              <ul class="case-study-result-list">
+                {entry.data.deliverables.map((deliverable) => <li>{deliverable}</li>)}
+              </ul>
+            </section>
+          )}
+        </div>
+      )}
+    </div>
+  </section>
+
+  {supportLinks.length > 0 && (
+    <section class="section">
+      <div class="shell split">
+        <section class="surface stack">
+          <p class="eyebrow">Supporting Authority</p>
+          <h2>Resources and proof that reinforce this service.</h2>
+          <div class="case-study-links">
+            {supportLinks.map((link) => (
+              <a class="case-study-link-card" href={link.href}>
+                <span>{link.kind}</span>
+                <strong>{link.title}</strong>
+                <p>{link.description}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <aside class="surface stack">
+          <h2>Where this usually connects next</h2>
+          <ul class="case-study-result-list">
+            {entry.data.outcomes.map((outcome) => <li>{outcome}</li>)}
+          </ul>
+          <div class="button-row">
+            {primaryReport ? (
+              <a class="button secondary" href={primaryReport.href}>
+                Read {primaryReport.title}
+              </a>
+            ) : (
+              <a class="button secondary" href="/reports">Read supporting reports</a>
+            )}
+            {primaryCaseStudy ? (
+              <a class="button primary" href={primaryCaseStudy.href}>
+                See proof in practice
+              </a>
+            ) : (
+              <a class="button primary" href="/portfolio">See proof in practice</a>
+            )}
+          </div>
+        </aside>
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="shell">
+      <section class="case-study-cta">
+        <div class="stack">
+          <p class="eyebrow">Next Step</p>
+          <h2>Want to know whether this is the right layer to fix first?</h2>
+          <p>
+            The diagnostic audit helps separate visibility problems, trust problems, response problems, and
+            measurement gaps before a larger implementation gets scoped.
+          </p>
+        </div>
+        <div class="button-row">
+          <a class="button primary" href="/contact">Request the audit</a>
+          <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes">
+            See what the audit includes
+          </a>
+        </div>
+      </section>
+    </div>
+  </section>
+</BaseLayout>

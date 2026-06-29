@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/contact/ContactForm.astro";
+import { webpageGraph } from "../lib/schema";
+---
+
+<BaseLayout
+  title="Contact"
+  description="Start a discovery conversation about local demand, trust signals, and faster lead response."
+  schema={webpageGraph("/contact", "Contact", "Start a discovery conversation about local demand, trust signals, and faster lead response.")}
+>
+  <section class="section">
+    <div class="shell split">
+      <div class="surface stack">
+        <p class="eyebrow">Contact And Conversion</p>
+        <h1>Map the leaks before more local demand drifts away.</h1>
+        <p>
+          Start with the diagnostic audit if you need clarity on where visibility, trust, and
+          response are breaking down before committing to a broader build.
+        </p>
+        <p>
+          Use this form when you want a grounded read on where visibility, trust, response, or
+          measurement are breaking down. The reply will point you toward the smartest next move,
+          not the biggest package.
+        </p>
+        <p>
+          If the form ever fails, email <a href="mailto:mike@leverageai.network">mike@leverageai.network</a>
+          directly so the inquiry does not disappear into tooling noise.
+        </p>
+        <div class="button-row">
+          <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes">Read what the audit includes</a>
+          <a class="button secondary" href="/pricing">Review pricing first</a>
+        </div>
+      </div>
+      <div class="surface">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

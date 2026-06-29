@@ -1,0 +1,1119 @@
+:root {
+  color-scheme: dark;
+  --bg: oklch(0.1 0.008 265);
+  --surface: oklch(0.13 0.008 265);
+  --surface-strong: oklch(0.16 0.007 265);
+  --ink: oklch(0.96 0.005 80);
+  --muted: oklch(0.65 0.008 80);
+  --line: oklch(0.22 0.007 265);
+  --accent: oklch(0.74 0.165 68);
+  --accent-strong: oklch(0.64 0.145 68);
+  --accent-glow: oklch(0.74 0.165 68 / 0.12);
+  --max-width: 75rem;
+  --prose-width: 68ch;
+  --radius-sm: 0.2rem;
+  --radius-md: 0.45rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top right, var(--accent-glow), transparent 26rem),
+    linear-gradient(180deg, oklch(0.1 0.01 258) 0%, var(--bg) 100%);
+  color: var(--ink);
+  font-family: "Barlow", system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.shell {
+  width: min(100% - 2rem, var(--max-width));
+  margin: 0 auto;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.surface {
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.05;
+  margin: 0;
+  text-wrap: balance;
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+}
+
+p,
+li {
+  color: var(--muted);
+  max-width: var(--prose-width);
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 700;
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.button.primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.button.secondary {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button.primary:hover {
+  background: var(--accent-strong);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.meta-list li {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+}
+
+.prose > :first-child {
+  margin-top: 0;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 18%, var(--line));
+  border-radius: 0.45rem;
+  background: color-mix(in oklab, var(--surface-strong) 76%, var(--accent-glow));
+}
+
+.prose blockquote p {
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border: 1px solid var(--line);
+  background: color-mix(in oklab, var(--surface) 90%, black 10%);
+}
+
+.prose th,
+.prose td {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: color-mix(in oklab, var(--surface-strong) 82%, black 18%);
+}
+
+.prose td {
+  color: var(--muted);
+}
+
+.prose strong {
+  color: var(--ink);
+}
+
+.hero {
+  padding: 6rem 0 4rem;
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--accent) 24%, var(--line));
+  border-radius: 0.5rem;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  background:
+    linear-gradient(160deg, oklch(0.1 0.01 258 / 0.96), oklch(0.14 0.012 258 / 0.88)),
+    radial-gradient(circle at top right, var(--accent-glow), transparent 20rem);
+  color: #f9efe2;
+}
+
+.hero-panel p,
+.hero-panel li {
+  color: rgba(249, 239, 226, 0.86);
+}
+
+.hero-panel a {
+  color: #fff4dd;
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--accent) 22%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--accent) 22%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 55% at 60% 35%, black 20%, transparent 75%);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.split {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
+}
+
+.case-study-hero {
+  padding-bottom: 3rem;
+}
+
+.case-study-hero__panel {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.9fr);
+  align-items: stretch;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid color-mix(in oklab, var(--accent) 18%, var(--line));
+  border-radius: 0.5rem;
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--surface) 88%, black 12%), color-mix(in oklab, var(--surface-strong) 92%, black 8%)),
+    radial-gradient(circle at top right, var(--accent-glow), transparent 18rem);
+}
+
+.case-study-hero__copy {
+  align-content: start;
+}
+
+.case-study-hero__lead,
+.case-study-intro > p,
+.case-study-story-block p,
+.case-study-quote p,
+.case-study-context p,
+.case-study-execution p,
+.case-study-callout p,
+.case-study-link-card p,
+.case-study-cta p {
+  font-size: 1.02rem;
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+.case-study-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.case-study-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.2rem;
+  padding: 0 0.8rem;
+  border: 1px solid color-mix(in oklab, var(--line) 80%, var(--accent));
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--surface-strong) 75%, transparent);
+  color: var(--ink);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.case-study-sidecar {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 1.4rem;
+  border: 1px solid color-mix(in oklab, var(--line) 78%, var(--accent));
+  border-radius: 0.5rem;
+  background: color-mix(in oklab, var(--surface-strong) 88%, black 12%);
+}
+
+.case-study-sidecar__label,
+.case-study-kicker,
+.case-study-flow__label,
+.case-study-link-card span {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.case-study-result-list,
+.case-study-checklist,
+.case-study-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study-result-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.case-study-result-list li,
+.case-study-checklist li {
+  color: var(--ink);
+}
+
+.case-study-result-list li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.case-study-result-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.72rem;
+  left: 0;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.case-study-stat-band {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  border: 1px solid color-mix(in oklab, var(--accent) 18%, var(--line));
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--accent) 12%, var(--line));
+}
+
+.case-study-stat {
+  padding: 1.4rem 1.2rem;
+  background: color-mix(in oklab, var(--surface) 94%, black 6%);
+}
+
+.case-study-stat__value,
+.case-study-stat__label,
+.case-study-stat__detail {
+  margin: 0;
+}
+
+.case-study-stat__value {
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.case-study-stat__label {
+  margin-top: 0.45rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.case-study-stat__detail {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.case-study-intro {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+  align-items: end;
+}
+
+.case-study-kicker {
+  color: var(--muted);
+}
+
+.case-study-intro h2,
+.case-study-cta h2 {
+  max-width: 16ch;
+}
+
+.case-study-story-grid {
+  display: grid;
+  gap: 2rem 2.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.case-study-story-block {
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in oklab, var(--accent) 15%, var(--line));
+}
+
+.case-study-story-block h3,
+.case-study-flow h3,
+.case-study-context h3,
+.case-study-execution h3,
+.case-study-callout h3 {
+  margin: 0;
+  font-size: 1.45rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.case-study-quote,
+.case-study-flow,
+.case-study-context,
+.case-study-execution,
+.case-study-callout {
+  grid-column: 1 / -1;
+}
+
+.case-study-quote {
+  margin: 0;
+  padding: 1.8rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 20%, var(--line));
+  border-radius: 0.5rem;
+  background: color-mix(in oklab, var(--surface-strong) 72%, var(--accent-glow));
+  box-shadow: inset 0 1px 0 color-mix(in oklab, var(--accent) 45%, transparent);
+}
+
+.case-study-quote p,
+.case-study-quote cite {
+  margin: 0;
+}
+
+.case-study-quote p {
+  color: var(--ink);
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  font-style: italic;
+}
+
+.case-study-quote cite {
+  display: block;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-study-flow {
+  gap: 1.25rem;
+}
+
+.case-study-flow__track {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.case-study-flow__node {
+  padding: 1rem;
+  border: 1px solid color-mix(in oklab, var(--line) 86%, transparent);
+  border-radius: 0.45rem;
+  background: color-mix(in oklab, var(--surface-strong) 70%, transparent);
+}
+
+.case-study-flow__node--accent {
+  border-color: color-mix(in oklab, var(--accent) 42%, var(--line));
+  background: color-mix(in oklab, var(--accent) 16%, var(--surface-strong));
+}
+
+.case-study-flow__name {
+  margin: 0.3rem 0 0;
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.case-study-context,
+.case-study-execution {
+  gap: 1rem;
+}
+
+.case-study-execution {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--surface) 55%, black 45%), color-mix(in oklab, var(--surface-strong) 42%, black 58%));
+  border-color: color-mix(in oklab, var(--accent) 18%, var(--line));
+}
+
+.case-study-execution h3,
+.case-study-execution p,
+.case-study-checklist li {
+  color: color-mix(in oklab, var(--ink) 92%, white 8%);
+}
+
+.case-study-checklist {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.case-study-checklist li {
+  position: relative;
+  padding-left: 1rem;
+  line-height: 1.55;
+}
+
+.case-study-checklist li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.case-study-callout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.case-study-callout h3,
+.case-study-callout p,
+.case-study-callout__badge span,
+.case-study-callout__badge small {
+  color: inherit;
+}
+
+.case-study-callout--ink {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--surface) 52%, black 48%), color-mix(in oklab, var(--surface-strong) 40%, black 60%));
+  color: color-mix(in oklab, var(--ink) 94%, white 6%);
+}
+
+.case-study-callout__badge {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 8rem;
+  text-align: center;
+}
+
+.case-study-callout__badge span {
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.case-study-callout__badge small {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-study-links {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.case-study-link-card {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: color-mix(in oklab, var(--surface-strong) 72%, transparent);
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
+}
+
+.case-study-link-card strong {
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.case-study-link-card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--accent) 40%, var(--line));
+  background: color-mix(in oklab, var(--surface-strong) 84%, var(--accent-glow));
+}
+
+.case-study-cta {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.2fr) auto;
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  border: 1px solid color-mix(in oklab, var(--accent) 20%, var(--line));
+  border-radius: 0.5rem;
+  background:
+    radial-gradient(circle at top right, var(--accent-glow), transparent 20rem),
+    color-mix(in oklab, var(--surface) 90%, black 10%);
+}
+
+.service-hero {
+  padding-bottom: 3rem;
+}
+
+.service-hero__panel {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.9fr);
+  align-items: stretch;
+}
+
+.service-hero__lead,
+.service-sidecar li,
+.service-proof-card p,
+.service-faq-item p {
+  font-size: 1.02rem;
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+.service-sidecar {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 1.4rem;
+  border: 1px solid color-mix(in oklab, var(--line) 78%, var(--accent));
+  border-radius: 0.5rem;
+  background: color-mix(in oklab, var(--surface-strong) 88%, black 12%);
+}
+
+.service-sidecar__label {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.service-checklist,
+.service-faq-list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-checklist li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--ink);
+}
+
+.service-checklist li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.service-proof-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.service-proof-card {
+  padding: 1.15rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 16%, var(--line));
+  border-radius: 0.45rem;
+  background: color-mix(in oklab, var(--surface-strong) 78%, transparent);
+}
+
+.service-proof-card p,
+.service-faq-item p {
+  margin: 0;
+}
+
+.service-faq-item {
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: color-mix(in oklab, var(--surface-strong) 70%, transparent);
+}
+
+.service-faq-item[open] {
+  border-color: color-mix(in oklab, var(--accent) 28%, var(--line));
+  background: color-mix(in oklab, var(--surface-strong) 82%, var(--accent-glow));
+}
+
+.service-faq-item summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.service-faq-item p {
+  margin-top: 0.75rem;
+}
+
+.location-hub-hero__panel,
+.location-page-hero__panel,
+.pricing-hero__panel {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 0.9fr);
+  align-items: stretch;
+}
+
+.location-hub-hero__lead,
+.location-page-hero__lead,
+.pricing-hero__lead,
+.location-page-sidecar p,
+.pricing-sidecar li,
+.location-page-nearby__card p,
+.pricing-card p,
+.pricing-credit p {
+  font-size: 1.02rem;
+  line-height: 1.72;
+  text-wrap: pretty;
+}
+
+.location-hub-sidecar,
+.location-page-sidecar,
+.pricing-sidecar {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 1.4rem;
+  border: 1px solid color-mix(in oklab, var(--line) 78%, var(--accent));
+  border-radius: 0.5rem;
+  background: color-mix(in oklab, var(--surface-strong) 88%, black 12%);
+}
+
+.location-hub-sidecar__label,
+.location-page-sidecar__label,
+.pricing-sidecar__label,
+.location-page-block__label,
+.pricing-principles__label,
+.pricing-credit__label {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.location-hub-principles,
+.pricing-principles,
+.pricing-grid,
+.location-card-grid,
+.location-page-grid,
+.location-page-nearby__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.location-hub-principles h2,
+.pricing-principles h2 {
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+}
+
+.location-tier {
+  display: grid;
+  gap: 1rem;
+}
+
+.location-tier__header {
+  padding-top: 0.5rem;
+  border-top: 1px solid color-mix(in oklab, var(--accent) 15%, var(--line));
+}
+
+.location-card {
+  gap: 1rem;
+}
+
+.location-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.location-card__signals,
+.pricing-card__details {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.location-card__signals li,
+.pricing-card__details li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.location-card__signals li::before,
+.pricing-card__details li::before {
+  content: "";
+  position: absolute;
+  top: 0.72rem;
+  left: 0;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.location-card__signals strong {
+  color: var(--ink);
+}
+
+.location-page-hero,
+.pricing-hero {
+  display: grid;
+}
+
+.location-page-priorities,
+.pricing-credit {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.location-page-priorities {
+  border-color: color-mix(in oklab, var(--accent) 18%, var(--line));
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--surface) 55%, black 45%), color-mix(in oklab, var(--surface-strong) 42%, black 58%));
+}
+
+.location-page-priorities h3,
+.location-page-priorities li {
+  color: color-mix(in oklab, var(--ink) 92%, white 8%);
+}
+
+.location-page-nearby {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.location-page-nearby__card {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: color-mix(in oklab, var(--surface-strong) 72%, transparent);
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
+}
+
+.location-page-nearby__card strong {
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.location-page-nearby__card:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--accent) 40%, var(--line));
+  background: color-mix(in oklab, var(--surface-strong) 84%, var(--accent-glow));
+}
+
+.pricing-card {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.pricing-card--featured {
+  border-color: color-mix(in oklab, var(--accent) 28%, var(--line));
+  background:
+    radial-gradient(circle at top right, var(--accent-glow), transparent 18rem),
+    color-mix(in oklab, var(--surface-strong) 88%, black 12%);
+}
+
+.pricing-card__range {
+  margin: 0;
+  color: var(--accent);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.pricing-card__tier,
+.pricing-card__tagline,
+.pricing-card__setup {
+  margin: 0;
+}
+
+.pricing-card__tier {
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pricing-card__tagline,
+.pricing-card__setup {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.pricing-card__tagline {
+  color: var(--muted);
+}
+
+.pricing-card__setup {
+  color: color-mix(in oklab, var(--ink) 78%, var(--muted));
+}
+
+.pricing-credit {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  border: 1px solid color-mix(in oklab, var(--accent) 18%, var(--line));
+  background: color-mix(in oklab, var(--surface-strong) 82%, black 18%);
+}
+
+@media (max-width: 900px) {
+  .case-study-hero__panel,
+  .service-hero__panel,
+  .case-study-intro,
+  .case-study-callout,
+  .case-study-cta,
+  .location-hub-hero__panel,
+  .location-page-hero__panel,
+  .pricing-hero__panel,
+  .pricing-credit {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-callout__badge {
+    text-align: left;
+  }
+}
+
+@media (max-width: 760px) {
+  .case-study-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  .service-proof-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  padding: 0.8rem 0.95rem;
+  font: inherit;
+  background: color-mix(in oklab, var(--surface-strong) 72%, var(--bg));
+  color: var(--ink);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid color-mix(in oklab, var(--accent) 60%, white);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.form-note,
+.form-status {
+  margin: 0;
+  max-width: none;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.form-status {
+  display: none;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: color-mix(in oklab, var(--surface-strong) 88%, black 12%);
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.form-status[data-state] {
+  display: block;
+}
+
+.form-status[data-state="loading"] {
+  border-color: color-mix(in oklab, var(--accent) 28%, var(--line));
+  background: color-mix(in oklab, var(--surface-strong) 84%, var(--accent-glow));
+}
+
+.form-status[data-state="success"] {
+  border-color: color-mix(in oklab, oklch(0.72 0.15 150) 38%, var(--line));
+  background: color-mix(in oklab, oklch(0.72 0.15 150 / 0.12) 36%, var(--surface-strong));
+}
+
+.form-status[data-state="error"] {
+  border-color: color-mix(in oklab, oklch(0.64 0.18 25) 42%, var(--line));
+  background: color-mix(in oklab, oklch(0.64 0.18 25 / 0.11) 34%, var(--surface-strong));
+}
+
+button:disabled,
+.button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

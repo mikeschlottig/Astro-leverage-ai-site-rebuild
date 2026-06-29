@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — LEVERAGE AI</title>
+  <meta name="description" content="LEVERAGE AI services: AI Search Optimization, Design Strategy, Data Analytics, Brand Architecture. Custom-scoped, directly executed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:         oklch(0.96 0.005 80);
+      --ink-muted:   oklch(0.65 0.008 80);
+      --ink-faint:   oklch(0.38 0.006 80);
+      --bg:          oklch(0.10 0.010 258);
+      --surface:     oklch(0.13 0.009 258);
+      --surface-alt: oklch(0.17 0.008 258);
+      --border:      oklch(0.22 0.007 258);
+      --amber:       oklch(0.74 0.165 68);
+      --amber-dim:   oklch(0.64 0.145 68);
+      --amber-glow:  oklch(0.74 0.165 68 / 0.08);
+      --amber-line:  oklch(0.74 0.165 68 / 0.25);
+      --max-w: 1200px;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--ink);
+      font-family: 'Barlow', system-ui, sans-serif;
+      font-size: 16px; line-height: 1.65;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-weight: 700; line-height: 1.08; letter-spacing: -0.03em; text-wrap: balance;
+    }
+    p { text-wrap: pretty; }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 clamp(1.25rem, 5vw, 3rem); height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: oklch(0.10 0.010 258 / 0.85);
+      backdrop-filter: blur(16px); border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Familjen Grotesk', sans-serif; font-weight: 700;
+      font-size: 1rem; letter-spacing: 0.08em; color: var(--amber); text-transform: uppercase;
+    }
+    .nav-logo span {
+      display: block; font-size: 0.6rem; letter-spacing: 0.18em;
+      color: var(--ink-muted); font-weight: 400; font-family: 'Barlow', sans-serif;
+      text-transform: uppercase; margin-top: 1px;
+    }
+    .nav-links { display: flex; align-items: center; gap: clamp(1.5rem, 3vw, 2.5rem); list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--ink-muted); transition: color 200ms;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta {
+      font-family: 'Familjen Grotesk', sans-serif; font-size: 0.8rem;
+      font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--bg) !important; background: var(--amber);
+      padding: 0.5rem 1.25rem; border-radius: 2px; transition: background 200ms !important;
+    }
+    .nav-cta:hover { background: var(--amber-dim) !important; }
+
+    .container { width: 100%; max-width: var(--max-w); margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--amber); margin-bottom: 1.5rem;
+    }
+    .section-label::before { content: ''; width: 20px; height: 1px; background: var(--amber); }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Familjen Grotesk', sans-serif; font-size: 0.85rem;
+      font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--bg); background: var(--amber); padding: 0.9rem 2rem; border-radius: 2px;
+      transition: background 200ms var(--ease-out), transform 200ms var(--ease-out);
+    }
+    .btn-primary:hover { background: var(--amber-dim); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Familjen Grotesk', sans-serif; font-size: 0.8rem;
+      font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--amber); border: 1px solid var(--amber-line);
+      padding: 0.75rem 1.5rem; border-radius: 2px;
+      transition: background 200ms, border-color 200ms;
+    }
+    .btn-outline:hover { background: var(--amber-glow); border-color: var(--amber); }
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+    }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding-top: 68px; background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero-inner {
+      padding: 5rem clamp(1.25rem, 5vw, 3rem);
+      max-width: var(--max-w); margin: 0 auto;
+    }
+    .page-hero-tag {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--amber);
+      display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem;
+    }
+    .page-hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--amber); }
+    .page-hero-title { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 1.25rem; }
+    .page-hero-title em { font-style: italic; color: var(--amber); }
+    .page-hero-body { font-size: 1.1rem; color: var(--ink-muted); line-height: 1.75; max-width: 58ch; }
+
+    /* ── SERVICE ROWS — alternating layout, NOT identical card grid ── */
+    .services-section { padding: clamp(5rem, 8vh, 7rem) 0; }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      padding: clamp(3rem, 6vh, 5rem) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-row:first-child { border-top: 1px solid var(--border); }
+    .service-row.reverse { direction: rtl; }
+    .service-row.reverse > * { direction: ltr; }
+
+    .service-meta { display: flex; flex-direction: column; }
+
+    .service-num {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--amber); margin-bottom: 1.25rem;
+    }
+    .service-title { font-size: clamp(1.75rem, 3vw, 2.4rem); margin-bottom: 1rem; }
+    .service-lead {
+      font-size: 1.05rem; color: var(--ink-muted); line-height: 1.75;
+      margin-bottom: 1.75rem;
+    }
+    .service-deliverables { margin-bottom: 2rem; }
+    .service-deliverables-label {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.75rem;
+    }
+    .deliverable-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+    .deliverable-list li {
+      font-size: 0.88rem; color: var(--ink-muted);
+      display: flex; align-items: baseline; gap: 0.65rem;
+    }
+    .deliverable-list li::before {
+      content: '—'; color: var(--amber); flex-shrink: 0; font-size: 0.75rem;
+    }
+
+    /* Service visual panel — different treatment per service */
+    .service-visual {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      min-height: 320px;
+      position: relative;
+    }
+
+    /* AI Search — citation flow diagram */
+    .visual-citations {
+      padding: 2rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .citation-row {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.78rem;
+    }
+    .citation-platform {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-weight: 700; font-size: 0.75rem;
+      color: var(--ink); min-width: 80px;
+    }
+    .citation-bar-wrap { flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+    .citation-bar {
+      height: 100%; background: var(--amber); border-radius: 2px;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 800ms var(--ease-out);
+    }
+    .citation-bar.animate { transform: scaleX(1); }
+    .citation-pct { font-size: 0.72rem; color: var(--amber); font-weight: 600; }
+
+    /* Design Strategy — color palette blocks */
+    .visual-design {
+      padding: 2rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    }
+    .design-swatch {
+      border-radius: 4px; padding: 1.5rem 1.25rem;
+      display: flex; align-items: flex-end;
+    }
+    .design-swatch-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* Data — simple chart visual */
+    .visual-data { padding: 2rem; display: flex; align-items: flex-end; gap: 0.5rem; height: 280px; }
+    .data-bar-wrap { flex: 1; display: flex; flex-direction: column; gap: 0.4rem; align-items: center; }
+    .data-bar {
+      width: 100%; border-radius: 3px 3px 0 0;
+      background: var(--amber); opacity: 0.7;
+      transform: scaleY(0); transform-origin: bottom;
+      transition: transform 600ms var(--ease-out);
+    }
+    .data-bar.animate { transform: scaleY(1); }
+    .data-bar-label { font-size: 0.6rem; color: var(--ink-faint); letter-spacing: 0.06em; }
+
+    /* Brand Architecture — connection diagram */
+    .visual-brand {
+      padding: 2.5rem 2rem;
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    }
+    .brand-center {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: var(--amber-glow); border: 2px solid var(--amber);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--amber); text-align: center;
+    }
+    .brand-nodes { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+    .brand-node {
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--amber-line);
+      border-radius: 20px;
+      font-size: 0.7rem; color: var(--ink-muted);
+      background: var(--surface-alt);
+    }
+
+    /* ── PROCESS ── */
+    .process-section { padding: clamp(5rem, 8vh, 7rem) 0; background: var(--surface); }
+    .process-title { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 3rem; }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+    .process-step { background: var(--bg); padding: 2rem 1.5rem; }
+    .step-phase {
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--amber); margin-bottom: 1rem;
+    }
+    .step-title {
+      font-family: 'Familjen Grotesk', sans-serif; font-weight: 700;
+      font-size: 1rem; margin-bottom: 0.6rem;
+    }
+    .step-desc { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.6; }
+
+    /* ── CTA ── */
+    .cta-section { padding: clamp(5rem, 10vh, 8rem) 0; text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before {
+      content: '';
+      position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
+      width: 80vw; height: 80vw; max-width: 900px;
+      background: radial-gradient(circle, oklch(0.74 0.165 68 / 0.07) 0%, transparent 60%);
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-title { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.25rem; }
+    .cta-title em { font-style: italic; color: var(--amber); }
+    .cta-sub { font-size: 1.05rem; color: var(--ink-muted); max-width: 50ch; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .cta-actions { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; }
+    .cta-note { margin-top: 1.5rem; font-size: 0.75rem; color: var(--ink-faint); }
+
+    footer { border-top: 1px solid var(--border); padding: 3rem 0 2rem; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); font-size: 0.9rem; }
+    .footer-nav { display: flex; gap: 2rem; }
+    .footer-nav a { font-size: 0.8rem; color: var(--ink-muted); transition: color 200ms; }
+    .footer-nav a:hover { color: var(--ink); }
+    .footer-copy { font-size: 0.72rem; color: var(--ink-faint); margin-top: 1.5rem; }
+
+    @media (max-width: 900px) {
+      .service-row { grid-template-columns: 1fr; direction: ltr !important; }
+      .service-row.reverse > * { direction: ltr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .process-steps { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; }
+      * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Leverage AI<span>AI-First Digital Strategy</span></a>
+    <ul class="nav-links">
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-tag">What I Build</div>
+      <h1 class="page-hero-title">Four disciplines.<br><em>One executor.</em></h1>
+      <p class="page-hero-body">Every engagement is custom-scoped, personally executed, and built around measurable outcomes — not billable hours. No hand-offs. No templated playbooks.</p>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="container">
+
+      <!-- Row 1: AI Search -->
+      <div class="service-row fade-up">
+        <div class="service-meta">
+          <div class="service-num">Service 01</div>
+          <h2 class="service-title">AI Search Optimization</h2>
+          <p class="service-lead">Your brand, cited by name when ChatGPT, Perplexity, and Gemini answer the questions your customers are actually asking. Not just ranked — recommended. There's a difference, and it's the difference that drives pipeline.</p>
+          <div class="service-deliverables">
+            <div class="service-deliverables-label">What's included</div>
+            <ul class="deliverable-list">
+              <li>AI citation audit: where you appear, where your competitors appear, the gaps</li>
+              <li>JSON-LD schema implementation — Organization, LocalBusiness, Service, FAQ</li>
+              <li>Content architecture rebuilt for LLM comprehension and entity recognition</li>
+              <li>Google Business Profile optimization and citation building</li>
+              <li>Monthly citation velocity tracking across all major AI platforms</li>
+              <li>Competitive monitoring and adaptive strategy updates</li>
+            </ul>
+          </div>
+          <a href="services/ai-search.html" class="btn-outline">Full scope + pricing →</a>
+        </div>
+        <div class="service-visual">
+          <div class="visual-citations" id="citations-visual">
+            <div style="font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.5rem;">AI Citation Presence</div>
+            <div class="citation-row">
+              <div class="citation-platform">ChatGPT</div>
+              <div class="citation-bar-wrap"><div class="citation-bar" data-width="0.82"></div></div>
+              <div class="citation-pct">82%</div>
+            </div>
+            <div class="citation-row">
+              <div class="citation-platform">Perplexity</div>
+              <div class="citation-bar-wrap"><div class="citation-bar" data-width="0.74"></div></div>
+              <div class="citation-pct">74%</div>
+            </div>
+            <div class="citation-row">
+              <div class="citation-platform">Gemini</div>
+              <div class="citation-bar-wrap"><div class="citation-bar" data-width="0.68"></div></div>
+              <div class="citation-pct">68%</div>
+            </div>
+            <div class="citation-row">
+              <div class="citation-platform">Claude</div>
+              <div class="citation-bar-wrap"><div class="citation-bar" data-width="0.60"></div></div>
+              <div class="citation-pct">60%</div>
+            </div>
+            <div style="margin-top: 0.5rem; font-size: 0.7rem; color: var(--ink-faint);">Avg. 90-day citation growth: <span style="color: var(--amber); font-weight: 600;">+312%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Design Strategy (reversed) -->
+      <div class="service-row reverse fade-up" style="transition-delay: 100ms;">
+        <div class="service-meta">
+          <div class="service-num">Service 02</div>
+          <h2 class="service-title">Design Strategy</h2>
+          <p class="service-lead">Visual systems that communicate authority before a word is read. Built on research, constraint, and understanding of your market — not on which design trends shipped last quarter. Good design converts; great design compounds.</p>
+          <div class="service-deliverables">
+            <div class="service-deliverables-label">What's included</div>
+            <ul class="deliverable-list">
+              <li>Brand identity development — logo, color system, typography, visual language</li>
+              <li>UI/UX design for key conversion surfaces: homepage, landing pages, contact</li>
+              <li>Design system with documentation for internal consistency</li>
+              <li>Responsive implementation with accessibility baked in, not bolted on</li>
+              <li>Figma source files delivered — you own everything</li>
+            </ul>
+          </div>
+          <a href="services/design-strategy.html" class="btn-outline">Full scope + pricing →</a>
+        </div>
+        <div class="service-visual">
+          <div class="visual-design">
+            <div class="design-swatch" style="background: oklch(0.10 0.010 258); aspect-ratio: 1;">
+              <div class="design-swatch-label" style="color: oklch(0.96 0.005 80);">BG</div>
+            </div>
+            <div class="design-swatch" style="background: oklch(0.74 0.165 68); aspect-ratio: 1;">
+              <div class="design-swatch-label" style="color: oklch(0.10 0.010 258);">Amber</div>
+            </div>
+            <div class="design-swatch" style="background: oklch(0.13 0.009 258); aspect-ratio: 1;">
+              <div class="design-swatch-label" style="color: oklch(0.65 0.008 80);">Surface</div>
+            </div>
+            <div class="design-swatch" style="background: oklch(0.22 0.007 258); aspect-ratio: 1;">
+              <div class="design-swatch-label" style="color: oklch(0.65 0.008 80);">Border</div>
+            </div>
+            <div style="grid-column: span 2; padding: 1rem; background: var(--bg); border-radius: 4px; border: 1px solid var(--border);">
+              <div style="font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; font-size: 1.4rem; letter-spacing: -0.03em; margin-bottom: 0.3rem;">Display type</div>
+              <div style="font-size: 0.8rem; color: var(--ink-muted); font-weight: 300;">Body text, intentionally chosen.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Data Analytics -->
+      <div class="service-row fade-up" style="transition-delay: 200ms;">
+        <div class="service-meta">
+          <div class="service-num">Service 03</div>
+          <h2 class="service-title">Data Analytics</h2>
+          <p class="service-lead">Custom dashboards that surface the signals that actually matter: AI citation velocity, organic visibility trends, and leading indicators that predict where your brand's digital presence is heading before it gets there.</p>
+          <div class="service-deliverables">
+            <div class="service-deliverables-label">What's included</div>
+            <ul class="deliverable-list">
+              <li>Custom analytics dashboard tailored to your KPIs, not generic templates</li>
+              <li>AI search citation tracking across ChatGPT, Perplexity, Gemini, Claude</li>
+              <li>Performance benchmarking against direct competitors</li>
+              <li>Monthly reporting with trend analysis and actionable next steps</li>
+              <li>Predictive signals for content and SEO strategy</li>
+            </ul>
+          </div>
+          <a href="services/data-analytics.html" class="btn-outline">Full scope + pricing →</a>
+        </div>
+        <div class="service-visual" style="min-height: 280px; padding: 2rem;">
+          <div style="font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1rem;">Citation Velocity · 6 Month</div>
+          <div style="display: flex; align-items: flex-end; gap: 6px; height: 160px;" id="bar-chart">
+            <div class="data-bar-wrap">
+              <div class="data-bar" data-h="28" style="height: 28%"></div>
+              <div class="data-bar-label">Jan</div>
+            </div>
+            <div class="data-bar-wrap">
+              <div class="data-bar" data-h="40" style="height: 40%"></div>
+              <div class="data-bar-label">Feb</div>
+            </div>
+            <div class="data-bar-wrap">
+              <div class="data-bar" data-h="55" style="height: 55%"></div>
+              <div class="data-bar-label">Mar</div>
+            </div>
+            <div class="data-bar-wrap">
+              <div class="data-bar" data-h="65" style="height: 65%"></div>
+              <div class="data-bar-label">Apr</div>
+            </div>
+            <div class="data-bar-wrap">
+              <div class="data-bar" data-h="80" style="height: 80%"></div>
+              <div class="data-bar-label">May</div>
+            </div>
+            <div class="data-bar-wrap">
+              <div class="data-bar" data-h="100" style="height: 100%; opacity: 1;"></div>
+              <div class="data-bar-label" style="color: var(--amber);">Jun</div>
+            </div>
+          </div>
+          <div style="margin-top: 1rem; display: flex; gap: 1.5rem;">
+            <div><div style="font-family: 'Familjen Grotesk', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--amber); letter-spacing: -0.04em;">+312%</div><div style="font-size: 0.7rem; color: var(--ink-muted);">6-month growth</div></div>
+            <div><div style="font-family: 'Familjen Grotesk', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--ink); letter-spacing: -0.04em;">12M+</div><div style="font-size: 0.7rem; color: var(--ink-muted);">AI impressions</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4: Brand Architecture (reversed) -->
+      <div class="service-row reverse fade-up" style="transition-delay: 300ms;">
+        <div class="service-meta">
+          <div class="service-num">Service 04</div>
+          <h2 class="service-title">Brand Architecture</h2>
+          <p class="service-lead">Comprehensive identity systems that hold consistent across every surface your brand occupies — every AI platform, every directory, every human touchpoint. Consistency is how AI systems learn to trust and recommend a brand.</p>
+          <div class="service-deliverables">
+            <div class="service-deliverables-label">What's included</div>
+            <ul class="deliverable-list">
+              <li>Multi-platform brand consistency audit and framework</li>
+              <li>Voice and tone guidelines engineered for AI surface comprehension</li>
+              <li>Digital asset management strategy — what lives where, in what format</li>
+              <li>Brand governance documentation for internal teams</li>
+              <li>Entity disambiguation — ensuring AI systems know who you are</li>
+            </ul>
+          </div>
+          <a href="services/brand-architecture.html" class="btn-outline">Full scope + pricing →</a>
+        </div>
+        <div class="service-visual" style="min-height: 260px;">
+          <div class="visual-brand">
+            <div style="font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.5rem;">Entity Recognition Map</div>
+            <div class="brand-center">Your<br>Brand</div>
+            <div class="brand-nodes">
+              <div class="brand-node">ChatGPT</div>
+              <div class="brand-node">Perplexity</div>
+              <div class="brand-node">Gemini</div>
+              <div class="brand-node">Google Maps</div>
+              <div class="brand-node">Yelp</div>
+              <div class="brand-node">LinkedIn</div>
+              <div class="brand-node">Claude</div>
+              <div class="brand-node">Schema.org</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-label fade-up">How I Work</div>
+      <h2 class="process-title fade-up">Every engagement follows the same discipline.</h2>
+      <div class="process-steps fade-up">
+        <div class="process-step">
+          <div class="step-phase">Phase 01 · Audit</div>
+          <div class="step-title">Understand where you stand</div>
+          <div class="step-desc">Comprehensive audit of your current AI citation presence, schema implementation, content architecture, and competitive gap. No assumptions — all evidence.</div>
+        </div>
+        <div class="process-step">
+          <div class="step-phase">Phase 02 · Strategy</div>
+          <div class="step-title">Build the roadmap</div>
+          <div class="step-desc">A prioritized plan built around your business objectives, competitive landscape, and the quickest path to measurable results. You approve before anything is built.</div>
+        </div>
+        <div class="process-step">
+          <div class="step-phase">Phase 03 · Execute</div>
+          <div class="step-title">Ship with precision</div>
+          <div class="step-desc">Implementation with no hand-offs. I write the schema, architect the content, build the systems. Every deliverable reviewed against a quality bar, not a deadline.</div>
+        </div>
+        <div class="process-step">
+          <div class="step-phase">Phase 04 · Compound</div>
+          <div class="step-title">Monitor and adapt</div>
+          <div class="step-desc">Monthly tracking, reporting, and strategy updates. AI search is a moving target; your citation strategy moves with it. No set-and-forget.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-inner fade-up">
+        <h2 class="cta-title">Every engagement is<br><em>custom-scoped</em>.</h2>
+        <p class="cta-sub">Tell me where your brand stands today and where it needs to be. I'll tell you exactly what it takes to get there.</p>
+        <div class="cta-actions">
+          <a href="mailto:leverage_labs_alpha@proton.me" class="btn-primary">
+            Request a Strategy Call
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <p class="cta-note">Mon–Sat · 10am–8pm Pacific · Response within 24 hours</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <a href="index.html" class="footer-logo">Leverage AI</a>
+        <nav class="footer-nav">
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="index.html#work">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-copy">© 2026 LEVERAGE AI LLC · Grants Pass, Oregon</div>
+    </div>
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+    );
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Animate citation bars on scroll
+    const citeBars = document.querySelectorAll('.citation-bar');
+    const barObs = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('animate'), 300); } }),
+      { threshold: 0.5 }
+    );
+    citeBars.forEach(b => barObs.observe(b));
+
+    // Animate data bars
+    const dataBars = document.querySelectorAll('.data-bar');
+    dataBars.forEach(b => barObs.observe(b));
+  </script>
+</body>
+</html>

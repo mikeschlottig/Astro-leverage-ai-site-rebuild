@@ -1,0 +1,214 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { webpageGraph } from "../lib/schema";
+
+const pricingStages = [
+  {
+    tier: "Tier 1",
+    range: "$500-$1,200",
+    name: "Diagnostic Audit",
+    tagline: "See exactly where visibility, trust, and response are leaking before you commit to a larger build.",
+    summary: "A paid diagnosis that shows where visibility, trust, and response are leaking before we prescribe a bigger build.",
+    setup: "One-time engagement. Credited into implementation when the audit leads directly into the build.",
+    details: [
+      "Market and competitor read for the local territory you actually need to win",
+      "Website trust and conversion review focused on the first ten seconds",
+      "Lead-response audit covering forms, calls, and handoff delays",
+      "Schema, entity, and authority-signal review where it affects visibility",
+      "Clear implementation recommendation with scope tied to findings",
+    ],
+  },
+  {
+    tier: "Tier 2",
+    range: "$1,500-$4,000",
+    name: "System Implementation",
+    tagline: "Implement the highest-value fixes first, then build the public system around real market conditions.",
+    summary: "The build phase for the highest-value fixes: local visibility, trust surface, response routing, and measurement setup.",
+    setup: "Primary build path. Best fit when the business needs real infrastructure work, not another round of surface tweaks.",
+    featured: true,
+    details: [
+      "Service and location architecture that reflects the real market, not statewide filler",
+      "Custom website and conversion improvements tied to buyer confidence",
+      "Lead capture and routing improvements that reduce the reply gap",
+      "Schema, snippet, and entity architecture that strengthens trust and extractability",
+      "Analytics and reporting foundations that keep the system measurable",
+    ],
+  },
+  {
+    tier: "Tier 3",
+    range: "$400-$800/mo",
+    name: "Ongoing Adaptation",
+    tagline: "Keep the system monitored, refined, and locally sharpened without sliding into retainer theater.",
+    summary: "Lightweight continued support for operators who want the system monitored, adjusted, and expanded without retainer theater.",
+    setup: "Ongoing support for businesses that want visibility, authority, and response systems maintained as conditions change.",
+    details: [
+      "Visibility and response monitoring tied to actual demand signals",
+      "Location, service, and authority-page refinements based on what is working",
+      "Google Business Profile, snippet, and trust-signal upkeep where it matters",
+      "Technical upkeep for schema, reporting, and workflow reliability",
+      "A bounded operating layer rather than permanent dependency",
+    ],
+  },
+];
+
+const pricingPrinciples = [
+  "Pay for clarity first, not for a vague retainer promise.",
+  "Implementation scope should follow diagnosis, not precede it.",
+  "Ongoing work should stay explicit, measurable, and easy to understand.",
+];
+
+const supportingLinks = [
+  {
+    href: "/reports/oregon-market-intel-infrastructure-report",
+    label: "Report",
+    title: "Oregon Market Intel Report",
+    description: "The strategic source behind the audit-first pricing posture and market-specific scope logic.",
+  },
+  {
+    href: "/reports/why-speed-wins",
+    label: "Report",
+    title: "Why Speed Wins",
+    description: "Use this when the real problem is not traffic volume but slow response after the lead arrives.",
+  },
+  {
+    href: "/reports/how-oregon-markets-differ-for-local-service-businesses",
+    label: "Report",
+    title: "How Oregon Markets Differ",
+    description: "Scope makes more sense when the buyer understands why Bend, Eugene, and Grants Pass do not need identical playbooks.",
+  },
+  {
+    href: "/knowledge-base/what-the-diagnostic-audit-includes",
+    label: "Knowledge Base",
+    title: "What The Diagnostic Audit Includes",
+    description: "A practical explainer for what gets reviewed, what the buyer receives, and why diagnosis comes first.",
+  },
+  {
+    href: "/services/local-visibility",
+    label: "Service",
+    title: "Local Visibility Systems",
+    description: "The visibility layer that usually anchors city-page and service-area implementation work.",
+  },
+  {
+    href: "/services/search-data-architecture",
+    label: "Service",
+    title: "Search And Data Architecture",
+    description: "The measurement layer that keeps diagnostic findings tied to outcomes instead of opinions.",
+  },
+];
+---
+
+<BaseLayout
+  title="Pricing"
+  description="Diagnostic-first pricing for local visibility, custom websites, lead-response systems, and ongoing market adaptation."
+  canonicalPath="/pricing"
+  schema={webpageGraph("/pricing", "Pricing", "Diagnostic-first pricing for local visibility, custom websites, lead-response systems, and ongoing market adaptation.")}
+>
+  <section class="hero">
+    <div class="shell stack">
+      <div class="pricing-hero">
+        <article class="pricing-hero__panel">
+          <div class="pricing-hero__copy stack">
+            <p class="eyebrow">Diagnostic-First Pricing</p>
+            <h1>Start with diagnosis, not with a retainer trap.</h1>
+            <p class="pricing-hero__lead">
+              The pricing surface works best when it matches the Oregon report: diagnose the leak,
+              scope the fix like infrastructure, and keep any ongoing work transparent and bounded.
+            </p>
+            <div class="button-row">
+              <a class="button primary" href="/contact">Request the diagnostic audit</a>
+              <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes">See what the audit includes</a>
+            </div>
+          </div>
+
+          <aside class="pricing-sidecar">
+            <p class="pricing-sidecar__label">What determines scope</p>
+            <ul class="case-study-result-list">
+              <li>How competitive the local market actually is</li>
+              <li>How much trust and conversion work the current site needs</li>
+              <li>Whether lead-response routing is helping or quietly wasting demand</li>
+              <li>How much reporting and authority infrastructure needs to be rebuilt</li>
+            </ul>
+          </aside>
+        </article>
+      </div>
+
+      <div class="pricing-principles">
+        {pricingPrinciples.map((principle) => (
+          <article class="surface stack">
+            <p class="pricing-principles__label">Principle</p>
+            <h2>{principle}</h2>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">Engagement Structure</p>
+          <h2>Three stages, framed like an operator decision instead of a toy SaaS plan table.</h2>
+        </div>
+        <p>
+          These are not rigid packages for every market. They are the public ranges for the three
+          jobs the site keeps describing: diagnosis, implementation, and adaptation.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        {pricingStages.map((stage) => (
+          <article class:list={["pricing-card", "surface", stage.featured && "pricing-card--featured"]}>
+            <div class="stack">
+              <p class="pricing-card__tier">{stage.tier}</p>
+              <p class="pricing-card__tagline">{stage.tagline}</p>
+              <p class="pricing-card__range">{stage.range}</p>
+              <h3>{stage.name}</h3>
+              <p>{stage.summary}</p>
+              <p class="pricing-card__setup">{stage.setup}</p>
+            </div>
+            <ul class="pricing-card__details">
+              {stage.details.map((detail) => <li>{detail}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+
+      <div class="pricing-credit surface">
+        <div class="stack">
+          <p class="pricing-credit__label">Build credit</p>
+          <h3>When the audit leads into implementation, its cost can be credited into the build.</h3>
+        </div>
+        <p>
+          That keeps the first step outcome-led. You pay to know what is broken, not to sit through a
+          vague sales process disguised as strategy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">Pricing In Context</p>
+          <h2>The pages that make this pricing more believable.</h2>
+        </div>
+        <p>
+          The pricing page should not carry the whole sales argument by itself. It gets stronger when
+          it connects to the market report, response-time research, service pages, and the Oregon
+          location cluster.
+        </p>
+      </div>
+      <div class="case-study-links">
+        {supportingLinks.map((card) => (
+          <a class="case-study-link-card" href={card.href}>
+            <span>{card.label}</span>
+            <strong>{card.title}</strong>
+            <p>{card.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { webpageGraph } from "../lib/schema";
+import HomeHero from "../components/site/HomeHero.astro";
+
+const services = (await getCollection("services")).sort((a, b) => a.data.order - b.data.order);
+const caseStudies = await getCollection("caseStudies");
+const reports = (await getCollection("reports")).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
+);
+const knowledgeBase = (await getCollection("knowledgeBase")).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
+);
+---
+
+<BaseLayout
+  title="Local Demand Systems For Oregon Service Businesses"
+  description="High-performance websites, local visibility systems, and lead-response infrastructure for Oregon service businesses."
+  schema={webpageGraph("/", "Leverage AI", "Local demand systems for Oregon service businesses.")}
+>
+  <section class="hero">
+    <div class="shell">
+      <HomeHero />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="surface stack">
+        <p class="eyebrow">The System</p>
+        <h2>Every major page should support presence, trust, capture, response, or proof.</h2>
+        <p>
+          The four service layers are designed to reinforce each other. Better visibility should
+          land on a stronger trust surface, stronger trust should create cleaner inquiries, and
+          cleaner inquiries should move into a response system the business can actually measure.
+        </p>
+      </div>
+      <div class="grid">
+        {services.map((service) => (
+          <article class="surface stack">
+            <p class="eyebrow">{service.data.summary}</p>
+            <h2>{service.data.title}</h2>
+            <p>{service.data.description}</p>
+            <a href={`/services/${service.id}`}>Open service page</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell surface stack">
+      <p class="eyebrow">Real Proof</p>
+      <h2>Case studies should do the selling, not invented dashboards and inflated claims.</h2>
+      <div class="grid">
+        {caseStudies.map((entry) => (
+          <article class="stack">
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+            <a href={`/portfolio/${entry.id}`}>Read the case study</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell grid">
+      <article class="surface stack">
+        <p class="eyebrow">Reports</p>
+        <h2>Research-backed content that supports service claims and market diagnosis.</h2>
+        {reports.slice(0, 3).map((entry) => (
+          <div class="stack">
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+            <a href={`/reports/${entry.id}`}>Read the report</a>
+          </div>
+        ))}
+        <a class="button secondary" href="/reports">View all reports</a>
+      </article>
+      <article class="surface stack">
+        <p class="eyebrow">Knowledge Base</p>
+        <h2>Buyer-friendly explainers that strengthen the service clusters.</h2>
+        {knowledgeBase.slice(0, 3).map((entry) => (
+          <div class="stack">
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+            <a href={`/knowledge-base/${entry.id}`}>Open the guide</a>
+          </div>
+        ))}
+        <a class="button secondary" href="/knowledge-base">View the knowledge base</a>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Mike Schlottig — LEVERAGE AI</title>
+  <meta name="description" content="Mike Schlottig is a systems architect and full-stack developer running LEVERAGE AI solo from Grants Pass, Oregon. AI-first digital strategy, direct execution.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:         oklch(0.96 0.005 80);
+      --ink-muted:   oklch(0.65 0.008 80);
+      --ink-faint:   oklch(0.38 0.006 80);
+      --bg:          oklch(0.10 0.010 258);
+      --surface:     oklch(0.13 0.009 258);
+      --surface-alt: oklch(0.17 0.008 258);
+      --border:      oklch(0.22 0.007 258);
+      --amber:       oklch(0.74 0.165 68);
+      --amber-dim:   oklch(0.64 0.145 68);
+      --amber-pale:  oklch(0.86 0.080 68);
+      --amber-glow:  oklch(0.74 0.165 68 / 0.08);
+      --amber-line:  oklch(0.74 0.165 68 / 0.25);
+      --max-w: 1200px;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Barlow', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
+    h1, h2, h3, h4 {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      text-wrap: balance;
+    }
+    p { text-wrap: pretty; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+      height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: oklch(0.10 0.010 258 / 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      letter-spacing: 0.08em; color: var(--amber); text-transform: uppercase;
+    }
+    .nav-logo span {
+      display: block; font-size: 0.6rem; letter-spacing: 0.18em;
+      color: var(--ink-muted); font-weight: 400;
+      font-family: 'Barlow', sans-serif; text-transform: uppercase; margin-top: 1px;
+    }
+    .nav-links { display: flex; align-items: center; gap: clamp(1.5rem, 3vw, 2.5rem); list-style: none; }
+    .nav-links a {
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--ink-muted); transition: color 200ms;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--bg) !important;
+      background: var(--amber); padding: 0.5rem 1.25rem;
+      border-radius: 2px; transition: background 200ms !important;
+    }
+    .nav-cta:hover { background: var(--amber-dim) !important; }
+
+    /* ── UTILITIES ── */
+    .container {
+      width: 100%; max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: clamp(1.25rem, 5vw, 3rem);
+    }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--amber); margin-bottom: 1.5rem;
+    }
+    .section-label::before { content: ''; width: 20px; height: 1px; background: var(--amber); }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--bg);
+      background: var(--amber); padding: 0.9rem 2rem; border-radius: 2px;
+      transition: background 200ms var(--ease-out), transform 200ms var(--ease-out);
+    }
+    .btn-primary:hover { background: var(--amber-dim); transform: translateY(-1px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--ink-muted);
+      padding: 0.9rem 0; border-bottom: 1px solid var(--border);
+      transition: color 200ms, border-color 200ms;
+    }
+    .btn-ghost:hover { color: var(--ink); border-color: var(--ink-muted); }
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+    }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding-top: 68px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: -10%;
+      width: 55vw; height: 100%;
+      background: radial-gradient(ellipse at top right, oklch(0.74 0.165 68 / 0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      align-items: end;
+      padding: 5rem clamp(1.25rem, 5vw, 3rem) 5rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .page-hero-tag {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--amber);
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+    .page-hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--amber); }
+    .page-hero-title {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      margin-bottom: 1.5rem;
+    }
+    .page-hero-title em { font-style: italic; color: var(--amber); }
+    .page-hero-body {
+      font-size: 1.1rem; color: var(--ink-muted);
+      line-height: 1.75; max-width: 56ch;
+    }
+    .page-hero-body p + p { margin-top: 1rem; }
+
+    /* Profile card — right column */
+    .profile-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      align-self: end;
+    }
+    .profile-photo-area {
+      aspect-ratio: 4/3;
+      background: var(--surface-alt);
+      overflow: hidden;
+      position: relative;
+    }
+    .profile-photo-area img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(20%);
+      transition: filter 400ms;
+    }
+    .profile-photo-area:hover img { filter: grayscale(0%); }
+    .profile-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface-alt);
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      color: var(--amber);
+      opacity: 0.4;
+    }
+    .profile-meta {
+      padding: 1.25rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .profile-name {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .profile-role {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+    }
+    .profile-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      background: var(--amber-glow);
+      border: 1px solid var(--amber-line);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy-section {
+      padding: clamp(5rem, 10vh, 8rem) 0;
+    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .philosophy-left {}
+    .philosophy-title { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 2rem; }
+    .philosophy-body {
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      line-height: 1.8;
+    }
+    .philosophy-body p + p { margin-top: 1.25rem; }
+
+    .philosophy-quote {
+      margin-top: 2.5rem;
+      padding: 2rem 2rem 2rem 2rem;
+      border-top: 2px solid var(--amber);
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+    .philosophy-quote cite {
+      display: block;
+      margin-top: 1rem;
+      font-style: normal;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.06em;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    /* Principles — right column, NOT numbered scaffolding */
+    .principles {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .principle-row {
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .principle-row:first-child { border-top: 1px solid var(--border); }
+    .principle-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      padding-top: 0.2rem;
+    }
+    .principle-content {}
+    .principle-title {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .principle-desc {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      line-height: 1.65;
+    }
+
+    /* ── WHAT I DO ── */
+    .capabilities-section {
+      padding: clamp(5rem, 10vh, 8rem) 0;
+      background: var(--surface);
+    }
+    .capabilities-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+    .capabilities-title { font-size: clamp(2rem, 3.5vw, 2.8rem); }
+    .capabilities-desc { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.7; }
+
+    .capability-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .capability-item {
+      background: var(--bg);
+      padding: 2rem 2rem 2.5rem;
+      transition: background 250ms;
+    }
+    .capability-item:hover { background: var(--surface); }
+    .cap-icon {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--amber);
+      margin-bottom: 1.25rem;
+    }
+    .cap-title {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-weight: 700; font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+    .cap-desc { font-size: 0.84rem; color: var(--ink-muted); line-height: 1.65; }
+
+    /* ── TOOLS ── */
+    .tools-section { padding: clamp(5rem, 10vh, 8rem) 0; }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .tools-title { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 1.5rem; }
+    .tools-body { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.8; }
+    .tools-body p + p { margin-top: 1rem; }
+
+    .tech-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .tech-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+    }
+    .tech-group-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.6rem;
+    }
+    .tech-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .tech-item {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      background: var(--surface-alt);
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── CTA ── */
+    .about-cta {
+      padding: clamp(5rem, 10vh, 8rem) 0;
+      background: var(--surface);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-cta::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 50%; transform: translateX(-50%);
+      width: 80vw; height: 80vw; max-width: 900px;
+      background: radial-gradient(circle, oklch(0.74 0.165 68 / 0.07) 0%, transparent 60%);
+    }
+    .about-cta-inner { position: relative; z-index: 1; }
+    .about-cta-title { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; }
+    .about-cta-title em { font-style: italic; color: var(--amber); }
+    .about-cta-sub {
+      font-size: 1.05rem; color: var(--ink-muted);
+      line-height: 1.7; max-width: 50ch; margin: 0 auto 2.5rem;
+    }
+    .about-cta-actions { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--border); padding: 3rem 0 2rem; }
+    .footer-bottom {
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--amber); font-size: 0.9rem;
+    }
+    .footer-nav { display: flex; gap: 2rem; }
+    .footer-nav a { font-size: 0.8rem; color: var(--ink-muted); transition: color 200ms; }
+    .footer-nav a:hover { color: var(--ink); }
+    .footer-copy { font-size: 0.72rem; color: var(--ink-faint); margin-top: 1.5rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .page-hero-inner { grid-template-columns: 1fr; }
+      .profile-card { max-width: 360px; }
+      .philosophy-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .capabilities-header { grid-template-columns: 1fr; }
+      .capability-list { grid-template-columns: 1fr 1fr; }
+      .tools-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .capability-list { grid-template-columns: 1fr; }
+      .principle-row { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; }
+      * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">
+      Leverage AI
+      <span>AI-First Digital Strategy</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="../index.html#work">Work</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       PAGE HERO
+  ══════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <div class="page-hero-tag">About the Studio</div>
+        <h1 class="page-hero-title">I build what's<br><em>next</em>.</h1>
+        <div class="page-hero-body">
+          <p>
+            LEVERAGE AI LLC was founded on a singular belief: the future of digital visibility belongs to those who understand how AI systems discover, evaluate, and recommend brands.
+          </p>
+          <p>
+            I'm Mike Schlottig — systems architect, full-stack developer, solo operator. I run this studio using AI tooling to deliver what agencies charge 10× more for. From search optimization to premium design systems, every solution is engineered for measurable impact.
+          </p>
+          <p>
+            Based in Grants Pass, Oregon. Working nationally. By appointment — call, text, or email Mon–Sat 10am–8pm PT.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="profile-card">
+          <div class="profile-photo-area">
+            <img
+              src="https://leverageai.network/images/headshot-hat.jpg"
+              alt="Mike Schlottig — Founder, Leverage AI"
+              loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="profile-photo-placeholder" style="display:none;">MS</div>
+          </div>
+          <div class="profile-meta">
+            <div class="profile-name">Mike Schlottig</div>
+            <div class="profile-role">Founder — LEVERAGE AI LLC</div>
+            <div class="profile-badge">Grants Pass, Oregon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PHILOSOPHY
+  ══════════════════════════════════════════ -->
+  <section class="philosophy-section">
+    <div class="container">
+      <div class="philosophy-grid">
+        <div class="fade-up">
+          <div class="section-label">Philosophy</div>
+          <h2 class="philosophy-title">Operate with maximum leverage.</h2>
+          <div class="philosophy-body">
+            <p>
+              The solo studio model isn't a limitation — it's the feature. Every strategy I recommend, I execute. Every system I design, I build. There's no interpretation chain between your brief and the delivered work.
+            </p>
+            <p>
+              AI tooling lets me operate at agency scale without agency overhead. The result: you get senior-level execution at a fraction of the cost, with a single point of contact who actually gives a damn about your outcomes.
+            </p>
+            <p>
+              I work with forward-thinking companies — the ones who recognize that the window to build AI search advantage is right now, and that waiting is a choice with real competitive cost.
+            </p>
+          </div>
+          <blockquote class="philosophy-quote">
+            "Observe. Analyze. Identify. Dissect. Execute with Maximum Leverage. Repeat."
+            <cite>— Mike Schlottig, Founder</cite>
+          </blockquote>
+        </div>
+
+        <div class="fade-up" style="transition-delay: 150ms;">
+          <div class="principles">
+            <div class="principle-row">
+              <div class="principle-label">Value First</div>
+              <div class="principle-content">
+                <div class="principle-title">Outcomes justify every invoice</div>
+                <div class="principle-desc">I focus on delivering measurable value. If the work doesn't move the needle, it shouldn't exist.</div>
+              </div>
+            </div>
+            <div class="principle-row">
+              <div class="principle-label">Real Results</div>
+              <div class="principle-content">
+                <div class="principle-title">Traffic is vanity. Citations are signal.</div>
+                <div class="principle-desc">Web traffic numbers look good in reports. What actually matters is high-intent buyers finding you — in AI answers and on the Maps pack.</div>
+              </div>
+            </div>
+            <div class="principle-row">
+              <div class="principle-label">No Lock-In</div>
+              <div class="principle-content">
+                <div class="principle-title">My work speaks for itself</div>
+                <div class="principle-desc">No long-term contracts. No vendor lock-in. Monthly retainer, project, or one-time engagement — structured around your needs and your budget.</div>
+              </div>
+            </div>
+            <div class="principle-row">
+              <div class="principle-label">Compound</div>
+              <div class="principle-content">
+                <div class="principle-title">Build the moat before the competitors do</div>
+                <div class="principle-desc">Digital presence built correctly compounds over time. Your website and GBP are assets. The time to build a competitive moat is now — not after your competitor does it first.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CAPABILITIES
+  ══════════════════════════════════════════ -->
+  <section class="capabilities-section">
+    <div class="container">
+      <div class="capabilities-header fade-up">
+        <div>
+          <div class="section-label">Capabilities</div>
+          <h2 class="capabilities-title">What the studio does.</h2>
+        </div>
+        <p class="capabilities-desc">
+          Four disciplines, one executor. Every capability listed below is something I do — not delegate.
+        </p>
+      </div>
+      <div class="capability-list fade-up">
+        <div class="capability-item">
+          <div class="cap-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="8"/><path d="M18 18l7 7"/>
+              <path d="M10 12h4M12 10v4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="cap-title">AI Search Optimization</div>
+          <div class="cap-desc">Entity-based semantic modeling, JSON-LD schema, content architecture for LLM comprehension. Your brand, cited by name.</div>
+        </div>
+        <div class="capability-item">
+          <div class="cap-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="22" height="22" rx="2"/>
+              <path d="M3 11h22"/><circle cx="8" cy="7" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="12" cy="7" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div class="cap-title">Design Strategy</div>
+          <div class="cap-desc">Visual systems that communicate authority before a word is read. Built on research, not trends.</div>
+        </div>
+        <div class="capability-item">
+          <div class="cap-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M3 22l7-8 5 3 6-9 4 5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 25h22"/>
+            </svg>
+          </div>
+          <div class="cap-title">Data Analytics</div>
+          <div class="cap-desc">Custom dashboards that surface what matters: AI citation velocity, organic visibility, and leading indicators of growth.</div>
+        </div>
+        <div class="capability-item">
+          <div class="cap-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="10" y="3" width="8" height="8" rx="1"/>
+              <rect x="3" y="18" width="8" height="8" rx="1"/>
+              <rect x="17" y="18" width="8" height="8" rx="1"/>
+              <path d="M14 11v5M7 18l7-5 7 5"/>
+            </svg>
+          </div>
+          <div class="cap-title">Brand Architecture</div>
+          <div class="cap-desc">Identity systems that hold across every AI surface, platform, and human touchpoint. Consistent presence everywhere your customers look.</div>
+        </div>
+        <div class="capability-item">
+          <div class="cap-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M14 3a11 11 0 1 1 0 22A11 11 0 0 1 14 3z"/>
+              <path d="M14 3c-3 4-4.5 7-4.5 11s1.5 7 4.5 11"/>
+              <path d="M14 3c3 4 4.5 7 4.5 11s-1.5 7-4.5 11"/>
+              <path d="M3 14h22"/>
+            </svg>
+          </div>
+          <div class="cap-title">Google Business Profile</div>
+          <div class="cap-desc">GBP is the primary gateway for local buyers. Optimization, citation building, and review strategy that drives calls, not just visits.</div>
+        </div>
+        <div class="capability-item">
+          <div class="cap-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M5 14h3l2-9 4 18 3-12 2 3h4"/>
+            </svg>
+          </div>
+          <div class="cap-title">Full-Stack Development</div>
+          <div class="cap-desc">I build the systems I design. TypeScript, Astro, Cloudflare Workers, D1 databases — production-grade, not prototypes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TOOLS + STACK
+  ══════════════════════════════════════════ -->
+  <section class="tools-section">
+    <div class="container">
+      <div class="tools-grid">
+        <div class="fade-up">
+          <div class="section-label">The Setup</div>
+          <h2 class="tools-title">AI-augmented solo operation.</h2>
+          <div class="tools-body">
+            <p>
+              I run a local dev environment — what I call the "Grants Pass Data Center" — alongside a multi-agent AI infrastructure that handles research, code generation, and analysis at machine speed.
+            </p>
+            <p>
+              This isn't outsourcing to AI. It's leverage: I design the systems, define the constraints, review every output, and sign off on every deliverable. The AI handles the scale work; I handle the judgment.
+            </p>
+            <p>
+              The result is agency-grade output at a solo-operator rate. You get the quality without the overhead.
+            </p>
+          </div>
+        </div>
+        <div class="tech-stack fade-up" style="transition-delay: 150ms;">
+          <div class="tech-group">
+            <div class="tech-group-label">AI & Research</div>
+            <div class="tech-items">
+              <span class="tech-item">Claude Sonnet 4.6</span>
+              <span class="tech-item">Perplexity</span>
+              <span class="tech-item">Multi-agent orchestration</span>
+              <span class="tech-item">Exa Search</span>
+            </div>
+          </div>
+          <div class="tech-group">
+            <div class="tech-group-label">Development Stack</div>
+            <div class="tech-items">
+              <span class="tech-item">TypeScript (strict)</span>
+              <span class="tech-item">Astro 6</span>
+              <span class="tech-item">Cloudflare Workers</span>
+              <span class="tech-item">D1 / SQLite</span>
+              <span class="tech-item">Bun</span>
+            </div>
+          </div>
+          <div class="tech-group">
+            <div class="tech-group-label">SEO & Schema</div>
+            <div class="tech-items">
+              <span class="tech-item">Schema.org JSON-LD</span>
+              <span class="tech-item">Google Search Console</span>
+              <span class="tech-item">Entity optimization</span>
+              <span class="tech-item">GBP management</span>
+            </div>
+          </div>
+          <div class="tech-group">
+            <div class="tech-group-label">Design</div>
+            <div class="tech-items">
+              <span class="tech-item">Figma</span>
+              <span class="tech-item">Design systems</span>
+              <span class="tech-item">OKLCH color</span>
+              <span class="tech-item">Motion design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CTA
+  ══════════════════════════════════════════ -->
+  <section class="about-cta" id="contact">
+    <div class="container">
+      <div class="about-cta-inner fade-up">
+        <h2 class="about-cta-title">Let's build something <em>worth building</em>.</h2>
+        <p class="about-cta-sub">
+          I'm selective about who I work with. If you're serious about AI search visibility and want direct execution from someone who actually gives a damn — let's talk.
+        </p>
+        <div class="about-cta-actions">
+          <a href="mailto:leverage_labs_alpha@proton.me" class="btn-primary">
+            Email Mike directly
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="tel:+15414502082" class="btn-ghost">541-450-2082</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <a href="../index.html" class="footer-logo">Leverage AI</a>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="../services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="../index.html#work">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-copy">© 2026 LEVERAGE AI LLC · Grants Pass, Oregon · All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

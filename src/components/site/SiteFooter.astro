@@ -1,0 +1,28 @@
+---
+import { SITE } from "../../lib/site";
+---
+
+<footer class="section">
+  <div class="shell surface stack">
+    <div>
+      <p class="eyebrow">Built For Oregon Service Businesses</p>
+      <h2>{SITE.name}</h2>
+      <p>{SITE.description}</p>
+    </div>
+    <div class="split">
+      <div>
+        <h3>Reach Out</h3>
+        <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+        <p>{SITE.location}</p>
+      </div>
+      <div>
+        <h3>Where Next</h3>
+        <ul>
+          {SITE.nav.slice(0, 7).map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

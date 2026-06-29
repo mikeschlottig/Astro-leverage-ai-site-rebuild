@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Architecture — LEVERAGE AI</title>
+  <meta name="description" content="Comprehensive digital identity systems that maintain consistency across every AI surface and human touchpoint. LEVERAGE AI builds brand architecture that AI systems learn to trust.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: oklch(0.96 0.005 80);
+      --ink-muted: oklch(0.65 0.008 80);
+      --ink-faint: oklch(0.38 0.006 80);
+      --bg: oklch(0.10 0.010 258);
+      --surface: oklch(0.13 0.009 258);
+      --surface-alt: oklch(0.17 0.008 258);
+      --border: oklch(0.22 0.007 258);
+      --amber: oklch(0.74 0.165 68);
+      --amber-dim: oklch(0.64 0.145 68);
+      --amber-glow: oklch(0.74 0.165 68 / 0.08);
+      --amber-line: oklch(0.74 0.165 68 / 0.25);
+      --max-w: 1200px;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'Barlow', system-ui, sans-serif; font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; line-height: 1.08; letter-spacing: -0.03em; text-wrap: balance; }
+    p { text-wrap: pretty; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 clamp(1.25rem,5vw,3rem); height: 68px; display: flex; align-items: center; justify-content: space-between; background: oklch(0.10 0.010 258 / 0.88); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.08em; color: var(--amber); text-transform: uppercase; }
+    .nav-logo span { display: block; font-size: 0.6rem; letter-spacing: 0.18em; color: var(--ink-muted); font-weight: 400; font-family: 'Barlow', sans-serif; text-transform: uppercase; margin-top: 1px; }
+    .nav-links { display: flex; align-items: center; gap: clamp(1.5rem,3vw,2.5rem); list-style: none; }
+    .nav-links a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); transition: color 200ms; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { font-family: 'Familjen Grotesk', sans-serif; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bg) !important; background: var(--amber); padding: 0.5rem 1.25rem; border-radius: 2px; transition: background 200ms !important; }
+    .nav-cta:hover { background: var(--amber-dim) !important; }
+
+    .container { width: 100%; max-width: var(--max-w); margin-inline: auto; padding-inline: clamp(1.25rem,5vw,3rem); }
+    .section-label { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.5rem; }
+    .section-label::before { content: ''; width: 20px; height: 1px; background: var(--amber); }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Familjen Grotesk', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--bg); background: var(--amber); padding: 0.9rem 2rem; border-radius: 2px; transition: background 200ms var(--ease-out), transform 200ms var(--ease-out); }
+    .btn-primary:hover { background: var(--amber-dim); transform: translateY(-1px); }
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out); }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ── HERO — entity map visualization ── */
+    .service-hero {
+      padding-top: 68px;
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left: full-height amber-tinted panel */
+    .hero-left-panel {
+      background: var(--surface);
+      padding: 5rem clamp(2rem,4vw,4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .hero-left-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 0% 60%, oklch(0.74 0.165 68 / 0.08) 0%, transparent 55%);
+    }
+    .hero-left-content { position: relative; z-index: 1; }
+
+    .service-hero-back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1.5rem; transition: color 200ms; }
+    .service-hero-back:hover { color: var(--ink-muted); }
+    .service-hero-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1.5rem; }
+    .service-hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--amber); }
+    .service-hero-title { font-size: clamp(2.2rem, 4.5vw, 4rem); margin-bottom: 1.25rem; }
+    .service-hero-title em { font-style: italic; color: var(--amber); }
+    .service-hero-body { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.8; max-width: 46ch; margin-bottom: 2rem; }
+
+    /* Right: entity diagram */
+    .hero-right-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      position: relative;
+    }
+    .entity-diagram {
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+    }
+
+    /* SVG-based connection lines drawn in CSS */
+    .entity-diagram svg { width: 100%; height: auto; }
+
+    /* ── WHY CONSISTENCY ── */
+    .why-section { padding: clamp(5rem,10vh,8rem) 0; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .why-title { font-size: clamp(2rem,3.5vw,2.8rem); margin-bottom: 1.25rem; }
+    .why-body { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.8; }
+    .why-body p + p { margin-top: 1rem; }
+    .why-callout { margin-top: 2.5rem; padding: 1.5rem 2rem; border-top: 2px solid var(--amber); background: var(--surface); border-radius: 0 0 4px 4px; font-size: 0.95rem; color: var(--ink-muted); line-height: 1.7; }
+    .why-callout strong { color: var(--ink); font-family: 'Familjen Grotesk', sans-serif; }
+
+    .consistency-issues { display: flex; flex-direction: column; gap: 0; }
+    .consistency-issue { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+    .consistency-issue:first-child { border-top: 1px solid var(--border); }
+    .issue-top { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+    .issue-indicator {
+      width: 8px; height: 8px; border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .issue-indicator.red { background: oklch(0.60 0.18 28); }
+    .issue-indicator.amber { background: var(--amber); }
+    .issue-indicator.green { background: oklch(0.68 0.14 145); }
+    .issue-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+    .issue-label.red { color: oklch(0.60 0.18 28); }
+    .issue-label.amber { color: var(--amber); }
+    .issue-label.green { color: oklch(0.68 0.14 145); }
+    .issue-title { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.35rem; }
+    .issue-desc { font-size: 0.84rem; color: var(--ink-muted); line-height: 1.65; }
+
+    /* ── WHAT'S COVERED ── */
+    .covered-section { padding: clamp(5rem,10vh,8rem) 0; background: var(--surface); }
+    .covered-title { font-size: clamp(2rem,3.5vw,2.8rem); margin-bottom: 1rem; }
+    .covered-sub { font-size: 1.05rem; color: var(--ink-muted); max-width: 58ch; line-height: 1.7; margin-bottom: 3rem; }
+    .covered-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .covered-item { background: var(--bg); padding: 2rem 2rem 2.5rem; transition: background 250ms; }
+    .covered-item:hover { background: var(--surface-alt); }
+    .covered-item-num { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+    .covered-item-title { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .covered-item-desc { font-size: 0.84rem; color: var(--ink-muted); line-height: 1.65; }
+
+    /* ── DELIVERABLES + PRICING ── */
+    .deliverables-section { padding: clamp(5rem,10vh,8rem) 0; }
+    .deliverables-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .deliverables-title { font-size: clamp(2rem,3.5vw,2.8rem); margin-bottom: 1.25rem; }
+    .deliverables-body { font-size: 1.05rem; color: var(--ink-muted); line-height: 1.8; margin-bottom: 2rem; }
+    .deliverable-items { display: flex; flex-direction: column; }
+    .deliverable-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+    .deliverable-item:first-child { border-top: 1px solid var(--border); }
+    .deliverable-check { width: 20px; height: 20px; border-radius: 50%; background: var(--amber-glow); border: 1px solid var(--amber-line); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.2rem; color: var(--amber); }
+    .deliverable-text { font-size: 0.9rem; color: var(--ink-muted); line-height: 1.6; }
+    .deliverable-text strong { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; color: var(--ink); display: block; margin-bottom: 0.25rem; font-size: 0.95rem; }
+
+    .pricing-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; position: sticky; top: 88px; }
+    .pricing-header { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); background: var(--surface-alt); }
+    .pricing-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.5rem; }
+    .pricing-headline { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; }
+    .pricing-body { padding: 1.5rem 2rem; }
+    .pricing-line { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.85rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .pricing-line:last-of-type { border-bottom: none; }
+    .pricing-line-label { color: var(--ink-muted); }
+    .pricing-line-val { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; color: var(--ink); }
+    .pricing-note-text { font-size: 0.8rem; color: var(--ink-muted); line-height: 1.65; padding-top: 0.5rem; }
+    .pricing-cta { padding: 0 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .pricing-footnote { font-size: 0.72rem; color: var(--ink-faint); text-align: center; line-height: 1.5; }
+
+    /* CTA */
+    .cta-section { padding: clamp(5rem,10vh,8rem) 0; background: var(--surface); text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before { content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: 80vw; height: 80vw; max-width: 900px; background: radial-gradient(circle, oklch(0.74 0.165 68 / 0.07) 0%, transparent 60%); }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-title { font-size: clamp(2.5rem,5vw,4rem); margin-bottom: 1.25rem; }
+    .cta-title em { font-style: italic; color: var(--amber); }
+    .cta-sub { font-size: 1.05rem; color: var(--ink-muted); max-width: 50ch; margin: 0 auto 2.5rem; line-height: 1.7; }
+    .cta-detail { margin-top: 1.5rem; font-size: 0.75rem; color: var(--ink-faint); }
+
+    footer { border-top: 1px solid var(--border); padding: 3rem 0 2rem; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); font-size: 0.9rem; }
+    .footer-nav { display: flex; gap: 2rem; }
+    .footer-nav a { font-size: 0.8rem; color: var(--ink-muted); transition: color 200ms; }
+    .footer-nav a:hover { color: var(--ink); }
+    .footer-copy { font-size: 0.72rem; color: var(--ink-faint); margin-top: 1.5rem; }
+
+    @media (max-width: 960px) {
+      .service-hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left-panel { padding: 4rem clamp(1.25rem,5vw,3rem); }
+      .hero-right-panel { padding: 2rem clamp(1.25rem,5vw,3rem); }
+      .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .covered-grid { grid-template-columns: 1fr; }
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .pricing-card { position: relative; top: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; }
+      * { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">Leverage AI<span>AI-First Digital Strategy</span></a>
+    <ul class="nav-links">
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="service-hero">
+    <div class="hero-left-panel">
+      <div class="hero-left-content">
+        <a href="../services.html" class="service-hero-back">← All Services</a>
+        <div class="service-hero-tag">Service 04</div>
+        <h1 class="service-hero-title">One brand.<br><em>Every surface.</em><br>No drift.</h1>
+        <p class="service-hero-body">AI systems learn to recommend brands that are consistent, unambiguous, and structurally coherent across every platform they appear on. Inconsistency doesn't just confuse people — it confuses the algorithms deciding who to cite. Brand architecture fixes that at the foundation.</p>
+        <a href="#contact" class="btn-primary">
+          Start the conversation
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right-panel" aria-hidden="true">
+      <!-- Entity recognition diagram — CSS/SVG, no external assets -->
+      <div class="entity-diagram">
+        <svg viewBox="0 0 480 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Connection lines -->
+          <line x1="240" y1="200" x2="100" y2="80"  stroke="oklch(0.74 0.165 68 / 0.20)" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <line x1="240" y1="200" x2="380" y2="80"  stroke="oklch(0.74 0.165 68 / 0.20)" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <line x1="240" y1="200" x2="60"  y2="220" stroke="oklch(0.74 0.165 68 / 0.20)" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <line x1="240" y1="200" x2="420" y2="220" stroke="oklch(0.74 0.165 68 / 0.20)" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <line x1="240" y1="200" x2="100" y2="360" stroke="oklch(0.74 0.165 68 / 0.20)" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <line x1="240" y1="200" x2="380" y2="360" stroke="oklch(0.74 0.165 68 / 0.20)" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <line x1="240" y1="200" x2="240" y2="60"  stroke="oklch(0.74 0.165 68 / 0.20)" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <line x1="240" y1="200" x2="240" y2="370" stroke="oklch(0.74 0.165 68 / 0.20)" stroke-width="1.5" stroke-dasharray="4 6"/>
+
+          <!-- Center node -->
+          <circle cx="240" cy="200" r="52" fill="oklch(0.74 0.165 68 / 0.08)" stroke="oklch(0.74 0.165 68)" stroke-width="1.5"/>
+          <circle cx="240" cy="200" r="38" fill="oklch(0.74 0.165 68 / 0.12)" stroke="oklch(0.74 0.165 68 / 0.5)" stroke-width="1"/>
+          <text x="240" y="194" text-anchor="middle" fill="oklch(0.74 0.165 68)" font-family="'Familjen Grotesk', sans-serif" font-weight="700" font-size="11" letter-spacing="1">YOUR</text>
+          <text x="240" y="208" text-anchor="middle" fill="oklch(0.74 0.165 68)" font-family="'Familjen Grotesk', sans-serif" font-weight="700" font-size="11" letter-spacing="1">BRAND</text>
+          <text x="240" y="222" text-anchor="middle" fill="oklch(0.74 0.165 68 / 0.6)" font-family="'Familjen Grotesk', sans-serif" font-weight="400" font-size="8" letter-spacing="1">ENTITY</text>
+
+          <!-- Platform nodes -->
+          <!-- ChatGPT top-left -->
+          <rect x="45" y="44" width="110" height="36" rx="18" fill="oklch(0.13 0.009 258)" stroke="oklch(0.74 0.165 68 / 0.3)" stroke-width="1"/>
+          <text x="100" y="66" text-anchor="middle" fill="oklch(0.96 0.005 80)" font-family="'Barlow', sans-serif" font-size="11" font-weight="500">ChatGPT</text>
+
+          <!-- Perplexity top-right -->
+          <rect x="325" y="44" width="110" height="36" rx="18" fill="oklch(0.13 0.009 258)" stroke="oklch(0.74 0.165 68 / 0.3)" stroke-width="1"/>
+          <text x="380" y="66" text-anchor="middle" fill="oklch(0.96 0.005 80)" font-family="'Barlow', sans-serif" font-size="11" font-weight="500">Perplexity</text>
+
+          <!-- Gemini top-center -->
+          <rect x="175" y="22" width="130" height="36" rx="18" fill="oklch(0.13 0.009 258)" stroke="oklch(0.74 0.165 68 / 0.3)" stroke-width="1"/>
+          <text x="240" y="44" text-anchor="middle" fill="oklch(0.96 0.005 80)" font-family="'Barlow', sans-serif" font-size="11" font-weight="500">Google Gemini</text>
+
+          <!-- Google Maps left -->
+          <rect x="0" y="192" width="110" height="36" rx="18" fill="oklch(0.13 0.009 258)" stroke="oklch(0.74 0.165 68 / 0.3)" stroke-width="1"/>
+          <text x="55" y="214" text-anchor="middle" fill="oklch(0.96 0.005 80)" font-family="'Barlow', sans-serif" font-size="11" font-weight="500">Google Maps</text>
+
+          <!-- LinkedIn right -->
+          <rect x="370" y="192" width="110" height="36" rx="18" fill="oklch(0.13 0.009 258)" stroke="oklch(0.74 0.165 68 / 0.3)" stroke-width="1"/>
+          <text x="425" y="214" text-anchor="middle" fill="oklch(0.96 0.005 80)" font-family="'Barlow', sans-serif" font-size="11" font-weight="500">LinkedIn</text>
+
+          <!-- Schema.org bottom-center -->
+          <rect x="175" y="370" width="130" height="36" rx="18" fill="oklch(0.13 0.009 258)" stroke="oklch(0.74 0.165 68 / 0.3)" stroke-width="1"/>
+          <text x="240" y="392" text-anchor="middle" fill="oklch(0.96 0.005 80)" font-family="'Barlow', sans-serif" font-size="11" font-weight="500">Schema.org</text>
+
+          <!-- Claude bottom-left -->
+          <rect x="45" y="336" width="110" height="36" rx="18" fill="oklch(0.13 0.009 258)" stroke="oklch(0.74 0.165 68 / 0.3)" stroke-width="1"/>
+          <text x="100" y="358" text-anchor="middle" fill="oklch(0.96 0.005 80)" font-family="'Barlow', sans-serif" font-size="11" font-weight="500">Claude</text>
+
+          <!-- Yelp bottom-right -->
+          <rect x="325" y="336" width="110" height="36" rx="18" fill="oklch(0.13 0.009 258)" stroke="oklch(0.74 0.165 68 / 0.3)" stroke-width="1"/>
+          <text x="380" y="358" text-anchor="middle" fill="oklch(0.96 0.005 80)" font-family="'Barlow', sans-serif" font-size="11" font-weight="500">Yelp / GBP</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CONSISTENCY -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="fade-up">
+          <div class="section-label">The Problem</div>
+          <h2 class="why-title">Inconsistency is invisible — until it costs you a citation.</h2>
+          <div class="why-body">
+            <p>When your business name appears three different ways across your website, Google Business Profile, LinkedIn, and Yelp, AI systems face an ambiguity problem. They're not sure if these are the same entity — so they hedge, or they skip you entirely in favor of a competitor whose brand is unambiguous.</p>
+            <p>Brand architecture isn't about logos and brand books. It's about creating the kind of structural clarity that makes AI systems confident enough to recommend you by name. That means consistent naming, consistent NAP data, consistent voice, consistent schema across every surface you occupy.</p>
+          </div>
+          <div class="why-callout">
+            <strong>The rule AI systems follow:</strong> cite brands that are easy to understand. A consistent entity is an easy entity. An ambiguous entity gets skipped.
+          </div>
+        </div>
+        <div class="consistency-issues fade-up" style="transition-delay:150ms">
+          <div class="consistency-issue">
+            <div class="issue-top">
+              <div class="issue-indicator red"></div>
+              <span class="issue-label red">High Risk</span>
+            </div>
+            <div class="issue-title">Name inconsistency across platforms</div>
+            <div class="issue-desc">"Daley Organics LLC" on the website, "Daley's Organics" on Yelp, "Daley Organic Farm" on Google Maps. Three names, one entity — but AI systems see three separate businesses.</div>
+          </div>
+          <div class="consistency-issue">
+            <div class="issue-top">
+              <div class="issue-indicator red"></div>
+              <span class="issue-label red">High Risk</span>
+            </div>
+            <div class="issue-title">Missing or conflicting schema markup</div>
+            <div class="issue-desc">No structured data, or schema that contradicts what appears on the page. AI systems can't confidently extract your business details, so they don't cite them.</div>
+          </div>
+          <div class="consistency-issue">
+            <div class="issue-top">
+              <div class="issue-indicator amber"></div>
+              <span class="issue-label amber">Medium Risk</span>
+            </div>
+            <div class="issue-title">Inconsistent voice across surfaces</div>
+            <div class="issue-desc">Different descriptions of what you do on different platforms. AI systems synthesize across sources — conflicting signals about your services create citation uncertainty.</div>
+          </div>
+          <div class="consistency-issue">
+            <div class="issue-top">
+              <div class="issue-indicator green"></div>
+              <span class="issue-label green">Goal State</span>
+            </div>
+            <div class="issue-title">Unified entity across every surface</div>
+            <div class="issue-desc">Identical name, address, phone number, description, and category classification everywhere. Schema confirms what copy says. AI systems confidently identify the brand and cite it accordingly.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S COVERED -->
+  <section class="covered-section">
+    <div class="container">
+      <div class="section-label fade-up">Scope</div>
+      <h2 class="covered-title fade-up">Every layer of your brand's digital presence.</h2>
+      <p class="covered-sub fade-up">Brand architecture is an audit, a framework, and an implementation — not a PDF that sits in a folder. Every deliverable gets executed, not just documented.</p>
+      <div class="covered-grid fade-up">
+        <div class="covered-item">
+          <div class="covered-item-num">Layer 01</div>
+          <div class="covered-item-title">Multi-Platform Brand Audit</div>
+          <div class="covered-item-desc">Complete audit of how your brand appears across every platform: name variations, description inconsistencies, category mismatches, missing profiles. The gap analysis that drives everything else.</div>
+        </div>
+        <div class="covered-item">
+          <div class="covered-item-num">Layer 02</div>
+          <div class="covered-item-title">Entity Disambiguation Framework</div>
+          <div class="covered-item-desc">A systematic plan to unify your brand entity across all platforms — exact naming conventions, canonical descriptions, NAP standardization, and the order of operations to fix inconsistencies without breaking existing citations.</div>
+        </div>
+        <div class="covered-item">
+          <div class="covered-item-num">Layer 03</div>
+          <div class="covered-item-title">Voice & Tone for AI Surfaces</div>
+          <div class="covered-item-desc">Guidelines for how your brand communicates across AI-indexed surfaces. What words describe your services. How you explain your differentiators. The vocabulary that makes you easy for AI systems to understand and quote accurately.</div>
+        </div>
+        <div class="covered-item">
+          <div class="covered-item-num">Layer 04</div>
+          <div class="covered-item-title">Digital Asset Management Strategy</div>
+          <div class="covered-item-desc">What assets you need, in what formats, living where — logos, photography, brand marks, schema templates. A management structure that prevents drift as your business grows and new surfaces appear.</div>
+        </div>
+        <div class="covered-item">
+          <div class="covered-item-num">Layer 05</div>
+          <div class="covered-item-title">Schema Architecture</div>
+          <div class="covered-item-desc">The structured data layer that makes your brand's entity relationships machine-readable. Organization, LocalBusiness, Service, Person — implemented and validated across your entire digital presence.</div>
+        </div>
+        <div class="covered-item">
+          <div class="covered-item-num">Layer 06</div>
+          <div class="covered-item-title">Brand Governance Documentation</div>
+          <div class="covered-item-desc">A living document that captures every decision made in the architecture engagement — so future team members, contractors, and AI tools know how your brand is supposed to appear. Prevents drift from compounding.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELIVERABLES + PRICING -->
+  <section class="deliverables-section">
+    <div class="container">
+      <div class="deliverables-grid">
+        <div>
+          <div class="section-label fade-up">Deliverables</div>
+          <h2 class="deliverables-title fade-up">What gets built.</h2>
+          <p class="deliverables-body fade-up">Brand architecture is a system, not a document. Every deliverable is functional — implemented, tested, and validated across platforms.</p>
+          <div class="deliverable-items fade-up">
+            <div class="deliverable-item">
+              <div class="deliverable-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1.5 5l2.5 2.5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="deliverable-text"><strong>Multi-Platform Brand Audit Report</strong>Every surface documented, every inconsistency flagged, every gap quantified. The foundation of the engagement.</div>
+            </div>
+            <div class="deliverable-item">
+              <div class="deliverable-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1.5 5l2.5 2.5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="deliverable-text"><strong>Entity Disambiguation Playbook</strong>Step-by-step implementation guide for unifying your brand entity across all platforms — in the right order, with the right naming conventions.</div>
+            </div>
+            <div class="deliverable-item">
+              <div class="deliverable-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1.5 5l2.5 2.5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="deliverable-text"><strong>Voice & Tone Guidelines (AI-optimized)</strong>Canonical descriptions of your services, differentiators, and brand positioning — structured for AI comprehension and human readability.</div>
+            </div>
+            <div class="deliverable-item">
+              <div class="deliverable-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1.5 5l2.5 2.5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="deliverable-text"><strong>Schema Architecture Implementation</strong>Full JSON-LD structured data implementation across your site — Organization, LocalBusiness, Service entities validated and deployed.</div>
+            </div>
+            <div class="deliverable-item">
+              <div class="deliverable-check"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1.5 5l2.5 2.5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <div class="deliverable-text"><strong>Brand Governance Document</strong>The living record of every architectural decision. What your brand is, how it's supposed to appear, and why — so the system doesn't drift when people change.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-up" style="transition-delay:150ms">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <div class="pricing-label">Investment</div>
+              <div class="pricing-headline">Foundation work with compounding returns</div>
+            </div>
+            <div class="pricing-body">
+              <div class="pricing-line"><span class="pricing-line-label">Brand Audit + Framework</span><span class="pricing-line-val">$800–$2,000</span></div>
+              <div class="pricing-line"><span class="pricing-line-label">Full Implementation</span><span class="pricing-line-val">$2,000–$5,000</span></div>
+              <div class="pricing-line"><span class="pricing-line-label">Architecture + AI Search Bundle</span><span class="pricing-line-val">Most common</span></div>
+              <div class="pricing-line"><span class="pricing-line-label">Quarterly Governance Review</span><span class="pricing-line-val">$400–$800/qtr</span></div>
+              <div class="pricing-note-text">Brand architecture is often paired with AI Search Optimization — the two disciplines reinforce each other and are most effective when built together from the start.</div>
+            </div>
+            <div class="pricing-cta">
+              <a href="mailto:leverage_labs_alpha@proton.me" class="btn-primary" style="width:100%;justify-content:center">Request a Scope Call</a>
+              <p class="pricing-footnote">Tell me where you're starting from. I'll tell you what it takes to get to where you need to be.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <div class="cta-inner fade-up">
+        <h2 class="cta-title">Ambiguity is the<br>enemy of <em>being cited</em>.</h2>
+        <p class="cta-sub">AI systems recommend brands they understand. Let's make your brand impossible to misidentify — and easy to recommend.</p>
+        <a href="mailto:leverage_labs_alpha@proton.me" class="btn-primary">
+          Email Mike directly
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="cta-detail">541-450-2082 · Mon–Sat 10am–8pm Pacific · Grants Pass, Oregon</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <a href="../index.html" class="footer-logo">Leverage AI</a>
+        <nav class="footer-nav"><a href="../services.html">All Services</a><a href="../about.html">About</a><a href="#contact">Contact</a></nav>
+      </div>
+      <div class="footer-copy">© 2026 LEVERAGE AI LLC · Grants Pass, Oregon</div>
+    </div>
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    fadeEls.forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

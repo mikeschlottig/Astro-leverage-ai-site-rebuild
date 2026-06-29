@@ -1,0 +1,94 @@
+<form method="POST" action="/api/contact" data-contact-form>
+  <input class="sr-only" type="text" name="company_site" autocomplete="off" tabindex="-1" />
+  <label>
+    Name
+    <input name="name" required />
+  </label>
+  <label>
+    Email
+    <input type="email" name="email" required />
+  </label>
+  <label>
+    Phone
+    <input name="phone" />
+  </label>
+  <label>
+    Service
+    <select name="service" required>
+      <option value="">Select a service focus</option>
+      <option value="local-visibility">Local Visibility Systems</option>
+      <option value="custom-web-design">Custom Web Design</option>
+      <option value="lead-capture-ai-follow-up">Lead Capture & AI Follow-Up</option>
+      <option value="search-data-architecture">Search & Data Architecture</option>
+    </select>
+  </label>
+  <label>
+    What are you trying to fix?
+    <textarea name="message" minlength="20" required></textarea>
+  </label>
+  <p class="form-note">
+    You will get a direct reply with the clearest next step, whether that is a diagnostic audit, a
+    focused implementation, or a smaller fix first.
+  </p>
+  <p class="form-status" data-form-status aria-live="polite"></p>
+  <button class="button primary" type="submit" data-submit-button>Map My Local Demand System</button>
+</form>
+
+<script is:inline>
+  (() => {
+    const form = document.querySelector("[data-contact-form]");
+    if (!(form instanceof HTMLFormElement)) return;
+
+    const status = form.querySelector("[data-form-status]");
+    const submitButton = form.querySelector("[data-submit-button]");
+    const defaultButtonLabel = submitButton?.textContent ?? "Submit";
+
+    const setStatus = (message, state) => {
+      if (!(status instanceof HTMLElement)) return;
+      status.textContent = message;
+      status.dataset.state = state;
+    };
+
+    form.addEventListener("submit", async (event) => {
+      if (!(submitButton instanceof HTMLButtonElement)) return;
+
+      event.preventDefault();
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+      setStatus("Sending your request now.", "loading");
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        const payload = await response.json().catch(() => null);
+
+        if (!response.ok || !payload?.ok) {
+          const errorMessage =
+            payload?.error ?? "The request did not go through. Please try again or email directly.";
+          setStatus(errorMessage, "error");
+          return;
+        }
+
+        form.reset();
+        setStatus(
+          "Request received. You will get a direct follow-up once the audit request is reviewed.",
+          "success",
+        );
+      } catch (error) {
+        setStatus(
+          "The request could not be delivered from this browser session. Please try again or email directly.",
+          "error",
+        );
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = defaultButtonLabel;
+      }
+    });
+  })();
+</script>

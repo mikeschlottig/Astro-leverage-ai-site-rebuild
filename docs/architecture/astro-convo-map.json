@@ -1,0 +1,137 @@
+{
+  "sources": {
+    "pastedTranscript": "C:\\Users\\mikes\\.codex\\attachments\\8979fb3c-1d91-40b2-9101-17c700e38938\\pasted-text.txt",
+    "astroConvo": "C:\\Users\\mikes\\Downloads\\astro-convo.json"
+  },
+  "positioning": {
+    "primaryOutcome": "Put Oregon service businesses in front of high-intent local customers and capture that intent before it drifts to competitors.",
+    "messagingPillars": [
+      "presence",
+      "quality",
+      "intent-capture",
+      "immediate-response",
+      "measurement"
+    ],
+    "contentPolicy": [
+      "use real proof where available",
+      "label illustrative dashboards clearly",
+      "avoid generic AI jargon",
+      "avoid fake metrics and fake testimonials"
+    ]
+  },
+  "routes": {
+    "primary": [
+      "/",
+      "/about",
+      "/services",
+      "/pricing",
+      "/portfolio",
+      "/contact"
+    ],
+    "servicePages": [
+      "/services/local-visibility",
+      "/services/custom-web-design",
+      "/services/lead-capture-ai-follow-up",
+      "/services/search-data-architecture"
+    ],
+    "families": [
+      "/portfolio/[slug]",
+      "/locations/[slug]",
+      "/industries/[slug]",
+      "/blog/[slug]",
+      "/reports/[slug]",
+      "/knowledge-base/[slug]"
+    ]
+  },
+  "collections": {
+    "services": {
+      "status": "approved",
+      "notes": "Outcome-led public pages with legacy service concepts preserved as secondary support."
+    },
+    "caseStudies": {
+      "status": "approved",
+      "seedEntries": [
+        "daley-organics",
+        "oregon-smb-directory"
+      ]
+    },
+    "locations": {
+      "status": "approved",
+      "seedCities": [
+        "albany",
+        "ashland",
+        "bend",
+        "corvallis",
+        "eugene",
+        "grants-pass",
+        "klamath-falls",
+        "medford",
+        "portland",
+        "roseburg",
+        "salem",
+        "springfield"
+      ]
+    },
+    "industries": {
+      "status": "planned"
+    },
+    "blog": {
+      "status": "approved"
+    },
+    "reports": {
+      "status": "approved",
+      "seedEntries": [
+        "why-speed-wins"
+      ]
+    },
+    "knowledgeBase": {
+      "status": "approved"
+    }
+  },
+  "preserveFromCurrentSite": [
+    "hero background video",
+    "header",
+    "footer",
+    "blog posts",
+    "article/report formatting lessons",
+    "local schema.org JSON-LD work",
+    "founder photo"
+  ],
+  "integrations": {
+    "deploy": "cloudflare-workers-static-assets-or-hybrid",
+    "contactFlow": "worker-backed-form-routing",
+    "constraints": [
+      "delegate build commands when required",
+      "pin node in repo",
+      "prefer pnpm",
+      "render metadata and json-ld server-side"
+    ]
+  },
+  "implementationTargets": {
+    "layouts": [
+      "BaseLayout.astro",
+      "BlogPostLayout.astro",
+      "CaseStudyLayout.astro",
+      "ReportLayout.astro"
+    ],
+    "lib": [
+      "site.ts",
+      "seo.ts",
+      "schema.ts",
+      "content-links.ts"
+    ],
+    "data": [
+      "locations.ts",
+      "services.ts",
+      "navigation.ts"
+    ],
+    "worker": [
+      "worker/contact.ts"
+    ]
+  },
+  "openQuestions": [
+    "final brand voice words for PRODUCT.md",
+    "accessibility target beyond WCAG AA baseline",
+    "whether /resources is a real public route or only a conceptual umbrella"
+  ]
+}

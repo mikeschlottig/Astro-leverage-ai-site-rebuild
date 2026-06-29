@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { webpageGraph } from "../../lib/schema";
+
+const caseStudies = await getCollection("caseStudies");
+---
+
+<BaseLayout
+  title="Portfolio"
+  description="Real case studies showing how Leverage AI builds local visibility, authority, and demand-capture systems for Oregon service businesses."
+  schema={webpageGraph("/portfolio", "Portfolio", "Real case studies showing how Leverage AI builds local visibility, authority, and demand-capture systems for Oregon service businesses.")}
+>
+  <section class="section">
+    <div class="shell stack">
+      <div class="surface stack">
+        <p class="eyebrow">Proof Surface</p>
+        <h1>Case studies built around business evidence, not agency theater.</h1>
+        <p>
+          Each page connects the outcome back to the service system, the market context,
+          and the supporting report or location cluster that makes the result credible.
+        </p>
+      </div>
+
+      <div class="grid">
+        {caseStudies.map((entry) => (
+          <article class="surface stack">
+            <p class="case-study-kicker">{entry.data.location}</p>
+            <h2>{entry.data.title}</h2>
+            <p>{entry.data.summary}</p>
+            {entry.data.stats.length > 0 && (
+              <div class="stack">
+                {entry.data.stats.slice(0, 2).map((stat) => (
+                  <div>
+                    <strong>{stat.value}</strong>
+                    <p>{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div class="button-row">
+              <a class="button primary" href={`/portfolio/${entry.id}`}>Read the case study</a>
+              {entry.data.services[0] && (
+                <a class="button secondary" href={`/services/${entry.data.services[0]}`}>
+                  Related service
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

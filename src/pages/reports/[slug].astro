@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+import { articleGraph } from "../../lib/schema";
+
+type LinkCard = {
+  href: string;
+  title: string;
+  description: string;
+};
+
+export async function getStaticPaths() {
+  const entries = await getCollection("reports");
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const renderedEntry = await render(entry);
+const { Content } = renderedEntry;
+const allServices = await getCollection("services");
+
+const relatedServices: LinkCard[] = entry.data.relatedServices.flatMap((slug) => {
+  const service = allServices.find((candidate) => candidate.id === slug);
+  return service
+    ? [
+        {
+          href: `/services/${service.id}`,
+          title: service.data.title,
+          description: service.data.description,
+        },
+      ]
+    : [];
+});
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonicalPath={`/reports/${entry.id}`}
+  schema={articleGraph(`/reports/${entry.id}`, entry.data.title, entry.data.description, entry.data.publishedAt.toISOString())}
+>
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">Report</p>
+          <h1>{entry.data.title}</h1>
+        </div>
+        <p>{entry.data.description}</p>
+      </div>
+
+      <div class="split">
+        <article class="surface stack prose">
+          <Content />
+        </article>
+
+        <aside class="stack">
+          <section class="surface stack">
+            <p class="eyebrow">TL;DR</p>
+            <h2>What this report is really saying.</h2>
+            <ul class="case-study-result-list">
+              {entry.data.tldr.map((item) => <li>{item}</li>)}
+            </ul>
+          </section>
+
+          {relatedServices.length > 0 && (
+            <section class="surface stack">
+              <p class="eyebrow">Supports These Services</p>
+              <h2>Where this research becomes actual implementation.</h2>
+              <div class="case-study-links">
+                {relatedServices.map((service) => (
+                  <a class="case-study-link-card" href={service.href}>
+                    <span>Service</span>
+                    <strong>{service.title}</strong>
+                    <p>{service.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <section class="surface stack">
+            <p class="eyebrow">Next Step</p>
+            <h2>Use the report as diagnosis, not as detached reading.</h2>
+            <div class="button-row">
+              <a class="button primary" href="/pricing">Review the diagnostic path</a>
+              <a class="button secondary" href="/contact">Request a market review</a>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

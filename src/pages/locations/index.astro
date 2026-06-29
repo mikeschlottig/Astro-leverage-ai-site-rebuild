@@ -1,0 +1,176 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { locations, tierDescriptions } from "../../data/locations";
+import { webpageGraph } from "../../lib/schema";
+
+const tierOrder = ["tier-1", "tier-2", "tier-3", "strategic"] as const;
+
+const tierGroups = tierOrder.map((tier) => ({
+  tier,
+  title: locations.find((location) => location.tier === tier)?.tierLabel ?? tier,
+  description: tierDescriptions[tier],
+  items: locations.filter((location) => location.tier === tier),
+}));
+
+const connectionCards = [
+  {
+    href: "/services/local-visibility",
+    label: "Service",
+    title: "Local Visibility Systems",
+    description: "Every city page should route back to the visibility layer that wins map intent and service-area searches.",
+  },
+  {
+    href: "/services/lead-capture-ai-follow-up",
+    label: "Service",
+    title: "Lead Capture And AI Follow-Up",
+    description: "Location traffic only matters if inbound calls and forms become real conversations quickly.",
+  },
+  {
+    href: "/reports/oregon-market-intel-infrastructure-report",
+    label: "Report",
+    title: "Oregon Market Intel Report",
+    description: "This report is the logic spine behind the market tiers, pricing posture, and location clustering.",
+  },
+  {
+    href: "/pricing",
+    label: "Conversion Surface",
+    title: "Diagnostic-Audit Pricing",
+    description: "The pricing page now frames city work as diagnosis, implementation, and ongoing adaptation instead of a generic retainer.",
+  },
+];
+---
+
+<BaseLayout
+  title="Oregon Locations"
+  description="Oregon location pages shaped by real market nuance, tiered opportunity, and links back into services, proof, reports, and pricing."
+  canonicalPath="/locations"
+  schema={webpageGraph("/locations", "Oregon Locations", "Oregon location pages shaped by real market nuance, tiered opportunity, and links back into services, proof, reports, and pricing.")}
+>
+  <section class="hero location-hub-hero">
+    <div class="shell stack">
+      <div class="hero-panel location-hub-hero__panel">
+        <div class="stack">
+          <p class="eyebrow">Oregon Market Cluster</p>
+          <h1>Oregon city pages built from market asymmetry, not statewide copy spam.</h1>
+          <p class="location-hub-hero__lead">
+            The best use of the Oregon infrastructure report is not one more PDF summary. It is a
+            linked location system that explains which markets are asymmetric, which are stable, and
+            which need sharper differentiation before they deserve more spend.
+          </p>
+          <div class="button-row">
+            <a class="button primary" href="/reports/oregon-market-intel-infrastructure-report">Read the Oregon market report</a>
+            <a class="button secondary" href="/pricing">See diagnostic-audit pricing</a>
+          </div>
+        </div>
+        <aside class="location-hub-sidecar">
+          <p class="location-hub-sidecar__label">What the cluster does</p>
+          <ul class="case-study-result-list">
+            <li>Explains why Bend should not be sold like Portland.</li>
+            <li>Connects every market to the right service and proof surfaces.</li>
+            <li>Turns location SEO into a trust and conversion architecture, not a page factory.</li>
+          </ul>
+        </aside>
+      </div>
+      <div class="location-hub-principles">
+        <article class="surface stack">
+          <p class="location-hub-principles__label">Linking</p>
+          <h2>Every city page points back into services, proof, and conversion.</h2>
+          <p>
+            Nothing in this cluster should become a stranded SEO page. Every route needs a role in
+            the broader system.
+          </p>
+        </article>
+        <article class="surface stack">
+          <p class="location-hub-principles__label">Hierarchy</p>
+          <h2>City pages inherit logic from the report and route traffic toward diagnosis.</h2>
+          <p>
+            The report gives the statewide frame. The location pages make it usable. The pricing page
+            turns it into a next step.
+          </p>
+        </article>
+        <article class="surface stack">
+          <p class="location-hub-principles__label">Clustering</p>
+          <h2>Markets are grouped by opportunity and buying conditions, not alphabetized lazily.</h2>
+          <p>
+            That keeps the cluster outcome-led and makes internal linking feel earned instead of
+            ornamental.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">Oregon Opportunity Matrix</p>
+          <h2>The statewide story gets better when we admit Oregon is not one market.</h2>
+        </div>
+        <p>
+          The matrix below is where the report becomes operational. Each tier carries its own buyer
+          behavior, competition profile, and recommended entry point back into the service stack.
+        </p>
+      </div>
+
+      {tierGroups.map((group) => (
+        <section class="location-tier">
+          <div class="location-tier__header">
+            <div class="stack">
+              <p class="eyebrow">{group.title}</p>
+              <h3>{group.description}</h3>
+            </div>
+          </div>
+          <div class="location-card-grid">
+            {group.items.map((location) => (
+              <article class="location-card surface stack">
+                <div class="location-card__meta">
+                  <span class="case-study-chip">{location.region}</span>
+                  <span class="case-study-chip">{location.tierLabel}</span>
+                </div>
+                <h3>{location.name}</h3>
+                <p>{location.marketSummary}</p>
+                <ul class="location-card__signals">
+                  {location.signals.slice(0, 2).map((signal) => (
+                    <li>
+                      <strong>{signal.label}:</strong> {signal.value}
+                    </li>
+                  ))}
+                </ul>
+                <div class="button-row">
+                  <a class="button primary" href={`/locations/${location.slug}`}>Open {location.name}</a>
+                  <a class="button secondary" href="/pricing">See audit pricing</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">System Links</p>
+          <h2>This cluster should make the rest of the site easier to navigate and easier to trust.</h2>
+        </div>
+        <p>
+          Each market page links outward on purpose: to the services that solve the local problem,
+          the proof that reinforces it, the report that explains it, and the pricing surface that
+          turns it into a buying decision.
+        </p>
+      </div>
+      <div class="case-study-links">
+        {connectionCards.map((card) => (
+          <a class="case-study-link-card" href={card.href}>
+            <span>{card.label}</span>
+            <strong>{card.title}</strong>
+            <p>{card.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

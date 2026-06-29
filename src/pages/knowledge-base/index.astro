@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { webpageGraph } from "../../lib/schema";
+
+const articles = (await getCollection("knowledgeBase")).sort(
+  (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
+);
+
+const supportingLinks = [
+  {
+    href: "/pricing",
+    label: "Conversion Surface",
+    title: "Pricing",
+    description: "The diagnostic-audit explainer should strengthen the pricing conversation, not live outside it.",
+  },
+  {
+    href: "/reports/why-speed-wins",
+    label: "Report",
+    title: "Why Speed Wins",
+    description: "Response-time economics make the audit easier to justify for service businesses losing warm leads.",
+  },
+  {
+    href: "/contact",
+    label: "Next Step",
+    title: "Request The Audit",
+    description: "Once the buyer understands the audit, the contact path should feel like a clear next move.",
+  },
+];
+---
+
+<BaseLayout
+  title="Knowledge Base"
+  description="Durable explainers and educational content that support the public service architecture."
+  schema={webpageGraph("/knowledge-base", "Knowledge Base", "Durable explainers and educational content that support the public service architecture.")}
+>
+  <section class="hero">
+    <div class="shell stack">
+      <div class="hero-panel">
+        <p class="eyebrow">Knowledge Base</p>
+        <h1>Durable explainers for buyers who need clarity before they need more pitch.</h1>
+        <p>
+          This hub supports the service pages, reports, and pricing surface with practical articles
+          that explain the system in plain terms. The best entries should remove ambiguity and make
+          the next decision feel easier.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">Working Explanations</p>
+          <h2>The strongest articles explain what the site means without collapsing into jargon.</h2>
+        </div>
+        <p>
+          These pages are not blog filler. They are long-lived support surfaces for services,
+          reports, and conversion decisions.
+        </p>
+      </div>
+      <div class="grid">
+        {articles.map((entry) => (
+          <article class="surface stack">
+            <p class="eyebrow">Knowledge Base</p>
+            <h3>{entry.data.title}</h3>
+            <p>{entry.data.description}</p>
+            <a class="button secondary" href={`/knowledge-base/${entry.id}`}>Read the article</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-links">
+        {supportingLinks.map((card) => (
+          <a class="case-study-link-card" href={card.href}>
+            <span>{card.label}</span>
+            <strong>{card.title}</strong>
+            <p>{card.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

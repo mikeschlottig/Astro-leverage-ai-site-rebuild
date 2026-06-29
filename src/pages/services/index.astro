@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { webpageGraph } from "../../lib/schema";
+
+const services = (await getCollection("services")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Services"
+  description="Outcome-led service pages for local visibility, custom websites, lead capture, and search data architecture."
+  schema={webpageGraph("/services", "Services", "Outcome-led service pages for local visibility, custom websites, lead capture, and search data architecture.")}
+>
+  <section class="section">
+    <div class="shell stack">
+      <div class="surface stack">
+        <p class="eyebrow">Outcome-Led Services</p>
+        <h1>Services organized around buyer jobs, not agency buzzwords.</h1>
+      </div>
+      <div class="grid">
+        {services.map((service) => (
+          <article class="surface stack">
+            <h2>{service.data.title}</h2>
+            <p>{service.data.description}</p>
+            <a href={`/services/${service.id}`}>Open the service</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

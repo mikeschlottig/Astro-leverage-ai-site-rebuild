@@ -1,0 +1,277 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+import { locations } from "../../data/locations";
+import { articleGraph } from "../../lib/schema";
+
+type LinkCard = {
+  kind: "Service" | "Report" | "Location";
+  href: string;
+  title: string;
+  description: string;
+};
+
+export async function getStaticPaths() {
+  const entries = await getCollection("caseStudies");
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const allServices = await getCollection("services");
+const allReports = await getCollection("reports");
+const relatedServices: LinkCard[] = entry.data.services.flatMap((slug) => {
+  const service = allServices.find((candidate) => candidate.id === slug);
+  return service
+    ? [
+        {
+          kind: "Service",
+          href: `/services/${service.id}`,
+          title: service.data.title,
+          description: service.data.description,
+        },
+      ]
+    : [];
+});
+
+const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
+  const report = allReports.find((candidate) => candidate.id === slug);
+  return report
+    ? [
+        {
+          kind: "Report",
+          href: `/reports/${report.id}`,
+          title: report.data.title,
+          description: report.data.description,
+        },
+      ]
+    : [];
+});
+
+const relatedLocationPages: LinkCard[] = entry.data.relatedLocations.flatMap((slug) => {
+  const location = locations.find((candidate) => candidate.slug === slug);
+  return location
+    ? [
+        {
+          kind: "Location",
+          href: `/locations/${location.slug}`,
+          title: `${location.name} market page`,
+          description: location.opportunity,
+        },
+      ]
+    : [];
+});
+
+const systemLinks = [...relatedServices, ...relatedReports, ...relatedLocationPages];
+const primaryService = relatedServices[0];
+const primaryReport = relatedReports[0];
+const entryPath = `/portfolio/${entry.id}`;
+const flowHeadingId = `${entry.id}-flow`;
+const renderedEntry = entry.body?.trim() ? await render(entry) : null;
+const Content = renderedEntry?.Content;
+const resultThemeClass =
+  entry.data.outcomesCallout.theme === "ink"
+    ? "case-study-callout case-study-callout--ink"
+    : "case-study-callout";
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonicalPath={entryPath}
+  schema={articleGraph(entryPath, entry.data.title, entry.data.description)}
+>
+  <section class="hero case-study-hero">
+    <div class="shell stack">
+      <div class="case-study-hero__panel">
+        <div class="case-study-hero__copy stack">
+          <p class="eyebrow">{entry.data.heroLabel}</p>
+          <h1>{entry.data.heroTitle ?? entry.data.title}</h1>
+          <p class="case-study-hero__lead">{entry.data.description}</p>
+          <div class="case-study-chip-row" aria-label="Case study context">
+            <span class="case-study-chip">{entry.data.location}</span>
+            {entry.data.market && <span class="case-study-chip">{entry.data.market}</span>}
+            {entry.data.industry && <span class="case-study-chip">{entry.data.industry}</span>}
+          </div>
+          <div class="button-row">
+            {primaryService && (
+              <a class="button primary" href={primaryService.href}>
+                Explore {primaryService.title}
+              </a>
+            )}
+            <a class="button secondary" href="/contact">Talk through your market</a>
+          </div>
+        </div>
+        <aside class="case-study-sidecar">
+          <p class="case-study-sidecar__label">Outcome snapshot</p>
+          <ul class="case-study-result-list">
+            {entry.data.results.map((result) => <li>{result}</li>)}
+          </ul>
+        </aside>
+      </div>
+
+      {entry.data.stats.length > 0 && (
+        <div class="case-study-stat-band">
+          {entry.data.stats.map((stat) => (
+            <article class="case-study-stat">
+              <p class="case-study-stat__value">{stat.value}</p>
+              <p class="case-study-stat__label">{stat.label}</p>
+              {stat.detail && <p class="case-study-stat__detail">{stat.detail}</p>}
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">{entry.data.client}</p>
+          <h2>{entry.data.summary}</h2>
+        </div>
+        <p>
+          These pages are built as proof architecture, not brochure copy. Each section ties the business
+          problem back to the service system that fixed it.
+        </p>
+      </div>
+
+      <div class="case-study-story-grid">
+        <article class="case-study-story-block stack">
+          <h3>{entry.data.challenge.title}</h3>
+          {entry.data.challenge.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </article>
+
+        <article class="case-study-story-block stack">
+          <h3>{entry.data.stakes.title}</h3>
+          {entry.data.stakes.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </article>
+
+        {entry.data.quote && (
+          <blockquote class="case-study-quote">
+            <p>{entry.data.quote.text}</p>
+            {entry.data.quote.attribution && <cite>{entry.data.quote.attribution}</cite>}
+          </blockquote>
+        )}
+
+        {entry.data.flow && entry.data.flow.steps.length > 0 && (
+          <section class="case-study-flow surface stack" aria-labelledby={flowHeadingId}>
+            {entry.data.flow.title && <h3 id={flowHeadingId}>{entry.data.flow.title}</h3>}
+            <div class="case-study-flow__track">
+              {entry.data.flow.steps.map((step) => (
+                <article class:list={["case-study-flow__node", step.accent && "case-study-flow__node--accent"]}>
+                  <p class="case-study-flow__label">{step.label}</p>
+                  <p class="case-study-flow__name">{step.name}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {entry.data.context && (
+          <section class="case-study-context surface stack">
+            <h3>{entry.data.context.title}</h3>
+            {entry.data.context.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </section>
+        )}
+
+        {entry.data.execution && (
+          <section class="case-study-execution surface stack">
+            <h3>{entry.data.execution.title}</h3>
+            {entry.data.execution.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {entry.data.execution.items.length > 0 && (
+              <ul class="case-study-checklist">
+                {entry.data.execution.items.map((item) => <li>{item}</li>)}
+              </ul>
+            )}
+          </section>
+        )}
+
+        {entry.data.impact && (
+          <article class="case-study-story-block stack">
+            <h3>{entry.data.impact.title}</h3>
+            {entry.data.impact.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+          </article>
+        )}
+
+        <section class={resultThemeClass}>
+          <div class="stack">
+            <h3>{entry.data.outcomesCallout.headline}</h3>
+            <p>{entry.data.outcomesCallout.body}</p>
+          </div>
+          <div class="case-study-callout__badge" aria-label="Outcome highlight">
+            <span>{entry.data.outcomesCallout.badgeValue}</span>
+            <small>{entry.data.outcomesCallout.badgeLabel}</small>
+          </div>
+        </section>
+      </div>
+
+      {Content && (
+        <article class="surface stack prose">
+          <h2>Why this matters</h2>
+          <Content />
+        </article>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <section class="surface stack">
+        <p class="eyebrow">System Links</p>
+        <h2>How this case study connects to the rest of the site.</h2>
+        <div class="case-study-links">
+          {systemLinks.map((link) => (
+            <a class="case-study-link-card" href={link.href}>
+              <span>{link.kind}</span>
+              <strong>{link.title}</strong>
+              <p>{link.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <aside class="surface stack">
+        <h2>What this proves</h2>
+        <ul>
+          {entry.data.results.map((result) => <li>{result}</li>)}
+        </ul>
+        <div class="button-row">
+          <a class="button primary" href="/portfolio">See more proof</a>
+          {primaryReport ? (
+            <a class="button secondary" href={primaryReport.href}>
+              Read {primaryReport.title}
+            </a>
+          ) : (
+            <a class="button secondary" href="/reports">Read supporting reports</a>
+          )}
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <section class="case-study-cta">
+        <div class="stack">
+          <p class="eyebrow">Next Step</p>
+          <h2>Want this level of clarity applied to your market?</h2>
+          <p>
+            The value is not in a flashy deliverable. It is in building the right visibility,
+            trust, response, and measurement system for how your business actually wins work.
+          </p>
+        </div>
+        <div class="button-row">
+          <a class="button primary" href="/contact">Request a market review</a>
+          {primaryService ? (
+            <a class="button secondary" href={primaryService.href}>
+              Review the service system
+            </a>
+          ) : (
+            <a class="button secondary" href="/services">Review the service system</a>
+          )}
+        </div>
+      </section>
+    </div>
+  </section>
+</BaseLayout>

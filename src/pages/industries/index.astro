@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { webpageGraph } from "../../lib/schema";
+
+const industries = await getCollection("industries");
+---
+
+<BaseLayout
+  title="Industries"
+  description="Industry-specific pages grounded in local demand, trust signals, and response-time economics."
+  schema={webpageGraph("/industries", "Industries", "Industry-specific pages grounded in local demand, trust signals, and response-time economics.")}
+>
+  <section class="section">
+    <div class="shell grid">
+      {industries.map((entry) => (
+        <article class="surface stack">
+          <h1>{entry.data.title}</h1>
+          <p>{entry.data.description}</p>
+          <a href={`/industries/${entry.id}`}>Open industry page</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
