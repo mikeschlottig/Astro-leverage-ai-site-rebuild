@@ -1,16 +1,3 @@
-node_modules/
-dist/
-.astro/
-.wrangler/
-tmp/
-.codex/
-
-.env
-.env.*
-.dev.vars
-
-*.log
-pnpm-debug.log*
-
-.DS_Store
-Thumbs.db
+```
+# Configuration and source files only - no build artifacts or dependencies detected
+```

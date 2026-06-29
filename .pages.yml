@@ -1,0 +1,380 @@
+# Pages CMS Configuration
+# See: https://pagescms.org/docs/configuration/
+
+media:
+  input: public/images
+  output: /images
+
+content:
+  # Blog posts collection
+  - name: blog
+    label: Blog Posts
+    type: collection
+    path: src/content/blog
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: publishedAt
+        label: Published Date
+        type: date
+      - name: category
+        label: Category
+        type: string
+      - name: tags
+        label: Tags
+        type: list
+        options:
+          - underserved-markets
+          - local-service-businesses
+          - founder-operator
+          - local-trust
+          - lead-response
+          - entity-strength
+      - name: relatedServices
+        label: Related Services
+        type: list
+        options:
+          - local-visibility
+          - custom-web-design
+          - lead-capture-ai-follow-up
+          - search-data-architecture
+      - name: relatedCaseStudies
+        label: Related Case Studies
+        type: list
+      - name: body
+        label: Content
+        type: rich-text
+
+  # Case studies collection
+  - name: case-studies
+    label: Case Studies
+    type: collection
+    path: src/content/case-studies
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: summary
+        label: Summary
+        type: text
+      - name: heroTitle
+        label: Hero Title
+        type: string
+      - name: heroLabel
+        label: Hero Label
+        type: string
+      - name: client
+        label: Client
+        type: string
+      - name: location
+        label: Location
+        type: string
+      - name: industry
+        label: Industry
+        type: string
+      - name: market
+        label: Market
+        type: string
+      - name: services
+        label: Services
+        type: list
+        options:
+          - local-visibility
+          - custom-web-design
+          - lead-capture-ai-follow-up
+          - search-data-architecture
+      - name: relatedReports
+        label: Related Reports
+        type: list
+      - name: relatedLocations
+        label: Related Locations
+        type: list
+      - name: stats
+        label: Stats
+        type: object
+        fields:
+          - name: value
+            type: string
+          - name: label
+            type: string
+      - name: challenge
+        label: Challenge
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: paragraphs
+            type: list
+      - name: stakes
+        label: Stakes
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: paragraphs
+            type: list
+      - name: quote
+        label: Quote
+        type: object
+        fields:
+          - name: text
+            type: text
+          - name: attribution
+            type: string
+      - name: execution
+        label: Execution
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: paragraphs
+            type: list
+          - name: items
+            type: list
+      - name: impact
+        label: Impact
+        type: object
+        fields:
+          - name: title
+            type: string
+          - name: paragraphs
+            type: list
+      - name: outcomesCallout
+        label: Outcomes Callout
+        type: object
+        fields:
+          - name: headline
+            type: string
+          - name: body
+            type: text
+          - name: badgeValue
+            type: string
+          - name: badgeLabel
+            type: string
+          - name: theme
+            type: string
+      - name: results
+        label: Results
+        type: list
+      - name: body
+        label: Content
+        type: rich-text
+
+  # Reports collection
+  - name: reports
+    label: Reports
+    type: collection
+    path: src/content/reports
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: publishedAt
+        label: Published Date
+        type: date
+      - name: updatedAt
+        label: Updated Date
+        type: date
+      - name: tldr
+        label: TL;DR
+        type: list
+      - name: relatedServices
+        label: Related Services
+        type: list
+        options:
+          - local-visibility
+          - custom-web-design
+          - lead-capture-ai-follow-up
+          - search-data-architecture
+      - name: body
+        label: Content
+        type: rich-text
+
+  # Services collection
+  - name: services
+    label: Services
+    type: collection
+    path: src/content/services
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: summary
+        label: Summary
+        type: text
+      - name: heroTitle
+        label: Hero Title
+        type: string
+      - name: order
+        label: Order
+        type: number
+      - name: outcomes
+        label: Outcomes
+        type: list
+      - name: capabilities
+        label: Capabilities
+        type: list
+      - name: proofPoints
+        label: Proof Points
+        type: list
+      - name: diagnosticQuestions
+        label: Diagnostic Questions
+        type: list
+      - name: deliverables
+        label: Deliverables
+        type: list
+      - name: faqs
+        label: FAQs
+        type: list
+        fields:
+          - name: question
+            type: string
+          - name: answer
+            type: text
+      - name: relatedReports
+        label: Related Reports
+        type: list
+      - name: relatedKnowledgeBase
+        label: Related Knowledge Base
+        type: list
+      - name: relatedCaseStudies
+        label: Related Case Studies
+        type: list
+      - name: relatedLocations
+        label: Related Locations
+        type: list
+      - name: body
+        label: Content
+        type: rich-text
+
+  # Knowledge base collection
+  - name: knowledge-base
+    label: Knowledge Base
+    type: collection
+    path: src/content/knowledge-base
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: publishedAt
+        label: Published Date
+        type: date
+      - name: relatedServices
+        label: Related Services
+        type: list
+        options:
+          - local-visibility
+          - custom-web-design
+          - lead-capture-ai-follow-up
+          - search-data-architecture
+      - name: body
+        label: Content
+        type: rich-text
+
+  # Industries collection
+  - name: industries
+    label: Industries
+    type: collection
+    path: src/content/industries
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: summary
+        label: Summary
+        type: text
+      - name: relatedServices
+        label: Related Services
+        type: list
+        options:
+          - local-visibility
+          - custom-web-design
+          - lead-capture-ai-follow-up
+          - search-data-architecture
+      - name: body
+        label: Content
+        type: rich-text
+
+  # Static pages
+  - name: about
+    label: About Page
+    type: file
+    path: src/pages/about.astro
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: body
+        label: Content
+        type: rich-text
+
+  - name: contact
+    label: Contact Page
+    type: file
+    path: src/pages/contact.astro
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: body
+        label: Content
+        type: rich-text
+
+  - name: pricing
+    label: Pricing Page
+    type: file
+    path: src/pages/pricing.astro
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: body
+        label: Content
+        type: rich-text
+
+  - name: homepage
+    label: Homepage
+    type: file
+    path: src/pages/index.astro
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: body
+        label: Content
+        type: rich-text
+
+settings:
+  commitTemplate: "chore: update {{label}} via Pages CMS"
+  mergeMethod: squash
