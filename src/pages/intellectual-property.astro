@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../lib/site";
+---
+
+<BaseLayout
+  title="Copyright And Intellectual Property"
+  description="Ownership, permitted use, attribution, and rights information for Leverage AI website content."
+  canonicalPath="/intellectual-property"
+>
+  <section class="section">
+    <article class="shell surface stack prose legal-page">
+      <p class="eyebrow">Last updated June 30, 2026</p>
+      <h1>Copyright and intellectual property</h1>
+      <p>
+        Unless otherwise identified, the original writing, page design, graphics, code, reports,
+        and other creative material published on leverageai.network are owned by Leverage AI LLC or
+        used with permission.
+      </p>
+
+      <h2>Case-study and client materials</h2>
+      <p>
+        Client and project names, trademarks, product names, screenshots, photographs, and other
+        materials remain the property of their respective owners. Their appearance in a case study
+        documents work performed or provides commentary; it does not transfer ownership to
+        Leverage AI.
+      </p>
+
+      <h2>Permitted use</h2>
+      <p>
+        You may link to public pages and quote brief excerpts for commentary, education, or
+        discussion when you identify Leverage AI as the source and link to the original page.
+        Broader reproduction, republication, resale, model training, or creation of substantially
+        similar commercial materials requires prior written permission unless the use is otherwise
+        allowed by law.
+      </p>
+
+      <h2>No ownership of facts or ideas</h2>
+      <p>
+        Copyright protects original expression, not facts, ideas, systems, methods, or general
+        business concepts. References to public research or industry methods do not claim ownership
+        over the underlying facts or ideas.
+      </p>
+
+      <h2>Permission and concerns</h2>
+      <p>
+        To request permission, report a possible rights issue, or ask for attribution details,
+        email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Include the page URL and enough
+        information to identify the material.
+      </p>
+
+      <h2>Official resource</h2>
+      <p>
+        Learn more from the <a href="https://www.copyright.gov/help/faq/faq-protect.html">United States Copyright Office</a>.
+      </p>
+    </article>
+  </section>
+</BaseLayout>

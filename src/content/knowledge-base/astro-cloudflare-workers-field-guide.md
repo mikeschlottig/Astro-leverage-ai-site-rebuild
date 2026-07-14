@@ -104,7 +104,7 @@ That makes the Worker layer strategically useful for:
 - routing contact requests
 - keeping the response path close to the same infrastructure that serves the site
 
-That logic belongs directly under [Custom Web Design](/services/custom-web-design) and [Search & Data Architecture](/services/search-data-architecture), because the public experience and the supporting systems should reinforce each other.
+That logic belongs directly under [Custom Web Design](/services/custom-web-design/) and [Search & Data Architecture](/services/search-data-architecture/), because the public experience and the supporting systems should reinforce each other.
 
 ## What to avoid
 
@@ -137,6 +137,6 @@ Astro plus Cloudflare Workers is a strong fit when the business needs a site tha
 - content-rich without becoming messy
 - structured enough to support service pages, reports, location pages, and a Worker-backed response path together
 
-That is why this stack belongs in the same conversation as [Custom Web Design](/services/custom-web-design), [Search & Data Architecture](/services/search-data-architecture), and the broader authority system behind the site.
+That is why this stack belongs in the same conversation as [Custom Web Design](/services/custom-web-design/), [Search & Data Architecture](/services/search-data-architecture/), and the broader authority system behind the site.
 
-If the current build feels slow, brittle, or too disconnected to support that kind of growth surface, the right next move is usually the [diagnostic audit](/contact).
+If the current build feels slow, brittle, or too disconnected to support that kind of growth surface, the right next move is usually the [diagnostic audit](/contact/).

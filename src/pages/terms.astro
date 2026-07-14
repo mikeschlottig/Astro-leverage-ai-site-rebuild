@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../lib/site";
+---
+
+<BaseLayout
+  title="Terms of Use"
+  description="Terms governing use of the Leverage AI website and its public information."
+  canonicalPath="/terms"
+>
+  <section class="section">
+    <article class="shell surface stack prose legal-page">
+      <p class="eyebrow">Last updated June 30, 2026</p>
+      <h1>Terms of Use</h1>
+      <p>
+        By using this website, you agree to these terms. If you do not agree, please stop using the
+        site. These website terms do not replace a signed proposal, statement of work, or service
+        agreement. When those documents conflict with this page, the signed agreement controls.
+      </p>
+
+      <h2>Informational use</h2>
+      <p>
+        The website provides general information about marketing systems, websites, local search,
+        market research, and Leverage AI services. It is not legal, financial, tax, or accounting
+        advice. Results discussed in reports and case studies depend on market conditions,
+        competition, implementation, and other factors. No result is guaranteed.
+      </p>
+
+      <h2>Acceptable use</h2>
+      <p>You may not use the website to:</p>
+      <ul>
+        <li>interfere with its operation or attempt unauthorized access;</li>
+        <li>submit malicious code, spam, deceptive inquiries, or unlawful content;</li>
+        <li>scrape or reproduce substantial content in a way that violates applicable law;</li>
+        <li>misrepresent your identity or affiliation; or</li>
+        <li>use Leverage AI materials to imply an endorsement that does not exist.</li>
+      </ul>
+
+      <h2>Third-party sites</h2>
+      <p>
+        Links and live previews may lead to independent websites. They are provided for context and
+        do not make Leverage AI responsible for third-party availability, content, security, or
+        privacy practices.
+      </p>
+
+      <h2>No warranty</h2>
+      <p>
+        The website is provided on an “as available” basis. Leverage AI makes no warranty that every
+        page will always be available, error-free, or suitable for a particular purpose. Nothing on
+        the site is a promise of search position, lead volume, revenue, or other business outcome.
+      </p>
+
+      <h2>Limitation of liability</h2>
+      <p>
+        To the fullest extent permitted by law, Leverage AI LLC will not be liable for indirect,
+        incidental, special, consequential, or punitive damages arising from use of, or inability
+        to use, this website. Some jurisdictions do not permit every limitation, so portions of this
+        section may not apply to you.
+      </p>
+
+      <h2>Governing law</h2>
+      <p>
+        These terms are governed by Oregon law, without regard to conflict-of-law principles. Any
+        dispute concerning these website terms will be handled in a court with proper jurisdiction
+        in Oregon, unless applicable law requires otherwise.
+      </p>
+
+      <h2>Changes and contact</h2>
+      <p>
+        These terms may be updated as the website or services change. Questions may be sent to
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+      </p>
+    </article>
+  </section>
+</BaseLayout>

@@ -1,12 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { webpageGraph } from "../lib/schema";
 ---
 
 <BaseLayout
   title="About"
   description="About Mike Schlottig and the systems-first approach behind Leverage AI."
-  schema={webpageGraph("/about", "About Leverage AI", "About Mike Schlottig and the systems-first approach behind Leverage AI.")}
 >
   <section class="section">
     <div class="shell split">
@@ -20,18 +18,18 @@ import { webpageGraph } from "../lib/schema";
           response.
         </p>
         <p>
-          I built this business to do the opposite: treat visibility, trust, response, and
-          measurement like one operating system instead of four separate purchases. The public
-          brand surface has to earn belief. The underlying build has to support real inquiry flow.
-          The numbers have to show whether the work is actually moving the business forward.
+          I built Leverage AI to connect the work that usually gets split between four vendors:
+          getting found, earning trust, responding quickly, and measuring what turns into business.
+          Your website should make the right first impression, your inquiry process should make it
+          easy to take the next step, and the numbers should tell us whether the work is paying off.
         </p>
         <div class="button-row">
-          <a class="button primary" href="/contact">Request the diagnostic audit</a>
-          <a class="button secondary" href="/pricing">Review pricing</a>
+          <a class="button primary" href="/contact/">Request the diagnostic audit</a>
+          <a class="button secondary" href="/pricing/">Review pricing</a>
         </div>
       </div>
 
-      <aside class="surface stack about-founder-card">
+      <aside id="mike-schlottig" class="surface stack about-founder-card">
         <div class="about-headshot-frame">
           <img
             class="about-headshot"
@@ -44,9 +42,9 @@ import { webpageGraph } from "../lib/schema";
           <p class="eyebrow">Founder</p>
           <h2>Mike Schlottig</h2>
           <p>
-            Founder of Leverage AI. Based in Southern Oregon. I work directly on market diagnosis,
-            service architecture, search visibility, public trust surfaces, and lead-response
-            systems without an account-manager layer between strategy and execution.
+            Founder of Leverage AI. Based in Southern Oregon. I work directly on your market
+            research, website, search visibility, and lead-response process. There is no
+            account-manager layer between the strategy we agree on and the work that gets built.
           </p>
           <p class="about-founder-note">
             The goal is simple: keep the person shaping the strategy close enough to the build that
@@ -128,12 +126,12 @@ import { webpageGraph } from "../lib/schema";
 
       <div class="surface stack">
         <p class="eyebrow">Where To Go Next</p>
-        <h2>Use the strongest trust nodes before deciding on scope.</h2>
+        <h2>See the work, understand the process, and decide whether the approach fits.</h2>
         <div class="stack">
-          <a href="/knowledge-base/semantic-sync-for-local-search">See how Google Business Profile and website signals should stay aligned.</a>
-          <a href="/pricing">See how the diagnostic audit is structured.</a>
-          <a href="/portfolio/daley-organics">Read the Daley Organics case study.</a>
-          <a href="/reports/oregon-market-intel-infrastructure-report">Read the Oregon market report.</a>
+          <a href="/knowledge-base/semantic-sync-for-local-search/">See how Google Business Profile and website signals should stay aligned.</a>
+          <a href="/pricing/">See how the diagnostic audit is structured.</a>
+          <a href="/portfolio/daley-organics/">Read the Daley Organics case study.</a>
+          <a href="/reports/oregon-market-intel-infrastructure-report/">Read the Oregon market report.</a>
         </div>
       </div>
     </div>

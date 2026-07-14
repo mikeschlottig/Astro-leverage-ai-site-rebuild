@@ -16,7 +16,7 @@ Fewer understand that the response pattern matters too.
 
 A buyer is not only reading what customers said. They are also reading how the business behaves in public after the review appears. That includes whether the business responds at all, how quickly it tends to respond, whether the replies sound real, and whether the language reinforces a clear, believable service identity.
 
-That is why review management should not be treated like a courtesy task. It is part of the same trust surface that supports [Local Visibility](/services/local-visibility), stronger service interpretation, and better conversion after the click.
+That is why review management should not be treated like a courtesy task. It is part of the same trust surface that supports [Local Visibility](/services/local-visibility/), stronger service interpretation, and better conversion after the click.
 
 ## Why buyers pay attention to the reply, not just the rating
 
@@ -49,7 +49,7 @@ They communicate:
 - real locality
 - active operations
 
-That matters because public review surfaces help buyers and search systems form a broader judgment about business legitimacy. Across the source materials, the recurring pattern is that stronger local entities are easier to trust when their public signals stay current, coherent, and specific. Review replies can reinforce category clarity, service-area fit, and operational seriousness without turning into keyword stuffing.
+That matters because public review surfaces help buyers and search systems form a broader judgment about business legitimacy. Stronger local entities are easier to trust when their public signals stay current, coherent, and specific. Review replies can reinforce category clarity, service-area fit, and operational seriousness without turning into keyword stuffing.
 
 For example:
 
@@ -58,7 +58,7 @@ For example:
 - a med spa can show professionalism and discretion while still sounding human
 - a local professional service firm can acknowledge concern, explain process, and show that follow-through exists
 
-This is where review replies start connecting to [Search Data Architecture](/services/search-data-architecture). They are small public texts, but they still help shape how the business is interpreted across platforms.
+This is where review replies start connecting to [Search Data Architecture](/services/search-data-architecture/). They are small public texts, but they still help shape how the business is interpreted across platforms.
 
 ## Weak patterns versus stronger ones
 
@@ -114,7 +114,7 @@ This page is not arguing that review responses replace a strong profile, a stron
 
 It is arguing that they support all three.
 
-That is the boundary between this page and [What A Strong Google Business Profile Needs](/knowledge-base/what-a-strong-google-business-profile-needs). A complete profile still matters. Category alignment still matters. Service pages still matter. But review-response behavior is where public trust becomes visible in motion.
+That is the boundary between this page and [What A Strong Google Business Profile Needs](/knowledge-base/what-a-strong-google-business-profile-needs/). A complete profile still matters. Category alignment still matters. Service pages still matter. But review-response behavior is where public trust becomes visible in motion.
 
 When the pattern is strong, replies can reinforce:
 
@@ -140,9 +140,9 @@ That broader view matters because weak replies are often symptoms of a bigger is
 
 That is why the right next question is often not "Should we reply to more reviews?" but "What does the full trust system look like across the profile, site, and public mentions?"
 
-That is the work behind [What A Comprehensive Entity Audit Reviews](/knowledge-base/what-a-comprehensive-entity-audit-reviews) and the larger framing inside [Entity Strength And AI Search Visibility For Local Service Businesses](/reports/entity-strength-and-ai-search-visibility-for-local-service-businesses).
+That is the work behind [What A Comprehensive Entity Audit Reviews](/knowledge-base/what-a-comprehensive-entity-audit-reviews/) and the larger framing inside [Entity Strength And AI Search Visibility For Local Service Businesses](/reports/entity-strength-and-ai-search-visibility-for-local-service-businesses/).
 
-If the business needs help fixing the whole trust surface instead of only the symptom, the practical next step is usually a structured diagnostic review or a clear plan from the [Pricing](/pricing) page.
+If the business needs help fixing the whole trust surface instead of only the symptom, the practical next step is usually a structured diagnostic review or a clear plan from the [Pricing](/pricing/) page.
 
 ## The practical takeaway
 

@@ -1,25 +1,64 @@
 ---
 import "../styles/global.css";
+import SeoHead from "@leverageai/site-standard/components/SeoHead.astro";
+import SchemaGraph from "@leverageai/site-standard/components/SchemaGraph.astro";
+import type { FaqItem, PageMeta, PageType } from "@leverageai/site-standard";
 import SiteHeader from "../components/site/SiteHeader.astro";
 import SiteFooter from "../components/site/SiteFooter.astro";
-import { SITE } from "../lib/site";
-import { absoluteUrl, pageTitle } from "../lib/seo";
+import Breadcrumbs from "../components/site/Breadcrumbs.astro";
+import { breadcrumbItems } from "../lib/breadcrumbs";
+import { IDENTITY, SITE } from "../lib/site";
+import { pageTitle } from "../lib/seo";
 
 type Props = {
   title?: string;
   description?: string;
   canonicalPath?: string;
-  schema?: Record<string, unknown>[] | Record<string, unknown>;
+  pageType?: PageType;
+  noindex?: boolean;
+  ogImageUrl?: string;
+  datePublished?: string;
+  dateModified?: string;
+  articleSection?: string;
+  aboutUrl?: string;
+  serviceName?: string;
+  serviceArea?: readonly string[];
+  faqs?: readonly FaqItem[];
 };
 
 const {
   title,
   description = SITE.description,
   canonicalPath = Astro.url.pathname,
-  schema = [],
+  pageType = "page",
+  noindex,
+  ogImageUrl,
+  datePublished,
+  dateModified,
+  articleSection,
+  aboutUrl,
+  serviceName,
+  serviceArea,
+  faqs,
 } = Astro.props;
 
-const schemaGraph = Array.isArray(schema) ? schema : [schema];
+const breadcrumbLabel = title ?? "Home";
+const page: PageMeta = {
+  type: pageType,
+  title: pageTitle(title),
+  description,
+  path: canonicalPath,
+  breadcrumbs: breadcrumbItems(canonicalPath, breadcrumbLabel),
+  ...(noindex !== undefined ? { noindex } : {}),
+  ...(ogImageUrl !== undefined ? { ogImageUrl } : {}),
+  ...(datePublished !== undefined ? { datePublished } : {}),
+  ...(dateModified !== undefined ? { dateModified } : {}),
+  ...(articleSection !== undefined ? { articleSection } : {}),
+  ...(aboutUrl !== undefined ? { aboutUrl } : {}),
+  ...(serviceName !== undefined ? { serviceName } : {}),
+  ...(serviceArea !== undefined ? { serviceArea } : {}),
+  ...(faqs !== undefined ? { faqs } : {}),
+};
 ---
 
 <!doctype html>
@@ -33,15 +72,12 @@ const schemaGraph = Array.isArray(schema) ? schema : [schema];
       href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
       rel="stylesheet"
     />
-    <title>{pageTitle(title)}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={absoluteUrl(canonicalPath)} />
-    {schemaGraph.length > 0 && (
-      <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@graph": schemaGraph })} />
-    )}
+    <SeoHead identity={IDENTITY} page={page} />
+    <SchemaGraph identity={IDENTITY} page={page} />
   </head>
   <body>
     <SiteHeader />
+    <Breadcrumbs items={page.breadcrumbs ?? []} />
     <main>
       <slot />
     </main>

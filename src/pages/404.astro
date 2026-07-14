@@ -1,18 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { webpageGraph } from "../lib/schema";
 ---
 
 <BaseLayout
   title="Page Not Found"
   description="The page you requested does not exist."
-  schema={webpageGraph("/404", "Page Not Found", "The page you requested does not exist.")}
+  noindex
 >
   <section class="section">
     <div class="shell surface stack">
-      <h1>That page slipped the route graph.</h1>
-      <p>Head back to the homepage or use the primary navigation to find the right path.</p>
-      <a class="button primary" href="/">Return Home</a>
+      <h1>We could not find that page.</h1>
+      <p>
+        The address may have changed, or the link may be out of date. Start again from the homepage
+        or choose a section from the navigation.
+      </p>
+      <a class="button primary" href="/">Go to the homepage</a>
     </div>
   </section>
 </BaseLayout>

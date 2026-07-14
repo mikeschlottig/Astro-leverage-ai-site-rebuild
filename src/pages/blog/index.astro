@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { webpageGraph } from "../../lib/schema";
 
 const posts = await getCollection("blog");
 ---
@@ -9,7 +8,6 @@ const posts = await getCollection("blog");
 <BaseLayout
   title="Blog"
   description="Authority-building articles that support service pages, reports, and local positioning."
-  schema={webpageGraph("/blog", "Blog", "Authority-building articles that support service pages, reports, and local positioning.")}
 >
   <section class="section">
     <div class="shell stack">
@@ -17,8 +15,9 @@ const posts = await getCollection("blog");
         <p class="eyebrow">Blog</p>
         <h1>Operator-level articles on the systems behind local demand.</h1>
         <p>
-          These posts are where the site turns service claims into practical operating logic:
-          visibility, trust, response speed, and market structure explained without agency filler.
+          Practical articles about getting found locally, earning trust faster, and responding
+          while a customer is still ready to act—written for owners who want the reasoning, not
+          agency filler.
         </p>
       </div>
 
@@ -28,7 +27,7 @@ const posts = await getCollection("blog");
             <p class="eyebrow">{entry.data.category}</p>
             <h2>{entry.data.title}</h2>
             <p>{entry.data.description}</p>
-            <a href={`/blog/${entry.id}`}>Read the article</a>
+            <a href={`/blog/${entry.id}/`}>Read the article</a>
           </article>
         ))}
       </div>

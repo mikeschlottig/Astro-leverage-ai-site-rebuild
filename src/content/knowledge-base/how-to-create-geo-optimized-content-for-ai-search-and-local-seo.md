@@ -21,7 +21,7 @@ That is why the stronger framing is not "write for robots." It is:
 
 > write for real buyers in a way both search crawlers and answer engines can understand clearly
 
-This fits directly with [Local Visibility Systems](/services/local-visibility) and [Search And Data Architecture](/services/search-data-architecture).
+This fits directly with [Local Visibility Systems](/services/local-visibility/) and [Search And Data Architecture](/services/search-data-architecture/).
 
 ## What does GEO mean in a local service-business context?
 
@@ -46,7 +46,7 @@ The point is not to stuff locations awkwardly. The point is to give the page eno
 
 ## Why does entity density matter so much?
 
-The source skill is right about one thing many SEO pages still miss: generic filler does not travel well into AI answers.
+Generic filler performs poorly everywhere: customers skim past it, search engines struggle to distinguish it, and AI systems have little worth citing.
 
 A sentence like "we work hard for our clients" gives almost nothing to extract.
 
@@ -172,7 +172,7 @@ That helps both the buyer and the machine understand the real service geography.
 
 ## What writing patterns fail most often?
 
-The source skill calls out weak patterns correctly, and they show up everywhere in local SEO.
+The same weak patterns show up everywhere in local SEO.
 
 | Weak pattern | Why it fails | Better direction |
 | --- | --- | --- |
@@ -194,7 +194,7 @@ For business owners, the key takeaway is:
 - FAQPage schema helps question-and-answer sections
 - LocalBusiness and related entity signals support service and location pages
 
-The site already treats this structured layer as part of the public system rather than an afterthought. That is the same reason [Custom Web Design](/services/custom-web-design) and [Search And Data Architecture](/services/search-data-architecture) should be linked from pages like this one.
+Structured data works best when it confirms what the page already says clearly. That is why [Custom Web Design](/services/custom-web-design/) and [Search And Data Architecture](/services/search-data-architecture/) have to work together.
 
 ## What types of pages benefit most from GEO optimization?
 
@@ -206,12 +206,12 @@ The strongest candidates are usually:
 - pricing explainers
 - diagnostic or comparison content
 
-For this site specifically, that means the approach should keep reinforcing:
+For an Oregon service business, the approach should reinforce:
 
-- [locations](/locations)
-- [pricing](/pricing)
-- [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes)
-- [How Oregon Markets Differ For Local Service Businesses](/reports/how-oregon-markets-differ-for-local-service-businesses)
+- [locations](/locations/)
+- [pricing](/pricing/)
+- [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes/)
+- [How Oregon Markets Differ For Local Service Businesses](/reports/how-oregon-markets-differ-for-local-service-businesses/)
 
 ## How should marketers avoid making GEO content sound robotic?
 

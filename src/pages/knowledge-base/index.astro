@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { webpageGraph } from "../../lib/schema";
 
 const articles = (await getCollection("knowledgeBase")).sort(
   (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
@@ -9,22 +8,22 @@ const articles = (await getCollection("knowledgeBase")).sort(
 
 const supportingLinks = [
   {
-    href: "/pricing",
-    label: "Conversion Surface",
+    href: "/pricing/",
+    label: "Pricing",
     title: "Pricing",
-    description: "The diagnostic-audit explainer should strengthen the pricing conversation, not live outside it.",
+    description: "See the public price ranges and how diagnosis shapes the scope.",
   },
   {
-    href: "/reports/why-speed-wins",
+    href: "/reports/why-speed-wins/",
     label: "Report",
     title: "Why Speed Wins",
-    description: "Response-time economics make the audit easier to justify for service businesses losing warm leads.",
+    description: "See what delayed follow-up can cost when a lead is ready to hire.",
   },
   {
-    href: "/contact",
+    href: "/contact/",
     label: "Next Step",
     title: "Request The Audit",
-    description: "Once the buyer understands the audit, the contact path should feel like a clear next move.",
+    description: "Tell me what feels stuck and get a direct recommendation.",
   },
 ];
 ---
@@ -32,17 +31,15 @@ const supportingLinks = [
 <BaseLayout
   title="Knowledge Base"
   description="Durable explainers and educational content that support the public service architecture."
-  schema={webpageGraph("/knowledge-base", "Knowledge Base", "Durable explainers and educational content that support the public service architecture.")}
 >
   <section class="hero">
     <div class="shell stack">
       <div class="hero-panel">
         <p class="eyebrow">Knowledge Base</p>
-        <h1>Durable explainers for buyers who need clarity before they need more pitch.</h1>
+        <h1>Clear answers before you spend money fixing the wrong problem.</h1>
         <p>
-          This hub supports the service pages, reports, and pricing surface with practical articles
-          that explain the system in plain terms. The best entries should remove ambiguity and make
-          the next decision feel easier.
+          Learn what strong local visibility, trustworthy websites, faster follow-up, and cleaner
+          search signals actually require—then decide which issue deserves attention first.
         </p>
       </div>
     </div>
@@ -52,12 +49,12 @@ const supportingLinks = [
     <div class="shell stack">
       <div class="case-study-intro">
         <div class="stack">
-          <p class="case-study-kicker">Working Explanations</p>
-          <h2>The strongest articles explain what the site means without collapsing into jargon.</h2>
+          <p class="case-study-kicker">Find Your Question</p>
+          <h2>Choose the question closest to your situation.</h2>
         </div>
         <p>
-          These pages are not blog filler. They are long-lived support surfaces for services,
-          reports, and conversion decisions.
+          Each guide explains the problem, why it matters, what good work looks like, and what you
+          can do next.
         </p>
       </div>
       <div class="grid">
@@ -66,7 +63,7 @@ const supportingLinks = [
             <p class="eyebrow">Knowledge Base</p>
             <h3>{entry.data.title}</h3>
             <p>{entry.data.description}</p>
-            <a class="button secondary" href={`/knowledge-base/${entry.id}`}>Read the article</a>
+            <a class="button secondary" href={`/knowledge-base/${entry.id}/`}>Read the article</a>
           </article>
         ))}
       </div>

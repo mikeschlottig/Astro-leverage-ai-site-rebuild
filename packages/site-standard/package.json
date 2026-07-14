@@ -1,0 +1,36 @@
+{
+  "name": "@leverageai/site-standard",
+  "version": "1.0.0",
+  "description": "Shared SEO/schema/head standard for LEVERAGEAI Astro properties (leverageai.network, oregonsmbdirectory.com). Components, JSON-LD graph builders, canonical policy, host redirects, and post-build validation guards.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/SeoHead.astro": "./src/components/SeoHead.astro",
+    "./components/SchemaGraph.astro": "./src/components/SchemaGraph.astro"
+  },
+  "files": [
+    "src",
+    "scripts",
+    "redirects",
+    "ci",
+    "README.md"
+  ],
+  "scripts": {
+    "check": "tsc --noEmit",
+    "guard:phrases": "node scripts/lint-banned-phrases.mjs",
+    "guard:canonicals": "node scripts/validate-canonicals.mjs",
+    "guard:schema": "node scripts/validate-schema.mjs",
+    "guard:links": "node scripts/validate-internal-links.mjs",
+    "guard:all": "node scripts/lint-banned-phrases.mjs && node scripts/validate-canonicals.mjs && node scripts/validate-schema.mjs && node scripts/validate-internal-links.mjs"
+  },
+  "peerDependencies": {
+    "astro": ">=6.0.0"
+  },
+  "devDependencies": {
+    "typescript": "5.6"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

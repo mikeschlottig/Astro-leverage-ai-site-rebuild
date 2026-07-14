@@ -24,7 +24,7 @@ The goal is not to maintain a profile for the sake of local SEO chores. The goal
 - the buyer believe the business is real and relevant
 - the website carry the same story forward after the click
 
-That is why [Local Visibility](/services/local-visibility) should not be treated like a single-platform task.
+That is why [Local Visibility](/services/local-visibility/) should not be treated like a single-platform task.
 
 ## What a strong profile needs at the baseline
 
@@ -58,7 +58,7 @@ The cleaner pattern is:
 2. list the actual services inside the profile
 3. support those services with real pages on the site
 
-That is where [Search Data Architecture](/services/search-data-architecture) starts becoming practical instead of abstract.
+That is where [Search Data Architecture](/services/search-data-architecture/) starts becoming practical instead of abstract.
 
 ## Photos, reviews, and Q&A are trust surfaces
 
@@ -117,7 +117,7 @@ That system usually includes:
 - location architecture that makes service areas believable
 - consistent contact details and platform descriptions
 
-That is also where [Semantic Sync For Local Search](/knowledge-base/semantic-sync-for-local-search) becomes useful. The profile should not be carrying the whole trust burden by itself.
+That is also where [Semantic Sync For Local Search](/knowledge-base/semantic-sync-for-local-search/) becomes useful. The profile should not be carrying the whole trust burden by itself.
 
 ## When a weak profile is really a diagnostic problem
 
@@ -135,7 +135,7 @@ Low profile performance can point to:
 
 That is why a better audit does not stop at "optimize the profile." It asks how the business is being interpreted across the full public entity.
 
-If that broader question needs answering first, the right next step is [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes), not random profile tweaks.
+If that broader question needs answering first, the right next step is [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes/), not random profile tweaks.
 
 ## The practical takeaway
 

@@ -1,0 +1,105 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../lib/site";
+
+const updated = "June 30, 2026";
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="How Leverage AI collects, uses, and protects information submitted through this website."
+  canonicalPath="/privacy"
+>
+  <section class="section">
+    <article class="shell surface stack prose legal-page">
+      <p class="eyebrow">Last updated {updated}</p>
+      <h1>Privacy Policy</h1>
+      <p>
+        This policy explains what information Leverage AI LLC collects through this website, why we
+        use it, and the choices available to you. It applies to leverageai.network and does not
+        govern the independent websites shown in case-study embeds.
+      </p>
+
+      <h2>Information you provide</h2>
+      <p>
+        When you use the contact form or email us, you may provide your name, email address, phone
+        number, service interest, business information, and the details included in your message.
+        Please do not send sensitive personal, financial, health, or account-access information
+        through the form.
+      </p>
+
+      <h2>Information collected automatically</h2>
+      <p>
+        The website host and security infrastructure may process standard technical information
+        such as IP address, browser type, requested pages, timestamps, and security events. This
+        information is used to deliver the site, diagnose errors, prevent abuse, and maintain
+        security.
+      </p>
+      <p>
+        This site does not currently use advertising pixels or sell personal information. If
+        analytics or advertising technology is added later, this policy will be updated before that
+        use begins.
+      </p>
+
+      <h2>Embedded third-party websites</h2>
+      <p>
+        Case-study pages may display live previews from daleyorganics.com or
+        oregonsmbdirectory.com. Loading those previews may allow the third-party website and its
+        hosting providers to receive technical request data. Their own privacy practices apply to
+        those interactions.
+      </p>
+
+      <h2>How information is used</h2>
+      <ul>
+        <li>Respond to inquiries and discuss requested services.</li>
+        <li>Evaluate whether Leverage AI is a good fit for the problem described.</li>
+        <li>Operate, secure, troubleshoot, and improve the website and contact workflow.</li>
+        <li>Maintain business records and comply with legal obligations.</li>
+      </ul>
+
+      <h2>Sharing and retention</h2>
+      <p>
+        Information may be processed by service providers that support website hosting, email,
+        security, and lead delivery. Leverage AI does not sell personal information. Inquiry
+        information is retained only as long as reasonably needed for communication, business
+        records, security, or legal obligations.
+      </p>
+
+      <h2>Your choices and privacy requests</h2>
+      <p>
+        You may ask what personal information we hold about you or request correction or deletion
+        by emailing <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. We may need to verify the
+        request and may retain information when required for security, recordkeeping, or legal
+        reasons.
+      </p>
+      <p>
+        Oregon privacy rights depend on whether a business meets the Oregon Consumer Privacy Act's
+        coverage thresholds. Leverage AI will evaluate valid requests under applicable law even
+        when a particular statutory requirement does not apply.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        This website is intended for businesses and is not directed to children under 13. Do not
+        submit information about a child through the contact form.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        Material changes will be reflected on this page with a new “last updated” date.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Leverage AI LLC · {SITE.location} ·
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      </p>
+
+      <h2>Official resources</h2>
+      <ul>
+        <li><a href="https://www.doj.state.or.us/consumer-protection/id-theft-data-breaches/privacy/">Oregon Department of Justice: Consumer Privacy</a></li>
+        <li><a href="https://www.ftc.gov/business-guidance/privacy-security">Federal Trade Commission: Privacy and Security</a></li>
+      </ul>
+    </article>
+  </section>
+</BaseLayout>

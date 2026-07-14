@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCaseStudyMedia } from "../../lib/case-study-media";
+
+const { entry } = Astro.props as { entry: CollectionEntry<"caseStudies"> };
+
+const media = getCaseStudyMedia(entry.id);
+const preview = media?.previews?.[0];
+const caseStudyHref = `/portfolio/${entry.id}/`;
+const relatedServiceHref = entry.data.services[0] ? `/services/${entry.data.services[0]}/` : null;
+---
+
+<article class="case-study-preview-card stack">
+  {preview && (
+    <div class="case-study-preview">
+      <span class="case-study-preview__badge">{preview.label}</span>
+      <iframe
+        src={preview.src}
+        title={preview.title}
+        loading="lazy"
+        tabindex="-1"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+      <span class="case-study-preview__caption">{preview.caption}</span>
+      <a class="case-study-preview__link" href={caseStudyHref} aria-label={`Open the ${entry.data.title} case study`}></a>
+    </div>
+  )}
+
+  <div class="stack">
+    <p class="case-study-kicker">{entry.data.location}</p>
+    <h3>{entry.data.title}</h3>
+    <p>{entry.data.summary}</p>
+  </div>
+
+  {entry.data.stats.length > 0 && (
+    <div class="case-study-preview-card__stats" aria-label={`${entry.data.title} key proof points`}>
+      {entry.data.stats.slice(0, 2).map((stat) => (
+        <div class="case-study-preview-card__stat">
+          <strong>{stat.value}</strong>
+          <span>{stat.label}</span>
+        </div>
+      ))}
+    </div>
+  )}
+
+  <div class="button-row">
+    <a class="button primary" href={caseStudyHref}>Read the case study</a>
+    {relatedServiceHref && <a class="button secondary" href={relatedServiceHref}>Related service</a>}
+  </div>
+</article>

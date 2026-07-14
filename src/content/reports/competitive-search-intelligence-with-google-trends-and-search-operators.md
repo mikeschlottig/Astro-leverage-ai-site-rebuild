@@ -31,7 +31,7 @@ This report strengthens the intelligence layer behind all of that.
 
 ## Google Trends is useful because it measures attention movement
 
-The first thing the source material gets right is the distinction between raw searches and relative attention.
+The first useful distinction is between raw searches and relative attention.
 
 Google Trends does **not** function like a literal search counter. It normalizes demand and indexes it against the highest point of interest in the selected time range.
 
@@ -147,14 +147,14 @@ That is a different kind of research than generic keyword export work.
 
 It is more strategic because it can feed:
 
-- the [Search And Data Architecture](/services/search-data-architecture) service
-- the [Local Visibility Systems](/services/local-visibility) service
-- the [locations](/locations) cluster
-- the [pricing](/pricing) and diagnostic conversation
+- the [Search And Data Architecture](/services/search-data-architecture/) service
+- the [Local Visibility Systems](/services/local-visibility/) service
+- the [locations](/locations/) cluster
+- the [pricing](/pricing/) and diagnostic conversation
 
 ## A practical workflow for this site's architecture
 
-The strongest adapted use of the source material looks something like this:
+A disciplined competitive-search workflow looks like this:
 
 ### Phase 1: define the real market set
 
@@ -189,7 +189,7 @@ This report should reinforce the rebuild in three ways.
 
 ### For services
 
-It gives [Search And Data Architecture](/services/search-data-architecture) a stronger public rationale than "we do analytics and schema."
+It gives [Search And Data Architecture](/services/search-data-architecture/) a stronger public rationale than "we do analytics and schema."
 
 ### For reports
 
@@ -203,7 +203,7 @@ That is where the asset stops being informative and starts becoming useful.
 
 ## The limit to remember
 
-The source material is careful enough to keep one important warning in view:
+One important warning needs to stay in view:
 
 Google Trends is sampled, normalized, and shaped for comparative use. It is not a perfect mirror of total search demand.
 

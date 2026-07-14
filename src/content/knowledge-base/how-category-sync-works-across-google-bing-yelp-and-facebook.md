@@ -39,7 +39,7 @@ It is about keeping the whole public story aligned across:
 - FAQs
 - location language
 
-That is why [Semantic Sync For Local Search](/knowledge-base/semantic-sync-for-local-search) should stay the broader explainer, while this page stays focused on platform labels and the trust problems they can create.
+That is why [Semantic Sync For Local Search](/knowledge-base/semantic-sync-for-local-search/) should stay the broader explainer, while this page stays focused on platform labels and the trust problems they can create.
 
 ## What your Google category is really doing
 
@@ -112,7 +112,7 @@ It sits alongside:
 - structured data
 - contact-detail consistency
 
-That is why it belongs inside [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes) instead of being treated like a standalone trick.
+That is why it belongs inside [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes/) instead of being treated like a standalone trick.
 
 ## The practical takeaway
 

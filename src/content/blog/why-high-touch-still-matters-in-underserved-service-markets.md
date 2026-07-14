@@ -123,7 +123,7 @@ If a business is losing leverage in an underserved market, the real problem may 
 
 Those are different problems, and they should not all receive the same fix.
 
-That is why [pricing](/pricing) and [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes) are built around diagnosis first.
+That is why [pricing](/pricing/) and [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes/) are built around diagnosis first.
 
 Close execution still matters because good judgment still matters.
 

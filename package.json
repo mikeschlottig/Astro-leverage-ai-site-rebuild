@@ -11,9 +11,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "guard:phrases": "node packages/site-standard/scripts/lint-banned-phrases.mjs dist",
+    "guard:canonicals": "node packages/site-standard/scripts/validate-canonicals.mjs dist",
+    "guard:schema": "node packages/site-standard/scripts/validate-schema.mjs dist",
+    "guard:links": "node packages/site-standard/scripts/validate-internal-links.mjs dist",
+    "guard:site-standard": "pnpm guard:phrases && pnpm guard:canonicals && pnpm guard:schema && pnpm guard:links",
+    "verify": "pnpm check && pnpm build && pnpm guard:site-standard"
   },
   "dependencies": {
+    "@leverageai/site-standard": "workspace:*",
     "@astrojs/sitemap": "3.7.3",
     "astro": "6.4.8"
   },

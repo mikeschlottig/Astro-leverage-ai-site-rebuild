@@ -1,13 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { webpageGraph } from "../../lib/schema";
 ---
 
 <BaseLayout
   title="Contact Received"
   description="Your request has been received and will be reviewed directly."
   canonicalPath="/contact/thanks"
-  schema={webpageGraph("/contact/thanks", "Contact Received", "Confirmation that a diagnostic audit request has been received.")}
+  noindex
 >
   <section class="section">
     <div class="shell">
@@ -22,8 +21,8 @@ import { webpageGraph } from "../../lib/schema";
           </p>
         </div>
         <div class="button-row">
-          <a class="button primary" href="/pricing">Review the diagnostic path</a>
-          <a class="button secondary" href="/reports">Read supporting reports</a>
+          <a class="button primary" href="/pricing/">Review the diagnostic path</a>
+          <a class="button secondary" href="/reports/">Read supporting reports</a>
         </div>
       </section>
     </div>

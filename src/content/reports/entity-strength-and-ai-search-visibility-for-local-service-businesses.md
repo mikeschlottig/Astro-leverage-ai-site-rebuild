@@ -45,7 +45,7 @@ The first source report is useful because it sharpens this point:
 - underserved does not mean unwilling
 - it often means under-supported, under-digitized, or under-served by credible local guidance
 
-That supports the founder-operator model already running through [about](/about), [pricing](/pricing), and the broader local-service architecture.
+That supports the founder-operator model already running through [about](/about/), [pricing](/pricing/), and the broader local-service architecture.
 
 ## A stronger local business is easier to trust across three evaluators
 
@@ -89,7 +89,7 @@ If they reinforce each other, the business becomes easier to rank, easier to cit
 
 ## Category sync and semantic sync are really about reducing ambiguity
 
-One of the most useful shifts in the source material is its move away from exact-match obsession and toward entity understanding.
+The useful shift is away from exact-match obsession and toward entity understanding.
 
 That matters because the business is not just trying to rank for a string of words. It is trying to reduce uncertainty about:
 
@@ -111,7 +111,7 @@ They should support a coherent service position.
 
 The language across service pages, FAQs, reviews, structured data, bios, and external platform descriptions should reinforce the same business identity rather than introducing mixed signals.
 
-This is the same logic behind [Semantic Sync For Local Search](/knowledge-base/semantic-sync-for-local-search), but applied at the wider entity level.
+This is the same logic behind [Semantic Sync For Local Search](/knowledge-base/semantic-sync-for-local-search/), but applied at the wider entity level.
 
 ## A real audit should review more than SEO fundamentals
 
@@ -129,7 +129,7 @@ The stronger review looks at:
 | Competitive position | comparison against the businesses already owning high-intent queries | shows where authority and opportunity gaps actually are |
 | Underperformance and opportunity | weak pages, weak categories, thin content, missing assets, trust gaps | turns the audit into a roadmap instead of a diagnosis only |
 
-That is why this work fits [Local Visibility](/services/local-visibility), [Search Data Architecture](/services/search-data-architecture), [Custom Web Design](/services/custom-web-design), and [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up) at the same time.
+That is why this work fits [Local Visibility](/services/local-visibility/), [Search Data Architecture](/services/search-data-architecture/), [Custom Web Design](/services/custom-web-design/), and [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/) at the same time.
 
 ## Specific service and location pages still matter because they anchor intent
 
@@ -202,7 +202,7 @@ Then the work can sequence properly:
 
 That order matters because execution without diagnosis usually creates expensive motion without clear leverage.
 
-This is exactly why [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes) should be one of the site's strongest conversion-supporting pages.
+This is exactly why [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes/) should be one of the site's strongest conversion-supporting pages.
 
 ## What this report changes in the site architecture
 

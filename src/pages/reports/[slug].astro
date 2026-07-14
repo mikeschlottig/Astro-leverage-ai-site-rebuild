@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import AboutAuthor from "../../components/site/AboutAuthor.astro";
 import { getCollection, render } from "astro:content";
-import { articleGraph } from "../../lib/schema";
 
 type LinkCard = {
   href: string;
@@ -18,15 +18,29 @@ const { entry } = Astro.props;
 const renderedEntry = await render(entry);
 const { Content } = renderedEntry;
 const allServices = await getCollection("services");
+const allReports = await getCollection("reports");
 
 const relatedServices: LinkCard[] = entry.data.relatedServices.flatMap((slug) => {
   const service = allServices.find((candidate) => candidate.id === slug);
   return service
     ? [
         {
-          href: `/services/${service.id}`,
+          href: `/services/${service.id}/`,
           title: service.data.title,
           description: service.data.description,
+        },
+      ]
+    : [];
+});
+
+const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
+  const report = allReports.find((candidate) => candidate.id === slug && candidate.id !== entry.id);
+  return report
+    ? [
+        {
+          href: `/reports/${report.id}/`,
+          title: report.data.title,
+          description: report.data.description,
         },
       ]
     : [];
@@ -37,14 +51,17 @@ const relatedServices: LinkCard[] = entry.data.relatedServices.flatMap((slug) =>
   title={entry.data.title}
   description={entry.data.description}
   canonicalPath={`/reports/${entry.id}`}
-  schema={articleGraph(`/reports/${entry.id}`, entry.data.title, entry.data.description, entry.data.publishedAt.toISOString())}
+  pageType="article"
+  datePublished={entry.data.publishedAt.toISOString()}
+  dateModified={entry.data.updatedAt?.toISOString()}
+  articleSection="Reports"
 >
   <section class="section">
     <div class="shell stack">
       <div class="case-study-intro">
         <div class="stack">
           <p class="case-study-kicker">Report</p>
-          <h1>{entry.data.title}</h1>
+          <h1>{entry.data.heroTitle ?? entry.data.title}</h1>
         </div>
         <p>{entry.data.description}</p>
       </div>
@@ -79,16 +96,37 @@ const relatedServices: LinkCard[] = entry.data.relatedServices.flatMap((slug) =>
             </section>
           )}
 
+          {relatedReports.length > 0 && (
+            <section class="surface stack">
+              <p class="eyebrow">Continue The Research</p>
+              <h2>Build the operating context behind the numbers.</h2>
+              <div class="case-study-links">
+                {relatedReports.map((report) => (
+                  <a class="case-study-link-card" href={report.href}>
+                    <span>Related report</span>
+                    <strong>{report.title}</strong>
+                    <p>{report.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+
           <section class="surface stack">
             <p class="eyebrow">Next Step</p>
-            <h2>Use the report as diagnosis, not as detached reading.</h2>
+            <h2>Turn the research into a clearer next decision.</h2>
             <div class="button-row">
-              <a class="button primary" href="/pricing">Review the diagnostic path</a>
-              <a class="button secondary" href="/contact">Request a market review</a>
+              <a class="button primary" href="/pricing/">Review the diagnostic path</a>
+              <a class="button secondary" href="/contact/">Request a market review</a>
             </div>
           </section>
         </aside>
       </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell">
+      <AboutAuthor heading="Report author" />
     </div>
   </section>
 </BaseLayout>

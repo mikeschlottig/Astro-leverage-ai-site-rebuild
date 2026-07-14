@@ -7,7 +7,7 @@
   "vars": {
     "CONTACT_NOTIFICATION_EMAIL": "mike@leverageai.network",
     "CONTACT_FROM_EMAIL": "website@leverageai.network",
-    "PUBLIC_SITE_ORIGIN": "https://leverageai.network"
+    "PUBLIC_SITE_ORIGIN": "https://astro-leverage-ai-site-rebuild.ceo-a53.workers.dev"
   },
   "assets": {
     "directory": "./dist",
@@ -17,7 +17,9 @@
   "send_email": [
     {
       "name": "EMAIL",
-      "remote": true
+      "remote": true,
+      "destination_address": "mike@leverageai.network",
+      "allowed_sender_addresses": ["website@leverageai.network"]
     }
   ],
   "observability": {

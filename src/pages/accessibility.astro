@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../lib/site";
+---
+
+<BaseLayout
+  title="Accessibility"
+  description="Leverage AI's accessibility commitment and how to report a website access problem."
+  canonicalPath="/accessibility"
+>
+  <section class="section">
+    <article class="shell surface stack prose legal-page">
+      <p class="eyebrow">Last updated June 30, 2026</p>
+      <h1>Accessibility</h1>
+      <p>
+        Leverage AI wants this website to be usable by as many people as possible. The site is
+        designed toward WCAG 2.2 Level AA practices, including readable contrast, keyboard access,
+        visible focus, meaningful structure, alternative text, and reduced-motion support.
+      </p>
+
+      <h2>Known limitations</h2>
+      <p>
+        Live third-party website previews on case-study pages are controlled by their respective
+        site owners and may not match the accessibility behavior of leverageai.network. Every
+        preview is paired with a direct link and descriptive context.
+      </p>
+
+      <h2>Report a problem</h2>
+      <p>
+        If something prevents you from accessing information or completing an action, email
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Include the page address, the problem you
+        encountered, and the assistive technology or browser involved when you are comfortable
+        sharing it. We will work to provide the information in another format and address the issue.
+      </p>
+    </article>
+  </section>
+</BaseLayout>

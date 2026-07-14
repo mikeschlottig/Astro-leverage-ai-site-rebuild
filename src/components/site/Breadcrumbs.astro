@@ -1,0 +1,29 @@
+---
+import type { BreadcrumbItem } from "@leverageai/site-standard";
+
+type Props = {
+  items: readonly BreadcrumbItem[];
+};
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="shell">
+    <ol>
+      {items.map((item, index) => {
+        const isCurrentPage = index === items.length - 1;
+
+        return (
+          <li>
+            {isCurrentPage || item.url === undefined ? (
+              <span aria-current="page">{item.name}</span>
+            ) : (
+              <a href={item.url}>{item.name}</a>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</nav>

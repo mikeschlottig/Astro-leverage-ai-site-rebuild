@@ -51,9 +51,9 @@ That means businesses in those markets usually need:
 
 This maps directly to:
 
-- [Local Visibility Systems](/services/local-visibility)
-- [Custom Web Design](/services/custom-web-design)
-- [Search And Data Architecture](/services/search-data-architecture)
+- [Local Visibility Systems](/services/local-visibility/)
+- [Custom Web Design](/services/custom-web-design/)
+- [Search And Data Architecture](/services/search-data-architecture/)
 
 For these markets, trust often looks like evidence:
 
@@ -63,7 +63,7 @@ For these markets, trust often looks like evidence:
 - polished service pages
 - obvious professionalism
 
-The site should keep reflecting that on pages like [Bend](/locations/bend), [Corvallis](/locations/corvallis), and [Eugene](/locations/eugene).
+The site should keep reflecting that on pages like [Bend](/locations/bend/), [Corvallis](/locations/corvallis/), and [Eugene](/locations/eugene/).
 
 ## In Tier 3 markets, community trust changes the equation
 
@@ -86,11 +86,11 @@ That shifts the emphasis toward:
 
 In other words, the website still matters, but it needs to support the local reputation rather than try to replace it.
 
-That logic is especially important on pages like [Grants Pass](/locations/grants-pass), [Roseburg](/locations/roseburg), and [Klamath Falls](/locations/klamath-falls).
+That logic is especially important on pages like [Grants Pass](/locations/grants-pass/), [Roseburg](/locations/roseburg/), and [Klamath Falls](/locations/klamath-falls/).
 
 ## The search journey changes with the market
 
-One of the source document's most useful ideas is that the search path itself changes.
+The search path itself changes with the market.
 
 | Stage | Tier 2 pattern | Tier 3 pattern |
 | --- | --- | --- |
@@ -108,7 +108,7 @@ A city page that only tries to rank misses half of its job.
 
 ## Trust signals are not interchangeable either
 
-The source material is especially strong on the difference between urban digital trust and rural relational trust.
+Urban digital trust and rural relational trust depend on different signals.
 
 | Trust mode | Signals that matter most |
 | --- | --- |
@@ -135,8 +135,8 @@ This report strengthens several parts of the rebuild at once.
 
 ### For proof and authority
 
-- It gives the [Oregon SMB Directory](/portfolio/oregon-smb-directory) more strategic context.
-- It helps [Daley Organics](/portfolio/daley-organics) read as a market-fit proof asset, not just a one-off success story.
+- It gives the [Oregon SMB Directory](/portfolio/oregon-smb-directory/) more strategic context.
+- It helps [Daley Organics](/portfolio/daley-organics/) read as a market-fit proof asset, not just a one-off success story.
 
 ## The practical playbook
 
@@ -148,11 +148,11 @@ The site should keep teaching a simple rule:
 
 That is why this report belongs next to:
 
-- [locations](/locations)
-- [pricing](/pricing)
-- [Local Visibility Systems](/services/local-visibility)
-- [Custom Web Design](/services/custom-web-design)
-- [Oregon Market Intel And Infrastructure Report](/reports/oregon-market-intel-infrastructure-report)
+- [locations](/locations/)
+- [pricing](/pricing/)
+- [Local Visibility Systems](/services/local-visibility/)
+- [Custom Web Design](/services/custom-web-design/)
+- [Oregon Market Intel And Infrastructure Report](/reports/oregon-market-intel-infrastructure-report/)
 
 ## The takeaway
 

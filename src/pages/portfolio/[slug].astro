@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import AboutAuthor from "../../components/site/AboutAuthor.astro";
 import { getCollection, render } from "astro:content";
 import { locations } from "../../data/locations";
-import { articleGraph } from "../../lib/schema";
+import { getCaseStudyMedia } from "../../lib/case-study-media";
 
 type LinkCard = {
   kind: "Service" | "Report" | "Location";
@@ -25,7 +26,7 @@ const relatedServices: LinkCard[] = entry.data.services.flatMap((slug) => {
     ? [
         {
           kind: "Service",
-          href: `/services/${service.id}`,
+          href: `/services/${service.id}/`,
           title: service.data.title,
           description: service.data.description,
         },
@@ -39,7 +40,7 @@ const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
     ? [
         {
           kind: "Report",
-          href: `/reports/${report.id}`,
+          href: `/reports/${report.id}/`,
           title: report.data.title,
           description: report.data.description,
         },
@@ -53,7 +54,7 @@ const relatedLocationPages: LinkCard[] = entry.data.relatedLocations.flatMap((sl
     ? [
         {
           kind: "Location",
-          href: `/locations/${location.slug}`,
+          href: `/locations/${location.slug}/`,
           title: `${location.name} market page`,
           description: location.opportunity,
         },
@@ -68,6 +69,8 @@ const entryPath = `/portfolio/${entry.id}`;
 const flowHeadingId = `${entry.id}-flow`;
 const renderedEntry = entry.body?.trim() ? await render(entry) : null;
 const Content = renderedEntry?.Content;
+const media = getCaseStudyMedia(entry.id);
+const previews = media?.previews ?? [];
 const resultThemeClass =
   entry.data.outcomesCallout.theme === "ink"
     ? "case-study-callout case-study-callout--ink"
@@ -78,7 +81,9 @@ const resultThemeClass =
   title={entry.data.title}
   description={entry.data.description}
   canonicalPath={entryPath}
-  schema={articleGraph(entryPath, entry.data.title, entry.data.description)}
+  pageType="caseStudy"
+  articleSection="Case Studies"
+  aboutUrl={previews[0]?.href}
 >
   <section class="hero case-study-hero">
     <div class="shell stack">
@@ -98,7 +103,7 @@ const resultThemeClass =
                 Explore {primaryService.title}
               </a>
             )}
-            <a class="button secondary" href="/contact">Talk through your market</a>
+            <a class="button secondary" href="/contact/">Talk through your market</a>
           </div>
         </div>
         <aside class="case-study-sidecar">
@@ -131,10 +136,81 @@ const resultThemeClass =
           <h2>{entry.data.summary}</h2>
         </div>
         <p>
-          These pages are built as proof architecture, not brochure copy. Each section ties the business
-          problem back to the service system that fixed it.
+          Here is the problem we found, what we changed, and what became possible after the pieces
+          started working together.
         </p>
       </div>
+
+      {media && (
+        <section class="case-study-rich-media stack" aria-labelledby={`${entry.id}-media`}>
+          <div class="case-study-intro">
+            <div class="stack">
+              <p class="case-study-kicker">{media.gallery?.eyebrow ?? "Live Surface"}</p>
+              <h2 id={`${entry.id}-media`}>
+                {media.gallery?.title ?? `${entry.data.title} includes a live proof surface you can inspect.`}
+              </h2>
+            </div>
+            <p>
+              {media.gallery?.intro ??
+                "The live site matters because the case study is not theoretical. It points back to a real surface that buyers, crawlers, and local prospects can actually inspect."}
+            </p>
+          </div>
+
+          {previews.length > 0 && (
+            <div class="case-study-embed-grid">
+              {previews.map((preview, index) => (
+                <section class="case-study-embed surface">
+                  <div class="case-study-embed__copy stack">
+                    <p class="case-study-sidecar__label">{preview.label}</p>
+                    <h3>{index === 0 ? "See the live site tied to the outcome." : "See the supporting research surface."}</h3>
+                    <p>{preview.caption}</p>
+                    <div class="button-row">
+                      <a class="button primary" href={preview.href} target="_blank" rel="noreferrer">
+                        {index === 0 ? "Open live site" : "Open research page"}
+                      </a>
+                      {index === 0 ? (
+                        <a class="button secondary" href="/portfolio/">Back to portfolio</a>
+                      ) : (
+                        <a class="button secondary" href={previews[0]?.href} target="_blank" rel="noreferrer">
+                          Open main site
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <div class="case-study-embed__frame">
+                    <iframe
+                      src={preview.src}
+                      title={preview.title}
+                      loading="lazy"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                    ></iframe>
+                  </div>
+                </section>
+              ))}
+            </div>
+          )}
+
+          {media.gallery && (
+            <div class="case-study-gallery">
+              {media.gallery.items.map((item) => (
+                <figure class:list={["case-study-gallery__item", item.featured && "case-study-gallery__item--featured"]}>
+                  <img
+                    src={item.image.src}
+                    alt={item.alt}
+                    width={item.image.width}
+                    height={item.image.height}
+                    loading="lazy"
+                  />
+                  <figcaption class="stack">
+                    <strong>{item.title}</strong>
+                    <p>{item.caption}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
+        </section>
+      )}
 
       <div class="case-study-story-grid">
         <article class="case-study-story-block stack">
@@ -218,8 +294,9 @@ const resultThemeClass =
   <section class="section">
     <div class="shell split">
       <section class="surface stack">
-        <p class="eyebrow">System Links</p>
-        <h2>How this case study connects to the rest of the site.</h2>
+        <p class="eyebrow">Explore The Approach</p>
+        <h2>See the work behind this result.</h2>
+        <p>Explore the services, research, and local market context that shaped the approach.</p>
         <div class="case-study-links">
           {systemLinks.map((link) => (
             <a class="case-study-link-card" href={link.href}>
@@ -237,13 +314,13 @@ const resultThemeClass =
           {entry.data.results.map((result) => <li>{result}</li>)}
         </ul>
         <div class="button-row">
-          <a class="button primary" href="/portfolio">See more proof</a>
+          <a class="button primary" href="/portfolio/">See more proof</a>
           {primaryReport ? (
             <a class="button secondary" href={primaryReport.href}>
               Read {primaryReport.title}
             </a>
           ) : (
-            <a class="button secondary" href="/reports">Read supporting reports</a>
+            <a class="button secondary" href="/reports/">Read supporting reports</a>
           )}
         </div>
       </aside>
@@ -257,21 +334,26 @@ const resultThemeClass =
           <p class="eyebrow">Next Step</p>
           <h2>Want this level of clarity applied to your market?</h2>
           <p>
-            The value is not in a flashy deliverable. It is in building the right visibility,
-            trust, response, and measurement system for how your business actually wins work.
+            Your version will not look exactly like this one, and it should not. The goal is to find
+            what keeps your business from winning more of the right work, then build around that reality.
           </p>
         </div>
         <div class="button-row">
-          <a class="button primary" href="/contact">Request a market review</a>
+          <a class="button primary" href="/contact/">Request a market review</a>
           {primaryService ? (
             <a class="button secondary" href={primaryService.href}>
               Review the service system
             </a>
           ) : (
-            <a class="button secondary" href="/services">Review the service system</a>
+            <a class="button secondary" href="/services/">Review the service system</a>
           )}
         </div>
       </section>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell">
+      <AboutAuthor heading="Case study author" />
     </div>
   </section>
 </BaseLayout>

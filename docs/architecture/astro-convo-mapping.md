@@ -101,7 +101,7 @@ The convo treats blog posts, reports, and knowledge-base content as first-class:
 | Blog | Authority-building editorial inventory | `src/content/blog/*` and `src/layouts/BlogPostLayout.astro` |
 | Knowledge base | Durable explainers and educational support | `src/content/knowledge-base/*` and `src/pages/knowledge-base/[slug].astro` |
 | Contact flow | Workers-based form routing and validation | `worker/contact.ts` plus `src/components/contact/ContactForm.astro` |
-| Schema | Entity-rich JSON-LD across services, articles, and local business | `src/lib/schema.ts` |
+| Schema | Entity-rich JSON-LD across services, articles, and local business | `packages/site-standard/src/schema/*` through `src/layouts/BaseLayout.astro` |
 
 ## Locked vs Open
 

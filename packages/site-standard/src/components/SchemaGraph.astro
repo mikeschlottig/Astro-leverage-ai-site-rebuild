@@ -1,0 +1,26 @@
+---
+/**
+ * SchemaGraph — renders the page's JSON-LD @graph.
+ * Fixes audit finding N1 (schema only on homepage). One component, driven by
+ * PageMeta.type; the graph is always self-contained (Organization + Person +
+ * WebSite ship on every page with stable @ids).
+ *
+ * The serialized JSON is escaped for safe embedding inside a <script> element
+ * ("</script>" and HTML comment sequences cannot terminate the block).
+ */
+import { buildGraph } from '../schema/graph.js';
+import type { PageMeta, SiteIdentity } from '../types/index.js';
+
+interface Props {
+  readonly identity: SiteIdentity;
+  readonly page: PageMeta;
+}
+
+const { identity, page } = Astro.props as Props;
+
+const json = JSON.stringify(buildGraph(identity, page))
+  .replace(/</g, '\\u003c')
+  .replace(/>/g, '\\u003e')
+  .replace(/&/g, '\\u0026');
+---
+<script is:inline type="application/ld+json" set:html={json} />

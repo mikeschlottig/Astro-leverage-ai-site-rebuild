@@ -79,12 +79,12 @@ A stronger location system usually comes from better architecture choices, not m
 
 That can mean:
 
-- a stronger [locations](/locations) hub with clearer market tiers
+- a stronger [locations](/locations/) hub with clearer market tiers
 - city pages only where the business can support them with real relevance
 - tighter links between location pages, service pages, and proof surfaces
 - cleaner separation between broad service-area claims and city-specific positioning
 
-This is also why [Local Visibility](/services/local-visibility) and [Search Data Architecture](/services/search-data-architecture) belong in the same conversation.
+This is also why [Local Visibility](/services/local-visibility/) and [Search Data Architecture](/services/search-data-architecture/) belong in the same conversation.
 
 The issue is not only what gets published. It is whether the published structure makes sense.
 
@@ -103,7 +103,7 @@ That often means:
 
 The strongest example on this site is not raw page count. It is the logic behind how proof, services, reports, and location signals support each other.
 
-That is also why [Oregon SMB Directory](/portfolio/oregon-smb-directory) matters as a proof surface for local architecture, not just as a portfolio entry.
+That is also why [Oregon SMB Directory](/portfolio/oregon-smb-directory/) matters as a proof surface for local architecture, not just as a portfolio entry.
 
 ## Why the next step is diagnosis before expansion
 
@@ -121,6 +121,6 @@ It might be:
 - weak site structure
 - weak visibility in the markets that matter most
 
-That is why the safest next move is often [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes), not an automatic local-page expansion project.
+That is why the safest next move is often [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes/), not an automatic local-page expansion project.
 
 The right architecture should come from market truth, not from page-count ambition.

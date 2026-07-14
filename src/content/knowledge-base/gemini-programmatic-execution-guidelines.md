@@ -1,21 +1,17 @@
 ---
-title: Gemini Programmatic Execution Guidelines
-description: A branded technical guide to where programmatic Gemini workflows actually help with content, schema, GEO, and validation work.
+title: How We Use AI Automation Without Handing It The Keys
+description: How controlled AI workflows can speed up research and technical work without risking customer data, publishing errors, or unreviewed changes.
 publishedAt: 2026-06-27
 relatedServices:
   - custom-web-design
   - search-data-architecture
 ---
 
-Programmatic Gemini usage only becomes valuable when it is attached to a real operating job.
-
-That is the most useful lesson from the source guide.
-
-For a service-business growth system, the question is not whether Gemini is impressive in the abstract. The question is whether it can help produce cleaner content, stronger structured data, more reliable validation, and faster execution without letting quality drift into automation theater.
+Automation can make research, content operations, and technical maintenance faster. It can also create expensive mistakes when access, review, and rollback are treated as afterthoughts. This guide explains the controls we use before an automated system is allowed to touch live business data or public content.
 
 ## Where it actually belongs
 
-On this site, Gemini belongs inside the [Search & Data Architecture](/services/search-data-architecture) layer first.
+In client work, AI automation belongs inside the [Search & Data Architecture](/services/search-data-architecture/) layer first.
 
 That is because the highest-value uses are structured and repeatable:
 
@@ -69,7 +65,7 @@ That is most useful for tasks like:
 - generating first-pass FAQ candidates that still need local grounding
 - helping shape answer-first sections for pages that support AI-assisted search
 
-This only works when it is paired with the logic described in [How To Create GEO-Optimized Content For AI Search And Local SEO](/knowledge-base/how-to-create-geo-optimized-content-for-ai-search-and-local-seo). The model should support the system, not replace the local reasoning.
+This only works when it is paired with the logic described in [How To Create GEO-Optimized Content For AI Search And Local SEO](/knowledge-base/how-to-create-geo-optimized-content-for-ai-search-and-local-seo/). The model should support the system, not replace the local reasoning.
 
 ### Structured data and snippet support
 
@@ -144,9 +140,9 @@ Programmatic Gemini use belongs here when it helps the business do one of four t
 
 That is why this guide should sit beside:
 
-- [Search & Data Architecture](/services/search-data-architecture)
-- [How To Create GEO-Optimized Content For AI Search And Local SEO](/knowledge-base/how-to-create-geo-optimized-content-for-ai-search-and-local-seo)
-- [How To Use Google Trends And Search Operators For Local Competitive Research](/knowledge-base/how-to-use-google-trends-and-search-operators-for-local-competitive-research)
+- [Search & Data Architecture](/services/search-data-architecture/)
+- [How To Create GEO-Optimized Content For AI Search And Local SEO](/knowledge-base/how-to-create-geo-optimized-content-for-ai-search-and-local-seo/)
+- [How To Use Google Trends And Search Operators For Local Competitive Research](/knowledge-base/how-to-use-google-trends-and-search-operators-for-local-competitive-research/)
 
 The bigger point is not "use Gemini everywhere."
 
@@ -154,4 +150,4 @@ It is:
 
 > use programmatic model execution where structure, validation, and repeatability matter more than novelty
 
-If that layer is missing, the [diagnostic audit](/contact) is the right place to decide whether the business needs stronger architecture before it needs more automation.
+If that layer is missing, the [diagnostic audit](/contact/) is the right place to decide whether the business needs stronger architecture before it needs more automation.
