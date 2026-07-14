@@ -30,7 +30,8 @@ export default defineConfig({
 ```
 
 Internal links must use trailing slashes. The canonical guard fails the build
-if any rendered canonical disagrees with `SITE_URL + route + '/'`.
+if any rendered canonical disagrees with `SITE_URL + route + '/'`; the internal-link
+guard fails if a rendered page link omits the slash or points at a route absent from `dist/`.
 
 ## Usage
 
@@ -115,13 +116,14 @@ Both rows: 301, query preserved, subpath matching + path suffix ON — so
 
 ## CI guards
 
-`ci/site-standard.yml` builds, then runs the three guards against `dist/`:
+`ci/site-standard.yml` builds, then runs the four guards against `dist/`:
 
 | Guard | Fails when | Closes |
 |---|---|---|
 | `lint-banned-phrases` | drafting language ("the reference pages", "per the brief", TODO/lorem) in rendered HTML | N2 |
 | `validate-canonicals` | canonical missing, on www, or not exactly `SITE_URL + route + '/'` | N4 / invariant #2 |
 | `validate-schema` | any indexable page with no parseable JSON-LD containing an Organization node | N1 |
+| `validate-internal-links` | an internal page link omits its trailing slash or points at a route absent from `dist/` | Route integrity |
 
 Run locally: `SITE_URL=https://leverageai.network node scripts/validate-canonicals.mjs dist`.
 

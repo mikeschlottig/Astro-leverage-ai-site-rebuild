@@ -21,7 +21,8 @@
     "guard:phrases": "node scripts/lint-banned-phrases.mjs",
     "guard:canonicals": "node scripts/validate-canonicals.mjs",
     "guard:schema": "node scripts/validate-schema.mjs",
-    "guard:all": "node scripts/lint-banned-phrases.mjs && node scripts/validate-canonicals.mjs && node scripts/validate-schema.mjs"
+    "guard:links": "node scripts/validate-internal-links.mjs",
+    "guard:all": "node scripts/lint-banned-phrases.mjs && node scripts/validate-canonicals.mjs && node scripts/validate-schema.mjs && node scripts/validate-internal-links.mjs"
   },
   "peerDependencies": {
     "astro": ">=6.0.0"

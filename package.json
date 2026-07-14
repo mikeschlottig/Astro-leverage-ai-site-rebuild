@@ -15,7 +15,8 @@
     "guard:phrases": "node packages/site-standard/scripts/lint-banned-phrases.mjs dist",
     "guard:canonicals": "node packages/site-standard/scripts/validate-canonicals.mjs dist",
     "guard:schema": "node packages/site-standard/scripts/validate-schema.mjs dist",
-    "guard:site-standard": "pnpm guard:phrases && pnpm guard:canonicals && pnpm guard:schema",
+    "guard:links": "node packages/site-standard/scripts/validate-internal-links.mjs dist",
+    "guard:site-standard": "pnpm guard:phrases && pnpm guard:canonicals && pnpm guard:schema && pnpm guard:links",
     "verify": "pnpm check && pnpm build && pnpm guard:site-standard"
   },
   "dependencies": {

@@ -6,8 +6,8 @@ const { entry } = Astro.props as { entry: CollectionEntry<"caseStudies"> };
 
 const media = getCaseStudyMedia(entry.id);
 const preview = media?.previews?.[0];
-const caseStudyHref = `/portfolio/${entry.id}`;
-const relatedServiceHref = entry.data.services[0] ? `/services/${entry.data.services[0]}` : null;
+const caseStudyHref = `/portfolio/${entry.id}/`;
+const relatedServiceHref = entry.data.services[0] ? `/services/${entry.data.services[0]}/` : null;
 ---
 
 <article class="case-study-preview-card stack">
