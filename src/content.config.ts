@@ -105,6 +105,7 @@ const reports = defineCollection({
     updatedAt: z.coerce.date().optional(),
     tldr: z.array(z.string()).default([]),
     relatedServices: z.array(z.string()).default([]),
+    relatedReports: z.array(z.string()).default([]),
   }),
 });
 
