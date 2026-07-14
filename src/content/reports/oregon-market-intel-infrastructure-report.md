@@ -22,7 +22,7 @@ The most useful part of this report is its framing. A service business does not 
 2. The website does not communicate enough trust fast enough, so good prospects hesitate.
 3. Lead response is slow, so the best opportunities go to whoever answers first.
 
-That is why this site keeps treating the website as infrastructure rather than decoration. The public surface, the schema layer, the citation layer, and the response layer have to reinforce each other.
+That is why the website has to function as infrastructure rather than decoration. What customers see, what search systems understand, and what happens after an inquiry all have to reinforce each other.
 
 > A small lift in a vanity metric does not matter if the underlying conversion system is still leaking. The system has to be rebuilt as one machine.
 
@@ -30,11 +30,11 @@ That is why this site keeps treating the website as infrastructure rather than d
 
 ### 1. The map-pack blindspot
 
-If a business is invisible in the exact service area where the buyer is searching, the best website in the world cannot help. This is the role of [local visibility systems](/services/local-visibility): Google Business Profile alignment, service-area relevance, structured schema, and market-specific authority signals.
+If a business is invisible in the exact service area where the buyer is searching, the best website in the world cannot help. This is the role of [local visibility systems](/services/local-visibility/): Google Business Profile alignment, service-area relevance, structured schema, and market-specific authority signals.
 
 ### 2. The trust deficit
 
-Slow, bloated, generic websites repel serious buyers before a conversation starts. This is the role of [custom web design](/services/custom-web-design): faster surfaces, better hierarchy, clearer service proof, and a site that feels credible in the first ten seconds.
+Slow, bloated, generic websites repel serious buyers before a conversation starts. This is the role of [custom web design](/services/custom-web-design/): faster surfaces, better hierarchy, clearer service proof, and a site that feels credible in the first ten seconds.
 
 ### 3. The response gap
 
@@ -42,13 +42,13 @@ The report's speed-to-lead section is too important to bury. Missed calls and de
 
 ## Lead value decays fast
 
-The source report's core conversion argument maps directly to the site's existing research cluster:
+The conversion evidence points to a simple pattern:
 
 - Contact inside one minute: strongest lift in qualification and conversion likelihood.
 - The five-minute cliff: dramatic drop in lead value after even a short delay.
 - Beyond that point: every minute starts compounding against the business.
 
-This is why the response layer should connect back to [Why Speed Wins](/reports/why-speed-wins) and the operational service stack, not live as an afterthought.
+This is why the response layer should connect back to [Why Speed Wins](/reports/why-speed-wins/) and the operational service stack, not live as an afterthought.
 
 ## Traditional agency model versus system architecture
 
@@ -69,22 +69,22 @@ One of the most reusable ideas in the PDF is the closed-loop system model. It al
 
 | Layer | Site cluster | What it does |
 | --- | --- | --- |
-| Presence | [Local Visibility](/services/local-visibility) | Wins map intent, branded search, and service-area discoverability |
-| Quality | [Custom Web Design](/services/custom-web-design) | Converts attention into trust and action |
-| Capture | [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up) | Reduces reply lag and missed-opportunity leakage |
-| Measurement | [Search And Data Architecture](/services/search-data-architecture) | Maps outcomes back to revenue, not impressions |
+| Presence | [Local Visibility](/services/local-visibility/) | Wins map intent, branded search, and service-area discoverability |
+| Quality | [Custom Web Design](/services/custom-web-design/) | Converts attention into trust and action |
+| Capture | [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/) | Reduces reply lag and missed-opportunity leakage |
+| Measurement | [Search And Data Architecture](/services/search-data-architecture/) | Maps outcomes back to revenue, not impressions |
 
 The insight here is simple: none of those layers should be sold or built in isolation.
 
 ## Oregon is not one market
 
-The market-opportunity portion of the PDF is valuable because it breaks the lazy statewide story. Oregon markets behave differently, and the site should keep reinforcing that through location pages and city clusters.
+The market data breaks the lazy statewide story. Oregon markets behave differently, and investment should follow the conditions in the city a business actually needs to win.
 
 | Tier | Markets | Interpretation |
 | --- | --- | --- |
-| Tier 1: high opportunity | [Bend](/locations/bend), [Grants Pass](/locations/grants-pass) | Strong asymmetry, strong upside, and room for better local systems |
-| Tier 2: stable demand | [Corvallis](/locations/corvallis), [Roseburg](/locations/roseburg) | Predictable demand and moderate competition |
-| Tier 3: saturated | [Portland](/locations/portland), [Eugene](/locations/eugene), [Medford](/locations/medford) | Requires sharper differentiation and hyper-local specialization |
+| Tier 1: high opportunity | [Bend](/locations/bend/), [Grants Pass](/locations/grants-pass/) | Strong asymmetry, strong upside, and room for better local systems |
+| Tier 2: stable demand | [Corvallis](/locations/corvallis/), [Roseburg](/locations/roseburg/) | Predictable demand and moderate competition |
+| Tier 3: saturated | [Portland](/locations/portland/), [Eugene](/locations/eugene/), [Medford](/locations/medford/) | Requires sharper differentiation and hyper-local specialization |
 
 Generic agencies apply Portland tactics to Southern Oregon and then wonder why the economics do not hold. These location clusters should continue to explain the local differences explicitly.
 
@@ -96,17 +96,17 @@ The Daley Organics section in the PDF reinforces the same lesson as the dedicate
 - Fixed through Google Business Profile alignment, local schema, and entity cleanup
 - Verified number-one branded visibility and top-three category visibility
 
-That story already has its best home at [Daley Organics](/portfolio/daley-organics), but the report gives it a supporting role inside a broader operating argument.
+That story already has its best home at [Daley Organics](/portfolio/daley-organics/), but the report gives it a supporting role inside a broader operating argument.
 
 ## Foundational infrastructure can bypass national paywalls
 
-The Oregon SMB Directory section is another strong fit for the site's proof architecture. It explains why a regional authority asset matters and why it should point back into client sites rather than extract value from them.
+The Oregon SMB Directory shows why a regional authority asset matters: it can strengthen discovery, citations, and trust while directing value back to the local businesses it represents.
 
 That belongs in the report because it connects:
 
 - the authority-building argument
 - the internal-link and citation strategy
-- the supporting proof surface at [Oregon SMB Directory](/portfolio/oregon-smb-directory)
+- the supporting proof surface at [Oregon SMB Directory](/portfolio/oregon-smb-directory/)
 
 ## Pricing should feel like infrastructure, not a retainer trap
 
@@ -117,19 +117,19 @@ The pricing spreads in the PDF are useful as messaging inputs more than literal 
 - keep ongoing adaptation explicit and bounded
 - remove long-term lock-in as a default expectation
 
-That language should continue feeding [pricing](/pricing) and the contact funnel, but in the site's darker premium system rather than as boxed slideware.
+That is the logic behind [diagnostic-first pricing](/pricing/): verify the highest-cost constraint before paying to implement a larger system.
 
-## What this report should do on the site
+## Turn the findings into a practical next step
 
 This report is best used as a cluster anchor, not as a standalone dead-end PDF rewrite. It should keep linking outward to:
 
-- [Local Visibility](/services/local-visibility)
-- [Custom Web Design](/services/custom-web-design)
-- [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up)
-- [Search And Data Architecture](/services/search-data-architecture)
-- [Why Speed Wins](/reports/why-speed-wins)
-- [Daley Organics](/portfolio/daley-organics)
-- [Oregon SMB Directory](/portfolio/oregon-smb-directory)
-- the relevant [location pages](/locations)
+- [Local Visibility](/services/local-visibility/)
+- [Custom Web Design](/services/custom-web-design/)
+- [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/)
+- [Search And Data Architecture](/services/search-data-architecture/)
+- [Why Speed Wins](/reports/why-speed-wins/)
+- [Daley Organics](/portfolio/daley-organics/)
+- [Oregon SMB Directory](/portfolio/oregon-smb-directory/)
+- the relevant [location pages](/locations/)
 
-That is the right role for it in the hierarchy: not a detached asset, but a strong report that makes the rest of the site easier to understand.
+Use the findings to compare local opportunity, choose the right first intervention, and avoid paying for tactics your market does not need.

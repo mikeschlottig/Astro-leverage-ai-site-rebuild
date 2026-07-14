@@ -13,6 +13,7 @@ services:
   - custom-web-design
   - search-data-architecture
 relatedReports:
+  - how-the-google-local-pack-really-works
   - why-speed-wins
 relatedLocations:
   - grants-pass

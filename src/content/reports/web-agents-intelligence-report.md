@@ -1,6 +1,6 @@
 ---
 title: Web Agents Intelligence Report
-description: What the current browser-agent landscape actually means for repeatable research, automation, and authority-building systems.
+description: What AI-assisted browsing means for business research, automation reliability, and the public information customers use to make decisions.
 publishedAt: 2026-06-27
 tldr:
   - "The web-agents market is growing fast, but general-purpose autonomous browsing is still less reliable than the hype suggests."
@@ -11,9 +11,9 @@ relatedServices:
   - search-data-architecture
 ---
 
-## What this report is really tracking
+## Customers are beginning to research businesses through AI
 
-The source report surveys a large browser-agent ecosystem: 102 tools across 8 categories, from autonomous agents and computer-use systems to browser infrastructure, scraping tools, and benchmarking projects.
+Customers increasingly use AI assistants and automated research tools to compare businesses before visiting a website or making contact. Behind that shift is a large browser-agent ecosystem: autonomous agents, computer-use systems, browser infrastructure, scraping tools, and benchmarking projects.
 
 That breadth matters, but the most important takeaway is not the tool count.
 
@@ -52,7 +52,7 @@ Services like browser sandboxes, remote session APIs, tracing layers, and agent 
 - not as a one-off script
 - but as infrastructure that needs reliability, visibility, and cost control
 
-For Leverage AI, that is useful because it lines up with the same system-first thinking used across the rest of the site. The public brand surface should stay premium and readable. The automation layer underneath should stay observable and tightly scoped.
+For a service business, the principle is straightforward: public information should stay clear and readable, while any automation behind it stays observable, tightly scoped, and reviewable.
 
 ## The reliability ceiling is still real
 
@@ -75,7 +75,7 @@ It is:
 
 That is the more grounded question, and it produces better systems.
 
-## Where the real leverage is for this site
+## Where the real business leverage is
 
 The most useful applications are not grand autonomous-agent narratives. They are defined, instrumented jobs.
 
@@ -93,7 +93,7 @@ Those are strong fits because they are:
 - valuable enough to repeat
 - structured enough to measure
 
-That makes them more aligned with [Search & Data Architecture](/services/search-data-architecture) than with generic AI theater.
+That makes them more aligned with [Search & Data Architecture](/services/search-data-architecture/) than with generic AI theater.
 
 ## What this means for Oregon service businesses
 
@@ -134,14 +134,14 @@ Logs, screenshots, extracted fields, and validation traces matter. They make the
 
 If the browser automation does not improve visibility research, authority-building, or the speed of a repeatable internal process, it probably does not deserve production priority.
 
-## How this connects to the rest of the site
+## What to improve first
 
 This report is most useful when read alongside:
 
-- [Custom Web Design](/services/custom-web-design), because the public site still has to be readable and stable enough to support automation around it
-- [Search & Data Architecture](/services/search-data-architecture), because extracted signals and repeated checks need a system to land in
-- [pricing](/pricing), because the diagnostic audit should reveal whether automation support is justified or premature
-- [contact](/contact), because the next move should be diagnosis, not passive reading
+- [Custom Web Design](/services/custom-web-design/), because the public site still has to be readable and stable enough to support automation around it
+- [Search & Data Architecture](/services/search-data-architecture/), because extracted signals and repeated checks need a system to land in
+- [pricing](/pricing/), because the diagnostic audit should reveal whether automation support is justified or premature
+- [contact](/contact/), because the next move should be diagnosis, not passive reading
 
 ## Bottom line
 

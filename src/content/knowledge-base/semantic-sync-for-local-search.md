@@ -33,7 +33,7 @@ That includes:
 
 If the profile says you are a contractor serving Medford and Grants Pass, but the website is vague, generic, or built around different service language, the system becomes harder to trust.
 
-That is why [Local Visibility](/services/local-visibility) and [Search Data Architecture](/services/search-data-architecture) should be treated as one system rather than two disconnected tasks.
+That is why [Local Visibility](/services/local-visibility/) and [Search Data Architecture](/services/search-data-architecture/) should be treated as one system rather than two disconnected tasks.
 
 ## Why does this matter more now than it used to?
 
@@ -96,7 +96,7 @@ For most service businesses, the baseline system looks like this:
 - reviews and proof embedded where they support the claim being made
 - LocalBusiness, Service, and FAQ-aware structured data where relevant
 
-That is the kind of structure a stronger [Custom Web Design](/services/custom-web-design) build should support by default.
+That is the kind of structure a stronger [Custom Web Design](/services/custom-web-design/) build should support by default.
 
 ## Where do most businesses break semantic sync?
 
@@ -133,7 +133,7 @@ That means the strongest follow-on pages are usually:
 - location-specific trust and demand analyses
 - reports that explain why certain local signals matter financially
 
-This is also why [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes) matters. Diagnosis is often what reveals where the semantic disconnect is happening.
+This is also why [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes/) matters. Diagnosis is often what reveals where the semantic disconnect is happening.
 
 ## What are the best next pages to add from here?
 

@@ -22,7 +22,7 @@ For a local service business, Google Business Profile optimization and website s
 
 That is why this work should be treated as a full evaluation, not just an SEO pass.
 
-If you want the narrower first-step version of this process, start with [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes). If you already know the goal is a deeper evaluation before bigger implementation, this page explains what the broader audit should actually review.
+If you want the narrower first-step version of this process, start with [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes/). If you already know the goal is a deeper evaluation before bigger implementation, this page explains what the broader audit should actually review.
 
 ## The point is not more data. The point is better judgment.
 
@@ -58,7 +58,7 @@ Those issues are easy to dismiss one by one. Together, they make the entity less
 
 That matters because the real competitive advantage is not only ranking higher. It is becoming easier for systems and people to recognize the business as the trusted answer.
 
-The site's own report on [Entity Strength And AI Search Visibility For Local Service Businesses](/reports/entity-strength-and-ai-search-visibility-for-local-service-businesses) is built around that broader idea of entity clarity and authority.
+The site's own report on [Entity Strength And AI Search Visibility For Local Service Businesses](/reports/entity-strength-and-ai-search-visibility-for-local-service-businesses/) is built around that broader idea of entity clarity and authority.
 
 ## The trust surface matters as much as the traffic surface
 
@@ -74,7 +74,7 @@ That is why the audit should look beyond rankings and profile completeness into 
 
 This is also where the audit begins to separate a shallow lead-generation problem from a deeper trust problem.
 
-If the business wants to strengthen the visibility layer itself, [Local Visibility Systems](/services/local-visibility) is part of that path. If the issue is that structure, semantics, and entity clarity are weak underneath the surface, [Search And Data Architecture](/services/search-data-architecture) becomes the more important lever.
+If the business wants to strengthen the visibility layer itself, [Local Visibility Systems](/services/local-visibility/) is part of that path. If the issue is that structure, semantics, and entity clarity are weak underneath the surface, [Search And Data Architecture](/services/search-data-architecture/) becomes the more important lever.
 
 ## Response handling belongs inside the audit, not outside it
 
@@ -126,7 +126,7 @@ The audit should usually come first when:
 - leads exist, but response speed or follow-up quality is inconsistent
 - the owner is considering a rebuild, content expansion, or AI workflow spend without a grounded diagnosis
 
-This is why the site frames the audit as a decision-making step on [Pricing](/pricing), not as an optional add-on after implementation begins.
+This is why the site frames the audit as a decision-making step on [Pricing](/pricing/), not as an optional add-on after implementation begins.
 
 ## What this audit is really for
 
@@ -152,7 +152,7 @@ If the goal is to understand how the business is being interpreted across search
 
 That broader lens is what makes the next step cleaner. It reduces wasted spend, improves scope decisions, and gives the business a more defensible foundation before execution starts.
 
-If that is the level of clarity you need, review the options on [Pricing](/pricing), explore the related service paths in [Local Visibility Systems](/services/local-visibility) and [Search And Data Architecture](/services/search-data-architecture), or [get in touch](/contact) to start the conversation.
+If that is the level of clarity you need, review the options on [Pricing](/pricing/), explore the related service paths in [Local Visibility Systems](/services/local-visibility/) and [Search And Data Architecture](/services/search-data-architecture/), or [get in touch](/contact/) to start the conversation.
 
 ## Sources And Further Reading
 

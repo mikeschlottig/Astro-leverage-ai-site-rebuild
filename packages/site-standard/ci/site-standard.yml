@@ -1,0 +1,34 @@
+# Reusable job block — copy into each property's workflow (or `uses:` it as a
+# composite). Closes audit findings N1/N2/N4 (network) and R1/R2-adjacent
+# guards (directory) at the CI gate, per the ARCHITECTURE-INVARIANT.
+#
+# Repo requirements:
+#   • SITE_URL set per repo (apex, no trailing slash)
+#   • bun as runtime (LEVERAGEAI standard)
+name: site-standard-guards
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-guard:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: https://leverageai.network   # ← per-repo: apex origin, no trailing slash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - name: Install
+        run: bun install --frozen-lockfile
+      - name: Typecheck
+        run: bunx astro check && bunx tsc --noEmit
+      - name: Build
+        run: bunx astro build
+      - name: "Guard: banned phrases"
+        run: node node_modules/@leverageai/site-standard/scripts/lint-banned-phrases.mjs dist
+      - name: "Guard: canonicals"
+        run: node node_modules/@leverageai/site-standard/scripts/validate-canonicals.mjs dist
+      - name: "Guard: schema presence"
+        run: node node_modules/@leverageai/site-standard/scripts/validate-schema.mjs dist

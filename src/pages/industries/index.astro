@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { webpageGraph } from "../../lib/schema";
 
 const industries = await getCollection("industries");
 ---
@@ -9,17 +8,26 @@ const industries = await getCollection("industries");
 <BaseLayout
   title="Industries"
   description="Industry-specific pages grounded in local demand, trust signals, and response-time economics."
-  schema={webpageGraph("/industries", "Industries", "Industry-specific pages grounded in local demand, trust signals, and response-time economics.")}
 >
   <section class="section">
-    <div class="shell grid">
-      {industries.map((entry) => (
-        <article class="surface stack">
-          <h1>{entry.data.title}</h1>
-          <p>{entry.data.description}</p>
-          <a href={`/industries/${entry.id}`}>Open industry page</a>
-        </article>
-      ))}
+    <div class="shell stack">
+      <div class="surface stack">
+        <h1>Different service businesses lose demand in different places.</h1>
+        <p>
+          A contractor, clinic, professional firm, and home-service company may compete in the same
+          city but face very different trust gaps, search behavior, and lead values. Start with the
+          industry closest to yours.
+        </p>
+      </div>
+      <div class="grid">
+        {industries.map((entry) => (
+          <article class="surface stack">
+            <h2>{entry.data.title}</h2>
+            <p>{entry.data.description}</p>
+            <a href={`/industries/${entry.id}/`}>Explore local service strategy</a>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>

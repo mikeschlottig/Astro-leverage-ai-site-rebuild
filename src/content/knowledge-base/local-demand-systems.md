@@ -42,7 +42,7 @@ When this layer is weak, the symptoms usually look like:
 - nearby cities are technically mentioned without creating much local relevance
 - competitors with weaker work quality still get seen first
 
-This is the layer most directly supported by [Local Visibility Systems](/services/local-visibility). But it is not just a rankings question. It is also an entity-clarity and market-legibility question.
+This is the layer most directly supported by [Local Visibility Systems](/services/local-visibility/). But it is not just a rankings question. It is also an entity-clarity and market-legibility question.
 
 ## Trust
 
@@ -63,7 +63,7 @@ That often shows up as:
 - design that feels cheaper than the real quality of the work
 - pages that never make the market context feel believable
 
-This is why [Custom Web Design](/services/custom-web-design) matters as infrastructure, not decoration. A site has to help the buyer move from curiosity to confidence fast enough that the rest of the system has something to work with.
+This is why [Custom Web Design](/services/custom-web-design/) matters as infrastructure, not decoration. A site has to help the buyer move from curiosity to confidence fast enough that the rest of the system has something to work with.
 
 ## Conversion paths
 
@@ -85,7 +85,7 @@ That usually looks like:
 - forms that ask too little or too much
 - mobile contact experiences that make the simplest action harder than it should be
 
-Conversion path problems often sit between [Custom Web Design](/services/custom-web-design) and [Lead Capture & AI Follow-Up](/services/lead-capture-ai-follow-up). One makes the action feel obvious. The other makes sure the action does not die after it happens.
+Conversion path problems often sit between [Custom Web Design](/services/custom-web-design/) and [Lead Capture & AI Follow-Up](/services/lead-capture-ai-follow-up/). One makes the action feel obvious. The other makes sure the action does not die after it happens.
 
 ## Response infrastructure
 
@@ -108,7 +108,7 @@ That usually means:
 - missed calls quietly turn into lost revenue
 - there is no clear process separating serious inquiries from low-fit noise
 
-This is why [Lead Capture & AI Follow-Up](/services/lead-capture-ai-follow-up) belongs inside the public service stack. It is not there to sound modern. It is there because speed to lead is often where otherwise good marketing quietly fails.
+This is why [Lead Capture & AI Follow-Up](/services/lead-capture-ai-follow-up/) belongs inside the public service stack. It is not there to sound modern. It is there because speed to lead is often where otherwise good marketing quietly fails.
 
 ## Measurement
 
@@ -128,7 +128,7 @@ When measurement is weak, the business gets stuck in opinion loops:
 - reporting focuses on vanity instead of business movement
 - nobody can tell whether the problem is visibility, trust, response, or all three
 
-This is where [Search & Data Architecture](/services/search-data-architecture) becomes essential. It is the layer that ties visibility, proof, structure, and conversion signals back to evidence.
+This is where [Search & Data Architecture](/services/search-data-architecture/) becomes essential. It is the layer that ties visibility, proof, structure, and conversion signals back to evidence.
 
 ## Why the pillars have to connect
 
@@ -153,6 +153,6 @@ It is:
 
 > Which layer is breaking the chain between demand and booked work right now?
 
-That is the point of the [diagnostic audit](/knowledge-base/what-the-diagnostic-audit-includes). It helps separate a visibility problem from a trust problem, a trust problem from a response problem, and a response problem from a measurement problem.
+That is the point of the [diagnostic audit](/knowledge-base/what-the-diagnostic-audit-includes/). It helps separate a visibility problem from a trust problem, a trust problem from a response problem, and a response problem from a measurement problem.
 
-If you need that answered before deciding on implementation, the next move is to [request the diagnostic audit](/contact).
+If you need that answered before deciding on implementation, the next move is to [request the diagnostic audit](/contact/).

@@ -23,7 +23,7 @@ Not because the work is weak.
 
 Because the business is harder to find, harder to trust, or slower to respond than it should be.
 
-That pattern shows up across [Medford](/locations/medford), [Grants Pass](/locations/grants-pass), [Ashland](/locations/ashland), and nearby service areas. The opportunity is still real. What is uneven is the public operating surface buyers use to evaluate who feels dependable.
+That pattern shows up across [Medford](/locations/medford/), [Grants Pass](/locations/grants-pass/), [Ashland](/locations/ashland/), and nearby service areas. The opportunity is still real. What is uneven is the public operating surface buyers use to evaluate who feels dependable.
 
 This benchmark is meant to clarify that surface.
 
@@ -66,7 +66,7 @@ That is why stronger operators tend to combine:
 - clearer location and service specificity
 - less friction between inquiry and reply
 
-This is the practical lane for [Local Visibility](/services/local-visibility) and [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up). The systems matter most when they make the business easier to confirm, not when they try to imitate big-city marketing theater.
+This is the practical lane for [Local Visibility](/services/local-visibility/) and [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/). The systems matter most when they make the business easier to confirm, not when they try to imitate big-city marketing theater.
 
 ## Visibility gaps are still common in Medford, Grants Pass, and Ashland
 
@@ -123,7 +123,7 @@ Buyers here are often looking for signs that a business is genuinely legible in 
 - proof that feels local instead of templated
 - a business presence that looks stable rather than borrowed
 
-That is why this benchmark should sit next to broader regional context, not replace it. Reports like [Southern Oregon Technology Gaps And Local Growth Opportunity](/reports/southern-oregon-technology-gaps-and-local-growth-opportunity) and [How Oregon Markets Differ For Local Service Businesses](/reports/how-oregon-markets-differ-for-local-service-businesses) help explain why the Rogue Valley often rewards disciplined local credibility over louder promotion.
+That is why this benchmark should sit next to broader regional context, not replace it. Reports like [Southern Oregon Technology Gaps And Local Growth Opportunity](/reports/southern-oregon-technology-gaps-and-local-growth-opportunity/) and [How Oregon Markets Differ For Local Service Businesses](/reports/how-oregon-markets-differ-for-local-service-businesses/) help explain why the Rogue Valley often rewards disciplined local credibility over louder promotion.
 
 ## The region has support infrastructure, but businesses still have to close their own gaps
 
@@ -158,9 +158,9 @@ It is to diagnose which layer is doing the most damage first:
 - response
 - local proof
 
-That is also why the next conversation should usually run through [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes) before anyone jumps straight to execution or pricing assumptions.
+That is also why the next conversation should usually run through [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes/) before anyone jumps straight to execution or pricing assumptions.
 
-From there, the roadmap can be grounded in the actual market and the actual business instead of generic playbooks. If the gaps are clear, [Pricing](/pricing) starts making sense as a sequence decision rather than a menu.
+From there, the roadmap can be grounded in the actual market and the actual business instead of generic playbooks. If the gaps are clear, [Pricing](/pricing/) starts making sense as a sequence decision rather than a menu.
 
 ## Sources And Further Reading
 

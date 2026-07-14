@@ -112,7 +112,7 @@ Lead capture works best when it connects to:
 - a website that creates enough trust to trigger contact
 - measurement that shows where leads stall or disappear
 
-That is why this service belongs inside the same system as [Local Visibility Systems](/services/local-visibility), [Custom Web Design](/services/custom-web-design), and [Search And Data Architecture](/services/search-data-architecture).
+That is why this service belongs inside the same system as [Local Visibility Systems](/services/local-visibility/), [Custom Web Design](/services/custom-web-design/), and [Search And Data Architecture](/services/search-data-architecture/).
 
 ## When this service should move up the priority list
 

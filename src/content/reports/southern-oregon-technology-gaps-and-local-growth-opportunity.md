@@ -56,7 +56,7 @@ That usually looks like:
 - limited location architecture
 - broad claims with no strong page-level support
 
-This is where [Local Visibility](/services/local-visibility) starts becoming practical. The work is not about trendy search positioning. It is about making sure a business can be found cleanly when somebody is already looking for the service it provides.
+This is where [Local Visibility](/services/local-visibility/) starts becoming practical. The work is not about trendy search positioning. It is about making sure a business can be found cleanly when somebody is already looking for the service it provides.
 
 ## The trust gap is often the bigger leak
 
@@ -80,7 +80,7 @@ All of that weakens the return on every other part of the system.
 
 The business may still be getting seen. The buyer may still be interested. But the handoff breaks before the job gets booked.
 
-That is why [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up) belongs inside the same broader conversation as search visibility and trust.
+That is why [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/) belongs inside the same broader conversation as search visibility and trust.
 
 ## Southern Oregon buyers still choose differently than bigger Oregon markets
 
@@ -128,7 +128,7 @@ A stronger audit should confirm:
 - where response handling is slowing demand down
 - which fixes belong first in the roadmap
 
-That logic lines up directly with [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes).
+That logic lines up directly with [What The Diagnostic Audit Includes](/knowledge-base/what-the-diagnostic-audit-includes/).
 
 ## What a smarter roadmap looks like from here
 

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@leverageai/site-standard — Shared Package Spec v1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--spruce:#12352b;--paper:#f7f6f1;--ink:#1b241f;--ink-soft:#4a5750;--moss:#3f7d5c;--amber:#c98a2d;--clay:#b3452f;--line:#dcdad0;--card:#fff;--mono:'JetBrains Mono',monospace;--display:'Familjen Grotesk',sans-serif;--body:'Barlow',sans-serif;--sidebar-w:288px;--sidebar-collapsed:64px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);font-size:16.5px;line-height:1.65}
+#nav{position:fixed;top:0;left:0;bottom:0;width:var(--sidebar-w);background:var(--spruce);color:#e8efe9;overflow-y:auto;overflow-x:hidden;transition:width .28s ease;z-index:50;border-right:3px solid var(--amber)}
+#nav.collapsed{width:var(--sidebar-collapsed)}
+#nav .nav-head{display:flex;align-items:center;gap:12px;padding:20px 16px;border-bottom:1px solid rgba(255,255,255,.12)}
+#nav .brandmark{min-width:32px;height:32px;border-radius:6px;background:var(--amber);color:var(--spruce);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:15px}
+#nav .brandtext{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;transition:opacity .2s}
+#nav.collapsed .brandtext{opacity:0;pointer-events:none}
+#toggle{position:absolute;top:22px;right:-1px;width:26px;height:26px;background:var(--amber);border:none;border-radius:6px 0 0 6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--spruce)}
+#toggle svg{transition:transform .28s}#nav.collapsed #toggle svg{transform:rotate(180deg)}
+#nav ul{list-style:none;padding:14px 0}
+#nav .sect{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,239,233,.5);padding:16px 18px 6px;white-space:nowrap}
+#nav.collapsed .sect{visibility:hidden;height:8px;padding:4px}
+#nav a{display:flex;align-items:center;gap:12px;padding:9px 16px;color:#cfe0d4;text-decoration:none;font-size:14px;white-space:nowrap;border-left:3px solid transparent}
+#nav a:hover{background:rgba(255,255,255,.07);color:#fff}
+#nav a.active{border-left-color:var(--amber);background:rgba(255,255,255,.08);color:#fff}
+#nav a .ico{min-width:22px;text-align:center;font-size:15px}
+#nav a .lbl{transition:opacity .18s}#nav.collapsed a .lbl{opacity:0;pointer-events:none}
+#main{margin-left:var(--sidebar-w);transition:margin-left .28s ease;max-width:1120px;padding:0 56px 120px}
+body.nav-collapsed #main{margin-left:var(--sidebar-collapsed)}
+header.hero{padding:64px 0 36px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin-bottom:14px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-.015em}
+h1 .accent{color:var(--moss)}
+.meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px;font-family:var(--mono);font-size:12.5px;color:var(--ink-soft)}
+.meta b{color:var(--ink)}
+.tldr{margin:34px 0 8px;background:var(--spruce);color:#eef5ef;border-radius:12px;padding:30px 34px}
+.tldr:before{content:"TL;DR";font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--amber);display:block;margin-bottom:12px}
+.tldr p{font-size:18px;line-height:1.6}.tldr strong{color:var(--amber)}
+section{padding:52px 0 8px;scroll-margin-top:20px}
+h2{font-family:var(--display);font-weight:700;font-size:29px;letter-spacing:-.01em;margin-bottom:8px;display:flex;align-items:baseline;gap:14px}
+h2 .num{font-family:var(--mono);font-size:14px;color:var(--moss);font-weight:600}
+.h2sub{color:var(--ink-soft);margin-bottom:26px;max-width:78ch}
+h3{font-family:var(--display);font-weight:600;font-size:20px;margin:34px 0 12px}
+h4{font-family:var(--display);font-weight:600;font-size:16.5px;margin:22px 0 8px}
+p{margin:0 0 16px;max-width:80ch}
+a{color:var(--moss)}
+code{font-family:var(--mono);font-size:.86em;background:#ecebe3;padding:2px 6px;border-radius:4px}
+pre{background:#101f19;color:#d7e6da;border-radius:10px;padding:20px 24px;font-family:var(--mono);font-size:13px;line-height:1.8;overflow-x:auto;margin:18px 0}
+pre .c{color:#6b8577}pre .k{color:#e8b45d}pre .s{color:#7fd4a8}pre .f{color:#9fb8ff}
+.callout{border-radius:10px;padding:20px 24px 20px 22px;margin:22px 0;border-left:5px solid;background:var(--card);box-shadow:0 1px 3px rgba(27,36,31,.06)}
+.callout .ct{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.callout p:last-child{margin-bottom:0}
+.callout.good{border-color:var(--moss)}.callout.good .ct{color:var(--moss)}
+.callout.warn{border-color:var(--amber)}.callout.warn .ct{color:var(--amber)}
+.callout.note{border-color:#5a6b98}.callout.note .ct{color:#5a6b98}
+.block{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px 30px;margin:22px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:960px){.grid2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;margin:20px 0;background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(27,36,31,.06);font-size:14.5px}
+th{font-family:var(--display);font-weight:600;text-align:left;background:var(--spruce);color:#eef5ef;padding:12px 16px;font-size:13.5px}
+td{padding:12px 16px;border-top:1px solid var(--line);vertical-align:top}
+tr:hover td{background:#fbfaf5}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;padding:3px 9px;border-radius:20px;letter-spacing:.05em;font-weight:600}
+.tag.g{background:#e2efe6;color:#28624a}.tag.a{background:#f6ecd8;color:#8a5d16}
+footer{margin-top:70px;padding-top:24px;border-top:3px solid var(--ink);font-family:var(--mono);font-size:12px;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:860px){#nav{width:var(--sidebar-collapsed)}#nav .lbl,#nav .brandtext{opacity:0}#main{margin-left:var(--sidebar-collapsed);padding:0 22px 90px}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-head">
+    <div class="brandmark">L∆</div>
+    <div class="brandtext">Leverage AI</div>
+    <button id="toggle" aria-label="Collapse navigation"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></button>
+  </div>
+  <ul>
+    <li class="sect">Spec</li>
+    <li><a href="#overview"><span class="ico">◎</span><span class="lbl">Overview</span></a></li>
+    <li><a href="#filemap"><span class="ico">🗂</span><span class="lbl">File Map</span></a></li>
+    <li><a href="#dataflow"><span class="ico">⇢</span><span class="lbl">Data Flow</span></a></li>
+    <li><a href="#pagetypes"><span class="ico">🧬</span><span class="lbl">PageType → Graph</span></a></li>
+    <li><a href="#guards"><span class="ico">🛡</span><span class="lbl">CI Guards</span></a></li>
+    <li class="sect">Adopt</li>
+    <li><a href="#adopt"><span class="ico">▶</span><span class="lbl">Per-Repo Rollout</span></a></li>
+    <li><a href="#validation"><span class="ico">✓</span><span class="lbl">Validation Evidence</span></a></li>
+  </ul>
+</nav>
+
+<div id="main">
+
+<header class="hero">
+  <div class="eyebrow">LEVERAGEAI · Package Specification · @leverageai/site-standard v1.0.0</div>
+  <h1>One Package, <span class="accent">Two Properties</span>, Zero Drift.</h1>
+  <div class="meta">
+    <span>Author: <b>Claude — Technical SEO Architect</b></span>
+    <span>Date: <b>2026-07-13</b></span>
+    <span>Runtime deps: <b>0</b></span>
+    <span>TypeScript: <b>strict + exactOptionalPropertyTypes — PASS</b></span>
+    <span>Guard tests: <b>6/6 PASS</b></span>
+  </div>
+</header>
+
+<div class="tldr" id="overview">
+  <p><strong>@leverageai/site-standard</strong> is the shared Astro layer that closes every cross-cutting audit finding on both properties in one maintained place: a validated <strong>SiteIdentity</strong> config, a <strong>canonical policy module</strong> (apex + trailing-slash-always — canonicals can never point at a redirecting variant again), a <strong>SchemaGraph</strong> component that ships a self-contained JSON-LD <code>@graph</code> on every page type from service pillars to directory business entities, a <strong>SeoHead</strong> component with full OG/Twitter cards, the <strong>Cloudflare Bulk Redirect CSV</strong> for both www hosts, and <strong>three post-build guards</strong> that fail CI on leaked drafting language, wrong canonicals, or missing schema. Zero runtime dependencies; strict TypeScript throughout; every guard tested against clean and violating fixture builds.</p>
+</div>
+
+<section id="filemap">
+<h2><span class="num">01</span>File Map — 17 files</h2>
+<pre>site-standard/
+├── package.json                <span class="c"># exports "." + the two .astro components; guard npm-scripts</span>
+├── tsconfig.json               <span class="c"># strict, noImplicitAny, exactOptionalPropertyTypes, noUncheckedIndexedAccess</span>
+├── README.md                   <span class="c"># install, config alignment, usage, redirect upload, guard table</span>
+├── src/
+│   ├── index.ts                <span class="c"># barrel — the only public TS entry</span>
+│   ├── types/index.ts          <span class="c"># ALL types (SiteIdentity, PageMeta, PageType, JsonLd…) — barrel per standard</span>
+│   ├── config.ts               <span class="c"># defineSiteIdentity(): validates https+apex+no-slash, throws typed error</span>
+│   ├── canonical.ts            <span class="c"># canonicalFor() / ensureTrailingSlash() — THE canonical policy (fixes N4)</span>
+│   ├── schema/
+│   │   ├── nodes.ts            <span class="c"># 12 node builders w/ stable @ids (#organization, #founder, #website)</span>
+│   │   └── graph.ts            <span class="c"># buildGraph(): PageType switch → self-contained @graph (fixes N1)</span>
+│   └── components/
+│       ├── SeoHead.astro       <span class="c"># title/desc/canonical/robots + OG + Twitter (fixes N4, N5)</span>
+│       └── SchemaGraph.astro   <span class="c"># &lt;script type=ld+json&gt; with &lt;/script&gt;-safe escaping</span>
+├── scripts/                    <span class="c"># node built-ins only — run against dist/ after astro build</span>
+│   ├── lib.mjs                 <span class="c"># dist walker, route mapping, 404/500 exclusion</span>
+│   ├── lint-banned-phrases.mjs <span class="c"># fixes N2 — script/style stripped first (no JSON-LD false positives)</span>
+│   ├── validate-canonicals.mjs <span class="c"># invariant guard #2 — canonical must equal SITE_URL+route+/</span>
+│   └── validate-schema.mjs     <span class="c"># ≥1 parseable ld+json with an Organization node per indexable page</span>
+├── redirects/
+│   └── leverageai-host-redirects.csv  <span class="c"># both www hosts → apex, 301, official CF Bulk Redirects format (fixes N3 + directory R2)</span>
+└── ci/
+    └── site-standard.yml       <span class="c"># bun install → astro check + tsc → build → 3 guards</span></pre>
+</section>
+
+<section id="dataflow">
+<h2><span class="num">02</span>Data Flow</h2>
+<p class="h2sub">One <code>IDENTITY</code> constant per repo, one <code>PageMeta</code> object per page. Everything else is derived — no page can hand-roll a canonical or a schema block.</p>
+<pre><span class="c">// per repo, once:</span>
+src/site.ts        <span class="k">defineSiteIdentity({...})</span>  <span class="c">→ throws SiteStandardConfigError on www / http / trailing slash</span>
+
+<span class="c">// per page, in frontmatter:</span>
+const page: <span class="f">PageMeta</span> = { type, title, description, path, breadcrumbs?, faqs?, … }
+
+<span class="c">// in the base layout &lt;head&gt;:</span>
+&lt;<span class="s">SeoHead</span>     identity={IDENTITY} page={page} /&gt;   <span class="c">→ canonicalFor() → apex + trailing slash, OG/Twitter</span>
+&lt;<span class="s">SchemaGraph</span> identity={IDENTITY} page={page} /&gt;   <span class="c">→ buildGraph() → @graph, escaped, one script tag</span>
+
+<span class="c">// after astro build, in CI:</span>
+node scripts/lint-banned-phrases.mjs  dist   <span class="c">→ exit 1 on drafting-language leak</span>
+node scripts/validate-canonicals.mjs  dist   <span class="c">→ exit 1 unless canonical == SITE_URL+route+/</span>
+node scripts/validate-schema.mjs      dist   <span class="c">→ exit 1 unless every page ships a valid graph</span></pre>
+<div class="callout note">
+  <div class="ct">Design decision — self-contained graphs</div>
+  <p>Organization, Person (founder), and WebSite nodes ship on <em>every</em> page with stable <code>@id</code>s (<code>/#organization</code>, <code>/#founder</code>, <code>/#website</code>), and page-type nodes reference them. Costs a few hundred bytes per page; removes any dependency on crawlers stitching entities across URLs, and makes the schema guard's "Organization present" assertion meaningful on every page.</p>
+</div>
+</section>
+
+<section id="pagetypes">
+<h2><span class="num">03</span>PageType → Graph Contract</h2>
+<table>
+<thead><tr><th>PageMeta.type</th><th>Used on</th><th>@graph adds (beyond Org + Person + WebSite + WebPage + Breadcrumb)</th></tr></thead>
+<tbody>
+<tr><td><code>home</code></td><td>Both homepages</td><td><code>ProfessionalService</code> with <code>areaServed</code> cities</td></tr>
+<tr><td><code>service</code></td><td>network <code>/services/{slug}</code></td><td><code>Service</code> (provider → Org) + <code>FAQPage</code> when <code>faqs</code> given</td></tr>
+<tr><td><code>location</code></td><td>network <code>/locations/{city}</code></td><td><code>Service</code> scoped by <code>serviceArea</code> — deliberately <em>not</em> LocalBusiness (one business, many service areas)</td></tr>
+<tr><td><code>article</code></td><td>reports · blog · knowledge base — both sites</td><td><code>Article</code> with author → founder <code>@id</code>, publisher → Org, dates, section</td></tr>
+<tr><td><code>caseStudy</code></td><td>network <code>/portfolio/{slug}</code></td><td><code>Article</code> + <code>about</code> → subject's own site (reinforces the client entity graph)</td></tr>
+<tr><td><code>listing</code></td><td>directory city×category and subcategory×city pages</td><td><code>ItemList</code> — each item's <code>url</code> is the business's <em>canonical Tree A</em> URL (invariant Rule 1)</td></tr>
+<tr><td><code>business</code></td><td>directory <code>/city/{c}/{cat}/{biz}</code></td><td><code>LocalBusiness</code> with address, geo, telephone, <code>AggregateRating</code></td></tr>
+<tr><td><code>page</code></td><td>about · contact · pricing · legal</td><td>base nodes only</td></tr>
+</tbody>
+</table>
+<div class="callout warn">
+  <div class="ct">FAQPage discipline (invariant rule 4)</div>
+  <p><code>FAQPage</code> renders only when the page's own <code>faqs</code> array is populated. The component cannot inherit FAQs from a parent template — the exact mechanism that produced the directory's R1 boilerplate finding is structurally unavailable.</p>
+</div>
+</section>
+
+<section id="guards">
+<h2><span class="num">04</span>CI Guards</h2>
+<table>
+<thead><tr><th>Guard</th><th>Fails the build when</th><th>Closes</th></tr></thead>
+<tbody>
+<tr><td><code>lint-banned-phrases</code></td><td>Rendered copy contains drafting language: "the reference pages", "schema package reference", "per the brief/spec", "the provided content", "as an AI", TODO/TKTK/lorem. Script/style stripped first so JSON-LD can't false-positive.</td><td>N2 <span class="tag a">network</span></td></tr>
+<tr><td><code>validate-canonicals</code></td><td>Any indexable page whose canonical isn't exactly <code>SITE_URL + route + '/'</code> — catches www hosts, slash-less variants, and missing tags. 404/500 excluded.</td><td>N4 <span class="tag a">network</span> · invariant guard #2 <span class="tag g">directory</span></td></tr>
+<tr><td><code>validate-schema</code></td><td>Any indexable page with zero <code>ld+json</code> blocks, unparseable JSON, or no <code>Organization</code> node in the graph (proof the component actually rendered, not just any script tag).</td><td>N1 <span class="tag a">network</span> · R5 follow-through <span class="tag g">directory</span></td></tr>
+</tbody>
+</table>
+<p>All three are zero-dependency Node scripts run against <code>dist/</code>; <code>ci/site-standard.yml</code> wires them after <code>astro check</code> + <code>tsc --noEmit</code> + build, on Bun per house standard.</p>
+</section>
+
+<section id="adopt">
+<h2><span class="num">05</span>Per-Repo Rollout</h2>
+<div class="grid2">
+<div class="block">
+<h4>leverageai.network</h4>
+<p style="font-size:14.5px;margin-bottom:8px"><strong>1.</strong> Add dep; set <code>trailingSlash: 'always'</code>, <code>build.format: 'directory'</code>, <code>site</code> = apex.<br>
+<strong>2.</strong> Create <code>src/site.ts</code> IDENTITY (founder block included — powers Person/E-E-A-T nodes).<br>
+<strong>3.</strong> Replace hand-rolled head with <code>&lt;SeoHead/&gt;</code> + <code>&lt;SchemaGraph/&gt;</code> in the base layout; delete the homepage's inline graph (the component supersedes it).<br>
+<strong>4.</strong> Add <code>PageMeta</code> frontmatter per template: services → <code>service</code> (+ existing "Quick Answers" as <code>faqs</code>), locations → <code>location</code>, reports/blog/KB → <code>article</code>, portfolio → <code>caseStudy</code>.<br>
+<strong>5.</strong> Rewrite the two N2 paragraphs, then wire CI — the phrase guard keeps them dead.<br>
+<strong>6.</strong> Convert internal links to trailing-slash form (the canonical guard + a crawl will surface stragglers).</p>
+</div>
+<div class="block">
+<h4>oregonsmbdirectory.com</h4>
+<p style="font-size:14.5px;margin-bottom:8px"><strong>1.</strong> Same dep + config alignment (already trailing-slash serving — lowest-friction adopter).<br>
+<strong>2.</strong> IDENTITY with directory branding; keep existing OG defaults as <code>defaultOgImageUrl</code>.<br>
+<strong>3.</strong> Swap templates onto the shared components: listing pages → <code>listing</code> with <code>listItems</code> from D1 (URLs = Tree A canonical homes, enforcing invariant Rule 1 in markup), business pages → <code>business</code> with rating/geo from D1.<br>
+<strong>4.</strong> Category FAQs stay on category pages only — business pages get entity-specific <code>faqs</code> or none (R1 fix rides this migration).<br>
+<strong>5.</strong> CI guards join the invariant's route/dedup guards in the same workflow.</p>
+</div>
+</div>
+<div class="callout good">
+  <div class="ct">Host redirects — one upload covers both audits' findings</div>
+  <p>Cloudflare dashboard → Account → Bulk Redirects → create list → import <code>redirects/leverageai-host-redirects.csv</code> → enable in a Bulk Redirect Rule. Two rows, official CSV format (no header): both www hosts 301 → apex with query preserved and path suffix carried. Closes N3 and the directory's R2 in one action.</p>
+</div>
+</section>
+
+<section id="validation">
+<h2><span class="num">06</span>Validation Evidence (what was actually run)</h2>
+<table>
+<thead><tr><th>Check</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td><code>tsc --noEmit</code> under strict + <code>noImplicitAny</code> + <code>exactOptionalPropertyTypes</code> + <code>noUncheckedIndexedAccess</code></td><td><span class="tag g">PASS</span></td></tr>
+<tr><td><code>canonicalFor</code>: <code>/locations</code> → <code>…/locations/</code> · strips <code>?q=1#x</code> · preserves <code>/file.xml</code></td><td><span class="tag g">PASS</span></td></tr>
+<tr><td><code>buildGraph</code> per type — service → <code>…Service, FAQPage</code>; business → <code>…LocalBusiness</code>; listing → <code>…ItemList</code>; all include Org/Person/WebSite/WebPage</td><td><span class="tag g">PASS</span></td></tr>
+<tr><td><code>defineSiteIdentity</code> throws <code>SiteStandardConfigError</code> on a www origin</td><td><span class="tag g">PASS</span></td></tr>
+<tr><td>Guards vs <strong>clean fixture dist</strong> (component-generated pages + 404.html)</td><td><span class="tag g">3/3 PASS</span> — 404 correctly excluded</td></tr>
+<tr><td>Guards vs <strong>dirty fixture dist</strong> (leaked phrases, www canonical, slash-less canonical, missing schema)</td><td><span class="tag g">3/3 FAIL as required</span> — exit 1 with per-file diagnostics naming the exact violation</td></tr>
+</tbody>
+</table>
+<p>Repro: the fixtures are generated from the package's own <code>buildGraph</code>, so the guards are validated against the component's real output — not hand-written HTML that might accidentally agree with the checks.</p>
+</section>
+
+<footer>
+  <span>LEVERAGEAI LLC · Grants Pass, Oregon</span>
+  <span>Sources: docs.astro.build config reference (trailingSlash) · Cloudflare Bulk Redirects CSV spec (Apr 2026) · audits of 2026-07-12/13</span>
+</footer>
+
+</div>
+<script>
+const nav=document.getElementById('nav');
+document.getElementById('toggle').addEventListener('click',()=>{nav.classList.toggle('collapsed');document.body.classList.toggle('nav-collapsed');});
+const links=[...document.querySelectorAll('#nav a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-20% 0px -70% 0px'});
+secs.forEach(s=>obs.observe(s));
+</script>
+</body>
+</html>

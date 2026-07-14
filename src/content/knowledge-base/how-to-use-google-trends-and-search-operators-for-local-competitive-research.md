@@ -24,7 +24,7 @@ If a service business wants better intelligence, it needs two things working tog
 
 That is where Google Trends and search operators become useful.
 
-This article is the practical companion to the deeper report at [Competitive Search Intelligence With Google Trends And Search Operators](/reports/competitive-search-intelligence-with-google-trends-and-search-operators).
+This article is the practical companion to the deeper report at [Competitive Search Intelligence With Google Trends And Search Operators](/reports/competitive-search-intelligence-with-google-trends-and-search-operators/).
 
 ## What Google Trends is actually good for
 
@@ -123,10 +123,10 @@ That does not automatically tell you **why** they are winning, but it gives you 
 
 This type of research should feed directly into:
 
-- [Search And Data Architecture](/services/search-data-architecture), because the intelligence has to become structure and measurement
-- [Local Visibility Systems](/services/local-visibility), because local demand patterns should change how pages and service areas are expressed
-- the [locations](/locations) cluster, because markets do not behave the same way
-- the diagnostic-audit conversation on [pricing](/pricing), because diagnosis should include competitive context
+- [Search And Data Architecture](/services/search-data-architecture/), because the intelligence has to become structure and measurement
+- [Local Visibility Systems](/services/local-visibility/), because local demand patterns should change how pages and service areas are expressed
+- the [locations](/locations/) cluster, because markets do not behave the same way
+- the diagnostic-audit conversation on [pricing](/pricing/), because diagnosis should include competitive context
 
 ## The key mistake to avoid
 

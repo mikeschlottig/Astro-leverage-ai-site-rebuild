@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import AboutAuthor from "../../components/site/AboutAuthor.astro";
 import { getCollection, render } from "astro:content";
 import { locations } from "../../data/locations";
-import { serviceGraph } from "../../lib/schema";
 
 type LinkCard = {
   kind: "Report" | "Knowledge Base" | "Case Study" | "Location";
@@ -28,7 +28,7 @@ const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
     ? [
         {
           kind: "Report",
-          href: `/reports/${report.id}`,
+          href: `/reports/${report.id}/`,
           title: report.data.title,
           description: report.data.description,
         },
@@ -42,7 +42,7 @@ const relatedKnowledgeBase: LinkCard[] = entry.data.relatedKnowledgeBase.flatMap
     ? [
         {
           kind: "Knowledge Base",
-          href: `/knowledge-base/${resource.id}`,
+          href: `/knowledge-base/${resource.id}/`,
           title: resource.data.title,
           description: resource.data.description,
         },
@@ -56,7 +56,7 @@ const relatedCaseStudies: LinkCard[] = entry.data.relatedCaseStudies.flatMap((sl
     ? [
         {
           kind: "Case Study",
-          href: `/portfolio/${caseStudy.id}`,
+          href: `/portfolio/${caseStudy.id}/`,
           title: caseStudy.data.title,
           description: caseStudy.data.description,
         },
@@ -70,7 +70,7 @@ const relatedLocations: LinkCard[] = entry.data.relatedLocations.flatMap((slug) 
     ? [
         {
           kind: "Location",
-          href: `/locations/${location.slug}`,
+          href: `/locations/${location.slug}/`,
           title: `${location.name} market page`,
           description: location.opportunity,
         },
@@ -94,7 +94,9 @@ const Content = renderedEntry?.Content;
   title={entry.data.title}
   description={entry.data.description}
   canonicalPath={servicePath}
-  schema={serviceGraph(servicePath, entry.data.title, entry.data.description, entry.data.faqs)}
+  pageType="service"
+  serviceName={entry.data.title}
+  faqs={entry.data.faqs}
 >
   <section class="hero service-hero">
     <div class="shell stack">
@@ -109,8 +111,8 @@ const Content = renderedEntry?.Content;
             </div>
           )}
           <div class="button-row">
-            <a class="button primary" href="/contact">Request the diagnostic audit</a>
-            <a class="button secondary" href="/pricing">Review pricing structure</a>
+            <a class="button primary" href="/contact/">Request the diagnostic audit</a>
+            <a class="button secondary" href="/pricing/">Review pricing structure</a>
           </div>
         </div>
         <aside class="service-sidecar">
@@ -141,8 +143,8 @@ const Content = renderedEntry?.Content;
           <h2>{entry.data.summary}</h2>
         </div>
         <p>
-          This route should help a buyer understand what this layer fixes, how it connects to the
-          rest of the system, and what evidence supports acting on it now.
+          Most businesses do not need every layer rebuilt at once. Start with the constraint
+          costing you the most, then connect the next pieces only when they will improve the result.
         </p>
       </div>
 
@@ -155,8 +157,8 @@ const Content = renderedEntry?.Content;
         <aside class="stack">
           {entry.data.proofPoints.length > 0 && (
             <section class="surface stack">
-              <p class="eyebrow">What Strong Work Looks Like</p>
-              <h2>Signals this service should improve.</h2>
+              <p class="eyebrow">What Should Get Better</p>
+              <h2>The changes you should be able to see, feel, or measure.</h2>
               <ul class="case-study-result-list">
                 {entry.data.proofPoints.map((point) => <li>{point}</li>)}
               </ul>
@@ -210,8 +212,8 @@ const Content = renderedEntry?.Content;
     <section class="section">
       <div class="shell split">
         <section class="surface stack">
-          <p class="eyebrow">Supporting Authority</p>
-          <h2>Resources and proof that reinforce this service.</h2>
+          <p class="eyebrow">Why We Recommend It</p>
+          <h2>Research and real work behind the recommendation.</h2>
           <div class="case-study-links">
             {supportLinks.map((link) => (
               <a class="case-study-link-card" href={link.href}>
@@ -224,7 +226,7 @@ const Content = renderedEntry?.Content;
         </section>
 
         <aside class="surface stack">
-          <h2>Where this usually connects next</h2>
+          <h2>What improves when this layer is working</h2>
           <ul class="case-study-result-list">
             {entry.data.outcomes.map((outcome) => <li>{outcome}</li>)}
           </ul>
@@ -234,14 +236,14 @@ const Content = renderedEntry?.Content;
                 Read {primaryReport.title}
               </a>
             ) : (
-              <a class="button secondary" href="/reports">Read supporting reports</a>
+              <a class="button secondary" href="/reports/">Read supporting reports</a>
             )}
             {primaryCaseStudy ? (
               <a class="button primary" href={primaryCaseStudy.href}>
                 See proof in practice
               </a>
             ) : (
-              <a class="button primary" href="/portfolio">See proof in practice</a>
+              <a class="button primary" href="/portfolio/">See proof in practice</a>
             )}
           </div>
         </aside>
@@ -254,19 +256,24 @@ const Content = renderedEntry?.Content;
       <section class="case-study-cta">
         <div class="stack">
           <p class="eyebrow">Next Step</p>
-          <h2>Want to know whether this is the right layer to fix first?</h2>
+          <h2>Not sure this is the problem costing you the most?</h2>
           <p>
-            The diagnostic audit helps separate visibility problems, trust problems, response problems, and
-            measurement gaps before a larger implementation gets scoped.
+            The diagnostic audit shows where good opportunities are being lost before you commit
+            to a larger build.
           </p>
         </div>
         <div class="button-row">
-          <a class="button primary" href="/contact">Request the audit</a>
-          <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes">
+          <a class="button primary" href="/contact/">Request the audit</a>
+          <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes/">
             See what the audit includes
           </a>
         </div>
       </section>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell">
+      <AboutAuthor heading="Your strategist" />
     </div>
   </section>
 </BaseLayout>

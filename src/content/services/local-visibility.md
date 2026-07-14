@@ -36,6 +36,7 @@ faqs:
   - question: Does this connect to location pages and reports?
     answer: Yes. The goal is to connect service pages, location pages, case studies, and reports into one local authority system instead of treating them as isolated content pieces.
 relatedReports:
+  - how-the-google-local-pack-really-works
   - competitive-search-intelligence-with-google-trends-and-search-operators
   - how-oregon-markets-differ-for-local-service-businesses
   - oregon-market-intel-infrastructure-report
@@ -62,7 +63,7 @@ For many service businesses, the answer is still no. The business may have a web
 
 ## What this service is really solving
 
-The strongest ideas from the reference pages point in the same direction:
+Strong local visibility systems share the same operating principles:
 
 - visibility is not just about rankings
 - the business entity has to be legible
@@ -98,7 +99,7 @@ The point is not to stuff more place names. It is to make the service geography 
 
 ## Why GBP and local entity clarity matter
 
-One of the most useful takeaways from the schema package reference is that local discoverability gets stronger when the business identity is consistent everywhere it appears.
+Local discoverability gets stronger when the business identity is consistent everywhere it appears.
 
 That includes:
 
@@ -123,10 +124,10 @@ They should help a buyer and a machine understand:
 
 That is why this service should keep reinforcing:
 
-- the [locations](/locations) cluster
-- market-specific proof like [Daley Organics](/portfolio/daley-organics)
-- the [Diagnostic Audit explainer](/knowledge-base/what-the-diagnostic-audit-includes)
-- the GEO content guide at [How To Create GEO-Optimized Content For AI Search And Local SEO](/knowledge-base/how-to-create-geo-optimized-content-for-ai-search-and-local-seo)
+- the [locations](/locations/) cluster
+- market-specific proof like [Daley Organics](/portfolio/daley-organics/)
+- the [Diagnostic Audit explainer](/knowledge-base/what-the-diagnostic-audit-includes/)
+- the GEO content guide at [How To Create GEO-Optimized Content For AI Search And Local SEO](/knowledge-base/how-to-create-geo-optimized-content-for-ai-search-and-local-seo/)
 
 ## Where AI-assisted local discovery fits
 

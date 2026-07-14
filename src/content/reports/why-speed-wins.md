@@ -43,7 +43,7 @@ A business does not need national-scale analytics to see the pattern. It only ne
 2. How many of them cool off before a real response?
 3. What is that worth over a month or a year?
 
-That is why [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up) belongs in the public service stack. It is not there to sound modern. It is there because many businesses are already paying to generate leads they never operationally convert.
+That is why [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/) belongs in the public service stack. It is not there to sound modern. It is there because many businesses are already paying to generate leads they never operationally convert.
 
 ## The five-minute window changes everything
 
@@ -70,7 +70,7 @@ That dynamic should influence more than just operations. It should influence the
 
 ## Response speed is now a visibility issue too
 
-The report also sharpens an important point for the site architecture: response speed is no longer hidden.
+Response speed is no longer an invisible back-office issue. Customers experience it as part of your brand.
 
 Platforms are increasingly turning responsiveness into a public or ranking-influencing signal. Even without naming a specific platform on every page, the operating truth is clear:
 
@@ -78,18 +78,18 @@ Platforms are increasingly turning responsiveness into a public or ranking-influ
 - slow response can waste the exact demand that visibility work creates
 - operational weakness can undermine marketing strength
 
-That is why the closed-loop model matters. [Local Visibility Systems](/services/local-visibility) and [Custom Web Design](/services/custom-web-design) can create attention and trust, but they do not finish the job if the response layer fails.
+That is why the closed-loop model matters. [Local Visibility Systems](/services/local-visibility/) and [Custom Web Design](/services/custom-web-design/) can create attention and trust, but they do not finish the job if the response layer fails.
 
 ## From diagnosis to system design
 
-The most useful site-level lesson from this report is that speed should not be discussed in isolation. It belongs inside a broader demand system:
+Faster follow-up works best when the rest of the customer journey supports it:
 
 | Layer | Role in the response story |
 | --- | --- |
-| [Local Visibility](/services/local-visibility) | Brings in the high-intent searcher in the first place. |
-| [Custom Web Design](/services/custom-web-design) | Helps the visitor trust the business fast enough to reach out. |
-| [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up) | Shortens the gap between inquiry and real contact. |
-| [Search And Data Architecture](/services/search-data-architecture) | Shows where the handoff is leaking and whether changes are actually working. |
+| [Local Visibility](/services/local-visibility/) | Brings in the high-intent searcher in the first place. |
+| [Custom Web Design](/services/custom-web-design/) | Helps the visitor trust the business fast enough to reach out. |
+| [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/) | Shortens the gap between inquiry and real contact. |
+| [Search And Data Architecture](/services/search-data-architecture/) | Shows where the handoff is leaking and whether changes are actually working. |
 
 This is the difference between talking about "lead response" as a tactic and treating it like infrastructure.
 
@@ -105,12 +105,7 @@ Either way, the takeaway is the same:
 
 The business needs a response path that supports the rest of the growth system.
 
-That is why this report should keep linking to:
-
-- [pricing](/pricing), because the diagnostic audit should uncover where the handoff is failing
-- [contact](/contact), because the public funnel should prove the speed story
-- the broader [Oregon Market Intel Report](/reports/oregon-market-intel-infrastructure-report), because speed is one leak inside a wider system
-- the location cluster at [locations](/locations), because the value of a fast reply changes with the economics of the market
+If you suspect good inquiries are cooling off before anyone responds, the [diagnostic audit](/pricing/) can trace the handoff from form or call to first real conversation. The broader [Oregon Market Intel Report](/reports/oregon-market-intel-infrastructure-report/) shows how response speed fits inside the wider demand system, while the [Oregon market pages](/locations/) explain why the value of a fast reply changes with local economics.
 
 ## The real operating question
 

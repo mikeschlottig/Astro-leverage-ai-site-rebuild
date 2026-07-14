@@ -20,7 +20,7 @@ That is why speed to lead is not only a sales or CRM issue. It is also a website
 
 ## The website sets the pace before anyone replies
 
-The strongest insight behind [Why Speed Wins](/reports/why-speed-wins) is that delayed response is a measurable operating loss, not a soft best practice problem.
+The strongest insight behind [Why Speed Wins](/reports/why-speed-wins/) is that delayed response is a measurable operating loss, not a soft best practice problem.
 
 But there is an earlier step many businesses miss:
 
@@ -77,7 +77,7 @@ It should:
 - collect enough context to support a useful handoff
 - reassure them that the inquiry landed and will be handled
 
-That is where [Custom Web Design](/services/custom-web-design) and [Lead Capture & AI Follow-Up](/services/lead-capture-ai-follow-up) connect. One shapes the public trust and conversion path. The other protects the speed and consistency of the response.
+That is where [Custom Web Design](/services/custom-web-design/) and [Lead Capture & AI Follow-Up](/services/lead-capture-ai-follow-up/) connect. One shapes the public trust and conversion path. The other protects the speed and consistency of the response.
 
 ## What better website decisions look like
 
@@ -135,4 +135,4 @@ The fastest response system in the world still starts too late if the website is
 
 That is why speed to lead belongs in the website conversation from the beginning, not as a cleanup task after the pages are already built.
 
-If that chain feels weak in your business, the right next move is to [request the diagnostic audit](/contact) and use [Why Speed Wins](/reports/why-speed-wins) as the operating backdrop.
+If that chain feels weak in your business, the right next move is to [request the diagnostic audit](/contact/) and use [Why Speed Wins](/reports/why-speed-wins/) as the operating backdrop.

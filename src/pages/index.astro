@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { webpageGraph } from "../lib/schema";
 import HomeHero from "../components/site/HomeHero.astro";
+import CaseStudyPreviewCard from "../components/case-studies/CaseStudyPreviewCard.astro";
 
 const services = (await getCollection("services")).sort((a, b) => a.data.order - b.data.order);
 const caseStudies = await getCollection("caseStudies");
@@ -17,7 +17,7 @@ const knowledgeBase = (await getCollection("knowledgeBase")).sort(
 <BaseLayout
   title="Local Demand Systems For Oregon Service Businesses"
   description="High-performance websites, local visibility systems, and lead-response infrastructure for Oregon service businesses."
-  schema={webpageGraph("/", "Leverage AI", "Local demand systems for Oregon service businesses.")}
+  pageType="home"
 >
   <section class="hero">
     <div class="shell">
@@ -28,12 +28,13 @@ const knowledgeBase = (await getCollection("knowledgeBase")).sort(
   <section class="section">
     <div class="shell stack">
       <div class="surface stack">
-        <p class="eyebrow">The System</p>
-        <h2>Every major page should support presence, trust, capture, response, or proof.</h2>
+        <p class="eyebrow">The Whole Customer Path</p>
+        <h2>Being visible is only the beginning. The whole path to a booked job has to work.</h2>
         <p>
-          The four service layers are designed to reinforce each other. Better visibility should
-          land on a stronger trust surface, stronger trust should create cleaner inquiries, and
-          cleaner inquiries should move into a response system the business can actually measure.
+          We connect the pieces that local marketing usually leaves scattered: where you appear,
+          what customers see when they find you, how easily they can reach you, and how quickly your
+          team responds. The result is a system built to turn more local intent into real
+          conversations and booked work.
         </p>
       </div>
       <div class="grid">
@@ -42,7 +43,7 @@ const knowledgeBase = (await getCollection("knowledgeBase")).sort(
             <p class="eyebrow">{service.data.summary}</p>
             <h2>{service.data.title}</h2>
             <p>{service.data.description}</p>
-            <a href={`/services/${service.id}`}>Open service page</a>
+            <a href={`/services/${service.id}/`}>Open service page</a>
           </article>
         ))}
       </div>
@@ -52,15 +53,9 @@ const knowledgeBase = (await getCollection("knowledgeBase")).sort(
   <section class="section">
     <div class="shell surface stack">
       <p class="eyebrow">Real Proof</p>
-      <h2>Case studies should do the selling, not invented dashboards and inflated claims.</h2>
+      <h2>See what changes when local visibility, trust, and follow-up start working together.</h2>
       <div class="grid">
-        {caseStudies.map((entry) => (
-          <article class="stack">
-            <h3>{entry.data.title}</h3>
-            <p>{entry.data.description}</p>
-            <a href={`/portfolio/${entry.id}`}>Read the case study</a>
-          </article>
-        ))}
+        {caseStudies.map((entry) => <CaseStudyPreviewCard entry={entry} />)}
       </div>
     </div>
   </section>
@@ -69,27 +64,27 @@ const knowledgeBase = (await getCollection("knowledgeBase")).sort(
     <div class="shell grid">
       <article class="surface stack">
         <p class="eyebrow">Reports</p>
-        <h2>Research-backed content that supports service claims and market diagnosis.</h2>
+        <h2>Make better growth decisions with research grounded in Oregon markets.</h2>
         {reports.slice(0, 3).map((entry) => (
           <div class="stack">
             <h3>{entry.data.title}</h3>
             <p>{entry.data.description}</p>
-            <a href={`/reports/${entry.id}`}>Read the report</a>
+            <a href={`/reports/${entry.id}/`}>Read the report</a>
           </div>
         ))}
-        <a class="button secondary" href="/reports">View all reports</a>
+        <a class="button secondary" href="/reports/">View all reports</a>
       </article>
       <article class="surface stack">
         <p class="eyebrow">Knowledge Base</p>
-        <h2>Buyer-friendly explainers that strengthen the service clusters.</h2>
+        <h2>Get clear answers before you decide what to fix.</h2>
         {knowledgeBase.slice(0, 3).map((entry) => (
           <div class="stack">
             <h3>{entry.data.title}</h3>
             <p>{entry.data.description}</p>
-            <a href={`/knowledge-base/${entry.id}`}>Open the guide</a>
+            <a href={`/knowledge-base/${entry.id}/`}>Open the guide</a>
           </div>
         ))}
-        <a class="button secondary" href="/knowledge-base">View the knowledge base</a>
+        <a class="button secondary" href="/knowledge-base/">View the knowledge base</a>
       </article>
     </div>
   </section>

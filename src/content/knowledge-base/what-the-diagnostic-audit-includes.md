@@ -21,7 +21,7 @@ It is not a vague strategy call dressed up as insight. It is a paid working revi
 - where calls, forms, or follow-up delays are wasting demand
 - where market conditions change the right scope of work
 
-This is why the site keeps framing the audit as the first engagement surface on [pricing](/pricing).
+This is why the site keeps framing the audit as the first engagement surface on [pricing](/pricing/).
 
 ## This is not just an SEO audit
 
@@ -59,10 +59,10 @@ The exact mix changes by business and market, but the audit is designed to inspe
 
 Those layers map directly to the public service architecture:
 
-- [Local Visibility Systems](/services/local-visibility)
-- [Custom Web Design](/services/custom-web-design)
-- [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up)
-- [Search And Data Architecture](/services/search-data-architecture)
+- [Local Visibility Systems](/services/local-visibility/)
+- [Custom Web Design](/services/custom-web-design/)
+- [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/)
+- [Search And Data Architecture](/services/search-data-architecture/)
 
 ## Which touchpoints the audit should pressure-test
 
@@ -166,10 +166,10 @@ That sequence matters because jumping straight to execution often creates activi
 
 This page makes more sense when read alongside the site's growing report cluster:
 
-- [Why Speed Wins](/reports/why-speed-wins) explains why delayed follow-up leaks revenue
-- [How Oregon Markets Differ For Local Service Businesses](/reports/how-oregon-markets-differ-for-local-service-businesses) explains why market context changes trust and visibility strategy
-- [Oregon Market Intel And Infrastructure Report](/reports/oregon-market-intel-infrastructure-report) provides the broader infrastructure framing behind the audit-first approach
-- [Entity Strength And AI Search Visibility For Local Service Businesses](/reports/entity-strength-and-ai-search-visibility-for-local-service-businesses) explains why the audit should evaluate the business as a full cross-platform entity instead of as a simple SEO project
+- [Why Speed Wins](/reports/why-speed-wins/) explains why delayed follow-up leaks revenue
+- [How Oregon Markets Differ For Local Service Businesses](/reports/how-oregon-markets-differ-for-local-service-businesses/) explains why market context changes trust and visibility strategy
+- [Oregon Market Intel And Infrastructure Report](/reports/oregon-market-intel-infrastructure-report/) provides the broader infrastructure framing behind the audit-first approach
+- [Entity Strength And AI Search Visibility For Local Service Businesses](/reports/entity-strength-and-ai-search-visibility-for-local-service-businesses/) explains why the audit should evaluate the business as a full cross-platform entity instead of as a simple SEO project
 
 Those reports establish the business case. The audit is where that reasoning becomes specific to one operator's situation.
 
@@ -191,4 +191,4 @@ The diagnostic audit answers:
 
 That is why it belongs at the center of the conversion path instead of buried under a generic pricing grid.
 
-If that is the question you need answered, the next step is to [request the audit](/contact).
+If that is the question you need answered, the next step is to [request the audit](/contact/).

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import AboutAuthor from "../../components/site/AboutAuthor.astro";
 import { getCollection, render } from "astro:content";
-import { articleGraph } from "../../lib/schema";
 
 type LinkCard = {
   href: string;
@@ -24,7 +24,7 @@ const relatedServices: LinkCard[] = entry.data.relatedServices.flatMap((slug) =>
   return service
     ? [
         {
-          href: `/services/${service.id}`,
+          href: `/services/${service.id}/`,
           title: service.data.title,
           description: service.data.description,
         },
@@ -37,7 +37,10 @@ const relatedServices: LinkCard[] = entry.data.relatedServices.flatMap((slug) =>
   title={entry.data.title}
   description={entry.data.description}
   canonicalPath={`/reports/${entry.id}`}
-  schema={articleGraph(`/reports/${entry.id}`, entry.data.title, entry.data.description, entry.data.publishedAt.toISOString())}
+  pageType="article"
+  datePublished={entry.data.publishedAt.toISOString()}
+  dateModified={entry.data.updatedAt?.toISOString()}
+  articleSection="Reports"
 >
   <section class="section">
     <div class="shell stack">
@@ -81,14 +84,19 @@ const relatedServices: LinkCard[] = entry.data.relatedServices.flatMap((slug) =>
 
           <section class="surface stack">
             <p class="eyebrow">Next Step</p>
-            <h2>Use the report as diagnosis, not as detached reading.</h2>
+            <h2>Turn the research into a clearer next decision.</h2>
             <div class="button-row">
-              <a class="button primary" href="/pricing">Review the diagnostic path</a>
-              <a class="button secondary" href="/contact">Request a market review</a>
+              <a class="button primary" href="/pricing/">Review the diagnostic path</a>
+              <a class="button secondary" href="/contact/">Request a market review</a>
             </div>
           </section>
         </aside>
       </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell">
+      <AboutAuthor heading="Report author" />
     </div>
   </section>
 </BaseLayout>

@@ -54,7 +54,7 @@ relatedLocations:
   - ashland
 ---
 
-Search and data architecture is where the site stops being a set of nice-looking pages and starts behaving like a coherent public system.
+Search and measurement work best when every public signal tells the same clear story: who you help, where you work, what you do well, and what produces real inquiries.
 
 For most service businesses, this layer matters because the same core problem keeps repeating:
 
@@ -67,7 +67,7 @@ That is why this service is not just "analytics setup." It is the structure that
 
 ## What this layer actually covers
 
-The most useful concepts from the schema package reference are not the raw code blocks themselves. It is the operating logic behind them:
+The value of structured data is not the raw code block. It is the operating logic behind it:
 
 1. define the business entities clearly
 2. make the service and location relationships explicit
@@ -137,13 +137,13 @@ That means making it easier for the site to reinforce:
 
 This is why the service should connect naturally to:
 
-- [Local Visibility Systems](/services/local-visibility)
-- [How To Create GEO-Optimized Content For AI Search And Local SEO](/knowledge-base/how-to-create-geo-optimized-content-for-ai-search-and-local-seo)
-- [How Oregon Markets Differ For Local Service Businesses](/reports/how-oregon-markets-differ-for-local-service-businesses)
+- [Local Visibility Systems](/services/local-visibility/)
+- [How To Create GEO-Optimized Content For AI Search And Local SEO](/knowledge-base/how-to-create-geo-optimized-content-for-ai-search-and-local-seo/)
+- [How Oregon Markets Differ For Local Service Businesses](/reports/how-oregon-markets-differ-for-local-service-businesses/)
 
 ## What gets measured
 
-The references were also strong on the idea that technical work should not stay abstract.
+Technical work only matters when it improves a decision, strengthens visibility, or makes results easier to measure.
 
 This service should help answer questions like:
 

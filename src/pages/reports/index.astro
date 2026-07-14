@@ -1,36 +1,36 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import { webpageGraph } from "../../lib/schema";
 
 const reports = (await getCollection("reports")).sort(
   (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
 );
+const latestReport = reports[0];
 
 const featuredLinks = [
   {
-    href: "/pricing",
-    label: "Conversion Surface",
+    href: "/pricing/",
+    label: "Pricing",
     title: "Diagnostic-Audit Pricing",
-    description: "The reports should all route back to diagnosis, not end in passive reading.",
+    description: "Turn what you learned into a focused diagnostic plan.",
   },
   {
-    href: "/locations",
-    label: "Cluster Hub",
+    href: "/locations/",
+    label: "Markets",
     title: "Oregon Locations",
-    description: "The Oregon reports now support a real city cluster instead of sitting in isolation.",
+    description: "Compare market conditions across 12 Oregon cities.",
   },
   {
-    href: "/services/lead-capture-ai-follow-up",
+    href: "/services/lead-capture-ai-follow-up/",
     label: "Service",
     title: "Lead Capture And AI Follow-Up",
-    description: "Speed, routing, and revenue-loss reports should reinforce this service directly.",
+    description: "Build a faster path from first inquiry to real conversation.",
   },
   {
-    href: "/services/search-data-architecture",
+    href: "/services/search-data-architecture/",
     label: "Service",
     title: "Search And Data Architecture",
-    description: "Competitive research, entity clarity, and report-driven authority should reinforce this service directly.",
+    description: "Measure what is working and keep your public signals consistent.",
   },
 ];
 ---
@@ -38,18 +38,32 @@ const featuredLinks = [
 <BaseLayout
   title="Reports"
   description="Research-backed reports that support the site's claims about local demand, response speed, trust, and technical execution."
-  schema={webpageGraph("/reports", "Reports", "Research-backed reports that support the site's claims about local demand, response speed, trust, and technical execution.")}
 >
-  <section class="hero">
-    <div class="shell stack">
-      <div class="hero-panel">
-        <p class="eyebrow">Research And Market Authority</p>
-        <h1>Reports that strengthen the service story instead of floating beside it.</h1>
-        <p>
-          This hub is where the site makes its operating arguments explicit: why response speed
-          changes revenue, why Oregon markets need different playbooks, and why infrastructure beats
-          generic agency theater.
-        </p>
+  <section class="hero reports-hero">
+    <div class="shell">
+      <div class="reports-hero__panel">
+        <div class="reports-hero__copy stack">
+          <p class="eyebrow">Oregon Market Intelligence</p>
+          <h1>Find the growth constraint before you fund the fix.</h1>
+          <p class="reports-hero__lead">
+            These reports turn local search behavior, market gaps, and response-time economics into
+            practical decisions for Oregon service businesses.
+          </p>
+          <div class="button-row">
+            {latestReport && (
+              <a class="button primary" href={`/reports/${latestReport.id}/`}>Read the latest report</a>
+            )}
+            <a class="button secondary" href="/pricing/">Start with the diagnostic audit</a>
+          </div>
+        </div>
+        <aside class="reports-hero__guide" aria-label="How to use the research library">
+          <p class="reports-hero__guide-label">Use the library to decide</p>
+          <ol>
+            <li><strong>Where to compete</strong><span>Compare Oregon markets and unmet demand.</span></li>
+            <li><strong>What to fix first</strong><span>Separate visibility, trust, and response problems.</span></li>
+            <li><strong>What to measure</strong><span>Connect the investment to qualified conversations.</span></li>
+          </ol>
+        </aside>
       </div>
     </div>
   </section>
@@ -58,12 +72,12 @@ const featuredLinks = [
     <div class="shell stack">
       <div class="case-study-intro">
         <div class="stack">
-          <p class="case-study-kicker">Report Cluster</p>
-          <h2>The best reports should help buyers understand the problem before they see the offer.</h2>
+          <p class="case-study-kicker">Choose A Question</p>
+          <h2>Start with the problem costing your business the most.</h2>
         </div>
         <p>
-          These pieces are not meant to become detached thought leadership. Each one should support a
-          service page, a market page, a proof surface, or the diagnostic-audit conversation.
+          Each report turns a broad growth problem into evidence, practical implications, and a
+          clearer next decision.
         </p>
       </div>
 
@@ -76,7 +90,7 @@ const featuredLinks = [
             <ul class="location-card__signals">
               {entry.data.tldr.slice(0, 2).map((item) => <li>{item}</li>)}
             </ul>
-            <a class="button secondary" href={`/reports/${entry.id}`}>Read the report</a>
+            <a class="button secondary" href={`/reports/${entry.id}/`}>Read the report</a>
           </article>
         ))}
       </div>

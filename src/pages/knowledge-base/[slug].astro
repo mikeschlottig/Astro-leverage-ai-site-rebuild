@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import AboutAuthor from "../../components/site/AboutAuthor.astro";
 import { getCollection, render } from "astro:content";
-import { articleGraph } from "../../lib/schema";
 
 export async function getStaticPaths() {
   const entries = await getCollection("knowledgeBase");
@@ -16,12 +16,19 @@ const { Content } = await render(entry);
   title={entry.data.title}
   description={entry.data.description}
   canonicalPath={`/knowledge-base/${entry.id}`}
-  schema={articleGraph(`/knowledge-base/${entry.id}`, entry.data.title, entry.data.description, entry.data.publishedAt.toISOString())}
+  pageType="article"
+  datePublished={entry.data.publishedAt.toISOString()}
+  articleSection="Knowledge Base"
 >
   <section class="section">
     <div class="shell surface prose">
       <h1>{entry.data.title}</h1>
       <Content />
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell">
+      <AboutAuthor />
     </div>
   </section>
 </BaseLayout>
