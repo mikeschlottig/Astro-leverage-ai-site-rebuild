@@ -3,6 +3,7 @@ title: Semantic Sync For Local Search
 description: A practical guide to keeping your Google Business Profile, website, service pages, and trust signals aligned so buyers, Google, and AI search systems see one credible local business.
 publishedAt: 2026-06-28
 relatedServices:
+  - google-business-profile-optimization
   - local-visibility
   - search-data-architecture
   - custom-web-design

@@ -4,7 +4,7 @@ description: High-performance custom websites for Oregon service businesses that
 summary: Your website is a demand-capture surface.
 heroTitle: Custom websites built to convert local search traffic into booked jobs.
 methodName: Custom Website Systems
-order: 2
+order: 4
 outcomes:
   - Better trust signals
   - Cleaner service-page architecture
@@ -43,6 +43,8 @@ relatedReports:
 relatedKnowledgeBase:
   - what-the-diagnostic-audit-includes
   - local-demand-systems
+relatedGuides:
+  - website-redesign-cost-for-local-business
 relatedCaseStudies:
   - daley-organics
   - oregon-smb-directory

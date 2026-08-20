@@ -9,7 +9,6 @@ export const SITE = {
     "Outcome-led websites, local visibility systems, and lead-response infrastructure for Oregon service businesses.",
   location: "Grants Pass, Oregon",
   email: "mike@leverageai.network",
-  phone: "(541) 000-0000",
   social: {
     linkedin: "https://www.linkedin.com/in/schlottig/",
     github: "https://github.com/mikeschlottig",
@@ -48,5 +47,19 @@ export const IDENTITY = defineSiteIdentity({
     sameAs: defaultAuthor.sameAs,
   },
   sameAs: Object.values(SITE.social),
-  areaServed: ["Oregon", "Grants Pass", "Medford", "Ashland", "Bend"],
+  areaServed: [
+    "Oregon",
+    "Albany",
+    "Ashland",
+    "Bend",
+    "Corvallis",
+    "Eugene",
+    "Grants Pass",
+    "Klamath Falls",
+    "Medford",
+    "Portland",
+    "Roseburg",
+    "Salem",
+    "Springfield",
+  ],
 });

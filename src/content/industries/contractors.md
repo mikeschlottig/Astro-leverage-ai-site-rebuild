@@ -5,6 +5,8 @@ heroTitle: Local SEO for Oregon contractors who need better projects, not vanity
 summary: Win high-intent project searches, prove credibility quickly, and make every estimate request easier to act on.
 relatedServices:
   - local-visibility
+  - google-business-profile-optimization
+  - local-seo-consulting
   - custom-web-design
   - lead-capture-ai-follow-up
   - search-data-architecture

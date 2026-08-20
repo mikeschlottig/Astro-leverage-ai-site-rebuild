@@ -87,10 +87,27 @@ const featuredLinks = [
             <p class="eyebrow">Report</p>
             <h3>{entry.data.title}</h3>
             <p>{entry.data.description}</p>
+            {entry.data.research && (
+              <p class="report-evidence-type">
+                {entry.data.research.type === "synthesis"
+                  ? "Research synthesis"
+                  : entry.data.research.type === "original"
+                    ? "Original research"
+                    : "Diagnostic framework"}
+                {entry.data.research.sourceCount !== undefined
+                  ? ` · ${entry.data.research.sourceCount} named sources`
+                  : ""}
+              </p>
+            )}
             <ul class="location-card__signals">
               {entry.data.tldr.slice(0, 2).map((item) => <li>{item}</li>)}
             </ul>
             <a class="button secondary" href={`/reports/${entry.id}/`} data-astro-prefetch>Read the report</a>
+            {entry.data.research?.downloadUrl && (
+              <a href={entry.data.research.downloadUrl} download>
+                {entry.data.research.downloadLabel ?? "Download supporting data"}
+              </a>
+            )}
           </article>
         ))}
       </div>

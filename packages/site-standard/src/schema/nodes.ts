@@ -54,6 +54,16 @@ export function organizationNode(identity: SiteIdentity): JsonLdNode {
     logo: { '@type': 'ImageObject', url: identity.logoUrl },
     ...(identity.email !== undefined ? { email: identity.email } : {}),
     ...(identity.telephone !== undefined ? { telephone: identity.telephone } : {}),
+    ...(identity.email !== undefined || identity.telephone !== undefined
+      ? {
+          contactPoint: {
+            '@type': 'ContactPoint',
+            contactType: 'customer service',
+            ...(identity.email !== undefined ? { email: identity.email } : {}),
+            ...(identity.telephone !== undefined ? { telephone: identity.telephone } : {}),
+          },
+        }
+      : {}),
     ...(identity.address !== undefined ? { address: postalAddress(identity.address) } : {}),
     ...(identity.sameAs !== undefined && identity.sameAs.length > 0 ? { sameAs: identity.sameAs } : {}),
     ...(identity.founder !== undefined ? { founder: { '@id': ids.founder } } : {}),
@@ -94,6 +104,18 @@ export function professionalServiceNode(identity: SiteIdentity): JsonLdNode {
     name: identity.legalName,
     url: `${identity.url}/`,
     parentOrganization: { '@id': ids.organization },
+    ...(identity.email !== undefined ? { email: identity.email } : {}),
+    ...(identity.telephone !== undefined ? { telephone: identity.telephone } : {}),
+    ...(identity.email !== undefined || identity.telephone !== undefined
+      ? {
+          contactPoint: {
+            '@type': 'ContactPoint',
+            contactType: 'customer service',
+            ...(identity.email !== undefined ? { email: identity.email } : {}),
+            ...(identity.telephone !== undefined ? { telephone: identity.telephone } : {}),
+          },
+        }
+      : {}),
     ...(identity.address !== undefined ? { address: postalAddress(identity.address) } : {}),
     ...(identity.areaServed !== undefined && identity.areaServed.length > 0
       ? { areaServed: areaServedNodes(identity.areaServed) }

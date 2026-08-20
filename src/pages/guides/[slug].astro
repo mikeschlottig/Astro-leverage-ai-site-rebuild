@@ -1,0 +1,108 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AboutAuthor from "../../components/site/AboutAuthor.astro";
+import { getCollection, render } from "astro:content";
+
+type LinkCard = {
+  href: string;
+  title: string;
+  description: string;
+};
+
+export async function getStaticPaths() {
+  const entries = await getCollection("guides");
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const services = await getCollection("services");
+const guides = await getCollection("guides");
+
+const relatedServices: LinkCard[] = entry.data.relatedServices.flatMap((slug) => {
+  const service = services.find((candidate) => candidate.id === slug);
+  return service
+    ? [{ href: `/services/${service.id}/`, title: service.data.title, description: service.data.description }]
+    : [];
+});
+
+const relatedGuides: LinkCard[] = entry.data.relatedGuides.flatMap((slug) => {
+  const guide = guides.find((candidate) => candidate.id === slug && candidate.id !== entry.id);
+  return guide
+    ? [{ href: `/guides/${guide.id}/`, title: guide.data.title, description: guide.data.description }]
+    : [];
+});
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  canonicalPath={`/guides/${entry.id}`}
+  pageType="article"
+  datePublished={entry.data.publishedAt.toISOString()}
+  dateModified={entry.data.updatedAt?.toISOString()}
+  articleSection="Buyer Guides"
+  faqs={entry.data.faqs}
+>
+  <section class="section">
+    <div class="shell stack">
+      <header class="guide-hero surface stack">
+        <p class="eyebrow">Buyer Guide</p>
+        <h1>{entry.data.heroTitle ?? entry.data.title}</h1>
+        <p>{entry.data.description}</p>
+        <div class="button-row">
+          <a class="button primary" href="/contact/" data-astro-prefetch>Request the diagnostic audit</a>
+          <a class="button secondary" href="/pricing/" data-astro-prefetch>Review current pricing</a>
+        </div>
+      </header>
+
+      <div class="split guide-layout">
+        <article class="surface stack prose">
+          <Content />
+        </article>
+
+        <aside class="stack">
+          <section class="surface stack">
+            <h2>The short answer</h2>
+            <p>{entry.data.summary}</p>
+          </section>
+
+          {entry.data.faqs.length > 0 && (
+            <section class="surface stack">
+              <h2>Questions to settle before signing</h2>
+              <div class="service-faq-list">
+                {entry.data.faqs.map((faq) => (
+                  <details class="service-faq-item">
+                    <summary>{faq.question}</summary>
+                    <p>{faq.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
+        </aside>
+      </div>
+
+      {(relatedServices.length > 0 || relatedGuides.length > 0) && (
+        <section class="surface stack">
+          <h2>Continue with the relevant service or decision guide.</h2>
+          <div class="case-study-links">
+            {[...relatedServices, ...relatedGuides].map((link) => (
+              <a class="case-study-link-card" href={link.href} data-astro-prefetch>
+                <strong>{link.title}</strong>
+                <p>{link.description}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <AboutAuthor heading="Your decision partner" />
+    </div>
+  </section>
+</BaseLayout>
+

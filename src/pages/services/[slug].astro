@@ -5,7 +5,7 @@ import { getCollection, render } from "astro:content";
 import { locations } from "../../data/locations";
 
 type LinkCard = {
-  kind: "Report" | "Knowledge Base" | "Case Study" | "Location" | "Industry";
+  kind: "Report" | "Knowledge Base" | "Buyer Guide" | "Case Study" | "Location" | "Industry";
   href: string;
   title: string;
   description: string;
@@ -20,6 +20,7 @@ const { entry } = Astro.props;
 const servicePath = `/services/${entry.id}`;
 const allReports = await getCollection("reports");
 const allKnowledgeBaseEntries = await getCollection("knowledgeBase");
+const allGuides = await getCollection("guides");
 const allCaseStudies = await getCollection("caseStudies");
 const allIndustries = await getCollection("industries");
 
@@ -79,6 +80,20 @@ const relatedLocations: LinkCard[] = entry.data.relatedLocations.flatMap((slug) 
     : [];
 });
 
+const relatedGuides: LinkCard[] = entry.data.relatedGuides.flatMap((slug) => {
+  const guide = allGuides.find((candidate) => candidate.id === slug);
+  return guide
+    ? [
+        {
+          kind: "Buyer Guide",
+          href: `/guides/${guide.id}/`,
+          title: guide.data.title,
+          description: guide.data.description,
+        },
+      ]
+    : [];
+});
+
 const relatedIndustries: LinkCard[] = entry.data.relatedIndustries.flatMap((slug) => {
   const industry = allIndustries.find((candidate) => candidate.id === slug);
   return industry
@@ -96,6 +111,7 @@ const relatedIndustries: LinkCard[] = entry.data.relatedIndustries.flatMap((slug
 const supportLinks = [
   ...relatedReports,
   ...relatedKnowledgeBase,
+  ...relatedGuides,
   ...relatedCaseStudies,
   ...relatedIndustries,
   ...relatedLocations,

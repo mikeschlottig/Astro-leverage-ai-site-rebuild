@@ -5,6 +5,7 @@ heroTitle: Local SEO for Oregon home service companies competing for the next ne
 summary: Be easier to find, faster to trust, and quicker to respond when local demand is ready to move.
 relatedServices:
   - local-visibility
+  - google-business-profile-optimization
   - custom-web-design
   - lead-capture-ai-follow-up
   - search-data-architecture

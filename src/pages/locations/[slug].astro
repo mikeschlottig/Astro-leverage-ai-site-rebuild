@@ -9,6 +9,18 @@ const serviceCards = {
     title: "Local SEO & Google Maps Services",
     description: "Improve map-pack relevance, service-area clarity, and local search coverage.",
   },
+  "google-business-profile-optimization": {
+    href: "/services/google-business-profile-optimization/",
+    label: "Service",
+    title: "Google Business Profile Optimization",
+    description: "Align categories, services, proof, and website signals around the real business.",
+  },
+  "local-seo-consulting": {
+    href: "/services/local-seo-consulting/",
+    label: "Service",
+    title: "Local SEO Consultant in Oregon",
+    description: "Work directly with a founder-led consultant on the market, priorities, and implementation sequence.",
+  },
   "custom-web-design": {
     href: "/services/custom-web-design/",
     label: "Service",
@@ -184,6 +196,32 @@ const relatedLinks = [
         <ul class="case-study-checklist">
           {location.priorityMoves.map((move) => <li>{move}</li>)}
         </ul>
+      </div>
+
+      <div class="location-service-disclosure surface">
+        <div class="stack">
+          <p class="location-page-block__label">How service works here</p>
+          <h3>
+            {location.slug === "grants-pass"
+              ? "Leverage AI is based in Grants Pass."
+              : `${location.name} is a service area—not a claimed Leverage AI office.`}
+          </h3>
+        </div>
+        <div class="stack">
+          <p>
+            {location.slug === "grants-pass"
+              ? "Strategy and implementation are led locally, with direct founder involvement from research through launch and measurement."
+              : `Work for ${location.name} businesses is led from Grants Pass through remote discovery, market research, implementation, and review. The local strategy is specific to ${location.name}; the office location is not.`}
+          </p>
+          <a href={location.officialResource.href} rel="external">
+            Consult {location.officialResource.label} primary information
+          </a>
+          <p class="location-evidence-note">
+            Market observations on this page are planning hypotheses informed by public regional
+            context. Validate them against current search results, Google Business Profile data,
+            Search Console, and the business's own lead records before funding implementation.
+          </p>
+        </div>
       </div>
     </div>
   </section>

@@ -47,6 +47,8 @@ relatedKnowledgeBase:
   - what-the-diagnostic-audit-includes
   - how-to-create-geo-optimized-content-for-ai-search-and-local-seo
   - local-demand-systems
+relatedGuides:
+  - local-seo-consultant-vs-agency
 relatedCaseStudies:
   - daley-organics
   - oregon-smb-directory

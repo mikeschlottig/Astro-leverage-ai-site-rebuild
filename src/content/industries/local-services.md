@@ -5,6 +5,8 @@ heroTitle: Local SEO systems for Oregon service businesses.
 summary: Turn nearby search demand into trusted, qualified conversations.
 relatedServices:
   - local-visibility
+  - google-business-profile-optimization
+  - local-seo-consulting
   - custom-web-design
   - lead-capture-ai-follow-up
 ---

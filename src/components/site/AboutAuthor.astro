@@ -18,8 +18,9 @@ const {
     src={author.image}
     alt={author.imageAlt}
     width="240"
-    height="240"
+    height="320"
     loading="lazy"
+    decoding="async"
   />
   <div class="about-author__copy stack">
     <p class="eyebrow">{heading}</p>
@@ -29,6 +30,6 @@ const {
     <ul class="about-author__expertise" aria-label={`${author.name} areas of expertise`}>
       {author.expertise.map((item) => <li>{item}</li>)}
     </ul>
-    <a href="/about/">More about Mike and Leverage AI</a>
+    <a href="/about/" data-astro-prefetch>More about Mike and Leverage AI</a>
   </div>
 </aside>

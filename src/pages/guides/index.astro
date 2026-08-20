@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const guides = (await getCollection("guides")).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
+);
+---
+
+<BaseLayout
+  title="Local SEO & Website Buyer Guides"
+  description="Practical buyer guides for Oregon businesses comparing local SEO providers, website redesign costs, scope, ownership, and implementation options."
+  canonicalPath="/guides"
+>
+  <section class="section">
+    <div class="shell stack">
+      <div class="surface stack guide-index-hero">
+        <p class="eyebrow">Buyer Guides</p>
+        <h1>Make the expensive decision with fewer blind spots.</h1>
+        <p>
+          These guides answer the commercial questions that should be clear before an Oregon
+          service business hires a consultant, signs an agency retainer, or funds a website rebuild.
+        </p>
+      </div>
+
+      <div class="guide-list">
+        {guides.map((guide) => (
+          <article class="guide-list__item">
+            <div class="stack">
+              <p class="guide-list__label">Decision guide</p>
+              <h2>{guide.data.title}</h2>
+              <p>{guide.data.summary}</p>
+            </div>
+            <a class="button secondary" href={`/guides/${guide.id}/`} data-astro-prefetch>
+              Read the guide
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

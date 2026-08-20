@@ -3,6 +3,16 @@ title: Rogue Valley Local Service Visibility Benchmark
 description: An evidence-informed benchmark for how Medford, Grants Pass, Ashland, and nearby Rogue Valley service businesses typically separate on visibility, trust, local proof, and response handling.
 publishedAt: 2026-06-28
 updatedAt: 2026-06-28
+research:
+  type: diagnostic-framework
+  scope: Public visibility, trust, local proof, and response patterns for service businesses in Medford, Grants Pass, Ashland, and the surrounding Rogue Valley.
+  collectionPeriod: Sources and framework reviewed in June 2026.
+  methodology: Qualitative synthesis of the named Oregon and Rogue Valley public resources, combined with a four-layer diagnostic framework. No proprietary business sample or map-grid study was collected.
+  limitations: This is not a controlled benchmark or original field dataset. It should be used to form audit questions, then validated against the individual business's profile, website, Search Console, analytics, and lead records.
+  sourceCount: 5
+  revisionNotes:
+    - June 28, 2026 — Initial framework published.
+    - August 20, 2026 — Evidence type, methodology, scope, and limitations made explicit.
 tldr:
   - The Rogue Valley still gives disciplined local operators room to win, but many businesses leak demand through uneven visibility, thin public proof, and slow response.
   - Stronger businesses usually do not look louder. They look easier to verify, easier to trust, and easier to reach.

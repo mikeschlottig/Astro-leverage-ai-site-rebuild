@@ -65,7 +65,7 @@ That comparison belongs across the brand, but the report gives it a good home in
 
 ## The local demand architecture is a closed loop
 
-One of the most reusable ideas in the PDF is the closed-loop system model. It aligns almost perfectly with the ontology already driving the rebuild:
+The closed-loop system model connects the site's four operating layers:
 
 | Layer | Site cluster | What it does |
 | --- | --- | --- |
@@ -90,7 +90,7 @@ Generic agencies apply Portland tactics to Southern Oregon and then wonder why t
 
 ## Proof inside the report still matters
 
-The Daley Organics section in the PDF reinforces the same lesson as the dedicated case study: in smaller markets, intent is worth more than vanity traffic.
+The Daley Organics case reinforces the same lesson: in smaller markets, intent is worth more than vanity traffic.
 
 - Outranked by distant competitors despite operating locally
 - Fixed through Google Business Profile alignment, local schema, and entity cleanup
@@ -110,7 +110,7 @@ That belongs in the report because it connects:
 
 ## Pricing should feel like infrastructure, not a retainer trap
 
-The pricing spreads in the PDF are useful as messaging inputs more than literal layout inputs. The strongest reusable ideas are:
+The pricing model follows four practical operating principles:
 
 - pay for diagnostic clarity first
 - scope the implementation like infrastructure, not like theater

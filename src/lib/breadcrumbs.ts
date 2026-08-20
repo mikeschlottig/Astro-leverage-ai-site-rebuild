@@ -7,6 +7,7 @@ const sectionLabels: Record<string, string> = {
   accessibility: "Accessibility",
   blog: "Blog",
   contact: "Contact",
+  guides: "Buyer Guides",
   industries: "Industries",
   "intellectual-property": "Intellectual Property",
   "knowledge-base": "Knowledge Base",

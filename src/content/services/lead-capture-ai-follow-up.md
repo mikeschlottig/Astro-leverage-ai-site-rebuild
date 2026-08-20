@@ -4,7 +4,7 @@ description: Lead capture, missed-call recovery, qualification, and AI-assisted 
 summary: Speed to lead is a revenue system.
 heroTitle: Lead generation and AI follow-up that keeps local demand from going cold.
 methodName: Lead Capture & AI Follow-Up
-order: 3
+order: 5
 outcomes:
   - Faster response times
   - Fewer lost forms and calls

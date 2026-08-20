@@ -3,6 +3,7 @@ title: What A Strong Google Business Profile Really Needs
 description: A strong Google Business Profile is more than a completed listing. For local service businesses, it needs accurate categories, real service-page support, fresh proof, and a website that reinforces the same local story.
 publishedAt: 2026-06-28
 relatedServices:
+  - google-business-profile-optimization
   - local-visibility
   - search-data-architecture
   - custom-web-design

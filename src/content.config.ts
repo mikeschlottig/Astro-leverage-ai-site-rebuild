@@ -30,6 +30,18 @@ const faqItem = z.object({
   answer: z.string(),
 });
 
+const researchMeta = z.object({
+  type: z.enum(["original", "synthesis", "diagnostic-framework"]),
+  scope: z.string(),
+  collectionPeriod: z.string(),
+  methodology: z.string(),
+  limitations: z.string(),
+  sourceCount: z.number().int().nonnegative().optional(),
+  downloadUrl: z.string().optional(),
+  downloadLabel: z.string().optional(),
+  revisionNotes: z.array(z.string()).default([]),
+});
+
 const services = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/services" }),
   schema: z.object({
@@ -45,6 +57,7 @@ const services = defineCollection({
     faqs: z.array(faqItem).default([]),
     relatedReports: z.array(z.string()).default([]),
     relatedKnowledgeBase: z.array(z.string()).default([]),
+    relatedGuides: z.array(z.string()).default([]),
     relatedCaseStudies: z.array(z.string()).default([]),
     relatedLocations: z.array(z.string()).default([]),
     relatedIndustries: z.array(z.string()).default([]),
@@ -106,6 +119,7 @@ const reports = defineCollection({
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
     tldr: z.array(z.string()).default([]),
+    research: researchMeta.optional(),
     relatedServices: z.array(z.string()).default([]),
     relatedReports: z.array(z.string()).default([]),
   }),
@@ -132,6 +146,19 @@ const knowledgeBase = defineCollection({
   }),
 });
 
+const guides = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/guides" }),
+  schema: z.object({
+    ...seoFields,
+    publishedAt: z.coerce.date(),
+    updatedAt: z.coerce.date().optional(),
+    summary: z.string(),
+    faqs: z.array(faqItem).default([]),
+    relatedServices: z.array(z.string()).default([]),
+    relatedGuides: z.array(z.string()).default([]),
+  }),
+});
+
 const industries = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/industries" }),
   schema: z.object({
@@ -147,5 +174,6 @@ export const collections = {
   reports,
   blog,
   knowledgeBase,
+  guides,
   industries,
 };

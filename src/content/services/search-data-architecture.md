@@ -4,7 +4,7 @@ description: AI search optimization, schema, entity architecture, and measuremen
 summary: Measurement keeps strategy honest.
 heroTitle: AI search, schema, and data architecture built around measurable authority.
 methodName: Search & Data Architecture
-order: 4
+order: 6
 outcomes:
   - Cleaner analytics and reporting
   - Stronger schema and entity alignment

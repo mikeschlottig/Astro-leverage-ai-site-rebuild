@@ -53,6 +53,23 @@ img {
   gap: 1rem;
 }
 
+.prose {
+  min-width: 0;
+}
+
+.prose table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.prose th,
+.prose td {
+  min-width: 9rem;
+}
+
 .section {
   padding: 4rem 0;
 }
@@ -1096,7 +1113,8 @@ ul {
 
 .about-author__image {
   width: 100%;
-  aspect-ratio: 1;
+  height: auto;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center 24%;
   border-radius: 0.45rem;
@@ -1476,6 +1494,161 @@ ul {
   background: color-mix(in oklab, var(--surface-strong) 82%, black 18%);
 }
 
+.location-service-disclosure,
+.service-decision-path {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  border-color: color-mix(in oklab, var(--accent) 20%, var(--line));
+}
+
+.location-service-disclosure p,
+.location-service-disclosure h3,
+.pricing-driver-list dd,
+.guide-list__item p,
+.research-notes dd {
+  margin: 0;
+}
+
+.location-service-disclosure .location-evidence-note {
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.pricing-driver-list {
+  margin: 0;
+  padding-block: 0.25rem;
+}
+
+.pricing-driver-list__item {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: minmax(11rem, 0.65fr) minmax(0, 1.35fr);
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.pricing-driver-list__item:first-child {
+  border-top: 0;
+}
+
+.pricing-driver-list dt,
+.research-notes dt {
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.pricing-driver-list dd,
+.research-notes dd {
+  color: var(--muted);
+}
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.table-scroll:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.decision-table {
+  width: 100%;
+  min-width: 44rem;
+  border-collapse: collapse;
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+}
+
+.decision-table caption {
+  padding: 1rem;
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-weight: 700;
+  text-align: left;
+}
+
+.decision-table th,
+.decision-table td {
+  padding: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  text-align: left;
+  vertical-align: top;
+}
+
+.decision-table th {
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+}
+
+.guide-index-hero > p:last-child,
+.guide-hero > p {
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.guide-list {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.guide-list__item {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-list__label,
+.report-evidence-type {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.guide-layout {
+  grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+}
+
+.research-notes {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid color-mix(in oklab, var(--accent) 28%, var(--line));
+}
+
+.research-notes dl {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.research-notes dl > div {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: minmax(8.5rem, 0.35fr) minmax(0, 1.65fr);
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.research-notes dl > div:first-child {
+  border-top: 0;
+}
+
+.research-notes .button {
+  justify-self: start;
+}
+
 @media (max-width: 900px) {
   .case-study-hero__panel,
   .service-hero__panel,
@@ -1486,7 +1659,10 @@ ul {
   .location-hub-hero__panel,
   .location-page-hero__panel,
   .pricing-hero__panel,
-  .pricing-credit {
+  .pricing-credit,
+  .location-service-disclosure,
+  .service-decision-path,
+  .guide-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1515,6 +1691,12 @@ ul {
 
   .about-author__image {
     max-width: 12rem;
+  }
+
+  .pricing-driver-list__item,
+  .guide-list__item,
+  .research-notes dl > div {
+    grid-template-columns: 1fr;
   }
 }
 

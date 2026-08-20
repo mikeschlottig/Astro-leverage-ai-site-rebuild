@@ -15,7 +15,7 @@ relatedServices:
 
 ## Oregon needs a market diagnosis, not a statewide script
 
-The strongest contribution from the new source material is its insistence that Oregon's local service markets should not be flattened into one generic playbook.
+Oregon's local service markets should not be flattened into one generic playbook.
 
 That matters because the site is already organized around:
 

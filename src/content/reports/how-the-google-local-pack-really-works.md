@@ -7,6 +7,7 @@ tldr:
   - "Complete business information, accurate categories, real reviews, strong website support, and consistent local signals are more dependable than shortcuts."
   - "Treat precise ranking formulas, fixed review deadlines, and guaranteed 60-to-90-day outcomes as hypotheses unless they are backed by evidence from your own market."
 relatedServices:
+  - google-business-profile-optimization
   - local-visibility
   - search-data-architecture
   - custom-web-design

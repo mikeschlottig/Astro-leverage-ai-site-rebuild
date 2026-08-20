@@ -16,7 +16,7 @@ relatedServices:
 
 ## This is not really an SEO conversation anymore
 
-The strongest contribution from the new source material is its insistence that local discovery has moved past narrow SEO checklists.
+Local discovery has moved past narrow SEO checklists.
 
 A business can have a decent Google Business Profile and a decent website and still be weaker than it looks if the rest of its public entity is fragmented.
 

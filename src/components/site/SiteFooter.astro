@@ -19,16 +19,25 @@ import { SITE } from "../../lib/site";
         <h3>Where Next</h3>
         <ul>
           {SITE.nav.slice(0, 7).map((item) => (
-            <li><a href={item.href}>{item.label}</a></li>
+            <li><a href={item.href} data-astro-prefetch>{item.label}</a></li>
           ))}
+        </ul>
+      </div>
+      <div>
+        <h3>Decide</h3>
+        <ul>
+          <li><a href="/guides/" data-astro-prefetch>Buyer Guides</a></li>
+          <li><a href="/services/local-seo-consulting/" data-astro-prefetch>Local SEO Consultant</a></li>
+          <li><a href="/about/" data-astro-prefetch>About Mike</a></li>
+          <li><a href="/contact/" data-astro-prefetch>Request an Audit</a></li>
         </ul>
       </div>
     </div>
     <nav class="footer-legal" aria-label="Legal">
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-      <a href="/intellectual-property/">Copyright &amp; IP</a>
-      <a href="/accessibility/">Accessibility</a>
+      <a href="/privacy/" data-astro-prefetch>Privacy</a>
+      <a href="/terms/" data-astro-prefetch>Terms</a>
+      <a href="/intellectual-property/" data-astro-prefetch>Copyright &amp; IP</a>
+      <a href="/accessibility/" data-astro-prefetch>Accessibility</a>
     </nav>
     <p class="footer-copyright">
       © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.

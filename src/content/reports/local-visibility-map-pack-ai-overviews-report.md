@@ -4,11 +4,24 @@ heroTitle: "The Local Visibility Report: Map Pack, AI Overviews, and the Economi
 description: 2025–2026 research on Google Map Pack click share, local search intent, AI Overview citations, and the economic value of top-three visibility.
 publishedAt: 2026-07-13
 updatedAt: 2026-07-13
+research:
+  type: synthesis
+  scope: Published 2025–2026 studies and official guidance covering Google local results, AI Overviews, click behavior, entity consistency, and local discovery.
+  collectionPeriod: Sources compiled and checked in July 2026.
+  methodology: Narrative synthesis of eight named external sources with figures kept attached to their original study populations and caveats. The downloadable extract lists each benchmark separately rather than combining them into one dataset.
+  limitations: The source studies use different dates, markets, devices, query classes, and samples. Their figures are directional inputs and should be replaced with first-party business data before forecasting revenue.
+  sourceCount: 8
+  downloadUrl: /data/local-visibility-research-extract.csv
+  downloadLabel: Download the benchmark source extract
+  revisionNotes:
+    - July 13, 2026 — Initial research synthesis published.
+    - August 20, 2026 — Added structured methodology, limitations, and downloadable source extract.
 tldr:
   - "Local discovery now has two compressed front doors: Google's three-result Map Pack and AI-generated answers that cite only a small set of sources."
   - "A top-three position matters because local queries combine concentrated visibility with unusually high commercial intent—but traffic estimates are benchmarks, not revenue guarantees."
   - "Accurate business data, a complete Google Business Profile, credible reviews, strong local pages, structured data, and third-party corroboration support visibility across both systems."
 relatedServices:
+  - google-business-profile-optimization
   - local-visibility
   - search-data-architecture
   - custom-web-design

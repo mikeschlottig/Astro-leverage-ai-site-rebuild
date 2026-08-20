@@ -45,6 +45,12 @@ const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
       ]
     : [];
 });
+
+const researchTypeLabels = {
+  original: "Original research",
+  synthesis: "Research synthesis",
+  "diagnostic-framework": "Diagnostic framework",
+} as const;
 ---
 
 <BaseLayout
@@ -69,6 +75,57 @@ const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
       <div class="split">
         <article class="surface stack prose">
           <Content />
+
+          {entry.data.research && (
+            <section class="research-notes" aria-labelledby="research-notes-heading">
+              <h2 id="research-notes-heading">Research notes</h2>
+              <dl>
+                <div>
+                  <dt>Evidence type</dt>
+                  <dd>{researchTypeLabels[entry.data.research.type]}</dd>
+                </div>
+                <div>
+                  <dt>Scope</dt>
+                  <dd>{entry.data.research.scope}</dd>
+                </div>
+                <div>
+                  <dt>Collection period</dt>
+                  <dd>{entry.data.research.collectionPeriod}</dd>
+                </div>
+                <div>
+                  <dt>Methodology</dt>
+                  <dd>{entry.data.research.methodology}</dd>
+                </div>
+                <div>
+                  <dt>Limitations</dt>
+                  <dd>{entry.data.research.limitations}</dd>
+                </div>
+                {entry.data.research.sourceCount !== undefined && (
+                  <div>
+                    <dt>Named sources</dt>
+                    <dd>{entry.data.research.sourceCount}</dd>
+                  </div>
+                )}
+              </dl>
+              {entry.data.research.downloadUrl && (
+                <a
+                  class="button secondary"
+                  href={entry.data.research.downloadUrl}
+                  download
+                >
+                  {entry.data.research.downloadLabel ?? "Download supporting data"}
+                </a>
+              )}
+              {entry.data.research.revisionNotes.length > 0 && (
+                <div class="stack">
+                  <h3>Visible update history</h3>
+                  <ul>
+                    {entry.data.research.revisionNotes.map((note) => <li>{note}</li>)}
+                  </ul>
+                </div>
+              )}
+            </section>
+          )}
         </article>
 
         <aside class="stack">
@@ -86,7 +143,7 @@ const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
               <h2>Where this research becomes actual implementation.</h2>
               <div class="case-study-links">
                 {relatedServices.map((service) => (
-                  <a class="case-study-link-card" href={service.href}>
+                  <a class="case-study-link-card" href={service.href} data-astro-prefetch>
                     <span>Service</span>
                     <strong>{service.title}</strong>
                     <p>{service.description}</p>
@@ -102,7 +159,7 @@ const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
               <h2>Build the operating context behind the numbers.</h2>
               <div class="case-study-links">
                 {relatedReports.map((report) => (
-                  <a class="case-study-link-card" href={report.href}>
+                  <a class="case-study-link-card" href={report.href} data-astro-prefetch>
                     <span>Related report</span>
                     <strong>{report.title}</strong>
                     <p>{report.description}</p>
@@ -116,8 +173,8 @@ const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
             <p class="eyebrow">Next Step</p>
             <h2>Turn the research into a clearer next decision.</h2>
             <div class="button-row">
-              <a class="button primary" href="/pricing/">Review the diagnostic path</a>
-              <a class="button secondary" href="/contact/">Request a market review</a>
+              <a class="button primary" href="/pricing/" data-astro-prefetch>Review the diagnostic path</a>
+              <a class="button secondary" href="/contact/" data-astro-prefetch>Request a market review</a>
             </div>
           </section>
         </aside>

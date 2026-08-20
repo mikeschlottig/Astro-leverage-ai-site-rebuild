@@ -1,8 +1,17 @@
 ---
 title: Why Speed Wins
-description: A quantitative report on how missed calls and slow replies leak revenue for local service businesses and why response systems now belong inside the growth architecture.
+description: A diagnostic framework for estimating how missed calls and slow replies leak revenue for local service businesses and why response systems belong inside the growth architecture.
 publishedAt: 2026-06-27
-updatedAt: 2026-06-27
+updatedAt: 2026-08-20
+research:
+  type: diagnostic-framework
+  scope: Revenue-risk modeling for missed calls, form delays, and time-to-first-response in local service businesses.
+  collectionPeriod: Framework published in June 2026 and clarified in August 2026.
+  methodology: A business-specific calculation framework using inquiry volume, response time, qualification rate, close rate, and job value. The timing bands are illustrative operating thresholds rather than measurements from a Leverage AI field sample.
+  limitations: No proprietary sample or controlled response-time study is presented on this page. Each business must replace the illustrative timing bands with CRM, call, form, and booked-work records before estimating financial impact.
+  revisionNotes:
+    - June 27, 2026 — Initial operating framework published.
+    - August 20, 2026 — Removed the unsupported quantitative characterization and added explicit methodology and limitations.
 tldr:
   - Slow reply times are not a soft customer-service issue; they are a recurring revenue leak.
   - The five-minute window is where conversion probability still feels alive.
@@ -15,7 +24,7 @@ relatedServices:
 
 ## The cost of silence is measurable
 
-The strongest contribution from the new source document is its refusal to talk about response speed like a vague best practice. It treats missed calls and slow replies as a measurable operating loss.
+Response speed should not be treated like a vague best practice. Missed calls and slow replies can be modeled as an operating loss using the business's own inquiry, qualification, close-rate, and job-value records.
 
 That framing is useful because it changes the conversation:
 
@@ -45,11 +54,11 @@ A business does not need national-scale analytics to see the pattern. It only ne
 
 That is why [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/) belongs in the public service stack. It is not there to sound modern. It is there because many businesses are already paying to generate leads they never operationally convert.
 
-## The five-minute window changes everything
+## Response delay changes the opportunity
 
 The behavioral half of the report matters just as much as the financial half. Intent decays quickly.
 
-The core pattern is easy to understand:
+The operating pattern is easy to understand. The timing bands below are diagnostic prompts, not a claim that every category follows one universal conversion curve:
 
 | Time to first response | What usually happens |
 | --- | --- |
@@ -59,7 +68,7 @@ The core pattern is easy to understand:
 | 30+ minutes | The response becomes catch-up instead of first contact. |
 | Hours later | The lead often belongs to another business already. |
 
-This is why the "first responder advantage" keeps showing up in local demand research. The first fast, competent reply often becomes the company the prospect remembers as reliable.
+A fast, competent reply can become part of the reliability a prospect uses to choose. The business should measure its own response-time and close-rate relationship instead of borrowing a universal percentage.
 
 That dynamic should influence more than just operations. It should influence the website and offer structure too:
 

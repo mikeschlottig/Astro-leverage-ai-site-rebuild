@@ -2,6 +2,8 @@ export type LocationTier = "tier-1" | "tier-2" | "tier-3" | "strategic";
 
 export type ServiceSlug =
   | "local-visibility"
+  | "google-business-profile-optimization"
+  | "local-seo-consulting"
   | "custom-web-design"
   | "lead-capture-ai-follow-up"
   | "search-data-architecture";
@@ -38,6 +40,10 @@ export type LocationEntry = {
   relatedReports: ReportSlug[];
   relatedCaseStudies: CaseStudySlug[];
   nearbyMarkets: string[];
+  officialResource: {
+    label: string;
+    href: string;
+  };
 };
 
 export const tierDescriptions: Record<LocationTier, string> = {
@@ -51,6 +57,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "albany",
     name: "Albany",
+    officialResource: { label: "City of Albany", href: "https://albanyoregon.gov/" },
     region: "Willamette Valley",
     tier: "strategic",
     tierLabel: "Strategic Expansion",
@@ -90,6 +97,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "ashland",
     name: "Ashland",
+    officialResource: { label: "City of Ashland", href: "https://ashlandoregon.gov/" },
     region: "Southern Oregon",
     tier: "strategic",
     tierLabel: "Strategic Expansion",
@@ -129,6 +137,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "bend",
     name: "Bend",
+    officialResource: { label: "City of Bend", href: "https://bendoregon.gov/" },
     region: "Central Oregon",
     tier: "tier-1",
     tierLabel: "Tier 1: High Opportunity",
@@ -160,7 +169,7 @@ export const locations: LocationEntry[] = [
         detail: "A sharper system can outperform weaker competitors quickly.",
       },
     ],
-    recommendedServices: ["local-visibility", "custom-web-design", "lead-capture-ai-follow-up", "search-data-architecture"],
+    recommendedServices: ["local-visibility", "google-business-profile-optimization", "custom-web-design", "lead-capture-ai-follow-up", "search-data-architecture"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins"],
     relatedCaseStudies: ["daley-organics", "oregon-smb-directory"],
     nearbyMarkets: ["salem", "eugene", "klamath-falls"],
@@ -168,6 +177,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "corvallis",
     name: "Corvallis",
+    officialResource: { label: "City of Corvallis", href: "https://www.corvallisoregon.gov/" },
     region: "Willamette Valley",
     tier: "tier-2",
     tierLabel: "Tier 2: Stable Demand",
@@ -207,6 +217,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "eugene",
     name: "Eugene",
+    officialResource: { label: "City of Eugene", href: "https://www.eugene-or.gov/" },
     region: "Willamette Valley",
     tier: "tier-3",
     tierLabel: "Tier 3: Saturated Or Mixed",
@@ -246,6 +257,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "grants-pass",
     name: "Grants Pass",
+    officialResource: { label: "City of Grants Pass", href: "https://www.grantspassoregon.gov/" },
     region: "Southern Oregon",
     tier: "tier-1",
     tierLabel: "Tier 1: High Opportunity",
@@ -277,7 +289,7 @@ export const locations: LocationEntry[] = [
         detail: "Service-area authority and fast follow-up carry unusual weight here.",
       },
     ],
-    recommendedServices: ["local-visibility", "lead-capture-ai-follow-up", "custom-web-design", "search-data-architecture"],
+    recommendedServices: ["local-visibility", "google-business-profile-optimization", "local-seo-consulting", "lead-capture-ai-follow-up", "custom-web-design", "search-data-architecture"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins"],
     relatedCaseStudies: ["daley-organics", "oregon-smb-directory"],
     nearbyMarkets: ["medford", "ashland", "klamath-falls"],
@@ -285,6 +297,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "klamath-falls",
     name: "Klamath Falls",
+    officialResource: { label: "City of Klamath Falls", href: "https://www.klamathfalls.city/" },
     region: "Klamath Basin",
     tier: "strategic",
     tierLabel: "Strategic Expansion",
@@ -324,6 +337,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "medford",
     name: "Medford",
+    officialResource: { label: "City of Medford", href: "https://www.medfordoregon.gov/" },
     region: "Rogue Valley",
     tier: "tier-3",
     tierLabel: "Tier 3: Saturated Or Mixed",
@@ -355,7 +369,7 @@ export const locations: LocationEntry[] = [
         detail: "The business needs proof architecture, not just more pages.",
       },
     ],
-    recommendedServices: ["custom-web-design", "local-visibility", "lead-capture-ai-follow-up", "search-data-architecture"],
+    recommendedServices: ["custom-web-design", "local-visibility", "google-business-profile-optimization", "lead-capture-ai-follow-up", "search-data-architecture"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins", "web-agents-intelligence-report"],
     relatedCaseStudies: ["oregon-smb-directory", "daley-organics"],
     nearbyMarkets: ["ashland", "grants-pass", "klamath-falls"],
@@ -363,6 +377,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "portland",
     name: "Portland",
+    officialResource: { label: "City of Portland", href: "https://www.portland.gov/" },
     region: "Portland Metro",
     tier: "tier-3",
     tierLabel: "Tier 3: Saturated Or Mixed",
@@ -402,6 +417,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "roseburg",
     name: "Roseburg",
+    officialResource: { label: "City of Roseburg", href: "https://www.cityofroseburg.org/" },
     region: "Umpqua Valley",
     tier: "tier-2",
     tierLabel: "Tier 2: Stable Demand",
@@ -441,6 +457,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "salem",
     name: "Salem",
+    officialResource: { label: "City of Salem", href: "https://www.cityofsalem.net/" },
     region: "Willamette Valley",
     tier: "strategic",
     tierLabel: "Strategic Expansion",
@@ -480,6 +497,7 @@ export const locations: LocationEntry[] = [
   {
     slug: "springfield",
     name: "Springfield",
+    officialResource: { label: "City of Springfield", href: "https://springfield-or.gov/" },
     region: "Lane County",
     tier: "strategic",
     tierLabel: "Strategic Expansion",

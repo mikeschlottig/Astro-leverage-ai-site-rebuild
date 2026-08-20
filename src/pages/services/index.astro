@@ -31,6 +31,24 @@ const services = (await getCollection("services")).sort((a, b) => a.data.order -
           </article>
         ))}
       </div>
+
+      <aside class="service-decision-path surface">
+        <div class="stack">
+          <h2>Comparing providers or pricing a rebuild?</h2>
+          <p>
+            Settle ownership, scope, senior access, migration risk, and ongoing costs before the
+            proposal—not after the work starts.
+          </p>
+        </div>
+        <div class="button-row">
+          <a class="button secondary" href="/guides/local-seo-consultant-vs-agency/" data-astro-prefetch>
+            Consultant vs. agency
+          </a>
+          <a class="button secondary" href="/guides/website-redesign-cost-for-local-business/" data-astro-prefetch>
+            Website redesign costs
+          </a>
+        </div>
+      </aside>
     </div>
   </section>
 </BaseLayout>

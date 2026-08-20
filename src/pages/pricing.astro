@@ -56,6 +56,52 @@ const pricingPrinciples = [
   "Ongoing work should stay explicit, measurable, and easy to understand.",
 ];
 
+const costDrivers = [
+  {
+    name: "Market and service competition",
+    detail: "A focused Grants Pass service category requires a different research and authority plan than a saturated Portland or multi-city program.",
+  },
+  {
+    name: "Current website condition",
+    detail: "A strong site with one weak handoff is a smaller project than a rebuild involving content, trust, accessibility, forms, and migration risk.",
+  },
+  {
+    name: "Google Business Profile and entity cleanup",
+    detail: "Category, service, citation, review, and website inconsistencies increase the work required before local visibility can compound.",
+  },
+  {
+    name: "Content and proof readiness",
+    detail: "Existing approved copy, project evidence, photos, and market data reduce scope. Creating or organizing those inputs adds real work.",
+  },
+  {
+    name: "Lead routing and measurement",
+    detail: "CRM, scheduling, call tracking, missed-call recovery, analytics, and privacy requirements can expand implementation beyond the public pages.",
+  },
+];
+
+const pricingFaqs = [
+  {
+    question: "How much does local SEO cost in Oregon?",
+    answer: "Leverage AI currently starts with a $500–$1,200 diagnostic audit. Scoped implementation is generally $1,500–$4,000, and optional ongoing adaptation is generally $400–$800 per month. These are Leverage AI ranges, not a universal Oregon average, and final scope follows the market and current system.",
+  },
+  {
+    question: "Do I need a monthly local SEO retainer?",
+    answer: "Not automatically. Some businesses need a one-time correction and a maintainable operating plan. Ongoing support makes sense when competition, profile activity, content, reporting, or multiple markets require continued work with clear ownership and measures.",
+  },
+  {
+    question: "Is Google Business Profile work included?",
+    answer: "It can be included when the diagnostic shows that categories, services, service areas, proof, profile governance, or website alignment are part of the constraint. The final scope identifies exactly which profile work is included.",
+  },
+  {
+    question: "What does a website redesign cost?",
+    answer: "A focused redesign can fit inside the current $1,500–$4,000 implementation range when scope is bounded. Larger migrations, extensive content, custom applications, ecommerce, or multi-location systems require separate scoping. The buyer guide explains the cost drivers in detail.",
+  },
+  {
+    question: "Who owns the website, content, and data?",
+    answer: "Ownership and administrative access are made explicit in scope. The operating principle is that the business should retain control of its domain, content, code or deployable artifact, analytics, Search Console, Google Business Profile, and lead data.",
+  },
+];
+
 const supportingLinks = [
   {
     href: "/reports/oregon-market-intel-infrastructure-report/",
@@ -93,6 +139,18 @@ const supportingLinks = [
     title: "AI Search, Schema & Data Architecture",
     description: "The measurement layer that keeps diagnostic findings tied to outcomes instead of opinions.",
   },
+  {
+    href: "/guides/website-redesign-cost-for-local-business/",
+    label: "Buyer Guide",
+    title: "Website Redesign Cost for a Local Business",
+    description: "Understand how content, migration, local SEO, integrations, and ownership change redesign scope.",
+  },
+  {
+    href: "/guides/local-seo-consultant-vs-agency/",
+    label: "Buyer Guide",
+    title: "Local SEO Consultant vs. Agency",
+    description: "Compare senior access, production capacity, ownership, communication, and best-fit conditions.",
+  },
 ];
 ---
 
@@ -100,6 +158,7 @@ const supportingLinks = [
   title="Local SEO & Web Design Pricing in Oregon"
   description="Diagnostic-first pricing for local SEO, Google Maps optimization, custom web design, lead generation, and ongoing support in Oregon."
   canonicalPath="/pricing"
+  faqs={pricingFaqs}
 >
   <section class="hero">
     <div class="shell stack">
@@ -137,6 +196,85 @@ const supportingLinks = [
             <p class="pricing-principles__label">Principle</p>
             <h2>{principle}</h2>
           </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="local-seo-cost-heading">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">Cost Drivers</p>
+          <h2 id="local-seo-cost-heading">What changes local SEO and website pricing?</h2>
+        </div>
+        <p>
+          The ranges above are useful only when the scope is visible. These are the conditions that
+          most often move an Oregon service business toward the low or high end of an engagement.
+        </p>
+      </div>
+
+      <dl class="pricing-driver-list surface">
+        {costDrivers.map((driver) => (
+          <div class="pricing-driver-list__item">
+            <dt>{driver.name}</dt>
+            <dd>{driver.detail}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Local SEO engagement comparison">
+        <table class="decision-table">
+          <caption>How the three engagement stages differ</caption>
+          <thead>
+            <tr>
+              <th scope="col">Decision</th>
+              <th scope="col">Diagnostic audit</th>
+              <th scope="col">Implementation</th>
+              <th scope="col">Ongoing adaptation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Best when</th>
+              <td>The highest-cost constraint is unclear</td>
+              <td>The priority and ownership are agreed</td>
+              <td>The system needs continued governance</td>
+            </tr>
+            <tr>
+              <th scope="row">Primary output</th>
+              <td>Evidence, priorities, and scope</td>
+              <td>Working pages, profile changes, routing, or measurement</td>
+              <td>Monitoring, refinement, and bounded expansion</td>
+            </tr>
+            <tr>
+              <th scope="row">Commitment</th>
+              <td>One-time</td>
+              <td>Scoped project</td>
+              <td>Optional monthly support</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="pricing-faq-heading">
+    <div class="shell split">
+      <div class="stack">
+        <p class="case-study-kicker">Pricing Questions</p>
+        <h2 id="pricing-faq-heading">Answers that should be clear before a proposal.</h2>
+        <p>
+          If ownership, recurring costs, implementation responsibility, or measurement remain
+          vague, the price is not yet transparent enough to compare.
+        </p>
+      </div>
+      <div class="service-faq-list">
+        {pricingFaqs.map((faq) => (
+          <details class="service-faq-item">
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
         ))}
       </div>
     </div>
