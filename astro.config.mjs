@@ -8,5 +8,9 @@ export default defineConfig({
   build: {
     format: "directory",
   },
+  prefetch: {
+    defaultStrategy: "hover",
+    prefetchAll: false,
+  },
   integrations: [sitemap()],
 });

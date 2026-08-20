@@ -1,8 +1,9 @@
 ---
-title: Local Visibility Systems
-description: Build the local search, map-pack, service-area, and entity signals that make a business easier to discover in both traditional search and AI-assisted local discovery.
+title: Local SEO & Google Maps Services
+description: Local SEO, Google Maps optimization, service-area pages, and entity signals for Oregon businesses that need to capture nearby demand.
 summary: Local demand starts with discoverability.
-heroTitle: Local visibility systems that capture high-intent search demand.
+heroTitle: Local SEO services for Oregon businesses ready to win nearby demand.
+methodName: Local Visibility Systems
 order: 1
 outcomes:
   - Stronger local discoverability
@@ -53,6 +54,10 @@ relatedLocations:
   - grants-pass
   - bend
   - salem
+relatedIndustries:
+  - local-services
+  - contractors
+  - home-services
 ---
 
 Local visibility is the layer that answers a simple question:

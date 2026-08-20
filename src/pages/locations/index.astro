@@ -15,13 +15,13 @@ const connectionCards = [
   {
     href: "/services/local-visibility/",
     label: "Service",
-    title: "Local Visibility Systems",
+    title: "Local SEO & Google Maps Services",
     description: "Every city page should route back to the visibility layer that wins map intent and service-area searches.",
   },
   {
     href: "/services/lead-capture-ai-follow-up/",
     label: "Service",
-    title: "Lead Capture And AI Follow-Up",
+    title: "Lead Generation & AI Follow-Up",
     description: "Location traffic only matters if inbound calls and forms become real conversations quickly.",
   },
   {
@@ -40,8 +40,8 @@ const connectionCards = [
 ---
 
 <BaseLayout
-  title="Oregon Locations"
-  description="Oregon location pages shaped by real market nuance, tiered opportunity, and links back into services, proof, reports, and pricing."
+  title="Oregon Local SEO & Web Design Locations"
+  description="Local SEO, Google Maps optimization, web design, and lead-response strategy shaped for distinct Oregon markets."
   canonicalPath="/locations"
 >
   <section class="hero location-hub-hero">
@@ -49,15 +49,15 @@ const connectionCards = [
       <div class="hero-panel location-hub-hero__panel">
         <div class="stack">
           <p class="eyebrow">Oregon Local Market Strategy</p>
-          <h1>The same growth plan does not work in every Oregon market.</h1>
+          <h1>Local SEO and web design shaped for each Oregon market.</h1>
           <p class="location-hub-hero__lead">
             A service business in Bend faces different competition, buyer expectations, and lead
             economics than one in Grants Pass or Portland. Explore the markets we study and see
             where better visibility, stronger trust, or faster follow-up can create the most leverage.
           </p>
           <div class="button-row">
-            <a class="button primary" href="/reports/oregon-market-intel-infrastructure-report/">Read the Oregon market report</a>
-            <a class="button secondary" href="/pricing/">See diagnostic-audit pricing</a>
+            <a class="button primary" href="/reports/oregon-market-intel-infrastructure-report/" data-astro-prefetch>Read the Oregon market report</a>
+            <a class="button secondary" href="/pricing/" data-astro-prefetch>See diagnostic-audit pricing</a>
           </div>
         </div>
         <aside class="location-hub-sidecar">
@@ -136,8 +136,8 @@ const connectionCards = [
                   ))}
                 </ul>
                 <div class="button-row">
-                  <a class="button primary" href={`/locations/${location.slug}/`}>Open {location.name}</a>
-                  <a class="button secondary" href="/pricing/">See audit pricing</a>
+                  <a class="button primary" href={`/locations/${location.slug}/`} data-astro-prefetch>Open {location.name}</a>
+                  <a class="button secondary" href="/pricing/" data-astro-prefetch>See audit pricing</a>
                 </div>
               </article>
             ))}
@@ -161,7 +161,7 @@ const connectionCards = [
       </div>
       <div class="case-study-links">
         {connectionCards.map((card) => (
-          <a class="case-study-link-card" href={card.href}>
+          <a class="case-study-link-card" href={card.href} data-astro-prefetch>
             <span>{card.label}</span>
             <strong>{card.title}</strong>
             <p>{card.description}</p>

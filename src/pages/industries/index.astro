@@ -6,13 +6,13 @@ const industries = await getCollection("industries");
 ---
 
 <BaseLayout
-  title="Industries"
-  description="Industry-specific pages grounded in local demand, trust signals, and response-time economics."
+  title="Local SEO by Industry in Oregon"
+  description="Industry-specific local SEO, web design, and lead-response strategies for Oregon contractors, home-service companies, and local businesses."
 >
   <section class="section">
     <div class="shell stack">
       <div class="surface stack">
-        <h1>Different service businesses lose demand in different places.</h1>
+        <h1>Local SEO strategies built around how each service industry wins work.</h1>
         <p>
           A contractor, clinic, professional firm, and home-service company may compete in the same
           city but face very different trust gaps, search behavior, and lead values. Start with the
@@ -24,7 +24,7 @@ const industries = await getCollection("industries");
           <article class="surface stack">
             <h2>{entry.data.title}</h2>
             <p>{entry.data.description}</p>
-            <a href={`/industries/${entry.id}/`}>Explore local service strategy</a>
+            <a href={`/industries/${entry.id}/`} data-astro-prefetch>Explore {entry.data.title}</a>
           </article>
         ))}
       </div>

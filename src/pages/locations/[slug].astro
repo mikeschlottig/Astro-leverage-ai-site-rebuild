@@ -6,25 +6,25 @@ const serviceCards = {
   "local-visibility": {
     href: "/services/local-visibility/",
     label: "Service",
-    title: "Local Visibility Systems",
+    title: "Local SEO & Google Maps Services",
     description: "Improve map-pack relevance, service-area clarity, and local search coverage.",
   },
   "custom-web-design": {
     href: "/services/custom-web-design/",
     label: "Service",
-    title: "Custom Web Design",
+    title: "Custom Web Design for Oregon Service Businesses",
     description: "Turn traffic into trust faster with a cleaner, sharper public surface.",
   },
   "lead-capture-ai-follow-up": {
     href: "/services/lead-capture-ai-follow-up/",
     label: "Service",
-    title: "Lead Capture And AI Follow-Up",
+    title: "Lead Generation & AI Follow-Up",
     description: "Shorten reply lag and keep hot leads from going cold after the click.",
   },
   "search-data-architecture": {
     href: "/services/search-data-architecture/",
     label: "Service",
-    title: "Search And Data Architecture",
+    title: "AI Search, Schema & Data Architecture",
     description: "Measure what is working, strengthen schema, and keep the strategy honest.",
   },
 } as const;
@@ -92,11 +92,11 @@ const relatedLinks = [
 ---
 
 <BaseLayout
-  title={`${location.name} Local Growth Systems`}
-  description={`Local visibility, trust architecture, and lead-response systems for service businesses in ${location.name}, Oregon.`}
+  title={`Local SEO & Web Design in ${location.name}, Oregon`}
+  description={`Local SEO, Google Maps optimization, custom web design, and lead-response systems for service businesses in ${location.name}, Oregon.`}
   canonicalPath={`/locations/${location.slug}`}
   pageType="location"
-  serviceName={`Local growth systems in ${location.name}`}
+  serviceName={`Local SEO and web design in ${location.name}, Oregon`}
   serviceArea={[location.name, "Oregon"]}
 >
   <section class="hero">
@@ -108,13 +108,17 @@ const relatedLinks = [
               <span class="case-study-chip">{location.tierLabel}</span>
               <span class="case-study-chip">{location.region}</span>
             </div>
-            <p class="eyebrow">Oregon Location Page</p>
-            <h1>{location.name} demand systems built for how this market actually buys.</h1>
+            <p class="eyebrow">Oregon Local SEO & Web Design</p>
+            <h1>Local SEO and web design for {location.name} service businesses.</h1>
             <p class="location-page-hero__lead">{location.marketSummary}</p>
             <p>{location.buyerDynamics}</p>
+            <p class="location-page__method">
+              Delivered through a market-specific Local Demand System built around how {location.name}
+              buyers search, compare, and respond.
+            </p>
             <div class="button-row">
-              <a class="button primary" href="/pricing/">Start with the diagnostic audit</a>
-              <a class="button secondary" href="/reports/oregon-market-intel-infrastructure-report/">See the market logic</a>
+              <a class="button primary" href="/pricing/" data-astro-prefetch>Start with the diagnostic audit</a>
+              <a class="button secondary" href="/reports/oregon-market-intel-infrastructure-report/" data-astro-prefetch>See the market logic</a>
             </div>
           </div>
 
@@ -198,7 +202,7 @@ const relatedLinks = [
       </div>
       <div class="case-study-links">
         {relatedLinks.map((card) => (
-          <a class="case-study-link-card" href={card.href}>
+          <a class="case-study-link-card" href={card.href} data-astro-prefetch>
             <span>{card.label}</span>
             <strong>{card.title}</strong>
             <p>{card.description}</p>
@@ -231,7 +235,7 @@ const relatedLinks = [
         </div>
         <div class="location-page-nearby__grid">
           {nearbyMarkets.map((market) => (
-            <a class="location-page-nearby__card" href={`/locations/${market.slug}/`}>
+            <a class="location-page-nearby__card" href={`/locations/${market.slug}/`} data-astro-prefetch>
               <strong>{market.name}</strong>
               <p>{market.marketSummary}</p>
             </a>

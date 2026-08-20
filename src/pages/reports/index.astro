@@ -23,37 +23,37 @@ const featuredLinks = [
   {
     href: "/services/lead-capture-ai-follow-up/",
     label: "Service",
-    title: "Lead Capture And AI Follow-Up",
+    title: "Lead Generation & AI Follow-Up",
     description: "Build a faster path from first inquiry to real conversation.",
   },
   {
     href: "/services/search-data-architecture/",
     label: "Service",
-    title: "Search And Data Architecture",
+    title: "AI Search, Schema & Data Architecture",
     description: "Measure what is working and keep your public signals consistent.",
   },
 ];
 ---
 
 <BaseLayout
-  title="Reports"
-  description="Research-backed reports that support the site's claims about local demand, response speed, trust, and technical execution."
+  title="Oregon Local Search Reports & Benchmarks"
+  description="Research-backed Oregon local search reports about market demand, response speed, trust, AI search, and technical execution."
 >
   <section class="hero reports-hero">
     <div class="shell">
       <div class="reports-hero__panel">
         <div class="reports-hero__copy stack">
           <p class="eyebrow">Oregon Market Intelligence</p>
-          <h1>Find the growth constraint before you fund the fix.</h1>
+          <h1>Oregon local search reports built for better growth decisions.</h1>
           <p class="reports-hero__lead">
             These reports turn local search behavior, market gaps, and response-time economics into
             practical decisions for Oregon service businesses.
           </p>
           <div class="button-row">
             {latestReport && (
-              <a class="button primary" href={`/reports/${latestReport.id}/`}>Read the latest report</a>
+              <a class="button primary" href={`/reports/${latestReport.id}/`} data-astro-prefetch>Read the latest report</a>
             )}
-            <a class="button secondary" href="/pricing/">Start with the diagnostic audit</a>
+            <a class="button secondary" href="/pricing/" data-astro-prefetch>Start with the diagnostic audit</a>
           </div>
         </div>
         <aside class="reports-hero__guide" aria-label="How to use the research library">
@@ -90,7 +90,7 @@ const featuredLinks = [
             <ul class="location-card__signals">
               {entry.data.tldr.slice(0, 2).map((item) => <li>{item}</li>)}
             </ul>
-            <a class="button secondary" href={`/reports/${entry.id}/`}>Read the report</a>
+            <a class="button secondary" href={`/reports/${entry.id}/`} data-astro-prefetch>Read the report</a>
           </article>
         ))}
       </div>
@@ -101,7 +101,7 @@ const featuredLinks = [
     <div class="shell stack">
       <div class="case-study-links">
         {featuredLinks.map((card) => (
-          <a class="case-study-link-card" href={card.href}>
+          <a class="case-study-link-card" href={card.href} data-astro-prefetch>
             <span>{card.label}</span>
             <strong>{card.title}</strong>
             <p>{card.description}</p>

@@ -36,7 +36,10 @@ function postalAddress(a: PostalAddressInput): JsonLdNode {
 }
 
 function areaServedNodes(names: readonly string[]): readonly JsonLdNode[] {
-  return names.map((name) => ({ '@type': 'City', name }));
+  return names.map((name) => ({
+    '@type': name.trim().toLowerCase() === 'oregon' ? 'AdministrativeArea' : 'City',
+    name,
+  }));
 }
 
 export function organizationNode(identity: SiteIdentity): JsonLdNode {

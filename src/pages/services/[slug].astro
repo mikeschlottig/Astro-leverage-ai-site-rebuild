@@ -5,7 +5,7 @@ import { getCollection, render } from "astro:content";
 import { locations } from "../../data/locations";
 
 type LinkCard = {
-  kind: "Report" | "Knowledge Base" | "Case Study" | "Location";
+  kind: "Report" | "Knowledge Base" | "Case Study" | "Location" | "Industry";
   href: string;
   title: string;
   description: string;
@@ -21,6 +21,7 @@ const servicePath = `/services/${entry.id}`;
 const allReports = await getCollection("reports");
 const allKnowledgeBaseEntries = await getCollection("knowledgeBase");
 const allCaseStudies = await getCollection("caseStudies");
+const allIndustries = await getCollection("industries");
 
 const relatedReports: LinkCard[] = entry.data.relatedReports.flatMap((slug) => {
   const report = allReports.find((candidate) => candidate.id === slug);
@@ -78,10 +79,25 @@ const relatedLocations: LinkCard[] = entry.data.relatedLocations.flatMap((slug) 
     : [];
 });
 
+const relatedIndustries: LinkCard[] = entry.data.relatedIndustries.flatMap((slug) => {
+  const industry = allIndustries.find((candidate) => candidate.id === slug);
+  return industry
+    ? [
+        {
+          kind: "Industry",
+          href: `/industries/${industry.id}/`,
+          title: industry.data.title,
+          description: industry.data.description,
+        },
+      ]
+    : [];
+});
+
 const supportLinks = [
   ...relatedReports,
   ...relatedKnowledgeBase,
   ...relatedCaseStudies,
+  ...relatedIndustries,
   ...relatedLocations,
 ];
 const primaryReport = relatedReports[0];
@@ -102,7 +118,7 @@ const Content = renderedEntry?.Content;
     <div class="shell stack">
       <div class="service-hero__panel">
         <div class="service-hero__copy stack">
-          <p class="eyebrow">Service Detail</p>
+          <p class="eyebrow">Oregon Business Services</p>
           <h1>{entry.data.heroTitle ?? entry.data.title}</h1>
           <p class="service-hero__lead">{entry.data.description}</p>
           {entry.data.outcomes.length > 0 && (
@@ -111,8 +127,8 @@ const Content = renderedEntry?.Content;
             </div>
           )}
           <div class="button-row">
-            <a class="button primary" href="/contact/">Request the diagnostic audit</a>
-            <a class="button secondary" href="/pricing/">Review pricing structure</a>
+            <a class="button primary" href="/contact/" data-astro-prefetch>Request the diagnostic audit</a>
+            <a class="button secondary" href="/pricing/" data-astro-prefetch>Review pricing structure</a>
           </div>
         </div>
         <aside class="service-sidecar">
@@ -139,7 +155,7 @@ const Content = renderedEntry?.Content;
     <div class="shell stack">
       <div class="case-study-intro">
         <div class="stack">
-          <p class="case-study-kicker">{entry.data.title}</p>
+          <p class="case-study-kicker">{entry.data.methodName ?? entry.data.title}</p>
           <h2>{entry.data.summary}</h2>
         </div>
         <p>
@@ -216,7 +232,7 @@ const Content = renderedEntry?.Content;
           <h2>Research and real work behind the recommendation.</h2>
           <div class="case-study-links">
             {supportLinks.map((link) => (
-              <a class="case-study-link-card" href={link.href}>
+              <a class="case-study-link-card" href={link.href} data-astro-prefetch>
                 <span>{link.kind}</span>
                 <strong>{link.title}</strong>
                 <p>{link.description}</p>
@@ -232,18 +248,18 @@ const Content = renderedEntry?.Content;
           </ul>
           <div class="button-row">
             {primaryReport ? (
-              <a class="button secondary" href={primaryReport.href}>
+              <a class="button secondary" href={primaryReport.href} data-astro-prefetch>
                 Read {primaryReport.title}
               </a>
             ) : (
-              <a class="button secondary" href="/reports/">Read supporting reports</a>
+              <a class="button secondary" href="/reports/" data-astro-prefetch>Read supporting reports</a>
             )}
             {primaryCaseStudy ? (
-              <a class="button primary" href={primaryCaseStudy.href}>
+              <a class="button primary" href={primaryCaseStudy.href} data-astro-prefetch>
                 See proof in practice
               </a>
             ) : (
-              <a class="button primary" href="/portfolio/">See proof in practice</a>
+              <a class="button primary" href="/portfolio/" data-astro-prefetch>See proof in practice</a>
             )}
           </div>
         </aside>
@@ -263,8 +279,8 @@ const Content = renderedEntry?.Content;
           </p>
         </div>
         <div class="button-row">
-          <a class="button primary" href="/contact/">Request the audit</a>
-          <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes/">
+          <a class="button primary" href="/contact/" data-astro-prefetch>Request the audit</a>
+          <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes/" data-astro-prefetch>
             See what the audit includes
           </a>
         </div>

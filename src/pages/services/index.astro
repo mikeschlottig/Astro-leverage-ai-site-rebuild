@@ -6,14 +6,14 @@ const services = (await getCollection("services")).sort((a, b) => a.data.order -
 ---
 
 <BaseLayout
-  title="Services"
-  description="Outcome-led service pages for local visibility, custom websites, lead capture, and search data architecture."
+  title="Local SEO, Web Design & Lead Systems"
+  description="Local SEO, custom web design, lead generation, AI follow-up, and search architecture services for Oregon businesses."
 >
   <section class="section">
     <div class="shell stack">
       <div class="surface stack">
-        <p class="eyebrow">Find The Constraint</p>
-        <h1>Where is your growth system losing good customers?</h1>
+        <p class="eyebrow">Services For Oregon Businesses</p>
+        <h1>Local SEO, web design, and lead generation built to work together.</h1>
         <p>
           You may not need more marketing. You may need to fix the point where customers stop
           finding you, trusting you, contacting you, or hearing back.
@@ -24,7 +24,10 @@ const services = (await getCollection("services")).sort((a, b) => a.data.order -
           <article class="surface stack">
             <h2>{service.data.title}</h2>
             <p>{service.data.description}</p>
-            <a href={`/services/${service.id}/`}>See how it works</a>
+            {service.data.methodName && (
+              <p class="service-card__method">Delivered through our {service.data.methodName} methodology.</p>
+            )}
+            <a href={`/services/${service.id}/`} data-astro-prefetch>Explore {service.data.title}</a>
           </article>
         ))}
       </div>

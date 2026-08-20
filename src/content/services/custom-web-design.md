@@ -1,8 +1,9 @@
 ---
-title: Custom Web Design
-description: High-performance websites that communicate trust, support local search, and convert intent into action.
+title: Custom Web Design for Oregon Service Businesses
+description: High-performance custom websites for Oregon service businesses that need stronger trust, local search support, and clearer conversion paths.
 summary: Your website is a demand-capture surface.
 heroTitle: Custom websites built to convert local search traffic into booked jobs.
+methodName: Custom Website Systems
 order: 2
 outcomes:
   - Better trust signals
@@ -49,6 +50,10 @@ relatedLocations:
   - ashland
   - medford
   - eugene
+relatedIndustries:
+  - local-services
+  - contractors
+  - home-services
 ---
 
 Custom web design matters because most service-business websites are still carrying too much of the wrong weight.

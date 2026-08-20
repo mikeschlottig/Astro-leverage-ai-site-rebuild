@@ -4,11 +4,11 @@ import { primaryNavigation } from "../../data/navigation";
 
 <header class="site-header">
   <div class="shell split">
-    <a href="/" aria-label="Leverage AI home"><strong>Leverage AI</strong></a>
+    <a href="/" aria-label="Leverage AI home" data-astro-prefetch><strong>Leverage AI</strong></a>
     <nav aria-label="Primary">
       <ul class="meta-list">
         {primaryNavigation.map((item) => (
-          <li><a href={item.href}>{item.label}</a></li>
+          <li><a href={item.href} data-astro-prefetch>{item.label}</a></li>
         ))}
       </ul>
     </nav>

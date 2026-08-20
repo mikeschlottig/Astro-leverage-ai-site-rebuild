@@ -84,21 +84,21 @@ const supportingLinks = [
   {
     href: "/services/local-visibility/",
     label: "Service",
-    title: "Local Visibility Systems",
+    title: "Local SEO & Google Maps Services",
     description: "The visibility layer that usually anchors city-page and service-area implementation work.",
   },
   {
     href: "/services/search-data-architecture/",
     label: "Service",
-    title: "Search And Data Architecture",
+    title: "AI Search, Schema & Data Architecture",
     description: "The measurement layer that keeps diagnostic findings tied to outcomes instead of opinions.",
   },
 ];
 ---
 
 <BaseLayout
-  title="Pricing"
-  description="Diagnostic-first pricing for local visibility, custom websites, lead-response systems, and ongoing market adaptation."
+  title="Local SEO & Web Design Pricing in Oregon"
+  description="Diagnostic-first pricing for local SEO, Google Maps optimization, custom web design, lead generation, and ongoing support in Oregon."
   canonicalPath="/pricing"
 >
   <section class="hero">
@@ -107,15 +107,15 @@ const supportingLinks = [
         <article class="pricing-hero__panel">
           <div class="pricing-hero__copy stack">
             <p class="eyebrow">Diagnostic-First Pricing</p>
-            <h1>Start with diagnosis, not with a retainer trap.</h1>
+            <h1>Local SEO and web design pricing that starts with diagnosis.</h1>
             <p class="pricing-hero__lead">
               Every market and every business leaks opportunity in a different place. We find the
               highest-cost problem first, price the fix clearly, and keep ongoing support optional
               and transparent.
             </p>
             <div class="button-row">
-              <a class="button primary" href="/contact/">Request the diagnostic audit</a>
-              <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes/">See what the audit includes</a>
+              <a class="button primary" href="/contact/" data-astro-prefetch>Request the diagnostic audit</a>
+              <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes/" data-astro-prefetch>See what the audit includes</a>
             </div>
           </div>
 
@@ -203,7 +203,7 @@ const supportingLinks = [
       </div>
       <div class="case-study-links">
         {supportingLinks.map((card) => (
-          <a class="case-study-link-card" href={card.href}>
+          <a class="case-study-link-card" href={card.href} data-astro-prefetch>
             <span>{card.label}</span>
             <strong>{card.title}</strong>
             <p>{card.description}</p>

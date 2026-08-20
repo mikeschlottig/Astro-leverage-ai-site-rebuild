@@ -1,8 +1,9 @@
 ---
-title: Lead Capture & AI Follow-Up
-description: Capture every inbound lead and respond before attention collapses or a competitor gets there first.
+title: Lead Generation & AI Follow-Up
+description: Lead capture, missed-call recovery, qualification, and AI-assisted follow-up for service businesses that cannot afford slow response.
 summary: Speed to lead is a revenue system.
-heroTitle: Capture every lead and respond before it drifts away.
+heroTitle: Lead generation and AI follow-up that keeps local demand from going cold.
+methodName: Lead Capture & AI Follow-Up
 order: 3
 outcomes:
   - Faster response times
@@ -49,6 +50,10 @@ relatedLocations:
   - grants-pass
   - bend
   - klamath-falls
+relatedIndustries:
+  - local-services
+  - contractors
+  - home-services
 ---
 
 Lead capture and follow-up is where a lot of otherwise good marketing quietly falls apart.

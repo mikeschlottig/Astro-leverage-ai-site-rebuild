@@ -34,6 +34,7 @@ const services = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/services" }),
   schema: z.object({
     ...seoFields,
+    methodName: z.string().optional(),
     summary: z.string(),
     order: z.number(),
     outcomes: z.array(z.string()).default([]),
@@ -46,6 +47,7 @@ const services = defineCollection({
     relatedKnowledgeBase: z.array(z.string()).default([]),
     relatedCaseStudies: z.array(z.string()).default([]),
     relatedLocations: z.array(z.string()).default([]),
+    relatedIndustries: z.array(z.string()).default([]),
   }),
 });
 

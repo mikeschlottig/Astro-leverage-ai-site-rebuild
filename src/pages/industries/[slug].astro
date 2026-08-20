@@ -9,6 +9,11 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const allServices = await getCollection("services");
+const relatedServices = entry.data.relatedServices.flatMap((slug) => {
+  const service = allServices.find((candidate) => candidate.id === slug);
+  return service ? [service] : [];
+});
 const { Content } = await render(entry);
 ---
 
@@ -17,15 +22,73 @@ const { Content } = await render(entry);
   description={entry.data.description}
   canonicalPath={`/industries/${entry.id}`}
 >
+  <section class="hero service-hero">
+    <div class="shell stack">
+      <div class="service-hero__panel">
+        <div class="service-hero__copy stack">
+          <p class="eyebrow">Industry Strategy</p>
+          <h1>{entry.data.heroTitle ?? entry.data.title}</h1>
+          <p class="service-hero__lead">{entry.data.description}</p>
+          <div class="button-row">
+            <a class="button primary" href="/contact/" data-astro-prefetch>Request the diagnostic audit</a>
+            <a class="button secondary" href="/pricing/" data-astro-prefetch>Review pricing</a>
+          </div>
+        </div>
+        <aside class="service-sidecar">
+          <p class="service-sidecar__label">Connected services</p>
+          <ul class="service-checklist">
+            {relatedServices.map((service) => <li>{service.data.title}</li>)}
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
-    <div class="shell surface prose">
-      <h1>{entry.data.title}</h1>
-      <Content />
+    <div class="shell split">
+      <article class="surface stack prose">
+        <h2>{entry.data.summary}</h2>
+        <Content />
+      </article>
+      <aside class="surface stack">
+        <h2>Build the right sequence</h2>
+        <p>
+          Start with the constraint losing the most qualified demand, then connect visibility,
+          website trust, lead response, and measurement only where each layer improves the result.
+        </p>
+        <div class="case-study-links">
+          {relatedServices.map((service) => (
+            <a class="case-study-link-card" href={`/services/${service.id}/`} data-astro-prefetch>
+              <span>Service</span>
+              <strong>{service.data.title}</strong>
+              <p>{service.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <section class="case-study-cta">
+        <div class="stack">
+          <h2>Find the leak before you fund the fix.</h2>
+          <p>
+            The diagnostic audit shows whether visibility, website trust, response speed, or
+            measurement is the first constraint to address.
+          </p>
+        </div>
+        <div class="button-row">
+          <a class="button primary" href="/contact/" data-astro-prefetch>Request the audit</a>
+          <a class="button secondary" href="/reports/" data-astro-prefetch>Review the research</a>
+        </div>
+      </section>
     </div>
   </section>
   <section class="section">
     <div class="shell">
-      <AboutAuthor />
+      <AboutAuthor heading="Your strategist" />
     </div>
   </section>
 </BaseLayout>

@@ -1,7 +1,8 @@
 ---
-title: Local Services
-description: The base industry frame for contractors, trades, clinics, and other appointment-driven local businesses.
-summary: A practical growth system for trades, home services, clinics, professional firms, and other Oregon businesses that depend on local customers.
+title: Local SEO for Oregon Service Businesses
+description: Local SEO, custom websites, and lead-response systems for Oregon businesses that depend on nearby customers and qualified inquiries.
+heroTitle: Local SEO systems for Oregon service businesses.
+summary: Turn nearby search demand into trusted, qualified conversations.
 relatedServices:
   - local-visibility
   - custom-web-design

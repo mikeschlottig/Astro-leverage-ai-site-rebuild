@@ -1,8 +1,9 @@
 ---
-title: Search & Data Architecture
-description: Build the measurement, schema, entity, and authority systems that make local visibility and AI-search performance easier to earn and easier to trust.
+title: AI Search, Schema & Data Architecture
+description: AI search optimization, schema, entity architecture, and measurement systems that make authority easier to understand, trust, and improve.
 summary: Measurement keeps strategy honest.
-heroTitle: Search and data architecture that turns authority signals into a measurable system.
+heroTitle: AI search, schema, and data architecture built around measurable authority.
+methodName: Search & Data Architecture
 order: 4
 outcomes:
   - Cleaner analytics and reporting
@@ -52,6 +53,10 @@ relatedLocations:
   - portland
   - bend
   - ashland
+relatedIndustries:
+  - local-services
+  - contractors
+  - home-services
 ---
 
 Search and measurement work best when every public signal tells the same clear story: who you help, where you work, what you do well, and what produces real inquiries.

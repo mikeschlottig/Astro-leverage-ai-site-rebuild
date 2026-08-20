@@ -1162,6 +1162,12 @@ ul {
   text-wrap: pretty;
 }
 
+.service-card__method,
+.location-page__method {
+  color: color-mix(in oklab, var(--ink) 82%, var(--muted));
+  font-weight: 500;
+}
+
 .service-sidecar {
   display: grid;
   gap: 1rem;
