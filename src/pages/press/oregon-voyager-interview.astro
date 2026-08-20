@@ -1,0 +1,170 @@
+---
+import AboutAuthor from "../../components/site/AboutAuthor.astro";
+import SocialLinks from "../../components/site/SocialLinks.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const interviewUrl =
+  "https://oregonvoyager.com/interview/meet-jon-schlottig-of-leverage-ai-llc";
+---
+
+<BaseLayout
+  title="OregonVoyager Interview With Leverage AI Founder Mike Schlottig"
+  description="OregonVoyager interviews Leverage AI founder Jon “Mike” Schlottig about Southern Oregon, systems thinking, local search, and building practical digital infrastructure."
+  canonicalPath="/press/oregon-voyager-interview/"
+  pageType="article"
+  datePublished="2026-08-20"
+  dateModified="2026-08-20"
+  articleSection="Press"
+>
+  <section class="section press-hero">
+    <div class="shell press-hero__layout">
+      <article class="surface stack press-hero__copy">
+        <p class="eyebrow">Press &amp; Interviews</p>
+        <h1>Leverage AI founder featured by OregonVoyager.</h1>
+        <p class="press-hero__lead">
+          OregonVoyager sat down with Jon “Mike” Schlottig to trace the path from Southern Oregon
+          and integrated systems thinking to local search, web infrastructure, and Leverage AI.
+        </p>
+        <ul class="meta-list" aria-label="Publication details">
+          <li>OregonVoyager</li>
+          <li>August 13, 2026</li>
+          <li>Founder interview</li>
+        </ul>
+        <div class="button-row">
+          <a
+            class="button primary"
+            href={interviewUrl}
+            target="_blank"
+            rel="external noopener noreferrer"
+          >
+            Read the full interview ↗
+          </a>
+          <a class="button secondary" href="/about/" data-astro-prefetch>About Mike</a>
+        </div>
+      </article>
+
+      <figure class="surface press-portrait">
+        <img
+          src="/images/founder/mike-schlottig.jpg"
+          alt="Mike Schlottig, founder of Leverage AI, in Southern Oregon"
+          width="2208"
+          height="2944"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <figcaption>
+          <strong>Jon “Mike” Schlottig</strong>
+          <span>Founder and systems strategist, Leverage AI LLC</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell press-story">
+      <div class="stack press-story__intro">
+        <h2>What the conversation covers.</h2>
+        <p>
+          The interview is a direct account of the experiences and operating ideas behind the
+          company. It connects Mike’s Oregon roots with the practical constraints local businesses
+          face when search visibility, website trust, contact data, and lead response drift apart.
+        </p>
+      </div>
+
+      <div class="press-topic-list">
+        <article>
+          <h3>From systems thinking to local growth</h3>
+          <p>
+            Mike explains how energy management, agriculture, home services, market research, and
+            AI-assisted work converged into a systems-led approach to local business growth.
+          </p>
+        </article>
+        <article>
+          <h3>Why infrastructure matters</h3>
+          <p>
+            The conversation gets specific about the complexity behind consistent business data,
+            reviews, search visibility, lead handling, measurement, and platform independence.
+          </p>
+        </article>
+        <article>
+          <h3>What Leverage AI is building</h3>
+          <p>
+            The company’s near-term focus is practical: help Oregon service businesses become
+            easier to find, easier to verify, and quicker to respond when demand is ready to move.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell split">
+      <article class="surface stack">
+        <p class="eyebrow">The Operating Thesis</p>
+        <h2>Growth starts by finding the leak between visibility and revenue.</h2>
+        <p>
+          A website, Google Business Profile, directory listing, phone system, review process, and
+          follow-up workflow can each look acceptable in isolation while the combined system still
+          loses good opportunities. Leverage AI starts with the whole path, then prioritizes the
+          constraint that matters most.
+        </p>
+        <a href="/knowledge-base/what-the-diagnostic-audit-includes/" data-astro-prefetch>
+          See what the diagnostic audit examines.
+        </a>
+      </article>
+
+      <aside class="surface stack press-source">
+        <p class="eyebrow">Original Publication</p>
+        <h2>Meet Jon Schlottig of LEVERAGE AI LLC</h2>
+        <p>
+          Read OregonVoyager’s complete interview for Mike’s story, lessons, company roadmap, and
+          view of how AI and search will reshape digital visibility.
+        </p>
+        <a
+          class="button secondary"
+          href={interviewUrl}
+          target="_blank"
+          rel="external noopener noreferrer"
+        >
+          Open OregonVoyager ↗
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell stack">
+      <AboutAuthor />
+      <div class="surface stack press-follow">
+        <h2>Follow the work.</h2>
+        <p>
+          These are the verified public profiles currently connected to Mike Schlottig and
+          Leverage AI.
+        </p>
+        <SocialLinks />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell surface press-next">
+      <div class="stack">
+        <h2>Continue from the story to the work.</h2>
+        <p>
+          Explore the founder-led consulting model, see a Southern Oregon case study, or start with
+          a diagnostic conversation about the part of your local demand system that feels stuck.
+        </p>
+      </div>
+      <div class="button-row">
+        <a class="button secondary" href="/services/local-seo-consulting/" data-astro-prefetch>
+          Founder-led consulting
+        </a>
+        <a class="button secondary" href="/portfolio/daley-organics/" data-astro-prefetch>
+          See the case study
+        </a>
+        <a class="button primary" href="/contact/" data-astro-prefetch>Start a conversation</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

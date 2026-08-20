@@ -9,8 +9,12 @@ export const SITE = {
     "Outcome-led websites, local visibility systems, and lead-response infrastructure for Oregon service businesses.",
   location: "Grants Pass, Oregon",
   email: "mike@leverageai.network",
+  phone: "541-450-2082",
+  phoneHref: "tel:+15414502082",
   social: {
     linkedin: "https://www.linkedin.com/in/schlottig/",
+    facebook: "https://www.facebook.com/p/Leverageai-LLC-61575834658691/",
+    x: "https://x.com/LEVERAGEAI_LLC",
     github: "https://github.com/mikeschlottig",
     instagram: "https://www.instagram.com/mikeschlottig44/",
   },
@@ -27,6 +31,14 @@ export const SITE = {
   ],
 };
 
+export const SOCIAL_PROFILES = [
+  { label: "LinkedIn", href: SITE.social.linkedin },
+  { label: "Facebook", href: SITE.social.facebook },
+  { label: "X", href: SITE.social.x },
+  { label: "GitHub", href: SITE.social.github },
+  { label: "Instagram", href: SITE.social.instagram },
+] as const;
+
 export const IDENTITY = defineSiteIdentity({
   url: SITE.siteUrl,
   name: SITE.name,
@@ -35,6 +47,7 @@ export const IDENTITY = defineSiteIdentity({
   logoUrl: `${SITE.siteUrl}/images/leverage-ai-mark.svg`,
   defaultOgImageUrl: `${SITE.siteUrl}${defaultAuthor.image}`,
   email: SITE.email,
+  telephone: "+1-541-450-2082",
   address: {
     addressLocality: "Grants Pass",
     addressRegion: "OR",

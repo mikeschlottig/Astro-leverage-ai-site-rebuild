@@ -1156,6 +1156,172 @@ ul {
   font-size: 0.88rem;
 }
 
+.social-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social-links a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-underline-offset: 0.22em;
+}
+
+.press-feature,
+.press-next {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr);
+  align-items: center;
+  border-color: color-mix(in oklab, var(--accent) 22%, var(--line));
+  background:
+    radial-gradient(circle at top right, var(--accent-glow), transparent 20rem),
+    color-mix(in oklab, var(--surface-strong) 88%, black 12%);
+}
+
+.press-feature__actions {
+  justify-items: start;
+}
+
+.press-hero__layout {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+  align-items: stretch;
+}
+
+.press-hero__copy {
+  justify-content: center;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  border-color: color-mix(in oklab, var(--accent) 24%, var(--line));
+  background:
+    radial-gradient(circle at top right, var(--accent-glow), transparent 22rem),
+    color-mix(in oklab, var(--surface) 92%, black 8%);
+}
+
+.press-hero__lead {
+  color: color-mix(in oklab, var(--ink) 84%, var(--muted));
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.press-portrait {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 1rem;
+  margin: 0;
+  padding: 0.85rem;
+  border-color: color-mix(in oklab, var(--accent) 20%, var(--line));
+}
+
+.press-portrait img {
+  width: 100%;
+  height: 100%;
+  min-height: 28rem;
+  object-fit: cover;
+  object-position: center 26%;
+  border-radius: 0.35rem;
+}
+
+.press-portrait figcaption {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.press-portrait strong {
+  color: var(--ink);
+  font-family: "Familjen Grotesk", system-ui, sans-serif;
+  font-size: 1.05rem;
+}
+
+.press-portrait span {
+  color: var(--muted);
+}
+
+.press-story {
+  display: grid;
+  gap: clamp(2rem, 6vw, 5rem);
+  grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.3fr);
+  align-items: start;
+}
+
+.press-story__intro {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.press-topic-list {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.press-topic-list article {
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.press-topic-list p,
+.press-topic-list h3,
+.press-follow p {
+  margin: 0;
+}
+
+.press-source .button {
+  justify-self: start;
+}
+
+.press-follow {
+  align-items: start;
+}
+
+.press-next .button-row {
+  justify-content: flex-end;
+}
+
+.press-index {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.press-index__header {
+  max-width: 58rem;
+}
+
+.press-index__feature {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr);
+  align-items: center;
+  border-color: color-mix(in oklab, var(--accent) 22%, var(--line));
+  background:
+    radial-gradient(circle at top right, var(--accent-glow), transparent 20rem),
+    color-mix(in oklab, var(--surface-strong) 88%, black 12%);
+}
+
+.press-index__feature .button {
+  justify-self: start;
+}
+
+.press-index__feature img {
+  width: 100%;
+  max-height: 30rem;
+  object-fit: cover;
+  object-position: center 27%;
+  border-radius: 0.35rem;
+}
+
 .legal-page {
   max-width: min(76rem, calc(100% - 2rem));
 }
@@ -1662,8 +1828,21 @@ ul {
   .pricing-credit,
   .location-service-disclosure,
   .service-decision-path,
-  .guide-layout {
+  .guide-layout,
+  .press-feature,
+  .press-next,
+  .press-hero__layout,
+  .press-story,
+  .press-index__feature {
     grid-template-columns: 1fr;
+  }
+
+  .press-story__intro {
+    position: static;
+  }
+
+  .press-next .button-row {
+    justify-content: flex-start;
   }
 
   .case-study-callout__badge {
@@ -1691,6 +1870,11 @@ ul {
 
   .about-author__image {
     max-width: 12rem;
+  }
+
+  .press-portrait img {
+    min-height: 22rem;
+    max-height: 34rem;
   }
 
   .pricing-driver-list__item,

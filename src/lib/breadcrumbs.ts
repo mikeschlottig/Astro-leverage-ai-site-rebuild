@@ -13,6 +13,7 @@ const sectionLabels: Record<string, string> = {
   "knowledge-base": "Knowledge Base",
   locations: "Locations",
   portfolio: "Portfolio",
+  press: "Press",
   pricing: "Pricing",
   privacy: "Privacy",
   reports: "Reports",

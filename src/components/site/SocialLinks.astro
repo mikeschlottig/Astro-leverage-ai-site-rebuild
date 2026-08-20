@@ -1,0 +1,21 @@
+---
+import { SOCIAL_PROFILES } from "../../lib/site";
+
+type Props = {
+  label?: string;
+};
+
+const { label = "Mike Schlottig and Leverage AI social profiles" } = Astro.props;
+---
+
+<nav class="social-links" aria-label={label}>
+  <ul>
+    {SOCIAL_PROFILES.map((profile) => (
+      <li>
+        <a href={profile.href} target="_blank" rel="me external noopener noreferrer">
+          {profile.label}<span aria-hidden="true"> ↗</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

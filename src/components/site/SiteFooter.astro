@@ -1,5 +1,6 @@
 ---
 import { SITE } from "../../lib/site";
+import SocialLinks from "./SocialLinks.astro";
 ---
 
 <footer class="section">
@@ -13,7 +14,9 @@ import { SITE } from "../../lib/site";
       <div>
         <h3>Reach Out</h3>
         <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+        <p><a href={SITE.phoneHref}>{SITE.phone}</a></p>
         <p>{SITE.location}</p>
+        <SocialLinks />
       </div>
       <div>
         <h3>Where Next</h3>
@@ -28,6 +31,7 @@ import { SITE } from "../../lib/site";
         <ul>
           <li><a href="/guides/" data-astro-prefetch>Buyer Guides</a></li>
           <li><a href="/services/local-seo-consulting/" data-astro-prefetch>Local SEO Consultant</a></li>
+          <li><a href="/press/oregon-voyager-interview/" data-astro-prefetch>OregonVoyager Interview</a></li>
           <li><a href="/about/" data-astro-prefetch>About Mike</a></li>
           <li><a href="/contact/" data-astro-prefetch>Request an Audit</a></li>
         </ul>

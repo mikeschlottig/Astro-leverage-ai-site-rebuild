@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Press and Interviews"
+  description="Published interviews and independent coverage of Leverage AI and founder Mike Schlottig."
+  canonicalPath="/press/"
+>
+  <section class="section">
+    <div class="shell press-index">
+      <header class="stack press-index__header">
+        <p class="eyebrow">Press &amp; Interviews</p>
+        <h1>Independent conversations about the work.</h1>
+        <p>
+          Published interviews provide context that a service page cannot: where the company came
+          from, what shaped the operating model, and how the founder thinks about the market.
+        </p>
+      </header>
+
+      <article class="surface press-index__feature">
+        <div class="stack">
+          <p class="eyebrow">OregonVoyager · August 13, 2026</p>
+          <h2>Meet Jon Schlottig of LEVERAGE AI LLC</h2>
+          <p>
+            A founder interview covering Mike’s Southern Oregon roots, systems background, local
+            search strategy, infrastructure priorities, and roadmap for Leverage AI.
+          </p>
+          <a class="button primary" href="/press/oregon-voyager-interview/" data-astro-prefetch>
+            Read the interview page
+          </a>
+        </div>
+        <img
+          src="/images/founder/mike-schlottig.jpg"
+          alt="Mike Schlottig, founder of Leverage AI"
+          width="2208"
+          height="2944"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </article>
+    </div>
+  </section>
+</BaseLayout>
