@@ -31,6 +31,11 @@ export const SITE = {
   ],
 };
 
+export const OG_IMAGES = {
+  default: `${SITE.siteUrl}/images/og/leverage-ai-default.jpg`,
+  oregonVoyager: `${SITE.siteUrl}/images/og/oregon-voyager-interview.jpg`,
+} as const;
+
 export const SOCIAL_PROFILES = [
   { label: "LinkedIn", href: SITE.social.linkedin },
   { label: "Facebook", href: SITE.social.facebook },
@@ -45,7 +50,7 @@ export const IDENTITY = defineSiteIdentity({
   legalName: SITE.legalName,
   description: SITE.description,
   logoUrl: `${SITE.siteUrl}/images/leverage-ai-mark.svg`,
-  defaultOgImageUrl: `${SITE.siteUrl}${defaultAuthor.image.src}`,
+  defaultOgImageUrl: OG_IMAGES.default,
   email: SITE.email,
   telephone: "+1-541-450-2082",
   address: {

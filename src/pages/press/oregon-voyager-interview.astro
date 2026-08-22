@@ -4,9 +4,8 @@ import SocialLinks from "../../components/site/SocialLinks.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
 import { defaultAuthor } from "../../data/authors";
-
-const interviewUrl =
-  "https://oregonvoyager.com/interview/meet-jon-schlottig-of-leverage-ai-llc";
+import { EXTERNAL_LINKS } from "../../lib/external-links";
+import { OG_IMAGES } from "../../lib/site";
 ---
 
 <BaseLayout
@@ -17,6 +16,7 @@ const interviewUrl =
   datePublished="2026-08-20"
   dateModified="2026-08-20"
   articleSection="Press"
+  ogImageUrl={OG_IMAGES.oregonVoyager}
 >
   <section class="section press-hero">
     <div class="shell press-hero__layout">
@@ -35,7 +35,7 @@ const interviewUrl =
         <div class="button-row">
           <a
             class="button primary"
-            href={interviewUrl}
+            href={EXTERNAL_LINKS.oregonVoyagerInterview}
             target="_blank"
             rel="external noopener noreferrer"
           >
@@ -126,7 +126,7 @@ const interviewUrl =
         </p>
         <a
           class="button secondary"
-          href={interviewUrl}
+          href={EXTERNAL_LINKS.oregonVoyagerInterview}
           target="_blank"
           rel="external noopener noreferrer"
         >

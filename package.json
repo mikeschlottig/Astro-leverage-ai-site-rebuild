@@ -8,6 +8,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "assets:brand": "node scripts/generate-brand-assets.mjs",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

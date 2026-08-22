@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SocialLinks from "../components/site/SocialLinks.astro";
 import { Image } from "astro:assets";
 import mikeSchlottigImage from "../assets/founder/mike-schlottig.webp";
+import { EXTERNAL_LINKS } from "../lib/external-links";
 ---
 
 <BaseLayout
@@ -82,8 +83,13 @@ import mikeSchlottigImage from "../assets/founder/mike-schlottig.webp";
         </p>
       </div>
       <div class="stack press-feature__actions">
-        <a class="button primary" href="/press/oregon-voyager-interview/" data-astro-prefetch>
-          Read the interview page
+        <a
+          class="button primary"
+          href={EXTERNAL_LINKS.oregonVoyagerInterview}
+          target="_blank"
+          rel="external noopener noreferrer"
+        >
+          Read on OregonVoyager ↗
         </a>
         <SocialLinks label="Follow Mike Schlottig and Leverage AI" />
       </div>
@@ -160,7 +166,11 @@ import mikeSchlottigImage from "../assets/founder/mike-schlottig.webp";
           <a href="/guides/local-seo-consultant-vs-agency/" data-astro-prefetch>Compare a local SEO consultant with an agency.</a>
           <a href="/knowledge-base/semantic-sync-for-local-search/" data-astro-prefetch>See how Google Business Profile and website signals should stay aligned.</a>
           <a href="/pricing/" data-astro-prefetch>See how the diagnostic audit is structured.</a>
-          <a href="/press/oregon-voyager-interview/" data-astro-prefetch>Read the OregonVoyager founder interview.</a>
+          <a
+            href={EXTERNAL_LINKS.oregonVoyagerInterview}
+            target="_blank"
+            rel="external noopener noreferrer"
+          >Read the OregonVoyager founder interview ↗</a>
           <a href="/portfolio/daley-organics/" data-astro-prefetch>Read the Daley Organics case study.</a>
           <a href="/reports/oregon-market-intel-infrastructure-report/" data-astro-prefetch>Read the Oregon market report.</a>
         </div>

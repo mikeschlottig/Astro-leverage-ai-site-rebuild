@@ -1,5 +1,6 @@
 ---
 import { SITE } from "../../lib/site";
+import { EXTERNAL_LINKS } from "../../lib/external-links";
 import SocialLinks from "./SocialLinks.astro";
 ---
 
@@ -31,7 +32,13 @@ import SocialLinks from "./SocialLinks.astro";
         <ul>
           <li><a href="/guides/" data-astro-prefetch>Buyer Guides</a></li>
           <li><a href="/services/local-seo-consulting/" data-astro-prefetch>Local SEO Consultant</a></li>
-          <li><a href="/press/oregon-voyager-interview/" data-astro-prefetch>OregonVoyager Interview</a></li>
+          <li>
+            <a
+              href={EXTERNAL_LINKS.oregonVoyagerInterview}
+              target="_blank"
+              rel="external noopener noreferrer"
+            >OregonVoyager Interview ↗</a>
+          </li>
           <li><a href="/about/" data-astro-prefetch>About Mike</a></li>
           <li><a href="/contact/" data-astro-prefetch>Request an Audit</a></li>
         </ul>
