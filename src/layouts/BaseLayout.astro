@@ -1,5 +1,12 @@
 ---
 import "../styles/global.css";
+import "@fontsource-variable/familjen-grotesk/wght.css";
+import "@fontsource/barlow/latin-300.css";
+import "@fontsource/barlow/latin-300-italic.css";
+import "@fontsource/barlow/latin-400.css";
+import "@fontsource/barlow/latin-400-italic.css";
+import "@fontsource/barlow/latin-500.css";
+import "@fontsource/barlow/latin-600.css";
 import SeoHead from "@leverageai/site-standard/components/SeoHead.astro";
 import SchemaGraph from "@leverageai/site-standard/components/SchemaGraph.astro";
 import type { FaqItem, PageMeta, PageType } from "@leverageai/site-standard";
@@ -66,12 +73,6 @@ const page: PageMeta = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
-      rel="stylesheet"
-    />
     <SeoHead identity={IDENTITY} page={page} />
     <SchemaGraph identity={IDENTITY} page={page} />
   </head>

@@ -8,6 +8,9 @@ export default defineConfig({
   build: {
     format: "directory",
   },
+  image: {
+    responsiveStyles: true,
+  },
   prefetch: {
     defaultStrategy: "hover",
     prefetchAll: false,

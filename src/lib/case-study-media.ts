@@ -1,11 +1,11 @@
 import type { ImageMetadata } from "astro";
 
-import daleyAngelOfGypsum from "../assets/case-studies/daley-organics/daleys-angel-of-gypsum.png";
-import daleyBlackGold from "../assets/case-studies/daley-organics/DaleysBlackGold.png";
-import daleyBoneMeal from "../assets/case-studies/daley-organics/daleys-bone-meal.png";
-import daleyInfographic from "../assets/case-studies/daley-organics/DaleyOrganicsInfographic.png";
-import daleyMycorrhizalHighway from "../assets/case-studies/daley-organics/daleys-mycorrhizal-highway.png";
-import daleySeabirdGuano from "../assets/case-studies/daley-organics/daleys-seabird-guano.png";
+import daleyAngelOfGypsum from "../assets/case-studies/daley-organics/daleys-angel-of-gypsum.webp";
+import daleyBlackGold from "../assets/case-studies/daley-organics/DaleysBlackGold.webp";
+import daleyBoneMeal from "../assets/case-studies/daley-organics/daleys-bone-meal.webp";
+import daleyInfographic from "../assets/case-studies/daley-organics/DaleyOrganicsInfographic.webp";
+import daleyMycorrhizalHighway from "../assets/case-studies/daley-organics/daleys-mycorrhizal-highway.webp";
+import daleySeabirdGuano from "../assets/case-studies/daley-organics/daleys-seabird-guano.webp";
 
 export type CaseStudyPreview = {
   kind: "iframe";

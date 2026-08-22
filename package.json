@@ -20,9 +20,12 @@
     "verify": "pnpm check && pnpm build && pnpm guard:site-standard"
   },
   "dependencies": {
-    "@leverageai/site-standard": "workspace:*",
     "@astrojs/sitemap": "3.7.3",
-    "astro": "6.4.8"
+    "@fontsource-variable/familjen-grotesk": "^5.3.0",
+    "@fontsource/barlow": "^5.3.0",
+    "@leverageai/site-standard": "workspace:*",
+    "astro": "6.4.8",
+    "sharp": "^0.35.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",

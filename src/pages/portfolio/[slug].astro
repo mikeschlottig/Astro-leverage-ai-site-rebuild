@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import AboutAuthor from "../../components/site/AboutAuthor.astro";
+import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import { locations } from "../../data/locations";
 import { getCaseStudyMedia } from "../../lib/case-study-media";
@@ -194,12 +195,18 @@ const resultThemeClass =
             <div class="case-study-gallery">
               {media.gallery.items.map((item) => (
                 <figure class:list={["case-study-gallery__item", item.featured && "case-study-gallery__item--featured"]}>
-                  <img
-                    src={item.image.src}
+                  <Image
+                    src={item.image}
                     alt={item.alt}
-                    width={item.image.width}
-                    height={item.image.height}
+                    layout="constrained"
+                    widths={[320, 640, 960, 1280, 1920].filter((width) => width <= item.image.width)}
+                    sizes={item.featured
+                      ? "(max-width: 720px) calc(100vw - 4rem), (max-width: 1200px) calc(100vw - 8rem), 1120px"
+                      : "(max-width: 720px) calc(100vw - 4rem), (max-width: 1200px) calc(50vw - 5rem), 540px"}
+                    format="webp"
+                    quality={78}
                     loading="lazy"
+                    decoding="async"
                   />
                   <figcaption class="stack">
                     <strong>{item.title}</strong>

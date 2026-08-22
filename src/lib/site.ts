@@ -45,7 +45,7 @@ export const IDENTITY = defineSiteIdentity({
   legalName: SITE.legalName,
   description: SITE.description,
   logoUrl: `${SITE.siteUrl}/images/leverage-ai-mark.svg`,
-  defaultOgImageUrl: `${SITE.siteUrl}${defaultAuthor.image}`,
+  defaultOgImageUrl: `${SITE.siteUrl}${defaultAuthor.image.src}`,
   email: SITE.email,
   telephone: "+1-541-450-2082",
   address: {
@@ -56,7 +56,7 @@ export const IDENTITY = defineSiteIdentity({
   founder: {
     name: defaultAuthor.name,
     jobTitle: defaultAuthor.role,
-    imageUrl: `${SITE.siteUrl}${defaultAuthor.image}`,
+    imageUrl: `${SITE.siteUrl}${defaultAuthor.image.src}`,
     sameAs: defaultAuthor.sameAs,
   },
   sameAs: Object.values(SITE.social),

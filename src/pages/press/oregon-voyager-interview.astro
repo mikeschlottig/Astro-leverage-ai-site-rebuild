@@ -2,6 +2,8 @@
 import AboutAuthor from "../../components/site/AboutAuthor.astro";
 import SocialLinks from "../../components/site/SocialLinks.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { defaultAuthor } from "../../data/authors";
 
 const interviewUrl =
   "https://oregonvoyager.com/interview/meet-jon-schlottig-of-leverage-ai-llc";
@@ -44,14 +46,15 @@ const interviewUrl =
       </article>
 
       <figure class="surface press-portrait">
-        <img
-          src="/images/founder/mike-schlottig.jpg"
+        <Image
+          src={defaultAuthor.image}
           alt="Mike Schlottig, founder of Leverage AI, in Southern Oregon"
-          width="2208"
-          height="2944"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
+          layout="constrained"
+          widths={[320, 480, 640, 960]}
+          sizes="(max-width: 720px) calc(100vw - 5rem), (max-width: 1100px) 45vw, 540px"
+          format="webp"
+          quality={82}
+          priority
         />
         <figcaption>
           <strong>Jon “Mike” Schlottig</strong>

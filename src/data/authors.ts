@@ -1,10 +1,13 @@
+import type { ImageMetadata } from "astro";
+import mikeSchlottigImage from "../assets/founder/mike-schlottig.webp";
+
 export type AuthorProfile = {
   id: string;
   name: string;
   role: string;
   organization: string;
   location: string;
-  image: string;
+  image: ImageMetadata;
   imageAlt: string;
   bio: string;
   expertise: string[];
@@ -18,7 +21,7 @@ export const authors = {
     role: "Founder and systems strategist",
     organization: "Leverage AI",
     location: "Grants Pass, Oregon",
-    image: "/images/founder/mike-schlottig.jpg",
+    image: mikeSchlottigImage,
     imageAlt: "Mike Schlottig, founder of Leverage AI",
     bio: "Mike works directly with Oregon service businesses on local visibility, website strategy, market research, and lead-response systems. His focus is practical: find where good demand is being lost, fix that constraint, and measure whether the work creates better business outcomes.",
     expertise: [

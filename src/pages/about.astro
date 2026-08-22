@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SocialLinks from "../components/site/SocialLinks.astro";
+import { Image } from "astro:assets";
+import mikeSchlottigImage from "../assets/founder/mike-schlottig.webp";
 ---
 
 <BaseLayout
@@ -32,15 +34,16 @@ import SocialLinks from "../components/site/SocialLinks.astro";
 
       <aside id="mike-schlottig" class="surface stack about-founder-card">
         <div class="about-headshot-frame">
-          <img
+          <Image
             class="about-headshot"
-            src="/images/founder/mike-schlottig.jpg"
+            src={mikeSchlottigImage}
             alt="Mike Schlottig outside a home in Oregon, founder of Leverage AI"
-            width="2208"
-            height="2944"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
+            layout="constrained"
+            widths={[320, 480, 640, 960, 1200]}
+            sizes="(max-width: 720px) calc(100vw - 6.5rem), (max-width: 1100px) 45vw, 540px"
+            format="webp"
+            quality={82}
+            priority
           />
         </div>
         <div class="stack about-founder-copy">
@@ -185,9 +188,7 @@ import SocialLinks from "../components/site/SocialLinks.astro";
 
   .about-headshot {
     width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    object-position: center 28%;
+    height: auto;
     border-radius: 0.45rem;
   }
 

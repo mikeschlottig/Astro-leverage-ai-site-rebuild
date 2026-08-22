@@ -1,5 +1,6 @@
 ---
 import { defaultAuthor, type AuthorProfile } from "../../data/authors";
+import { Image } from "astro:assets";
 
 type Props = {
   author?: AuthorProfile;
@@ -13,12 +14,15 @@ const {
 ---
 
 <aside class="about-author" aria-labelledby={`${author.id}-author-heading`}>
-  <img
+  <Image
     class="about-author__image"
     src={author.image}
     alt={author.imageAlt}
-    width="240"
-    height="320"
+    layout="constrained"
+    widths={[160, 240, 360, 480]}
+    sizes="(max-width: 720px) 192px, 240px"
+    format="webp"
+    quality={82}
     loading="lazy"
     decoding="async"
   />
