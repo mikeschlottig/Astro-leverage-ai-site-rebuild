@@ -8,8 +8,8 @@ tldr:
   - Tier 2 markets reward stronger digital proof and cleaner online credibility.
   - Tier 3 markets reward community trust, local embeddedness, and service-area relevance alongside the basic digital foundation.
 relatedServices:
-  - local-visibility
-  - custom-web-design
+  - local-seo
+  - website-design
   - search-data-architecture
 ---
 
@@ -51,9 +51,9 @@ That means businesses in those markets usually need:
 
 This maps directly to:
 
-- [Local Visibility Systems](/services/local-visibility/)
-- [Custom Web Design](/services/custom-web-design/)
-- [Search And Data Architecture](/services/search-data-architecture/)
+- [Local Visibility Systems](/services/local-seo/)
+- [Custom Web Design](/services/website-design/)
+- [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/)
 
 For these markets, trust often looks like evidence:
 
@@ -150,8 +150,8 @@ That is why this report belongs next to:
 
 - [locations](/locations/)
 - [pricing](/pricing/)
-- [Local Visibility Systems](/services/local-visibility/)
-- [Custom Web Design](/services/custom-web-design/)
+- [Local Visibility Systems](/services/local-seo/)
+- [Custom Web Design](/services/website-design/)
 - [Oregon Market Intel And Infrastructure Report](/reports/oregon-market-intel-infrastructure-report/)
 
 ## The takeaway

@@ -3,9 +3,9 @@ title: What A Strong Google Business Profile Really Needs
 description: A strong Google Business Profile is more than a completed listing. For local service businesses, it needs accurate categories, real service-page support, fresh proof, and a website that reinforces the same local story.
 publishedAt: 2026-06-28
 relatedServices:
-  - local-visibility
+  - local-seo
   - search-data-architecture
-  - custom-web-design
+  - website-design
 ---
 
 ## A complete profile can still be weak
@@ -24,7 +24,7 @@ The goal is not to maintain a profile for the sake of local SEO chores. The goal
 - the buyer believe the business is real and relevant
 - the website carry the same story forward after the click
 
-That is why [Local Visibility](/services/local-visibility/) should not be treated like a single-platform task.
+That is why [Local Visibility](/services/local-seo/) should not be treated like a single-platform task.
 
 ## What a strong profile needs at the baseline
 
@@ -58,7 +58,7 @@ The cleaner pattern is:
 2. list the actual services inside the profile
 3. support those services with real pages on the site
 
-That is where [Search Data Architecture](/services/search-data-architecture/) starts becoming practical instead of abstract.
+That is where [Search Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) starts becoming practical instead of abstract.
 
 ## Photos, reviews, and Q&A are trust surfaces
 

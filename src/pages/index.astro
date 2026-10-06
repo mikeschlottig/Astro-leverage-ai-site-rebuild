@@ -1,10 +1,12 @@
 ---
+import { buildServiceTree, hubsOf } from "../lib/services";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import HomeHero from "../components/site/HomeHero.astro";
 import CaseStudyPreviewCard from "../components/case-studies/CaseStudyPreviewCard.astro";
 
-const services = (await getCollection("services")).sort((a, b) => a.data.order - b.data.order);
+const serviceTree = buildServiceTree(await getCollection("services"));
+const services = hubsOf(serviceTree);
 const caseStudies = await getCollection("caseStudies");
 const reports = (await getCollection("reports")).sort(
   (a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime(),
@@ -40,10 +42,10 @@ const knowledgeBase = (await getCollection("knowledgeBase")).sort(
       <div class="grid">
         {services.map((service) => (
           <article class="surface stack">
-            <p class="eyebrow">{service.data.summary}</p>
-            <h2>{service.data.title}</h2>
-            <p>{service.data.description}</p>
-            <a href={`/services/${service.id}/`}>Open service page</a>
+            <p class="eyebrow">{service.entry.data.summary}</p>
+            <h2>{service.entry.data.navLabel}</h2>
+            <p>{service.entry.data.description}</p>
+            <a href={service.path}>Open service page</a>
           </article>
         ))}
       </div>

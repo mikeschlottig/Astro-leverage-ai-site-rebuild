@@ -34,6 +34,10 @@ const services = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/services" }),
   schema: z.object({
     ...seoFields,
+    kind: z.enum(["hub", "subhub", "spoke"]),
+    parent: z.string().optional(),
+    phrase: z.string().min(3),
+    navLabel: z.string().min(2),
     summary: z.string(),
     order: z.number(),
     outcomes: z.array(z.string()).default([]),

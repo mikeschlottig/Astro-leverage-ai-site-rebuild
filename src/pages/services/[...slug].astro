@@ -3,6 +3,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import AboutAuthor from "../../components/site/AboutAuthor.astro";
 import { getCollection, render } from "astro:content";
 import { locations } from "../../data/locations";
+import {
+  buildServiceTree,
+  routeParam,
+  serviceBreadcrumbs,
+  siblingsOf,
+  type ServiceNode,
+} from "../../lib/services";
 
 type LinkCard = {
   kind: "Report" | "Knowledge Base" | "Case Study" | "Location";
@@ -11,13 +18,24 @@ type LinkCard = {
   description: string;
 };
 
+type Props = { node: ServiceNode };
+
 export async function getStaticPaths() {
-  const services = await getCollection("services");
-  return services.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+  const tree = buildServiceTree(await getCollection("services"));
+  return [...tree.values()].map((node) => ({ params: { slug: routeParam(node) }, props: { node } }));
 }
 
-const { entry } = Astro.props;
-const servicePath = `/services/${entry.id}`;
+const { node } = Astro.props;
+const entry = node.entry;
+const servicePath = node.path;
+const breadcrumbs = serviceBreadcrumbs(node);
+const eyebrow =
+  entry.data.kind === "spoke"
+    ? "Service"
+    : entry.data.kind === "subhub"
+      ? "Service Area"
+      : "Service Hub";
+const siblings = siblingsOf(node);
 const allReports = await getCollection("reports");
 const allKnowledgeBaseEntries = await getCollection("knowledgeBase");
 const allCaseStudies = await getCollection("caseStudies");
@@ -95,14 +113,15 @@ const Content = renderedEntry?.Content;
   description={entry.data.description}
   canonicalPath={servicePath}
   pageType="service"
-  serviceName={entry.data.title}
+  serviceName={entry.data.phrase}
   faqs={entry.data.faqs}
+  breadcrumbs={breadcrumbs}
 >
   <section class="hero service-hero">
     <div class="shell stack">
       <div class="service-hero__panel">
         <div class="service-hero__copy stack">
-          <p class="eyebrow">Service Detail</p>
+          <p class="eyebrow">{eyebrow}</p>
           <h1>{entry.data.heroTitle ?? entry.data.title}</h1>
           <p class="service-hero__lead">{entry.data.description}</p>
           {entry.data.outcomes.length > 0 && (
@@ -134,6 +153,26 @@ const Content = renderedEntry?.Content;
       )}
     </div>
   </section>
+
+  {node.children.length > 0 && (
+    <section class="section" aria-labelledby="in-this-section">
+      <div class="shell stack">
+        <div class="stack">
+          <p class="eyebrow">In This Section</p>
+          <h2 id="in-this-section">{entry.data.phrase} services</h2>
+        </div>
+        <div class="grid">
+          {node.children.map((child) => (
+            <article class="surface stack">
+              <h3>{child.entry.data.navLabel}</h3>
+              <p>{child.entry.data.description}</p>
+              <a href={child.path}>See {child.entry.data.navLabel}</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="section">
     <div class="shell stack">
@@ -247,6 +286,26 @@ const Content = renderedEntry?.Content;
             )}
           </div>
         </aside>
+      </div>
+    </section>
+  )}
+
+  {node.parent && (
+    <section class="section" aria-labelledby="more-in-section">
+      <div class="shell stack">
+        <div class="stack">
+          <p class="eyebrow">Part Of</p>
+          <h2 id="more-in-section">
+            <a href={node.parent.path}>{node.parent.entry.data.navLabel}</a>
+          </h2>
+        </div>
+        {siblings.length > 0 && (
+          <ul class="case-study-result-list">
+            {siblings.map((sibling) => (
+              <li><a href={sibling.path}>{sibling.entry.data.navLabel}</a></li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   )}

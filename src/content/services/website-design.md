@@ -1,9 +1,12 @@
 ---
-title: Custom Web Design
+title: "Website Design and Hosting in Southern Oregon"
 description: High-performance websites that communicate trust, support local search, and convert intent into action.
 summary: Your website is a demand-capture surface.
-heroTitle: Custom websites built to convert local search traffic into booked jobs.
-order: 2
+heroTitle: "Why Leverage AI LLC is the best choice for high-performance website design for local Southern Oregon service businesses"
+kind: hub
+phrase: "Website Design"
+navLabel: "Website Design"
+order: 3
 outcomes:
   - Better trust signals
   - Cleaner service-page architecture

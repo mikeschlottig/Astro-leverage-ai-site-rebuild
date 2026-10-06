@@ -1,9 +1,13 @@
 ---
-title: Search & Data Architecture
-description: Build the measurement, schema, entity, and authority systems that make local visibility and AI-search performance easier to earn and easier to trust.
+title: "Search Data Architecture in Southern Oregon"
+description: "Schema, entity and measurement structure that makes local visibility and AI-search results easier to earn, verify and track."
 summary: Measurement keeps strategy honest.
-heroTitle: Search and data architecture that turns authority signals into a measurable system.
-order: 4
+heroTitle: "Why Leverage AI LLC is the best choice for search data architecture for local Southern Oregon service businesses"
+kind: spoke
+parent: ai-search-optimization
+phrase: "Search Data Architecture"
+navLabel: "Search Data Architecture"
+order: 1
 outcomes:
   - Cleaner analytics and reporting
   - Stronger schema and entity alignment
@@ -137,7 +141,7 @@ That means making it easier for the site to reinforce:
 
 This is why the service should connect naturally to:
 
-- [Local Visibility Systems](/services/local-visibility/)
+- [Local Visibility Systems](/services/local-seo/)
 - [How To Create GEO-Optimized Content For AI Search And Local SEO](/knowledge-base/how-to-create-geo-optimized-content-for-ai-search-and-local-seo/)
 - [How Oregon Markets Differ For Local Service Businesses](/reports/how-oregon-markets-differ-for-local-service-businesses/)
 

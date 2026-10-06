@@ -3,9 +3,9 @@ title: Semantic Sync For Local Search
 description: A practical guide to keeping your Google Business Profile, website, service pages, and trust signals aligned so buyers, Google, and AI search systems see one credible local business.
 publishedAt: 2026-06-28
 relatedServices:
-  - local-visibility
+  - local-seo
   - search-data-architecture
-  - custom-web-design
+  - website-design
 ---
 
 ## If your Google Business Profile and your website tell different stories, local trust gets weaker.
@@ -33,7 +33,7 @@ That includes:
 
 If the profile says you are a contractor serving Medford and Grants Pass, but the website is vague, generic, or built around different service language, the system becomes harder to trust.
 
-That is why [Local Visibility](/services/local-visibility/) and [Search Data Architecture](/services/search-data-architecture/) should be treated as one system rather than two disconnected tasks.
+That is why [Local Visibility](/services/local-seo/) and [Search Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) should be treated as one system rather than two disconnected tasks.
 
 ## Why does this matter more now than it used to?
 
@@ -96,7 +96,7 @@ For most service businesses, the baseline system looks like this:
 - reviews and proof embedded where they support the claim being made
 - LocalBusiness, Service, and FAQ-aware structured data where relevant
 
-That is the kind of structure a stronger [Custom Web Design](/services/custom-web-design/) build should support by default.
+That is the kind of structure a stronger [Custom Web Design](/services/website-design/) build should support by default.
 
 ## Where do most businesses break semantic sync?
 

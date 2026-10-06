@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import SeoHead from "@leverageai/site-standard/components/SeoHead.astro";
 import SchemaGraph from "@leverageai/site-standard/components/SchemaGraph.astro";
-import type { FaqItem, PageMeta, PageType } from "@leverageai/site-standard";
+import type { BreadcrumbItem, FaqItem, PageMeta, PageType } from "@leverageai/site-standard";
 import SiteHeader from "../components/site/SiteHeader.astro";
 import SiteFooter from "../components/site/SiteFooter.astro";
 import Breadcrumbs from "../components/site/Breadcrumbs.astro";
@@ -24,6 +24,7 @@ type Props = {
   serviceName?: string;
   serviceArea?: readonly string[];
   faqs?: readonly FaqItem[];
+  breadcrumbs?: readonly BreadcrumbItem[];
 };
 
 const {
@@ -40,6 +41,7 @@ const {
   serviceName,
   serviceArea,
   faqs,
+  breadcrumbs,
 } = Astro.props;
 
 const breadcrumbLabel = title ?? "Home";
@@ -48,7 +50,7 @@ const page: PageMeta = {
   title: pageTitle(title),
   description,
   path: canonicalPath,
-  breadcrumbs: breadcrumbItems(canonicalPath, breadcrumbLabel),
+  breadcrumbs: breadcrumbs ?? breadcrumbItems(canonicalPath, breadcrumbLabel),
   ...(noindex !== undefined ? { noindex } : {}),
   ...(ogImageUrl !== undefined ? { ogImageUrl } : {}),
   ...(datePublished !== undefined ? { datePublished } : {}),

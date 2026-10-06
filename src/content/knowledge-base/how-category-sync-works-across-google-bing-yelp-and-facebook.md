@@ -3,9 +3,9 @@ title: How Category Sync Works Across Google, Bing, Yelp, and Facebook
 description: A plain-language guide to why category alignment across major local platforms matters, how it differs from semantic sync, and where it fits inside a broader entity-trust audit.
 publishedAt: 2026-06-28
 relatedServices:
-  - local-visibility
+  - local-seo
   - search-data-architecture
-  - custom-web-design
+  - website-design
 ---
 
 ## Why category sync matters more than most owners think

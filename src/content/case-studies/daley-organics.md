@@ -9,8 +9,8 @@ location: Grants Pass, Oregon
 industry: Organic soil, compost, and bark supply
 market: Grants Pass and the wider Rogue Valley
 services:
-  - local-visibility
-  - custom-web-design
+  - local-seo
+  - website-design
   - search-data-architecture
 relatedReports:
   - how-the-google-local-pack-really-works

@@ -9,8 +9,8 @@ location: Oregon
 industry: Regional directory and citation infrastructure
 market: Statewide Oregon service-business visibility
 services:
-  - local-visibility
-  - custom-web-design
+  - local-seo
+  - website-design
   - search-data-architecture
 relatedReports:
   - why-speed-wins

@@ -1,3 +1,5 @@
+import { SERVICE_REDIRECTS, normalizeServicePath } from "../src/data/service-redirects";
+
 type EmailBinding = {
   send: (message: {
     to: string | { email: string; name?: string };
@@ -22,9 +24,15 @@ type Env = {
 };
 
 const allowedServices = new Set([
+  "local-seo",
+  "website-design",
+  "internet-marketing-services",
+  "software-development",
+  // Legacy values kept so forms rendered before the hub reorganization still submit.
   "local-visibility",
   "custom-web-design",
   "lead-capture-ai-follow-up",
+  "lead-capture-and-ai-follow-up",
   "search-data-architecture",
 ]);
 
@@ -113,6 +121,16 @@ const redirectResponse = (location: string) =>
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+
+    if (request.method === "GET" || request.method === "HEAD") {
+      const moved = SERVICE_REDIRECTS[normalizeServicePath(url.pathname)];
+      if (moved !== undefined) {
+        return new Response(null, {
+          status: 301,
+          headers: { location: `${url.origin}${moved}${url.search}` },
+        });
+      }
+    }
 
     if (url.pathname === "/api/contact") {
       if (request.method !== "POST") {

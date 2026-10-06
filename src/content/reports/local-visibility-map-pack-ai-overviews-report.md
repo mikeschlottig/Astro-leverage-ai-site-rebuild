@@ -9,9 +9,9 @@ tldr:
   - "A top-three position matters because local queries combine concentrated visibility with unusually high commercial intent—but traffic estimates are benchmarks, not revenue guarantees."
   - "Accurate business data, a complete Google Business Profile, credible reviews, strong local pages, structured data, and third-party corroboration support visibility across both systems."
 relatedServices:
-  - local-visibility
+  - local-seo
   - search-data-architecture
-  - custom-web-design
+  - website-design
 relatedReports:
   - how-the-google-local-pack-really-works
   - entity-strength-and-ai-search-visibility-for-local-service-businesses

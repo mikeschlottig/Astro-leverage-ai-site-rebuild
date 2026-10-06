@@ -1,8 +1,12 @@
 ---
-title: Lead Capture & AI Follow-Up
+title: "Lead Capture and AI Follow-Up"
 description: Capture every inbound lead and respond before attention collapses or a competitor gets there first.
 summary: Speed to lead is a revenue system.
-heroTitle: Capture every lead and respond before it drifts away.
+heroTitle: "Why Leverage AI LLC is the best choice for lead capture and AI follow-up for local Southern Oregon service businesses"
+kind: subhub
+parent: internet-marketing-services
+phrase: "Lead Capture and AI Follow-Up"
+navLabel: "Lead Capture and AI Follow-Up"
 order: 3
 outcomes:
   - Faster response times
@@ -112,7 +116,7 @@ Lead capture works best when it connects to:
 - a website that creates enough trust to trigger contact
 - measurement that shows where leads stall or disappear
 
-That is why this service belongs inside the same system as [Local Visibility Systems](/services/local-visibility/), [Custom Web Design](/services/custom-web-design/), and [Search And Data Architecture](/services/search-data-architecture/).
+That is why this service belongs inside the same system as [Local Visibility Systems](/services/local-seo/), [Custom Web Design](/services/website-design/), and [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/).
 
 ## When this service should move up the priority list
 

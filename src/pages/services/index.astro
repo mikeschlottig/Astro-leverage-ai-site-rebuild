@@ -1,13 +1,14 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
+import { buildServiceTree, hubsOf } from "../../lib/services";
 
-const services = (await getCollection("services")).sort((a, b) => a.data.order - b.data.order);
+const hubs = hubsOf(buildServiceTree(await getCollection("services")));
 ---
 
 <BaseLayout
   title="Services"
-  description="Outcome-led service pages for local visibility, custom websites, lead capture, and search data architecture."
+  description="Internet marketing, local SEO, website design, and software development for Oregon service businesses."
 >
   <section class="section">
     <div class="shell stack">
@@ -20,11 +21,16 @@ const services = (await getCollection("services")).sort((a, b) => a.data.order -
         </p>
       </div>
       <div class="grid">
-        {services.map((service) => (
+        {hubs.map((hub) => (
           <article class="surface stack">
-            <h2>{service.data.title}</h2>
-            <p>{service.data.description}</p>
-            <a href={`/services/${service.id}/`}>See how it works</a>
+            <h2><a href={hub.path}>{hub.entry.data.navLabel}</a></h2>
+            <p>{hub.entry.data.description}</p>
+            <ul class="case-study-result-list">
+              {hub.children.map((child) => (
+                <li><a href={child.path}>{child.entry.data.navLabel}</a></li>
+              ))}
+            </ul>
+            <a href={hub.path}>See all {hub.entry.data.navLabel} services</a>
           </article>
         ))}
       </div>

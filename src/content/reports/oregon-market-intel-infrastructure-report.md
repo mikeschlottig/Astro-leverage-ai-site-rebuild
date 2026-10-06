@@ -8,9 +8,9 @@ tldr:
   - High-intent lead value collapses fast, which is why speed-to-lead belongs inside the website and Worker architecture.
   - Oregon markets are not interchangeable, so service, location, and authority pages should be clustered around real local conditions.
 relatedServices:
-  - local-visibility
-  - custom-web-design
-  - lead-capture-ai-follow-up
+  - local-seo
+  - website-design
+  - lead-capture-and-ai-follow-up
   - search-data-architecture
 ---
 
@@ -30,11 +30,11 @@ That is why the website has to function as infrastructure rather than decoration
 
 ### 1. The map-pack blindspot
 
-If a business is invisible in the exact service area where the buyer is searching, the best website in the world cannot help. This is the role of [local visibility systems](/services/local-visibility/): Google Business Profile alignment, service-area relevance, structured schema, and market-specific authority signals.
+If a business is invisible in the exact service area where the buyer is searching, the best website in the world cannot help. This is the role of [local visibility systems](/services/local-seo/): Google Business Profile alignment, service-area relevance, structured schema, and market-specific authority signals.
 
 ### 2. The trust deficit
 
-Slow, bloated, generic websites repel serious buyers before a conversation starts. This is the role of [custom web design](/services/custom-web-design/): faster surfaces, better hierarchy, clearer service proof, and a site that feels credible in the first ten seconds.
+Slow, bloated, generic websites repel serious buyers before a conversation starts. This is the role of [custom web design](/services/website-design/): faster surfaces, better hierarchy, clearer service proof, and a site that feels credible in the first ten seconds.
 
 ### 3. The response gap
 
@@ -69,10 +69,10 @@ One of the most reusable ideas in the PDF is the closed-loop system model. It al
 
 | Layer | Site cluster | What it does |
 | --- | --- | --- |
-| Presence | [Local Visibility](/services/local-visibility/) | Wins map intent, branded search, and service-area discoverability |
-| Quality | [Custom Web Design](/services/custom-web-design/) | Converts attention into trust and action |
-| Capture | [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/) | Reduces reply lag and missed-opportunity leakage |
-| Measurement | [Search And Data Architecture](/services/search-data-architecture/) | Maps outcomes back to revenue, not impressions |
+| Presence | [Local Visibility](/services/local-seo/) | Wins map intent, branded search, and service-area discoverability |
+| Quality | [Custom Web Design](/services/website-design/) | Converts attention into trust and action |
+| Capture | [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/) | Reduces reply lag and missed-opportunity leakage |
+| Measurement | [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) | Maps outcomes back to revenue, not impressions |
 
 The insight here is simple: none of those layers should be sold or built in isolation.
 
@@ -123,10 +123,10 @@ That is the logic behind [diagnostic-first pricing](/pricing/): verify the highe
 
 This report is best used as a cluster anchor, not as a standalone dead-end PDF rewrite. It should keep linking outward to:
 
-- [Local Visibility](/services/local-visibility/)
-- [Custom Web Design](/services/custom-web-design/)
-- [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/)
-- [Search And Data Architecture](/services/search-data-architecture/)
+- [Local Visibility](/services/local-seo/)
+- [Custom Web Design](/services/website-design/)
+- [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/)
+- [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/)
 - [Why Speed Wins](/reports/why-speed-wins/)
 - [Daley Organics](/portfolio/daley-organics/)
 - [Oregon SMB Directory](/portfolio/oregon-smb-directory/)

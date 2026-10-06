@@ -1,9 +1,12 @@
 ---
-title: Local Visibility Systems
-description: Build the local search, map-pack, service-area, and entity signals that make a business easier to discover in both traditional search and AI-assisted local discovery.
+title: "Local SEO in Southern Oregon"
+description: "Local SEO for Southern Oregon service businesses: Google Business Profile, map-pack ranking, service-area pages and entity signals for search and AI answers."
 summary: Local demand starts with discoverability.
-heroTitle: Local visibility systems that capture high-intent search demand.
-order: 1
+heroTitle: "Why Leverage AI LLC is the best choice for Local SEO for Southern Oregon service businesses"
+kind: hub
+phrase: "Local SEO"
+navLabel: "Local SEO"
+order: 2
 outcomes:
   - Stronger local discoverability
   - Better map and AI-surface visibility
