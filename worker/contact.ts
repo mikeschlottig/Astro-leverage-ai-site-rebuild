@@ -1,3 +1,5 @@
+import { handleRelay, isRelayPath, type RelayEnv, type WaitUntilContext } from "./posthog-relay";
+
 type EmailBinding = {
   send: (message: {
     to: string | { email: string; name?: string };
@@ -19,7 +21,7 @@ type Env = {
   CONTACT_NOTIFICATION_EMAIL?: string;
   CONTACT_FROM_EMAIL?: string;
   PUBLIC_SITE_ORIGIN?: string;
-};
+} & RelayEnv;
 
 const allowedServices = new Set([
   "local-visibility",
@@ -111,8 +113,12 @@ const redirectResponse = (location: string) =>
   });
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx: WaitUntilContext): Promise<Response> {
     const url = new URL(request.url);
+
+    if (isRelayPath(url.pathname)) {
+      return handleRelay(request, env, ctx);
+    }
 
     if (url.pathname === "/api/contact") {
       if (request.method !== "POST") {

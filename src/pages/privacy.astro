@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE } from "../lib/site";
 
-const updated = "June 30, 2026";
+const updated = "October 10, 2026";
 ---
 
 <BaseLayout
@@ -36,9 +36,46 @@ const updated = "June 30, 2026";
         security.
       </p>
       <p>
-        This site does not currently use advertising pixels or sell personal information. If
-        analytics or advertising technology is added later, this policy will be updated before that
-        use begins.
+        This site does not use advertising pixels, does not use session recording, and does not
+        sell personal information.
+      </p>
+
+      <h2>Analytics</h2>
+      <p>
+        We use privacy-focused analytics to understand which pages are useful and how the site
+        performs, so we can improve it. We use two services:
+      </p>
+      <ul>
+        <li>
+          <strong>PostHog</strong> records page views, clicks on links and buttons, and page-speed
+          measurements. It runs in a cookieless mode: it does not set cookies or store identifiers in
+          your browser, and it does not build a profile of you. To count visits without cookies,
+          PostHog computes a one-way hash from your IP address, browser user agent, our site
+          name and a random value that changes every day and is then deleted, so visits cannot be
+          linked across days or tied back to you. It never records what you type into forms.
+          Requests pass through our own server before reaching PostHog.
+        </li>
+        <li>
+          <strong>Cloudflare Web Analytics</strong>, provided by our hosting and security provider,
+          measures page views and page performance without cookies.
+        </li>
+      </ul>
+      <p>
+        These services act on our behalf, and we use their data only to operate and improve this
+        website.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        This site does not set cookies for analytics, advertising or tracking, so there is no
+        cookie banner. If that changes, we will ask for your consent first and update this page.
+      </p>
+
+      <h2>Do Not Track and Global Privacy Control</h2>
+      <p>
+        If your browser sends a Global Privacy Control or Do Not Track signal, PostHog analytics does
+        not load at all during your visit. Basic technical processing needed to deliver and secure
+        the site, described above, still applies.
       </p>
 
       <h2>Embedded third-party websites</h2>
@@ -60,7 +97,7 @@ const updated = "June 30, 2026";
       <h2>Sharing and retention</h2>
       <p>
         Information may be processed by service providers that support website hosting, email,
-        security, and lead delivery. Leverage AI does not sell personal information. Inquiry
+        security, analytics, and lead delivery. Leverage AI does not sell personal information. Inquiry
         information is retained only as long as reasonably needed for communication, business
         records, security, or legal obligations.
       </p>
