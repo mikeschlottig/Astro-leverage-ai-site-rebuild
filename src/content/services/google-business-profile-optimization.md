@@ -1,8 +1,12 @@
 ---
 title: Google Business Profile Optimization
-description: Google Business Profile optimization for Oregon service businesses that need accurate categories, stronger map visibility, credible proof, and a cleaner path from discovery to contact.
+description: "Google Business Profile optimization for Oregon service businesses: accurate categories, stronger map visibility, credible proof and a clear path to contact."
 summary: Make the business easier to understand, verify, and choose in local search.
 heroTitle: Google Business Profile optimization for Oregon service businesses.
+kind: spoke
+parent: local-seo
+phrase: "Google Business Profile Optimization"
+navLabel: "Google Business Profile"
 methodName: Local Visibility Systems
 order: 2
 outcomes:

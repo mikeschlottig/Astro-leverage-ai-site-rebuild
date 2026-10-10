@@ -8,9 +8,9 @@ tldr:
   - "Treat precise ranking formulas, fixed review deadlines, and guaranteed 60-to-90-day outcomes as hypotheses unless they are backed by evidence from your own market."
 relatedServices:
   - google-business-profile-optimization
-  - local-visibility
+  - local-seo
   - search-data-architecture
-  - custom-web-design
+  - website-design
 ---
 
 ## The local pack is where high-intent searches become shortlists

@@ -7,7 +7,7 @@ tldr:
   - "The strongest production pattern is hybrid: deterministic browser control for predictable steps, AI reasoning for the messy parts."
   - "For Oregon service-business work, the practical leverage is in narrow, instrumented research and extraction pipelines, not in theatrical autonomy."
 relatedServices:
-  - custom-web-design
+  - website-design
   - search-data-architecture
 ---
 
@@ -93,7 +93,7 @@ Those are strong fits because they are:
 - valuable enough to repeat
 - structured enough to measure
 
-That makes them more aligned with [Search & Data Architecture](/services/search-data-architecture/) than with generic AI theater.
+That makes them more aligned with [Search & Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) than with generic AI theater.
 
 ## What this means for Oregon service businesses
 
@@ -138,8 +138,8 @@ If the browser automation does not improve visibility research, authority-buildi
 
 This report is most useful when read alongside:
 
-- [Custom Web Design](/services/custom-web-design/), because the public site still has to be readable and stable enough to support automation around it
-- [Search & Data Architecture](/services/search-data-architecture/), because extracted signals and repeated checks need a system to land in
+- [Custom Web Design](/services/website-design/), because the public site still has to be readable and stable enough to support automation around it
+- [Search & Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/), because extracted signals and repeated checks need a system to land in
 - [pricing](/pricing/), because the diagnostic audit should reveal whether automation support is justified or premature
 - [contact](/contact/), because the next move should be diagnosis, not passive reading
 

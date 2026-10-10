@@ -13,8 +13,8 @@ faqs:
   - question: What ongoing costs should be disclosed?
     answer: Hosting, domain renewal, licensed software, third-party services, maintenance, content work, tracking tools, and any support retainer should be explicit before the project begins.
 relatedServices:
-  - custom-web-design
-  - local-visibility
+  - website-design
+  - local-seo
   - search-data-architecture
 relatedGuides:
   - local-seo-consultant-vs-agency

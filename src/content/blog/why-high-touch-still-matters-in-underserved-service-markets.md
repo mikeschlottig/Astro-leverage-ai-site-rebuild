@@ -11,10 +11,10 @@ tags:
   - lead-response
   - entity-strength
 relatedServices:
-  - local-visibility
-  - lead-capture-ai-follow-up
+  - local-seo
+  - lead-capture-and-ai-follow-up
   - search-data-architecture
-  - custom-web-design
+  - website-design
 relatedCaseStudies: []
 ---
 

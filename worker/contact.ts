@@ -1,4 +1,5 @@
 import { handleRelay, isRelayPath, type RelayEnv, type WaitUntilContext } from "./posthog-relay";
+import { SERVICE_REDIRECTS, normalizeServicePath } from "../src/data/service-redirects";
 
 type EmailBinding = {
   send: (message: {
@@ -24,9 +25,15 @@ type Env = {
 } & RelayEnv;
 
 const allowedServices = new Set([
+  "local-seo",
+  "website-design",
+  "internet-marketing-services",
+  "software-development",
+  // Legacy values kept so forms rendered before the hub reorganization still submit.
   "local-visibility",
   "custom-web-design",
   "lead-capture-ai-follow-up",
+  "lead-capture-and-ai-follow-up",
   "search-data-architecture",
 ]);
 
@@ -118,6 +125,16 @@ export default {
 
     if (isRelayPath(url.pathname)) {
       return handleRelay(request, env, ctx);
+    }
+
+    if (request.method === "GET" || request.method === "HEAD") {
+      const moved = SERVICE_REDIRECTS[normalizeServicePath(url.pathname)];
+      if (moved !== undefined) {
+        return new Response(null, {
+          status: 301,
+          headers: { location: `${url.origin}${moved}${url.search}` },
+        });
+      }
     }
 
     if (url.pathname === "/api/contact") {

@@ -3,6 +3,10 @@ title: Local SEO Consultant in Oregon
 description: Founder-led local SEO consulting for Oregon service businesses that need direct market analysis, clear priorities, and implementation tied to qualified demand.
 summary: Work directly with the person diagnosing the market and shaping the implementation.
 heroTitle: Work directly with an Oregon local SEO consultant—not an account-manager layer.
+kind: spoke
+parent: local-seo
+phrase: "Local SEO Consultant"
+navLabel: "Local SEO Consultant"
 methodName: Founder-Led Local SEO Consulting
 order: 3
 outcomes:

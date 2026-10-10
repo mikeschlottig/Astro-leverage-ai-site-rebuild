@@ -4,11 +4,11 @@ description: Local SEO, custom websites, and lead-response systems for Oregon bu
 heroTitle: Local SEO systems for Oregon service businesses.
 summary: Turn nearby search demand into trusted, qualified conversations.
 relatedServices:
-  - local-visibility
+  - local-seo
   - google-business-profile-optimization
-  - local-seo-consulting
-  - custom-web-design
-  - lead-capture-ai-follow-up
+  - local-seo-consultant
+  - website-design
+  - lead-capture-and-ai-follow-up
 ---
 
 Local service businesses do not need attention for its own sake. They need to appear when nearby customers are ready to act, earn trust quickly, and respond before the opportunity moves on.

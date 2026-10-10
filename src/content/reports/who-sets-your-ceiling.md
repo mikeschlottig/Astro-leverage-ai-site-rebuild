@@ -22,9 +22,9 @@ research:
   revisionNotes:
     - October 10, 2026 — Initial publication with the 18-site benchmark.
 relatedServices:
-  - custom-web-design
+  - website-design
   - search-data-architecture
-  - local-visibility
+  - local-seo
 relatedReports:
   - why-speed-wins
 ---

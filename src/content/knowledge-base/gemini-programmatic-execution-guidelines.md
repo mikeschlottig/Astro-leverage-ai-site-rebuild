@@ -3,7 +3,7 @@ title: How We Use AI Automation Without Handing It The Keys
 description: How controlled AI workflows can speed up research and technical work without risking customer data, publishing errors, or unreviewed changes.
 publishedAt: 2026-06-27
 relatedServices:
-  - custom-web-design
+  - website-design
   - search-data-architecture
 ---
 
@@ -11,7 +11,7 @@ Automation can make research, content operations, and technical maintenance fast
 
 ## Where it actually belongs
 
-In client work, AI automation belongs inside the [Search & Data Architecture](/services/search-data-architecture/) layer first.
+In client work, AI automation belongs inside the [Search & Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) layer first.
 
 That is because the highest-value uses are structured and repeatable:
 
@@ -140,7 +140,7 @@ Programmatic Gemini use belongs here when it helps the business do one of four t
 
 That is why this guide should sit beside:
 
-- [Search & Data Architecture](/services/search-data-architecture/)
+- [Search & Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/)
 - [How To Create GEO-Optimized Content For AI Search And Local SEO](/knowledge-base/how-to-create-geo-optimized-content-for-ai-search-and-local-seo/)
 - [How To Use Google Trends And Search Operators For Local Competitive Research](/knowledge-base/how-to-use-google-trends-and-search-operators-for-local-competitive-research/)
 

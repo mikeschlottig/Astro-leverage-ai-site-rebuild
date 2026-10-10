@@ -10,7 +10,7 @@ tags:
   - cloudflare
   - astro
 relatedServices:
-  - custom-web-design
+  - website-design
   - search-data-architecture
 relatedCaseStudies:
   - daley-organics

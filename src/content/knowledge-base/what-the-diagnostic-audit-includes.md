@@ -3,9 +3,9 @@ title: What The Diagnostic Audit Includes
 description: A clear explainer for what the diagnostic audit reviews, what the buyer receives, and why diagnosis comes before broader implementation.
 publishedAt: 2026-06-27
 relatedServices:
-  - local-visibility
+  - local-seo
   - search-data-architecture
-  - lead-capture-ai-follow-up
+  - lead-capture-and-ai-follow-up
 ---
 
 ## The diagnostic audit exists to answer one question first
@@ -59,10 +59,10 @@ The exact mix changes by business and market, but the audit is designed to inspe
 
 Those layers map directly to the public service architecture:
 
-- [Local Visibility Systems](/services/local-visibility/)
-- [Custom Web Design](/services/custom-web-design/)
-- [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/)
-- [Search And Data Architecture](/services/search-data-architecture/)
+- [Local Visibility Systems](/services/local-seo/)
+- [Custom Web Design](/services/website-design/)
+- [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/)
+- [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/)
 
 ## Which touchpoints the audit should pressure-test
 

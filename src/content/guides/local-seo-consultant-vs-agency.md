@@ -13,8 +13,8 @@ faqs:
   - question: What should remain owned by the business?
     answer: The business should retain ownership or direct administrative access to its domain, website repository, analytics, Search Console, Google Business Profile, content, data, and advertising accounts.
 relatedServices:
-  - local-seo-consulting
-  - local-visibility
+  - local-seo-consultant
+  - local-seo
   - google-business-profile-optimization
 relatedGuides:
   - website-redesign-cost-for-local-business

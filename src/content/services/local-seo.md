@@ -1,10 +1,13 @@
 ---
-title: Local SEO & Google Maps Services
-description: Local SEO, Google Maps optimization, service-area pages, and entity signals for Oregon businesses that need to capture nearby demand.
+title: "Local SEO in Southern Oregon"
+description: "Local SEO for Southern Oregon service businesses: Google Business Profile, map-pack ranking, service-area pages and entity signals for search and AI answers."
 summary: Local demand starts with discoverability.
-heroTitle: Local SEO services for Oregon businesses ready to win nearby demand.
+heroTitle: "Why Leverage AI LLC is the best choice for Local SEO for Southern Oregon service businesses"
+kind: hub
+phrase: "Local SEO"
+navLabel: "Local SEO"
+order: 2
 methodName: Local Visibility Systems
-order: 1
 outcomes:
   - Stronger local discoverability
   - Better map and AI-surface visibility

@@ -9,9 +9,9 @@ tldr:
   - In relationship-driven markets, better technology only matters when it strengthens local credibility instead of replacing it.
   - The smartest next step is usually a diagnostic audit and roadmap, not a generic redesign or random automation spend.
 relatedServices:
-  - local-visibility
-  - custom-web-design
-  - lead-capture-ai-follow-up
+  - local-seo
+  - website-design
+  - lead-capture-and-ai-follow-up
   - search-data-architecture
 ---
 
@@ -56,7 +56,7 @@ That usually looks like:
 - limited location architecture
 - broad claims with no strong page-level support
 
-This is where [Local Visibility](/services/local-visibility/) starts becoming practical. The work is not about trendy search positioning. It is about making sure a business can be found cleanly when somebody is already looking for the service it provides.
+This is where [Local Visibility](/services/local-seo/) starts becoming practical. The work is not about trendy search positioning. It is about making sure a business can be found cleanly when somebody is already looking for the service it provides.
 
 ## The trust gap is often the bigger leak
 
@@ -80,7 +80,7 @@ All of that weakens the return on every other part of the system.
 
 The business may still be getting seen. The buyer may still be interested. But the handoff breaks before the job gets booked.
 
-That is why [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/) belongs inside the same broader conversation as search visibility and trust.
+That is why [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/) belongs inside the same broader conversation as search visibility and trust.
 
 ## Southern Oregon buyers still choose differently than bigger Oregon markets
 

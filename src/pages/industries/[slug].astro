@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import AboutAuthor from "../../components/site/AboutAuthor.astro";
 import { getCollection, render } from "astro:content";
+import { buildServiceTree, servicePath } from "../../lib/services";
 
 export async function getStaticPaths() {
   const entries = await getCollection("industries");
@@ -10,6 +11,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const allServices = await getCollection("services");
+const serviceTree = buildServiceTree(allServices);
 const relatedServices = entry.data.relatedServices.flatMap((slug) => {
   const service = allServices.find((candidate) => candidate.id === slug);
   return service ? [service] : [];
@@ -58,7 +60,7 @@ const { Content } = await render(entry);
         </p>
         <div class="case-study-links">
           {relatedServices.map((service) => (
-            <a class="case-study-link-card" href={`/services/${service.id}/`} data-astro-prefetch>
+            <a class="case-study-link-card" href={servicePath(serviceTree, service.id) ?? "/services/"} data-astro-prefetch>
               <span>Service</span>
               <strong>{service.data.title}</strong>
               <p>{service.data.description}</p>

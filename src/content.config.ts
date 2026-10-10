@@ -47,6 +47,10 @@ const services = defineCollection({
   schema: z.object({
     ...seoFields,
     methodName: z.string().optional(),
+    kind: z.enum(["hub", "subhub", "spoke"]),
+    parent: z.string().optional(),
+    phrase: z.string().min(3),
+    navLabel: z.string().min(2),
     summary: z.string(),
     order: z.number(),
     outcomes: z.array(z.string()).default([]),

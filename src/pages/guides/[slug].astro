@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import AboutAuthor from "../../components/site/AboutAuthor.astro";
 import { getCollection, render } from "astro:content";
+import { buildServiceTree, servicePath } from "../../lib/services";
 
 type LinkCard = {
   href: string;
@@ -17,12 +18,14 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const services = await getCollection("services");
+const serviceTree = buildServiceTree(services);
 const guides = await getCollection("guides");
 
 const relatedServices: LinkCard[] = entry.data.relatedServices.flatMap((slug) => {
   const service = services.find((candidate) => candidate.id === slug);
-  return service
-    ? [{ href: `/services/${service.id}/`, title: service.data.title, description: service.data.description }]
+  const href = service ? servicePath(serviceTree, service.id) : undefined;
+  return service && href
+    ? [{ href, title: service.data.title, description: service.data.description }]
     : [];
 });
 

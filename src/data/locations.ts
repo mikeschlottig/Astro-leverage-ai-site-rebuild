@@ -1,11 +1,11 @@
 export type LocationTier = "tier-1" | "tier-2" | "tier-3" | "strategic";
 
 export type ServiceSlug =
-  | "local-visibility"
+  | "local-seo"
   | "google-business-profile-optimization"
-  | "local-seo-consulting"
-  | "custom-web-design"
-  | "lead-capture-ai-follow-up"
+  | "local-seo-consultant"
+  | "website-design"
+  | "lead-capture-and-ai-follow-up"
   | "search-data-architecture";
 
 export type ReportSlug =
@@ -89,7 +89,7 @@ export const locations: LocationEntry[] = [
         detail: "Most gains come from credibility cleanup and tighter lead handling.",
       },
     ],
-    recommendedServices: ["local-visibility", "custom-web-design", "lead-capture-ai-follow-up"],
+    recommendedServices: ["local-seo", "website-design", "lead-capture-and-ai-follow-up"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins"],
     relatedCaseStudies: ["oregon-smb-directory"],
     nearbyMarkets: ["corvallis", "salem", "eugene"],
@@ -129,7 +129,7 @@ export const locations: LocationEntry[] = [
         detail: "The website has to carry more of the trust-building work here.",
       },
     ],
-    recommendedServices: ["custom-web-design", "local-visibility", "search-data-architecture"],
+    recommendedServices: ["website-design", "local-seo", "search-data-architecture"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "web-agents-intelligence-report"],
     relatedCaseStudies: ["oregon-smb-directory"],
     nearbyMarkets: ["medford", "grants-pass", "klamath-falls"],
@@ -169,7 +169,7 @@ export const locations: LocationEntry[] = [
         detail: "A sharper system can outperform weaker competitors quickly.",
       },
     ],
-    recommendedServices: ["local-visibility", "google-business-profile-optimization", "custom-web-design", "lead-capture-ai-follow-up", "search-data-architecture"],
+    recommendedServices: ["local-seo", "google-business-profile-optimization", "website-design", "lead-capture-and-ai-follow-up", "search-data-architecture"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins"],
     relatedCaseStudies: ["daley-organics", "oregon-smb-directory"],
     nearbyMarkets: ["salem", "eugene", "klamath-falls"],
@@ -209,7 +209,7 @@ export const locations: LocationEntry[] = [
         detail: "Clean proof architecture improves both conversion and local SEO utility.",
       },
     ],
-    recommendedServices: ["local-visibility", "custom-web-design", "search-data-architecture"],
+    recommendedServices: ["local-seo", "website-design", "search-data-architecture"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins"],
     relatedCaseStudies: ["oregon-smb-directory"],
     nearbyMarkets: ["albany", "salem", "eugene"],
@@ -249,7 +249,7 @@ export const locations: LocationEntry[] = [
         detail: "Sharper specialty framing is usually more valuable than broader reach.",
       },
     ],
-    recommendedServices: ["custom-web-design", "local-visibility", "lead-capture-ai-follow-up", "search-data-architecture"],
+    recommendedServices: ["website-design", "local-seo", "lead-capture-and-ai-follow-up", "search-data-architecture"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins", "web-agents-intelligence-report"],
     relatedCaseStudies: ["oregon-smb-directory", "daley-organics"],
     nearbyMarkets: ["springfield", "corvallis", "salem"],
@@ -289,7 +289,7 @@ export const locations: LocationEntry[] = [
         detail: "Service-area authority and fast follow-up carry unusual weight here.",
       },
     ],
-    recommendedServices: ["local-visibility", "google-business-profile-optimization", "local-seo-consulting", "lead-capture-ai-follow-up", "custom-web-design", "search-data-architecture"],
+    recommendedServices: ["local-seo", "google-business-profile-optimization", "local-seo-consultant", "lead-capture-and-ai-follow-up", "website-design", "search-data-architecture"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins"],
     relatedCaseStudies: ["daley-organics", "oregon-smb-directory"],
     nearbyMarkets: ["medford", "ashland", "klamath-falls"],
@@ -329,7 +329,7 @@ export const locations: LocationEntry[] = [
         detail: "Service-area clarity often matters before broader authority-building.",
       },
     ],
-    recommendedServices: ["local-visibility", "lead-capture-ai-follow-up", "custom-web-design"],
+    recommendedServices: ["local-seo", "lead-capture-and-ai-follow-up", "website-design"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins"],
     relatedCaseStudies: ["daley-organics"],
     nearbyMarkets: ["medford", "ashland", "grants-pass"],
@@ -369,7 +369,7 @@ export const locations: LocationEntry[] = [
         detail: "The business needs proof architecture, not just more pages.",
       },
     ],
-    recommendedServices: ["custom-web-design", "local-visibility", "google-business-profile-optimization", "lead-capture-ai-follow-up", "search-data-architecture"],
+    recommendedServices: ["website-design", "local-seo", "google-business-profile-optimization", "lead-capture-and-ai-follow-up", "search-data-architecture"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins", "web-agents-intelligence-report"],
     relatedCaseStudies: ["oregon-smb-directory", "daley-organics"],
     nearbyMarkets: ["ashland", "grants-pass", "klamath-falls"],
@@ -409,7 +409,7 @@ export const locations: LocationEntry[] = [
         detail: "Proof and analytics discipline matter more than extra page count.",
       },
     ],
-    recommendedServices: ["custom-web-design", "search-data-architecture", "local-visibility"],
+    recommendedServices: ["website-design", "search-data-architecture", "local-seo"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "web-agents-intelligence-report", "why-speed-wins"],
     relatedCaseStudies: ["oregon-smb-directory"],
     nearbyMarkets: ["salem", "albany", "eugene"],
@@ -449,7 +449,7 @@ export const locations: LocationEntry[] = [
         detail: "Steady gains come from local trust plus cleaner response systems.",
       },
     ],
-    recommendedServices: ["local-visibility", "lead-capture-ai-follow-up", "custom-web-design"],
+    recommendedServices: ["local-seo", "lead-capture-and-ai-follow-up", "website-design"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins"],
     relatedCaseStudies: ["daley-organics", "oregon-smb-directory"],
     nearbyMarkets: ["eugene", "grants-pass", "medford"],
@@ -489,7 +489,7 @@ export const locations: LocationEntry[] = [
         detail: "A cleaner information architecture is often the fastest win.",
       },
     ],
-    recommendedServices: ["custom-web-design", "local-visibility", "lead-capture-ai-follow-up", "search-data-architecture"],
+    recommendedServices: ["website-design", "local-seo", "lead-capture-and-ai-follow-up", "search-data-architecture"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "how-oregon-markets-differ-for-local-service-businesses", "why-speed-wins"],
     relatedCaseStudies: ["oregon-smb-directory"],
     nearbyMarkets: ["albany", "corvallis", "portland"],
@@ -529,7 +529,7 @@ export const locations: LocationEntry[] = [
         detail: "A grounded trust surface usually beats bigger brand theater here.",
       },
     ],
-    recommendedServices: ["local-visibility", "custom-web-design", "lead-capture-ai-follow-up"],
+    recommendedServices: ["local-seo", "website-design", "lead-capture-and-ai-follow-up"],
     relatedReports: ["oregon-market-intel-infrastructure-report", "why-speed-wins"],
     relatedCaseStudies: ["daley-organics", "oregon-smb-directory"],
     nearbyMarkets: ["eugene", "corvallis", "salem"],

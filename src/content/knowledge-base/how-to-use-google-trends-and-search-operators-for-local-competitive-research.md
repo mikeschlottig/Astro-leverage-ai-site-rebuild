@@ -4,7 +4,7 @@ description: A practical explainer for business owners and marketers who want to
 publishedAt: 2026-06-27
 relatedServices:
   - search-data-architecture
-  - local-visibility
+  - local-seo
 ---
 
 ## Most local competitive research is too static to be useful
@@ -123,8 +123,8 @@ That does not automatically tell you **why** they are winning, but it gives you 
 
 This type of research should feed directly into:
 
-- [Search And Data Architecture](/services/search-data-architecture/), because the intelligence has to become structure and measurement
-- [Local Visibility Systems](/services/local-visibility/), because local demand patterns should change how pages and service areas are expressed
+- [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/), because the intelligence has to become structure and measurement
+- [Local Visibility Systems](/services/local-seo/), because local demand patterns should change how pages and service areas are expressed
 - the [locations](/locations/) cluster, because markets do not behave the same way
 - the diagnostic-audit conversation on [pricing](/pricing/), because diagnosis should include competitive context
 

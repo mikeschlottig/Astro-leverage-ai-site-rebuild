@@ -1,0 +1,73 @@
+---
+title: "Social Media Management in Southern Oregon"
+description: "We run your business's Facebook, Instagram, X and YouTube profiles: setup, posting, replies and reporting, matched to your Google Business Profile and website."
+summary: "Your social profiles, run for you and kept consistent."
+heroTitle: "Why Leverage AI LLC is the best choice for social media management for local Southern Oregon service businesses"
+kind: subhub
+parent: internet-marketing-services
+phrase: "Social Media Management"
+navLabel: "Social Media Management"
+order: 2
+outcomes:
+  - "Active, accurate profiles on the platforms your customers use"
+  - "Consistent business details across every profile"
+  - "Replies to comments and messages handled"
+capabilities:
+  - "Facebook Page management"
+  - "Instagram business page management"
+  - "X account management"
+  - "YouTube channel management"
+  - "Content creation and scheduling"
+proofPoints:
+  - "Profile name, phone, address, hours and links match your Google Business Profile and website."
+  - "Posts go out on a set schedule, so profiles never look abandoned."
+  - "Comments and direct messages get a timely reply or are passed to you."
+diagnosticQuestions:
+  - "Which social profiles exist for the business today, and who controls each login?"
+  - "Do profile names, phone numbers and links match the website?"
+  - "When was the last post, and how are comments handled?"
+  - "Which platform do your customers actually use?"
+deliverables:
+  - "Profile setup or cleanup on each platform"
+  - "A posting calendar and ready-to-publish content"
+  - "Reply handling and escalation rules"
+  - "A monthly summary of activity and results"
+faqs:
+  - question: "What is social media management?"
+    answer: "Social media management means running a business's social profiles on its behalf: keeping them accurate, posting on a schedule, replying to comments and messages, and reporting on results."
+  - question: "Which platforms does Leverage AI manage?"
+    answer: "Facebook Pages, Instagram business accounts, X and YouTube channels. Each has its own page in this section. Tell us if your customers use a platform not listed."
+  - question: "Is social media management the same as content creation?"
+    answer: "No. Management is the ongoing running of the accounts. Content creation is the writing and design of what gets posted. Many clients use both, so content creation is a separate page under this one."
+relatedReports:
+  - "southern-oregon-technology-gaps-and-local-growth-opportunity"
+relatedKnowledgeBase:
+  - "how-category-sync-works-across-google-bing-yelp-and-facebook"
+  - "how-review-response-patterns-affect-local-trust"
+relatedCaseStudies:
+  - "daley-organics"
+relatedLocations:
+  - "grants-pass"
+  - "medford"
+  - "ashland"
+---
+
+> **In short:** Social media management from Leverage AI LLC means we run your Facebook, Instagram, X and YouTube profiles for you: setup, scheduled posts, replies and a monthly summary. We keep every profile consistent with your Google Business Profile and website so Southern Oregon customers see the same business everywhere.
+
+## What is social media management?
+
+Social media management is the ongoing running of a business's accounts on the platforms its customers use. That includes profile setup, posting, replying to comments and messages, and reviewing what performed.
+
+It is different from creating a single post or graphic. Management covers the account as a whole, week after week.
+
+## Which platforms does it cover?
+
+Facebook Pages, Instagram business accounts, X accounts and YouTube channels each have their own page under this one. The right mix depends on where your customers spend time.
+
+A trade business may need Facebook and a Google Business Profile most. A food or retail business may lean on Instagram. A business with how-to knowledge may benefit from YouTube.
+
+## How does it connect to local search?
+
+Search engines and AI assistants read social profiles as evidence that a business is real and active. Mismatched names, phone numbers or hours across platforms weaken that evidence.
+
+We set every profile to match your Google Business Profile and website, and link them together so the connection is visible.

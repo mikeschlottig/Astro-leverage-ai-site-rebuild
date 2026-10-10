@@ -4,11 +4,11 @@ description: Local SEO, contractor web design, and lead-response systems for Ore
 heroTitle: Local SEO for Oregon contractors who need better projects, not vanity traffic.
 summary: Win high-intent project searches, prove credibility quickly, and make every estimate request easier to act on.
 relatedServices:
-  - local-visibility
+  - local-seo
   - google-business-profile-optimization
-  - local-seo-consulting
-  - custom-web-design
-  - lead-capture-ai-follow-up
+  - local-seo-consultant
+  - website-design
+  - lead-capture-and-ai-follow-up
   - search-data-architecture
 ---
 

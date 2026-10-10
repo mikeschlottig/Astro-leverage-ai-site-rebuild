@@ -22,9 +22,9 @@ tldr:
   - "Accurate business data, a complete Google Business Profile, credible reviews, strong local pages, structured data, and third-party corroboration support visibility across both systems."
 relatedServices:
   - google-business-profile-optimization
-  - local-visibility
+  - local-seo
   - search-data-architecture
-  - custom-web-design
+  - website-design
 relatedReports:
   - how-the-google-local-pack-really-works
   - entity-strength-and-ai-search-visibility-for-local-service-businesses

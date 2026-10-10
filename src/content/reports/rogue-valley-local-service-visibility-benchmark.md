@@ -19,9 +19,9 @@ tldr:
   - This benchmark is diagnostic, not proprietary field measurement. It is meant to help owners identify which layer is most likely holding them back.
   - The smartest next step is usually a focused audit that connects visibility, trust, and response into one local growth system.
 relatedServices:
-  - local-visibility
-  - custom-web-design
-  - lead-capture-ai-follow-up
+  - local-seo
+  - website-design
+  - lead-capture-and-ai-follow-up
   - search-data-architecture
 ---
 
@@ -76,7 +76,7 @@ That is why stronger operators tend to combine:
 - clearer location and service specificity
 - less friction between inquiry and reply
 
-This is the practical lane for [Local Visibility](/services/local-visibility/) and [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/). The systems matter most when they make the business easier to confirm, not when they try to imitate big-city marketing theater.
+This is the practical lane for [Local Visibility](/services/local-seo/) and [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/). The systems matter most when they make the business easier to confirm, not when they try to imitate big-city marketing theater.
 
 ## Visibility gaps are still common in Medford, Grants Pass, and Ashland
 

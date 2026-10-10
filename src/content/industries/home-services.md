@@ -4,10 +4,10 @@ description: Local SEO, Google Maps optimization, home-service web design, and f
 heroTitle: Local SEO for Oregon home service companies competing for the next nearby call.
 summary: Be easier to find, faster to trust, and quicker to respond when local demand is ready to move.
 relatedServices:
-  - local-visibility
+  - local-seo
   - google-business-profile-optimization
-  - custom-web-design
-  - lead-capture-ai-follow-up
+  - website-design
+  - lead-capture-and-ai-follow-up
   - search-data-architecture
 ---
 

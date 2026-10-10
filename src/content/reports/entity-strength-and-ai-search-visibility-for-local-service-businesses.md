@@ -8,10 +8,10 @@ tldr:
   - The stronger competitive advantage is becoming a trusted entity across platforms, categories, service pages, reviews, and citations.
   - The diagnostic audit should evaluate entity strength from the perspective of search engines, LLMs, and potential customers before blueprint, playbook, and execution work begins.
 relatedServices:
-  - local-visibility
+  - local-seo
   - search-data-architecture
-  - custom-web-design
-  - lead-capture-ai-follow-up
+  - website-design
+  - lead-capture-and-ai-follow-up
 ---
 
 ## This is not really an SEO conversation anymore
@@ -129,7 +129,7 @@ The stronger review looks at:
 | Competitive position | comparison against the businesses already owning high-intent queries | shows where authority and opportunity gaps actually are |
 | Underperformance and opportunity | weak pages, weak categories, thin content, missing assets, trust gaps | turns the audit into a roadmap instead of a diagnosis only |
 
-That is why this work fits [Local Visibility](/services/local-visibility/), [Search Data Architecture](/services/search-data-architecture/), [Custom Web Design](/services/custom-web-design/), and [Lead Capture And AI Follow-Up](/services/lead-capture-ai-follow-up/) at the same time.
+That is why this work fits [Local Visibility](/services/local-seo/), [Search Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/), [Custom Web Design](/services/website-design/), and [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/) at the same time.
 
 ## Specific service and location pages still matter because they anchor intent
 

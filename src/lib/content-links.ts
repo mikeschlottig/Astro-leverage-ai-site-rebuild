@@ -1,6 +1,6 @@
-export function calloutForService(serviceSlug: string) {
+export function calloutForService(servicePath: string) {
   return {
-    href: `/services/${serviceSlug}/`,
+    href: servicePath,
     label: "Learn more about this service",
   };
 }

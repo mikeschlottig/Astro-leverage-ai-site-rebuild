@@ -3,9 +3,9 @@ title: How Review Response Patterns Affect Local Trust
 description: Review responses shape how buyers and search systems judge a local service business. Strong response patterns signal accountability, professionalism, and active operations across the public trust surface.
 publishedAt: 2026-06-28
 relatedServices:
-  - local-visibility
+  - local-seo
   - search-data-architecture
-  - custom-web-design
+  - website-design
 ---
 
 ## Review responses are part of the public trust surface
@@ -16,7 +16,7 @@ Fewer understand that the response pattern matters too.
 
 A buyer is not only reading what customers said. They are also reading how the business behaves in public after the review appears. That includes whether the business responds at all, how quickly it tends to respond, whether the replies sound real, and whether the language reinforces a clear, believable service identity.
 
-That is why review management should not be treated like a courtesy task. It is part of the same trust surface that supports [Local Visibility](/services/local-visibility/), stronger service interpretation, and better conversion after the click.
+That is why review management should not be treated like a courtesy task. It is part of the same trust surface that supports [Local Visibility](/services/local-seo/), stronger service interpretation, and better conversion after the click.
 
 ## Why buyers pay attention to the reply, not just the rating
 
@@ -58,7 +58,7 @@ For example:
 - a med spa can show professionalism and discretion while still sounding human
 - a local professional service firm can acknowledge concern, explain process, and show that follow-through exists
 
-This is where review replies start connecting to [Search Data Architecture](/services/search-data-architecture/). They are small public texts, but they still help shape how the business is interpreted across platforms.
+This is where review replies start connecting to [Search Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/). They are small public texts, but they still help shape how the business is interpreted across platforms.
 
 ## Weak patterns versus stronger ones
 
