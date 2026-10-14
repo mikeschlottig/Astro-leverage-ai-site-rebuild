@@ -151,7 +151,8 @@ use of the date picker.
 | H3 | Page weight grows only by `widget.js` | **Partly wrong.** `/book/` also loads cally (<9 KB gz stated). Other pages are unchanged. |
 | H4 | The floating button may overlap the mobile footer | **Moot.** The floating button is hidden; the inline button sits in the page flow. 390 px has no overflow. |
 | H5 (new) | The `haiku` alias means Haiku 5.5 | **Wrong for headless `claude -p`.** CLI 2.1.299 resolved `--model haiku` to `claude-haiku-4-5-20251001`. In-session Agent-tool subagents were already `claude-haiku-5-5` (read from their transcripts). Fixed with `ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-haiku-5-5` (settings.json) and an explicit `--model claude-haiku-5-5` in the watcher. |
-- After ship (Mike's order): make `leverage-ai-astro-site` private and confirm access → token: how it leaked, which apps
+- [x] After ship: `leverage-ai-astro-site` made private 2026-10-13. API `private=true`, authenticated `gh repo clone` ok (HEAD `1d5e0d0`), anonymous `git ls-remote` refused. Its active workflow "Deploy to Cloudflare Workers" still runs on push (relevant to the token audit).
+- [ ] Next (Mike's order): token: how it leaked, which apps
   use it, replacement tokens swapped into each → Mike revokes.
 - Last (Mike, 2026-10-13): get the deployed Cloudflare email clients (inbox Workers) working, and assign them to Mike
   and to Claude. Then plan email addresses for the other agents, operated through the built-in MCP.
