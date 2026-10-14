@@ -1,5 +1,6 @@
 import { handleRelay, isRelayPath, type RelayEnv, type WaitUntilContext } from "./posthog-relay";
 import { SERVICE_REDIRECTS, normalizeServicePath } from "../src/data/service-redirects";
+import { handleBooking, type BookingEnv } from "./booking";
 
 type EmailBinding = {
   send: (message: {
@@ -22,7 +23,7 @@ type Env = {
   CONTACT_NOTIFICATION_EMAIL?: string;
   CONTACT_FROM_EMAIL?: string;
   PUBLIC_SITE_ORIGIN?: string;
-} & RelayEnv;
+} & BookingEnv & RelayEnv;
 
 const allowedServices = new Set([
   "local-seo",
@@ -137,6 +138,9 @@ export default {
       }
     }
 
+    const booking = await handleBooking(request, env, url);
+    if (booking) return booking;
+
     if (url.pathname === "/api/contact") {
       if (request.method !== "POST") {
         return new Response("Method Not Allowed", { status: 405 });
@@ -218,6 +222,22 @@ export default {
             );
       }
 
+      // D1 before email (house Speed-to-Lead rule): the lead survives a failed send.
+      let submissionId: number | null = null;
+      if (env.DB) {
+        try {
+          const row = await env.DB.prepare(
+            `INSERT INTO contact_submissions (name, email, phone, service, message, ip, user_agent)
+             VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id`,
+          )
+            .bind(name, email, phone || null, service, message, request.headers.get("cf-connecting-ip"), request.headers.get("user-agent"))
+            .first<{ id: number }>();
+          submissionId = row?.id ?? null;
+        } catch (error) {
+          console.error("Contact submission insert failed", error);
+        }
+      }
+
       try {
         await env.EMAIL.send({
           to: env.CONTACT_NOTIFICATION_EMAIL,
@@ -233,8 +253,20 @@ export default {
             message,
           ].join("\n"),
         });
+        if (env.DB && submissionId !== null) {
+          await env.DB.prepare("UPDATE contact_submissions SET copy_sent = 1 WHERE id = ?")
+            .bind(submissionId)
+            .run()
+            .catch((error: unknown) => console.error("Contact copy_sent update failed", error));
+        }
       } catch (error) {
         console.error("Contact email send failed", error);
+        if (env.DB && submissionId !== null) {
+          await env.DB.prepare("UPDATE contact_submissions SET mail_error = ? WHERE id = ?")
+            .bind(String(error).slice(0, 500), submissionId)
+            .run()
+            .catch(() => undefined);
+        }
         return wantsJson(request)
           ? jsonError("The request could not be delivered. Please try again or email directly.", 502)
           : htmlError(

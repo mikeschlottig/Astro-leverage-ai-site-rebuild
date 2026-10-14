@@ -7,8 +7,20 @@
   "vars": {
     "CONTACT_NOTIFICATION_EMAIL": "mike@leverageai.network",
     "CONTACT_FROM_EMAIL": "website@leverageai.network",
-    "PUBLIC_SITE_ORIGIN": "https://astro-leverage-ai-site-rebuild.ceo-a53.workers.dev"
+    "PUBLIC_SITE_ORIGIN": "https://astro-leverage-ai-site-rebuild.ceo-a53.workers.dev",
+    "BOOKING_ALERT_EMAILS": "ceo@leverageai.network,mike@leverageai.network",
+    "NOTIFY_FROM_EMAIL": "notifications@leverageai.network",
+    "BOOKING_PUBLIC_ORIGIN": "https://leverageai.network",
+    "CALL_DESK_URL": "https://click-to-call.ceo-a53.workers.dev/admin"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "leverageai-forms",
+      "database_id": "f6b73e1d-5851-4ff8-9bfe-4a016e61ccec",
+      "migrations_dir": "migrations"
+    }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
@@ -20,6 +32,12 @@
       "remote": true,
       "destination_address": "mike@leverageai.network",
       "allowed_sender_addresses": ["website@leverageai.network"]
+    },
+    {
+      // Unrestricted Email Sending: booking confirmations go to the prospect's own address.
+      "name": "NOTIFY",
+      "remote": true,
+      "allowed_sender_addresses": ["notifications@leverageai.network"]
     }
   ],
   "observability": {

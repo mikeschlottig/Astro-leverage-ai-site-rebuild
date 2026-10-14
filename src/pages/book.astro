@@ -1,0 +1,223 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CallNow from "../components/call/CallNow.astro";
+---
+
+<BaseLayout
+  title="Book a 15-Minute Call"
+  description="Pick a 15-minute video call with Mike Schlottig to walk through how your business gets found, gets chosen, and gets the lead."
+>
+  <section class="section">
+    <div class="shell split">
+      <div class="surface stack">
+        <p class="eyebrow">15-Minute Call</p>
+        <h1>See where your local demand leaks, in fifteen minutes.</h1>
+        <p>
+          Pick a time and I will walk you through how your business gets found, gets chosen, and
+          gets the lead, live on video with my screen shared so you can see exactly what I see.
+        </p>
+        <p>
+          At your time, come back to this page and press <strong>Talk with Mike now</strong>. It runs
+          in your browser, so there is nothing to install.
+        </p>
+        <div class="stack">
+          <p class="eyebrow">Or talk right now</p>
+          <CallNow />
+        </div>
+      </div>
+
+      <div class="surface stack booking" data-booking>
+        <h2>Choose a day</h2>
+        <p class="booking-note" data-tz-note>Times are Mon–Fri, 8:00 AM–6:00 PM Pacific.</p>
+        <calendar-date class="booking-calendar" data-calendar first-day-of-week="0">
+          <svg aria-label="Previous" slot="previous" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M15.75 19.5 8.25 12l7.5-7.5"></path></svg>
+          <svg aria-label="Next" slot="next" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path></svg>
+          <calendar-month></calendar-month>
+        </calendar-date>
+
+        <div class="stack" data-slot-panel hidden>
+          <h2 data-slot-heading>Choose a time</h2>
+          <div class="slot-grid" data-slots role="group" aria-label="Available times"></div>
+        </div>
+
+        <form class="stack" data-booking-form hidden>
+          <input class="sr-only" type="text" name="company_site" autocomplete="off" tabindex="-1" aria-hidden="true" />
+          <p class="booking-choice" data-choice></p>
+          <label>Name <input name="name" autocomplete="name" required maxlength="120" /></label>
+          <label>Email <input type="email" name="email" autocomplete="email" required maxlength="200" /></label>
+          <label>Business name <input name="business" autocomplete="organization" maxlength="200" /></label>
+          <label>Website <input name="website" type="url" inputmode="url" placeholder="https://" maxlength="300" /></label>
+          <label>Phone (optional) <input name="phone" type="tel" autocomplete="tel" maxlength="40" /></label>
+          <label>What should we look at? <textarea name="topic" maxlength="2000"></textarea></label>
+          <button class="button primary" type="submit" data-book-button>Book this time</button>
+        </form>
+
+        <p class="form-status" data-booking-status aria-live="polite"></p>
+
+        <div class="stack" data-confirmation hidden>
+          <h2 tabindex="-1">You're booked.</h2>
+          <p data-confirmation-text></p>
+          <p>A confirmation is on its way to your inbox.</p>
+          <a class="button secondary" data-ics href="#">Add to calendar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import "cally";
+
+  type Slot = { start: string; day: string; localMinute: number };
+
+  const root = document.querySelector<HTMLElement>("[data-booking]");
+  if (root) {
+    const calendar = root.querySelector("[data-calendar]") as HTMLElement & {
+      value: string;
+      min: string;
+      max: string;
+      isDateDisallowed: (date: Date) => boolean;
+    };
+    const slotPanel = root.querySelector<HTMLElement>("[data-slot-panel]")!;
+    const slotHeading = root.querySelector<HTMLElement>("[data-slot-heading]")!;
+    const slotGrid = root.querySelector<HTMLElement>("[data-slots]")!;
+    const form = root.querySelector<HTMLFormElement>("[data-booking-form]")!;
+    const choice = root.querySelector<HTMLElement>("[data-choice]")!;
+    const status = root.querySelector<HTMLElement>("[data-booking-status]")!;
+    const button = root.querySelector<HTMLButtonElement>("[data-book-button]")!;
+    const confirmation = root.querySelector<HTMLElement>("[data-confirmation]")!;
+    const confirmationText = root.querySelector<HTMLElement>("[data-confirmation-text]")!;
+    const icsLink = root.querySelector<HTMLAnchorElement>("[data-ics]")!;
+    const tzNote = root.querySelector<HTMLElement>("[data-tz-note]")!;
+
+    const PACIFIC = "America/Los_Angeles";
+    const visitorTz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const samezone = visitorTz === PACIFIC;
+    const timeIn = (iso: string, timeZone: string) =>
+      new Intl.DateTimeFormat(undefined, { timeZone, hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date(iso));
+    const longIn = (iso: string, timeZone: string) =>
+      new Intl.DateTimeFormat(undefined, { timeZone, weekday: "long", month: "long", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(new Date(iso));
+    const dayLabel = (day: string) =>
+      new Intl.DateTimeFormat(undefined, { timeZone: "UTC", weekday: "long", month: "long", day: "numeric" }).format(new Date(`${day}T12:00:00Z`));
+
+    if (!samezone) tzNote.textContent = `Times are Mon–Fri, 8:00 AM–6:00 PM Pacific. Your local time (${visitorTz}) is shown first.`;
+
+    let byDay = new Map<string, Slot[]>();
+    let selected: Slot | null = null;
+
+    const setStatus = (message: string, state = "info") => {
+      status.textContent = message;
+      // global.css shows .form-status whenever data-state is set, so clear it for an empty message.
+      if (message) status.dataset.state = state;
+      else delete status.dataset.state;
+    };
+
+    const renderSlots = (day: string) => {
+      const slots = byDay.get(day) ?? [];
+      slotGrid.replaceChildren();
+      selected = null;
+      form.hidden = true;
+      slotPanel.hidden = slots.length === 0;
+      slotHeading.textContent = `Choose a time on ${dayLabel(day)}`;
+      for (const slot of slots) {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "slot";
+        b.setAttribute("aria-pressed", "false");
+        b.setAttribute("aria-label", longIn(slot.start, visitorTz));
+        b.innerHTML = samezone
+          ? `<span>${timeIn(slot.start, PACIFIC)}</span>`
+          : `<span>${timeIn(slot.start, visitorTz)}</span><small>${timeIn(slot.start, PACIFIC)}</small>`;
+        b.addEventListener("click", () => {
+          slotGrid.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", "false"));
+          b.setAttribute("aria-pressed", "true");
+          selected = slot;
+          choice.textContent = `Booking ${longIn(slot.start, visitorTz)}${samezone ? "" : ` (${timeIn(slot.start, PACIFIC)})`}.`;
+          form.hidden = false;
+          setStatus("");
+          form.querySelector<HTMLInputElement>("input[name=name]")?.focus();
+        });
+        slotGrid.append(b);
+      }
+    };
+
+    const loadSlots = async () => {
+      const res = await fetch("/api/booking/slots", { headers: { accept: "application/json" } });
+      const data = (await res.json()) as { ok: boolean; slots: Slot[] };
+      if (!res.ok || !data.ok) throw new Error("slots unavailable");
+      byDay = new Map();
+      for (const s of data.slots) byDay.set(s.day, [...(byDay.get(s.day) ?? []), s]);
+      const days = [...byDay.keys()].sort();
+      if (days.length === 0) {
+        setStatus("No open times in the next two weeks. Use Talk with Mike now, or email mike@leverageai.network.");
+        return;
+      }
+      calendar.min = days[0];
+      calendar.max = days[days.length - 1];
+      calendar.isDateDisallowed = (date: Date) => !byDay.has(date.toISOString().slice(0, 10));
+      if (!calendar.value || !byDay.has(calendar.value)) calendar.value = days[0];
+      renderSlots(calendar.value);
+    };
+
+    calendar.addEventListener("change", () => renderSlots(calendar.value));
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!selected) return;
+      button.disabled = true;
+      setStatus("Booking your time…", "loading");
+      const fields = Object.fromEntries(new FormData(form).entries());
+      try {
+        const res = await fetch("/api/booking", {
+          method: "POST",
+          headers: { "content-type": "application/json", accept: "application/json" },
+          body: JSON.stringify({ ...fields, slot_start: selected.start, visitor_tz: visitorTz }),
+        });
+        const data = (await res.json()) as { ok: boolean; error?: string; ics_url?: string };
+        if (!res.ok || !data.ok) {
+          setStatus(data.error ?? "The booking did not go through. Please try again.", "error");
+          if (res.status === 409) await loadSlots();
+          return;
+        }
+        form.hidden = true;
+        slotPanel.hidden = true;
+        calendar.hidden = true;
+        setStatus("");
+        confirmationText.textContent = `${longIn(selected.start, visitorTz)}${samezone ? "" : ` (${timeIn(selected.start, PACIFIC)})`}.`;
+        if (data.ics_url) icsLink.href = data.ics_url;
+        confirmation.hidden = false;
+        confirmation.querySelector("h2")?.focus();
+      } catch {
+        setStatus("The booking did not go through. Please try again, or email mike@leverageai.network.", "error");
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    loadSlots().catch(() =>
+      setStatus("The calendar could not load. Please refresh, use Talk with Mike now, or email mike@leverageai.network.", "error"),
+    );
+  }
+</script>
+
+<style>
+  /* .stack sets display:grid, which would otherwise override the hidden attribute. */
+  .booking :global([hidden]) { display: none !important; }
+  .booking-note { color: var(--muted); margin: 0; }
+  .booking-calendar { color: var(--ink); }
+  .booking-calendar::part(button) { border-radius: var(--radius-sm); }
+  .booking-calendar :global(calendar-month)::part(selected) { background: var(--accent); color: var(--bg); }
+  .booking-calendar :global(calendar-month)::part(disallowed) { opacity: 0.3; }
+  .booking-calendar :global(calendar-month)::part(today) { outline: 1px solid var(--line); }
+  .slot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr)); gap: 0.5rem; }
+  .slot-grid :global(.slot) {
+    display: grid; gap: 0.15rem; padding: 0.6rem; text-align: center; cursor: pointer;
+    background: var(--surface-strong); color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius-sm);
+    font: inherit;
+  }
+  .slot-grid :global(.slot small) { color: var(--muted); font-size: 0.75rem; }
+  .slot-grid :global(.slot[aria-pressed="true"]) { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+  .slot-grid :global(.slot:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .booking-choice { font-weight: 600; margin: 0; }
+  [data-confirmation] h2 { outline: none; }
+</style>

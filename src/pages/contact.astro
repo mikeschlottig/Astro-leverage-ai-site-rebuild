@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactForm from "../components/contact/ContactForm.astro";
+import CallNow from "../components/call/CallNow.astro";
 import { SITE } from "../lib/site";
 ---
 
@@ -23,6 +24,13 @@ import { SITE } from "../lib/site";
           <a href={SITE.phoneHref}>{SITE.phone}</a>, or write to
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
         </p>
+        <div class="stack call-block">
+          <CallNow />
+          <p>
+            Rather pick a time? <a href="/book/">Book a 15-minute call</a> and I will walk you through
+            how you get found, get chosen, and get the lead.
+          </p>
+        </div>
         <div class="button-row">
           <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes/">Read what the audit includes</a>
           <a class="button secondary" href="/pricing/">Review pricing first</a>
