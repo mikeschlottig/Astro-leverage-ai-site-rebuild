@@ -14,7 +14,7 @@ const require = createRequire(process.env.PLAYWRIGHT_FROM ?? "/home/mikes/spread
 const { chromium } = require("playwright");
 
 const SITE = "https://leverageai.network";
-const DESK = "https://click-to-call.ceo-a53.workers.dev/admin";
+const DESK = "https://call.leverageai.network/admin";
 const phase = process.argv[2] ?? "book";
 const version = process.argv[3];
 const OUT = process.env.GATE_OUT ?? os.tmpdir();

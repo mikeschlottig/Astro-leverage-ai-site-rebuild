@@ -1,5 +1,5 @@
 ---
-// Inline "talk now" button for the click-to-call app (/home/mikes/CloudflareRealTime-Admin-App,
+// Inline "talk now" button for the click-to-call app on call.leverageai.network (/home/mikes/CloudflareRealTime-Admin-App,
 // Worker `click-to-call`). widget.js mounts a floating #c2c-btn and binds open() to it; this page hides
 // that floating button and clicks it from an inline one instead, so the call app needs no change.
 // Without JavaScript the link opens the hosted call page directly.
@@ -7,7 +7,7 @@ interface Props {
   label?: string;
 }
 const { label = "Talk with Mike now" } = Astro.props;
-const CALL_ORIGIN = "https://click-to-call.ceo-a53.workers.dev";
+const CALL_ORIGIN = "https://call.leverageai.network";
 ---
 
 <a class="button primary call-now" href={`${CALL_ORIGIN}/call`} data-call-now>

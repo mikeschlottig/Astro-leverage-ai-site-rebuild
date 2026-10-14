@@ -11,7 +11,7 @@
     "BOOKING_ALERT_EMAILS": "ceo@leverageai.network,mike@leverageai.network",
     "NOTIFY_FROM_EMAIL": "notifications@leverageai.network",
     "BOOKING_PUBLIC_ORIGIN": "https://leverageai.network",
-    "CALL_DESK_URL": "https://click-to-call.ceo-a53.workers.dev/admin"
+    "CALL_DESK_URL": "https://call.leverageai.network/admin"
   },
   "d1_databases": [
     {
