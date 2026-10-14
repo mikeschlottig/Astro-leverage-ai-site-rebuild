@@ -15,7 +15,7 @@ and is published as a server-sent event (SSE) that a dedicated Claude Code Haiku
 | Piece | Where | Evidence |
 |---|---|---|
 | Call app (widget, `/call`, `/admin` desk, receptionist, browser share) | `/home/mikes/CloudflareRealTime-Admin-App`, Worker `click-to-call`, built 09-18 (Fable session `9687e7e1`) | embed audit: `delegation/prompts/20261013-202200-*`, blockers none |
-| Site Worker with the contact form + email | `worker/contact.ts` (`/api/contact`, `env.EMAIL.send`) | `worker/contact.ts:140,222` |
+| Site Worker with the contact form + email | `worker/contact.ts` (`/api/contact`, `env.EMAIL.send`) | `worker/contact.ts:144,242` |
 | Form → D1 → email pattern, sender `notifications@leverageai.network` | morningwood-firewood `src/lib/email.ts`, skill `~/.agents/skills/lead-capture-email-notifications/SKILL.md` | `morningwood-firewood/wrangler.jsonc:32` |
 | Email to any recipient | Cloudflare Email Sending: a `send_email` binding with no `destination_address` = unrestricted | skill `/mnt/c/Dev/_skills/store/cloudflare-email-in-workers-app/SKILL.md:29-46` |
 
@@ -156,3 +156,10 @@ use of the date picker.
   use it, replacement tokens swapped into each → Mike revokes.
 - Last (Mike, 2026-10-13): get the deployed Cloudflare email clients (inbox Workers) working, and assign them to Mike
   and to Claude. Then plan email addresses for the other agents, operated through the built-in MCP.
+
+## Gotchas recorded for the next build (Claude, 2026-10-13)
+- `pnpm add x` in this repo fails with `ERR_PNPM_ADDING_TO_ROOT` (it has `pnpm-workspace.yaml`). Use `pnpm add -w x@<version>`.
+- `wrangler secret put` deploys the current code immediately. `wrangler versions secret put NAME` creates an
+  undeployed version, which is how `EVENTS_TOKEN` was added (version `eb08d076`, staged at 0%). Secrets carry into
+  later `wrangler versions upload`s: SSE returned 200 on `2051eef6` without re-adding it.
+- The canonical guard needs `SITE_URL=https://leverageai.network` locally (CI sets it).
