@@ -2,7 +2,7 @@
 title: "Lead Capture and AI Follow-Up"
 description: Capture every inbound lead and respond before attention collapses or a competitor gets there first.
 summary: Speed to lead is a revenue system.
-heroTitle: "Why Leverage AI LLC is the best choice for lead capture and AI follow-up for local Southern Oregon service businesses"
+heroTitle: "Lead capture and AI follow-up: answer every inquiry before it goes cold"
 kind: hub
 phrase: "Lead Capture and AI Follow-Up"
 navLabel: "Lead Capture and AI Follow-Up"

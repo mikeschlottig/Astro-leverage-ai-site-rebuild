@@ -2,7 +2,7 @@
 title: "AI Search Optimization in Southern Oregon"
 description: "Make your Southern Oregon business easy for ChatGPT, Gemini, Perplexity and Google AI Overviews to find, understand and cite, using clear answers and schema."
 summary: "Be the business the AI assistant names."
-heroTitle: "Why Leverage AI LLC is the best choice for AI search optimization for local Southern Oregon service businesses"
+heroTitle: "AI search optimization: be the business ChatGPT, Gemini and Perplexity describe correctly"
 kind: hub
 phrase: "AI Search Optimization"
 navLabel: "AI Search Optimization"

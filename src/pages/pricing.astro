@@ -1,59 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const pricingStages = [
-  {
-    tier: "Tier 1",
-    range: "$500-$1,200",
-    name: "Diagnostic Audit",
-    tagline: "See exactly where visibility, trust, and response are leaking before you commit to a larger build.",
-    summary: "A paid diagnosis that shows where visibility, trust, and response are leaking before we prescribe a bigger build.",
-    setup: "One-time engagement. Credited into implementation when the audit leads directly into the build.",
-    details: [
-      "Market and competitor read for the local territory you actually need to win",
-      "Website trust and conversion review focused on the first ten seconds",
-      "Lead-response audit covering forms, calls, and handoff delays",
-      "Schema, entity, and authority-signal review where it affects visibility",
-      "Clear implementation recommendation with scope tied to findings",
-    ],
-  },
-  {
-    tier: "Tier 2",
-    range: "$1,500-$4,000",
-    name: "System Implementation",
-    tagline: "Implement the highest-value fixes first, then build the public system around real market conditions.",
-    summary: "The build phase for the highest-value fixes: local visibility, trust surface, response routing, and measurement setup.",
-    setup: "Primary build path. Best fit when the business needs real infrastructure work, not another round of surface tweaks.",
-    featured: true,
-    details: [
-      "Service and location architecture that reflects the real market, not statewide filler",
-      "Custom website and conversion improvements tied to buyer confidence",
-      "Lead capture and routing improvements that reduce the reply gap",
-      "Schema, snippet, and entity architecture that strengthens trust and extractability",
-      "Analytics and reporting foundations that keep the system measurable",
-    ],
-  },
-  {
-    tier: "Tier 3",
-    range: "$400-$800/mo",
-    name: "Ongoing Adaptation",
-    tagline: "Keep the system monitored, refined, and locally sharpened without sliding into retainer theater.",
-    summary: "Lightweight continued support for operators who want the system monitored, adjusted, and expanded without retainer theater.",
-    setup: "Ongoing support for businesses that want visibility, authority, and response systems maintained as conditions change.",
-    details: [
-      "Visibility and response monitoring tied to actual demand signals",
-      "Location, service, and authority-page refinements based on what is working",
-      "Google Business Profile, snippet, and trust-signal upkeep where it matters",
-      "Technical upkeep for schema, reporting, and workflow reliability",
-      "A bounded operating layer rather than permanent dependency",
-    ],
-  },
-];
+import { PRICE_TEXT, pricingStages, retainerTiers } from "../data/pricing";
 
 const pricingPrinciples = [
-  "Pay for clarity first, not for a vague retainer promise.",
-  "Implementation scope should follow diagnosis, not precede it.",
-  "Ongoing work should stay explicit, measurable, and easy to understand.",
+  "Pay for clarity first, then for the work the diagnosis supports.",
+  "Retainers have published ranges, named tiers, and written deliverables.",
+  "You own what we build. When the contract period ends, the code and digital assets are yours.",
 ];
 
 const costDrivers = [
@@ -82,11 +34,15 @@ const costDrivers = [
 const pricingFaqs = [
   {
     question: "How much does local SEO cost in Oregon?",
-    answer: "Leverage AI currently starts with a $500–$1,200 diagnostic audit. Scoped implementation is generally $1,500–$4,000, and optional ongoing adaptation is generally $400–$800 per month. These are Leverage AI ranges, not a universal Oregon average, and final scope follows the market and current system.",
+    answer: `Leverage AI starts with a ${PRICE_TEXT.audit} AI visibility and intake audit. Scoped implementation is generally ${PRICE_TEXT.implementation}. The Local Demand System retainer is published in three tiers: Foundation ${PRICE_TEXT.foundation} per month, Growth ${PRICE_TEXT.growth} per month, and Specialist ${PRICE_TEXT.specialist} per month. These are Leverage AI ranges, not a universal Oregon average, and final scope follows the market and current system.`,
   },
   {
-    question: "Do I need a monthly local SEO retainer?",
-    answer: "Not automatically. Some businesses need a one-time correction and a maintainable operating plan. Ongoing support makes sense when competition, profile activity, content, reporting, or multiple markets require continued work with clear ownership and measures.",
+    question: "Do I need a monthly retainer?",
+    answer: "No. A completed audit or a one-time build is a full engagement, and the audit fee is credited toward the website build or other services whether or not you retain us afterward. Retainers fit businesses where competition, profile activity, content, reporting, or multiple markets need continued work with clear ownership and measures.",
+  },
+  {
+    question: "Do you lock clients in or hold their assets?",
+    answer: "No. We are for retainers and against lock-in. When the contract period ends, the business owns the code and the digital assets built for it. We do not hold a client's website, content, or accounts hostage.",
   },
   {
     question: "Is Google Business Profile work included?",
@@ -94,7 +50,7 @@ const pricingFaqs = [
   },
   {
     question: "What does a website redesign cost?",
-    answer: "A focused redesign can fit inside the current $1,500–$4,000 implementation range when scope is bounded. Larger migrations, extensive content, custom applications, ecommerce, or multi-location systems require separate scoping. The buyer guide explains the cost drivers in detail.",
+    answer: `A focused redesign can fit inside the current ${PRICE_TEXT.implementation} implementation range when scope is bounded. Larger migrations, extensive content, custom applications, ecommerce, or multi-location systems require separate scoping. The buyer guide explains the cost drivers in detail.`,
   },
   {
     question: "Who owns the website, content, and data?",
@@ -155,8 +111,8 @@ const supportingLinks = [
 ---
 
 <BaseLayout
-  title="Local SEO & Web Design Pricing in Oregon"
-  description="Diagnostic-first pricing for local SEO, Google Maps optimization, custom web design, lead generation, and ongoing support in Oregon."
+  title="AI Search and Local SEO Pricing in Oregon"
+  description="Published pricing for an AI visibility and intake audit, system implementation, and Local Demand System retainers for Oregon service businesses."
   canonicalPath="/pricing"
   faqs={pricingFaqs}
 >
@@ -166,14 +122,15 @@ const supportingLinks = [
         <article class="pricing-hero__panel">
           <div class="pricing-hero__copy stack">
             <p class="eyebrow">Diagnostic-First Pricing</p>
-            <h1>Local SEO and web design pricing that starts with diagnosis.</h1>
+            <h1>AI search and local SEO pricing that starts with diagnosis.</h1>
             <p class="pricing-hero__lead">
               Every market and every business leaks opportunity in a different place. We find the
-              highest-cost problem first, price the fix clearly, and keep ongoing support optional
-              and transparent.
+              highest-cost problem first, price the fix clearly, and publish the ranges for ongoing
+              retainers. We are for retainers and against lock-in: when the contract period ends,
+              you own the code and the digital assets.
             </p>
             <div class="button-row">
-              <a class="button primary" href="/contact/" data-astro-prefetch>Request the diagnostic audit</a>
+              <a class="button primary" href="/contact/" data-astro-prefetch>Request the audit</a>
               <a class="button secondary" href="/knowledge-base/what-the-diagnostic-audit-includes/" data-astro-prefetch>See what the audit includes</a>
             </div>
           </div>
@@ -229,9 +186,9 @@ const supportingLinks = [
           <thead>
             <tr>
               <th scope="col">Decision</th>
-              <th scope="col">Diagnostic audit</th>
+              <th scope="col">Audit</th>
               <th scope="col">Implementation</th>
-              <th scope="col">Ongoing adaptation</th>
+              <th scope="col">Local Demand System retainer</th>
             </tr>
           </thead>
           <tbody>
@@ -239,19 +196,19 @@ const supportingLinks = [
               <th scope="row">Best when</th>
               <td>The highest-cost constraint is unclear</td>
               <td>The priority and ownership are agreed</td>
-              <td>The system needs continued governance</td>
+              <td>The system needs continued work and governance</td>
             </tr>
             <tr>
               <th scope="row">Primary output</th>
               <td>Evidence, priorities, and scope</td>
               <td>Working pages, profile changes, routing, or measurement</td>
-              <td>Monitoring, refinement, and bounded expansion</td>
+              <td>Monitoring, content, citations, and reporting</td>
             </tr>
             <tr>
               <th scope="row">Commitment</th>
-              <td>One-time</td>
+              <td>One-time, credited toward later work</td>
               <td>Scoped project</td>
-              <td>Optional monthly support</td>
+              <td>Monthly, in three published tiers</td>
             </tr>
           </tbody>
         </table>
@@ -290,7 +247,7 @@ const supportingLinks = [
         <p>
           These ranges cover three practical stages of the work: finding the leak, fixing it, and
           improving the system as your market changes. You will know what is included before the
-          work begins.
+          work begins. The first two steps are one-time engagements; the retainer tiers follow below.
         </p>
       </div>
 
@@ -315,13 +272,54 @@ const supportingLinks = [
       <div class="pricing-credit surface">
         <div class="stack">
           <p class="pricing-credit__label">Build credit</p>
-          <h3>When the audit leads into implementation, its cost can be credited into the build.</h3>
+          <h3>The audit fee is credited toward the work that follows, retainer or not.</h3>
         </div>
         <p>
           That keeps the first step outcome-led. You pay to know what is broken, not to sit through a
-          vague sales process disguised as strategy.
+          vague sales process disguised as strategy. The credit applies to the website build or other
+          services whether or not you choose an ongoing contract.
         </p>
       </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="retainer-heading">
+    <div class="shell stack">
+      <div class="case-study-intro">
+        <div class="stack">
+          <p class="case-study-kicker">Local Demand System</p>
+          <h2 id="retainer-heading">Three retainer tiers, published.</h2>
+        </div>
+        <p>
+          Retainers keep the system monitored, extended, and reported on. The tiers are cumulative:
+          each includes the one before it. When the contract period ends, you own the code and the
+          digital assets built for you.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        {retainerTiers.map((tier) => (
+          <article class:list={["pricing-card", "surface", tier.featured && "pricing-card--featured"]}>
+            <div class="stack">
+              <p class="pricing-card__tier">Local Demand System</p>
+              <p class="pricing-card__tagline">{tier.tagline}</p>
+              <p class="pricing-card__range">{tier.range}</p>
+              <h3>{tier.name}</h3>
+              <p>{tier.summary}</p>
+              <p class="pricing-card__setup">{tier.setup}</p>
+            </div>
+            <ul class="pricing-card__details">
+              {tier.details.map((detail) => <li>{detail}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+
+      <p>
+        Specialist work covers law firms and real estate teams. For law firms, content is verified
+        by the attorney before it publishes, and we do not promise case outcomes or rankings.
+        <a href="/industries/" data-astro-prefetch>See the industries we serve</a>.
+      </p>
     </div>
   </section>
 

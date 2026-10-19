@@ -12,6 +12,7 @@ export const SERVICE_REDIRECTS: Readonly<Record<string, string>> = {
   "/services/lead-capture-ai-follow-up/": "/services/lead-capture-and-ai-follow-up/",
   "/services/search-data-architecture/":
     "/services/ai-search-optimization/search-data-architecture/",
+  "/services/software-development/": "/services/automation-and-ai-systems/",
   // Internet Marketing Services hub retired; AI Search Optimization and Lead Capture became hubs.
   "/services/internet-marketing-services/": "/services/ai-search-optimization/",
   "/services/internet-marketing-services/ai-search-optimization/": "/services/ai-search-optimization/",

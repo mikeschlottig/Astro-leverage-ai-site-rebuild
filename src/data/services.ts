@@ -4,5 +4,5 @@ export const serviceHubSlugs = [
   "local-seo",
   "lead-capture-and-ai-follow-up",
   "website-design",
-  "software-development",
+  "automation-and-ai-systems",
 ] as const;

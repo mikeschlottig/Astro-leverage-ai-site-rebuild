@@ -31,13 +31,13 @@ const allowedServices = new Set([
   "website-design",
   "ai-search-optimization",
   "lead-capture-and-ai-follow-up",
-  "software-development",
+  "automation-and-ai-systems",
   // Legacy values kept so forms rendered before the hub reorganization still submit.
+  "software-development",
   "internet-marketing-services",
   "local-visibility",
   "custom-web-design",
   "lead-capture-ai-follow-up",
-  "lead-capture-and-ai-follow-up",
   "search-data-architecture",
 ]);
 

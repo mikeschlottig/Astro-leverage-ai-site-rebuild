@@ -26,9 +26,9 @@ A website redesign can be a visual refresh, a conversion repair, a content migra
 
 The current diagnostic-first structure is:
 
-- **$500–$1,200:** diagnostic audit
+- **$750–$1,500:** diagnostic audit (AI visibility and intake), credited toward the build or other services that follow
 - **$1,500–$4,000:** scoped system implementation
-- **$400–$800 per month:** optional ongoing adaptation
+- **$1,500–$10,000 per month:** optional Local Demand System retainer in three tiers (Foundation $1,500–$3,000, Growth $3,000–$6,000, Specialist $5,000–$10,000)
 
 Those ranges describe Leverage AI's present engagement structure, not a universal Oregon market average. A larger content inventory, ecommerce operation, custom application, complex migration, or multi-location program can require a materially larger budget.
 

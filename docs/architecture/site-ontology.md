@@ -47,7 +47,7 @@ must equal the slugified `phrase` (enforced in `src/lib/services.ts`). Old URLs 
   - `/services/local-seo/social-media-management/` (add-on, last)
 - `/services/lead-capture-and-ai-follow-up/` (hub, the intake product)
 - `/services/website-design/` (hub)
-- `/services/software-development/` (hub; renamed in the same branch, see redirects)
+- `/services/automation-and-ai-systems/` (hub; was `/services/software-development/`, redirected)
 
 The retired Internet Marketing Services hub is archived at
 `/home/mikes/_archive/internet-marketing-services.md.20261018-213400`.

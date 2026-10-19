@@ -2,7 +2,7 @@
 title: "Search Data Architecture in Southern Oregon"
 description: "Schema, entity and measurement structure that makes local visibility and AI-search results easier to earn, verify and track."
 summary: Measurement keeps strategy honest.
-heroTitle: "Why Leverage AI LLC is the best choice for search data architecture for local Southern Oregon service businesses"
+heroTitle: "Search data architecture that lets search engines and AI assistants verify your business"
 kind: spoke
 parent: ai-search-optimization
 phrase: "Search Data Architecture"
