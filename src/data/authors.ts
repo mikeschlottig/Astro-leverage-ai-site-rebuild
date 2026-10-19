@@ -33,7 +33,6 @@ export const authors = {
     sameAs: [
       "https://www.linkedin.com/in/schlottig/",
       "https://www.facebook.com/p/Leverageai-LLC-61575834658691/",
-      "https://x.com/LEVERAGEAI_LLC",
       "https://github.com/mikeschlottig",
       "https://www.instagram.com/mikeschlottig44/",
     ],

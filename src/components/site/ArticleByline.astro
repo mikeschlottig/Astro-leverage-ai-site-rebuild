@@ -1,0 +1,23 @@
+---
+import { defaultAuthor, type AuthorProfile } from "../../data/authors";
+
+type Props = {
+  author?: AuthorProfile;
+  publishedAt: Date;
+  minutes: number;
+};
+
+const { author = defaultAuthor, publishedAt, minutes } = Astro.props;
+const published = publishedAt.toLocaleDateString("en-US", {
+  dateStyle: "long",
+  timeZone: "UTC",
+});
+---
+
+<p class="article-byline">
+  <span>Written by <a href="/about/" rel="author" data-astro-prefetch>{author.name}</a></span>
+  <span>{author.role}, {author.organization}</span>
+  <span>{author.location}</span>
+  <span><time datetime={publishedAt.toISOString().slice(0, 10)}>{published}</time></span>
+  <span>{minutes} min read</span>
+</p>

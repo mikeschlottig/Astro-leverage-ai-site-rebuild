@@ -135,11 +135,14 @@ const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
   schema: z.object({
     ...seoFields,
+    /** A post is published once the build date reaches this date (see src/lib/blog.ts). */
     publishedAt: z.coerce.date(),
     category: z.string(),
     tags: z.array(z.string()).default([]),
     relatedServices: z.array(z.string()).default([]),
     relatedCaseStudies: z.array(z.string()).default([]),
+    /** Blog post ids shown under "Keep reading" once those posts are published. Unknown ids fail the build. */
+    relatedPosts: z.array(z.string()).default([]),
   }),
 });
 

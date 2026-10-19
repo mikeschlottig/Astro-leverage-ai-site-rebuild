@@ -1,7 +1,10 @@
 ---
 title: AI Overviews Hit 77% of Legal Searches. Is Your Firm Cited?
 description: More than 77% of legal searches trigger AI Overviews, the highest of any industry studied. Learn how GEO gets law firms cited by ChatGPT and Google AI.
-publishedAt: 2026-10-18
+publishedAt: 2026-10-20
+relatedPosts:
+  - geo-for-law-firms-playbook
+  - law-firm-lead-intake-leak
 category: Legal Marketing
 tags:
   - law-firms
@@ -52,7 +55,7 @@ Generative engine optimization, GEO, is the work of making a firm easy for assis
 5. An editorial workflow that captures real attorney expertise without bottlenecks.
 6. Monthly tracking of how often assistants cite the firm.
 
-The full tactical version is in [GEO for Law Firms: The Playbook](/blog/geo-for-law-firms-playbook/).
+The full tactical version is the GEO playbook that follows in this series.
 
 ## Share of voice: the new KPI
 

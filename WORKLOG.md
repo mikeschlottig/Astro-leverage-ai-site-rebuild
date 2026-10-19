@@ -3,6 +3,19 @@
 **Newest first. Append; never edit an older entry.** `AGENTS.md` says how to operate this project. This says what
 state the work is in and what happens next, which a fresh agent cannot derive from the tree.
 
+## 2026-10-19 — blog dates, byline, X removed, publishing plan
+
+**What:** The eight legal posts are dated two days apart (2026-10-18 to 2026-11-01) and only posts whose date has arrived are built
+(`src/lib/blog.ts`; `PUBLISH_AS_OF=YYYY-MM-DD` builds as of another day). Seven forward links became plain text; later posts appear under
+"Keep reading" through `relatedPosts`. Added `ArticleByline.astro` (written by, role, place, date, reading time). Blog index sorted newest
+first with dates. Removed the X account from `site.ts` and `authors.ts`; it is gone from every built file and from `Organization.sameAs`,
+`Person.sameAs` and `Article.author.sameAs`. Wrote `docs/publishing/legal-series-publishing-plan.md`.
+**Evidence:** `pnpm verify` green twice: as of today (77 pages, one legal post live) and `PUBLISH_AS_OF=2026-11-02` (84 pages, all eight,
+structured data valid on 82). Across 11 blog pages: `author` has `name` and four `sameAs` URLs, matches the `Person` node, and
+`datePublished` equals the byline date. The owner email from the 21:44 PDT contact-form test arrived (Mike); whether the submitter also
+received one is unconfirmed.
+**Next:** merge and release (staged) to publish post 1; then one release per publish day (plan runbook). Pending decisions are at the end of the plan.
+
 ## 2026-10-18 — structured-data gate, sitemap fix, docs brought current
 
 **What:** Added `scripts/validate-structured-data.mjs` (official schema.org 30.1 vocabulary plus Google Rich Results rules via

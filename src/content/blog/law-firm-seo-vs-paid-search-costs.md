@@ -1,7 +1,11 @@
 ---
 title: "The $150 Click: What Paid Search Really Costs Small Law Firms"
 description: Personal injury keywords average over $150 per click and legal leads cost $131.63 on average. See how paid search and SEO compare on cost and payback.
-publishedAt: 2026-10-18
+publishedAt: 2026-10-24
+relatedPosts:
+  - geo-for-law-firms-playbook
+  - law-firm-marketing-budget-benchmarks
+  - law-firm-lead-intake-leak
 category: Legal Marketing
 tags:
   - law-firms
@@ -65,7 +69,7 @@ The research does not argue for abandoning paid search. Leading firms build an o
 
 ## What to do next
 
-Request a [diagnostic audit](/pricing/) to see what AI assistants say about your firm and where inquiries go cold, then decide how to split budget between rented clicks and assets you keep. The fee is credited toward later work. For budget ranges by firm size, see [How Much Should a Law Firm Spend on Marketing in 2026?](/blog/law-firm-marketing-budget-benchmarks/).
+Request a [diagnostic audit](/pricing/) to see what AI assistants say about your firm and where inquiries go cold, then decide how to split budget between rented clicks and assets you keep. The fee is credited toward later work. Budget ranges by firm size are covered in the budget benchmarks article in this series.
 
 ## Sources
 

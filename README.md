@@ -41,6 +41,7 @@ pnpm verify     # check + build + every guard (needs SITE_URL, see Verification)
 | `migrations/` | D1 migrations (booking tables) |
 | `docs/architecture/` | design and audit documents, see below |
 | `docs/research/` | source research for the legal vertical (imported 2026-10-18, unchanged) |
+| `docs/publishing/` | publishing plans and runbooks |
 | `dist/` | build output, regenerated |
 
 ## Verification
@@ -61,7 +62,7 @@ SITE_URL=https://leverageai.network pnpm verify
 
 Worker tests: `node --test worker/noindex.test.ts worker/booking-slots.test.ts`.
 
-**Last run, 2026-10-18:** all of the above exit 0; 84 pages built, 82 indexable, 82 URLs in the sitemap; 12 worker tests pass; validator.schema.org returned 0 errors and 0 warnings on one page per page type. Not yet run: the Google Rich Results Test (no public API; a manual step after deploy).
+**Last run, 2026-10-19:** all of the above exit 0 twice: built as of today (77 pages, one legal post live) and with `PUBLISH_AS_OF=2026-11-02` (84 pages, 82 indexable, structured data valid on all). 12 worker tests pass. validator.schema.org returned 0 errors and 0 warnings on one page per page type. Not yet run: the Google Rich Results Test (no public API; a manual step after deploy). Page counts depend on the build date because scheduled blog posts are not built until their date.
 
 ## Documentation
 
@@ -71,6 +72,7 @@ Worker tests: `node --test worker/noindex.test.ts worker/booking-slots.test.ts`.
 - `tasks.md`, `hypothesis.md` — the current plan and its predictions versus outcomes
 - `docs/architecture/offer-repositioning-plan.html` — the 2026-10-18 offer plan, with a status table
 - `docs/architecture/structured-data-validation.md` — the JSON-LD gate, what it covers, results
+- `docs/publishing/legal-series-publishing-plan.md` — calendar, runbook and checks for the eight-post legal series
 - `docs/architecture/site-ontology.md` — site hierarchy and service route families
 - `docs/architecture/contact-flow-deployment-hardening.md`, `booking-and-call.md` — the Worker's contact and booking flows
 - `docs/architecture/performance-and-about-image-audit.md` — measured performance findings

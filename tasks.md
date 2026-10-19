@@ -19,6 +19,7 @@ Gate: `SITE_URL=https://leverageai.network pnpm verify` (SITE_URL is required by
 - [x] P7 social add-on framing; software -> automation-and-ai-systems
 - [x] 8 legal posts (drafts)
 - [x] Structured-data gate (schema.org 30.1 + Google Rich Results via Adobe validator), generator fixes, sitemap noindex filter, AGENTS/README/CLAUDE/WORKLOG to projectstd standard
+- [x] Legal posts dated 2 days apart with build-time date gate; ArticleByline; relatedPosts "Keep reading"; X account removed everywhere; Article.author sameAs verified on 11 blog pages; publishing plan written
 
 ## Open
 - [ ] Real-estate industry page: own session, needs research first (none in docs/research)
@@ -27,4 +28,6 @@ Gate: `SITE_URL=https://leverageai.network pnpm verify` (SITE_URL is required by
 - [ ] Contract / ownership terms: own session
 - [x] Header nav wrap at two rows: accepted by Mike
 - [ ] Post-deploy: Google Rich Results Test on /, a service hub, a blog post; confirm workers.dev x-robots-tag live
+- [ ] Publish the legal series: one staged release per publish day, 2026-10-20 to 2026-11-01 (docs/publishing/legal-series-publishing-plan.md); decisions listed at the end of the plan
+- [ ] Lawyer read of legal posts 5 (FindLaw/Internet Brands) and 7 (compliance) before 2026-10-26 / 2026-10-30
 - [ ] Push branch / merge / deploy (not requested yet)

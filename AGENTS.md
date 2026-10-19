@@ -118,6 +118,12 @@ Project invariants and what cost time to learn. Detail lives in `docs/architectu
 - JSON-LD comes from `packages/site-standard` and is gated by `scripts/validate-structured-data.mjs`: the official schema.org vocabulary (pinned) plus Google Rich Results rules. Read `docs/architecture/structured-data-validation.md` for what it covers and what it does not. Do not write a home-grown validator; compose official ones.
 - `packages/site-standard` is shared with other properties and stays dependency-free.
 
+**Blog publishing**
+
+- A blog post is published when the build date reaches its `publishedAt`; later posts are not built (`src/lib/blog.ts`). A published post links only to earlier-dated posts; forward references go in `relatedPosts` frontmatter. `PUBLISH_AS_OF=YYYY-MM-DD pnpm verify` builds as of that day. Plan and runbook: `docs/publishing/legal-series-publishing-plan.md`.
+- Every post shows a byline (`ArticleByline.astro`) and the author box; `Article.author` in JSON-LD carries `name` and `sameAs`.
+- No X link anywhere: the account was compromised and banned (2026-10-18). Do not re-add one until Mike gives the new handle.
+
 **Copy**
 
 - Never argue against retainers. The position is for retainers and against lock-in: when a contract period ends the client owns the code and digital assets. Contract terms are not published.

@@ -2,6 +2,9 @@
 title: Your Law Firm Is Losing 60% of Its Leads at Intake
 description: Law firms miss up to 35% of calls and fail to capture 60% of leads. See the 2026 intake data and how fast response and direct scheduling recover them.
 publishedAt: 2026-10-18
+relatedPosts:
+  - ai-overviews-legal-search-geo-visibility
+  - ai-marketing-compliance-law-firms
 category: Legal Marketing
 tags:
   - law-firms
@@ -57,7 +60,7 @@ Speed is also cheap to improve compared with traffic. You do not need a new keyw
 
 Legal problems do not keep office hours. Research on AI voice agents in legal intake reports that they handle up to 80% of routine inquiries autonomously and convert after-hours callers at nearly the same rate as business-hours traffic. Voicemail and a next-morning callback give a competitor the whole evening.
 
-A caution: an AI voice agent is not a lawyer, and several states regulate how it may speak to prospective clients. We cover the rules in [AI Marketing Compliance for Law Firms](/blog/ai-marketing-compliance-law-firms/).
+A caution: an AI voice agent is not a lawyer, and several states regulate how it may speak to prospective clients. Our compliance article in this series covers the rules.
 
 ## The scheduling unlock
 
@@ -79,8 +82,7 @@ The standard to hold vendors to is closed-loop attribution: cost per qualified l
 4. **Cover after hours.** Use an answering service or AI intake with clear disclosures.
 5. **Report on retainers.** Track signed retainers per channel, not clicks.
 
-If you want help finding the leak, the [diagnostic audit](/pricing/) includes an intake and response-speed review, and its fee is credited toward the work that follows. The wider picture for firms is on our [law firm page](/industries/law-firms/). Next in this series: [AI Overviews hit 77% of legal searches](/blog/ai-overviews-legal-search-geo-visibility/).
-
+If you want help finding the leak, the [diagnostic audit](/pricing/) includes an intake and response-speed review, and its fee is credited toward the work that follows. The wider picture for firms is on our [law firm page](/industries/law-firms/).
 ## Sources
 
 Ruler Analytics (110 million sessions) for conversion benchmarks; 2026 call-tracking studies for missed-call and lead-capture rates; Smith.ai, October 2026 (3.2 million answered calls, 4,210 firms) for connection rates; the October 2026 *US Legal Marketing Industry Breakdown* prepared for Leverage AI, which compiles them.

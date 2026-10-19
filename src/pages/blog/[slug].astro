@@ -1,15 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import AboutAuthor from "../../components/site/AboutAuthor.astro";
-import { getCollection, render } from "astro:content";
+import ArticleByline from "../../components/site/ArticleByline.astro";
+import { render } from "astro:content";
+import { publishedPosts, readingMinutes, relatedPublishedPosts } from "../../lib/blog";
 
 export async function getStaticPaths() {
-  const entries = await getCollection("blog");
+  const entries = await publishedPosts();
   return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const related = await relatedPublishedPosts(entry);
 ---
 
 <BaseLayout
@@ -24,9 +27,27 @@ const { Content } = await render(entry);
     <div class="shell surface stack prose">
       <p class="eyebrow">{entry.data.category}</p>
       <h1>{entry.data.title}</h1>
+      <ArticleByline publishedAt={entry.data.publishedAt} minutes={readingMinutes(entry.body)} />
       <Content />
     </div>
   </section>
+  {related.length > 0 && (
+    <section class="section" aria-labelledby="keep-reading-heading">
+      <div class="shell stack">
+        <h2 id="keep-reading-heading">Keep reading</h2>
+        <div class="grid">
+          {related.map((post) => (
+            <article class="surface stack">
+              <p class="eyebrow">{post.data.category}</p>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <a href={`/blog/${post.id}/`} data-astro-prefetch>Read the article</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
   <section class="section">
     <div class="shell">
       <AboutAuthor />

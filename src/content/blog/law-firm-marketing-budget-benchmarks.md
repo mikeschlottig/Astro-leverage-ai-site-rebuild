@@ -1,7 +1,11 @@
 ---
 title: How Much Should a Law Firm Spend on Marketing in 2026?
 description: Law firm marketing budgets by firm size, from solo practices to AmLaw 200. See 2026 benchmarks for SEO retainers and web builds, and where budgets leak.
-publishedAt: 2026-10-18
+publishedAt: 2026-11-01
+relatedPosts:
+  - law-firm-seo-vs-paid-search-costs
+  - findlaw-website-ownership-law-firms
+  - ai-marketing-compliance-law-firms
 category: Legal Marketing
 tags:
   - law-firms

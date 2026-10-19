@@ -1,7 +1,10 @@
 ---
 title: "FindLaw After the Buyout: Who Owns Your Law Firm's Website?"
 description: FindLaw is now owned by Internet Brands, backed by KKR and Warburg Pincus. See what the sale means for your firm's website and how to leave without losing rankings.
-publishedAt: 2026-10-18
+publishedAt: 2026-10-26
+relatedPosts:
+  - legal-directories-ai-search-citations
+  - law-firm-marketing-budget-benchmarks
 category: Legal Marketing
 tags:
   - law-firms
@@ -71,7 +74,7 @@ Rankings are lost when URLs change without redirects, when content thins out in 
 
 Leading buyers now ask for a written contractual guarantee that the firm retains 100% ownership of portable, open-source code (WordPress, Webflow or React front ends), the written copy, the Google Business Profile and the paid ad accounts. Our position matches it: when a contract period ends, the business owns the code and the digital assets built for it. We do not hold a client's website or accounts hostage. The [pricing page](/pricing/) states the same position.
 
-A leased platform is not the only thing worth keeping an eye on. Leave the vendor, keep the listings: directories remain valuable to AI search, as covered in [Legal Directories: Dead for Clients, Alive for AI Search](/blog/legal-directories-ai-search-citations/).
+A leased platform is not the only thing worth keeping an eye on. Leave the vendor, keep the listings: directories remain valuable to AI search, as the next article in this series explains.
 
 ## Start with an ownership review
 

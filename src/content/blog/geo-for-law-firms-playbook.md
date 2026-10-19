@@ -1,7 +1,11 @@
 ---
 title: "GEO for Law Firms: The Playbook to Get Recommended by ChatGPT"
 description: A step-by-step GEO playbook for law firms. Entity authority, directory signals, Q&A schema, NAP cleanup, attorney review and AI share-of-voice tracking.
-publishedAt: 2026-10-18
+publishedAt: 2026-10-22
+relatedPosts:
+  - ai-overviews-legal-search-geo-visibility
+  - legal-directories-ai-search-citations
+  - ai-marketing-compliance-law-firms
 category: Legal Marketing
 tags:
   - law-firms
@@ -63,7 +67,7 @@ Multi-office firms often have a different suite number, phone line or firm-name 
 
 ## Step 5: Attorney E-E-A-T without bottlenecks
 
-Experience, expertise, authoritativeness and trust come from real attorneys. The workflow that works avoids asking busy partners to write. Interview the billing attorney for fifteen minutes, draft from the transcript, and return it for sign-off. The attorney verifies every factual claim, case result and statute citation before publication; under ABA Model Rule 7.1 and Formal Opinion 512 that duty cannot be delegated. See [AI Marketing Compliance for Law Firms](/blog/ai-marketing-compliance-law-firms/).
+Experience, expertise, authoritativeness and trust come from real attorneys. The workflow that works avoids asking busy partners to write. Interview the billing attorney for fifteen minutes, draft from the transcript, and return it for sign-off. The attorney verifies every factual claim, case result and statute citation before publication; under ABA Model Rule 7.1 and Formal Opinion 512 that duty cannot be delegated. Our compliance article in this series covers the rules in detail.
 
 ## Step 6: Track AI share of voice monthly
 
@@ -79,7 +83,7 @@ AI models weight external citations in a hierarchy:
 | 2 | Strong | Authoritative legal directories: Martindale-Hubbell, Avvo, FindLaw, Justia, Super Lawyers, Best Lawyers |
 | 3 | Baseline | General business listings |
 
-Directories are therefore worth keeping accurate even if you no longer buy a vendor's website. We explain the distinction in [Legal Directories: Dead for Clients, Alive for AI Search](/blog/legal-directories-ai-search-citations/).
+Directories are therefore worth keeping accurate even if you no longer buy a vendor's website. A later article in this series explains the distinction between a directory vendor and a directory listing.
 
 ## Common GEO mistakes law firms make
 

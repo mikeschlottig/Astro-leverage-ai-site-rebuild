@@ -1,7 +1,10 @@
 ---
 title: "Legal Directories: Dead for Clients, Alive for AI Search"
 description: Lawyers are leaving legal directory vendors, but AI engines still use the directories to decide who to recommend. Here is the keep-the-listing playbook.
-publishedAt: 2026-10-18
+publishedAt: 2026-10-28
+relatedPosts:
+  - findlaw-website-ownership-law-firms
+  - geo-for-law-firms-playbook
 category: Legal Marketing
 tags:
   - law-firms

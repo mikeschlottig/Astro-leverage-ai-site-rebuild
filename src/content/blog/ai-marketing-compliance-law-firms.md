@@ -1,7 +1,10 @@
 ---
 title: "AI Marketing Compliance for Law Firms: Model Rule 7.1 in Practice"
 description: AI content for law firms triggers ABA Model Rule 7.1, Formal Opinion 512 and state bar rules. Here is a verification workflow that keeps the attorney in control.
-publishedAt: 2026-10-18
+publishedAt: 2026-10-30
+relatedPosts:
+  - geo-for-law-firms-playbook
+  - law-firm-lead-intake-leak
 category: Legal Marketing
 tags:
   - law-firms
