@@ -16,8 +16,9 @@
     "guard:phrases": "node packages/site-standard/scripts/lint-banned-phrases.mjs dist",
     "guard:canonicals": "node packages/site-standard/scripts/validate-canonicals.mjs dist",
     "guard:schema": "node packages/site-standard/scripts/validate-schema.mjs dist",
+    "guard:structured-data": "node scripts/validate-structured-data.mjs dist",
     "guard:links": "node packages/site-standard/scripts/validate-internal-links.mjs dist",
-    "guard:site-standard": "pnpm guard:phrases && pnpm guard:canonicals && pnpm guard:schema && pnpm guard:links",
+    "guard:site-standard": "pnpm guard:phrases && pnpm guard:canonicals && pnpm guard:schema && pnpm guard:structured-data && pnpm guard:links",
     "verify": "pnpm check && pnpm build && pnpm guard:site-standard"
   },
   "dependencies": {
@@ -31,7 +32,9 @@
     "sharp": "^0.35.3"
   },
   "devDependencies": {
+    "@adobe/structured-data-validator": "1.7.0",
     "@astrojs/check": "^0.9.9",
+    "@marbec/web-auto-extractor": "2.2.1",
     "typescript": "6.0.3",
     "wrangler": "4.105.0"
   }

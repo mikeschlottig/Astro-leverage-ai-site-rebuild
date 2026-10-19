@@ -59,6 +59,7 @@ const page: PageMeta = {
   description,
   path: canonicalPath,
   breadcrumbs: breadcrumbs ?? breadcrumbItems(canonicalPath, breadcrumbLabel),
+  ...(title !== undefined ? { headline: title } : {}),
   ...(noindex !== undefined ? { noindex } : {}),
   ...(ogImageUrl !== undefined ? { ogImageUrl } : {}),
   ...(datePublished !== undefined ? { datePublished } : {}),

@@ -18,11 +18,13 @@ Gate: `SITE_URL=https://leverageai.network pnpm verify` (SITE_URL is required by
 - [x] P6 hero titles x5 (+2 rewritten with their pages); ResultsStrip on home + portfolio
 - [x] P7 social add-on framing; software -> automation-and-ai-systems
 - [x] 8 legal posts (drafts)
+- [x] Structured-data gate (schema.org 30.1 + Google Rich Results via Adobe validator), generator fixes, sitemap noindex filter, AGENTS/README/CLAUDE/WORKLOG to projectstd standard
 
 ## Open
-- [ ] Real-estate industry page: needs research first (none in docs/research)
+- [ ] Real-estate industry page: own session, needs research first (none in docs/research)
 - [ ] Attorney + compliance read of the 8 posts before publishing; extend to the briefs' word counts only where the sources support it
 - [ ] Bring this site's own contact worker to parity with the described pipeline (confirmation to lead, business-URL alert, SMS option); then the intake claim is demonstrable on our own form
-- [ ] Contract / ownership terms (out of scope this session)
-- [ ] Header nav wraps to two rows with ten items: decide whether to group or trim
+- [ ] Contract / ownership terms: own session
+- [x] Header nav wrap at two rows: accepted by Mike
+- [ ] Post-deploy: Google Rich Results Test on /, a service hub, a blog post; confirm workers.dev x-robots-tag live
 - [ ] Push branch / merge / deploy (not requested yet)

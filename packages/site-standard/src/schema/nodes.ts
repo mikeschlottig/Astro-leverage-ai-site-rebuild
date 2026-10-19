@@ -103,6 +103,7 @@ export function professionalServiceNode(identity: SiteIdentity): JsonLdNode {
     '@id': `${identity.url}/#professionalservice`,
     name: identity.legalName,
     url: `${identity.url}/`,
+    image: identity.defaultOgImageUrl,
     parentOrganization: { '@id': ids.organization },
     ...(identity.email !== undefined ? { email: identity.email } : {}),
     ...(identity.telephone !== undefined ? { telephone: identity.telephone } : {}),
@@ -170,12 +171,19 @@ export function articleNode(identity: SiteIdentity, page: PageMeta): JsonLdNode 
   const url = canonicalFor(identity, page.path);
   const author: JsonLdNode =
     identity.founder !== undefined && (page.authorName === undefined || page.authorName === identity.founder.name)
-      ? { '@type': 'Person', '@id': ids.founder }
+      ? {
+          '@type': 'Person',
+          '@id': ids.founder,
+          name: identity.founder.name,
+          ...(identity.founder.sameAs !== undefined && identity.founder.sameAs.length > 0
+            ? { sameAs: identity.founder.sameAs }
+            : {}),
+        }
       : { '@type': 'Person', name: page.authorName ?? identity.name };
   return {
     '@type': 'Article',
     '@id': `${url}#article`,
-    headline: page.title,
+    headline: page.headline ?? page.title,
     description: page.description,
     url,
     mainEntityOfPage: { '@id': `${url}#webpage` },

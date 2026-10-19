@@ -91,6 +91,7 @@ export interface PageMeta {
   readonly noindex?: boolean;
 
   // article / caseStudy
+  readonly headline?: string;        // article title without the site suffix; defaults to title
   readonly datePublished?: string;   // ISO 8601
   readonly dateModified?: string;    // ISO 8601
   readonly authorName?: string;      // defaults to identity.founder

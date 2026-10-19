@@ -15,5 +15,10 @@ export default defineConfig({
     defaultStrategy: "hover",
     prefetchAll: false,
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Noindex pages must not be advertised to crawlers.
+      filter: (page) => !page.includes("/contact/thanks/"),
+    }),
+  ],
 });

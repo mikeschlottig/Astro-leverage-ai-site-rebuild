@@ -30,7 +30,8 @@ export function buildGraph(identity: SiteIdentity, page: PageMeta): JsonLdGraph 
   nodes.push(webSiteNode(identity));
   nodes.push(webPageNode(identity, page));
 
-  if (page.breadcrumbs !== undefined && page.breadcrumbs.length > 0) {
+  // Google requires at least two ListItems for a BreadcrumbList; a lone "Home" crumb is omitted.
+  if (page.breadcrumbs !== undefined && page.breadcrumbs.length >= 2) {
     nodes.push(breadcrumbNode(identity, page, page.breadcrumbs));
   }
 

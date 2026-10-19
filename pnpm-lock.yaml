@@ -33,9 +33,15 @@ importers:
         specifier: ^0.35.3
         version: 0.35.3(@types/node@24.13.2)
     devDependencies:
+      '@adobe/structured-data-validator':
+        specifier: 1.7.0
+        version: 1.7.0
       '@astrojs/check':
         specifier: ^0.9.9
         version: 0.9.9(prettier@3.8.4)(typescript@6.0.3)
+      '@marbec/web-auto-extractor':
+        specifier: 2.2.1
+        version: 2.2.1
       typescript:
         specifier: 6.0.3
         version: 6.0.3
@@ -54,6 +60,10 @@ importers:
         version: 5.6.3
 
 packages:
+
+  '@adobe/structured-data-validator@1.7.0':
+    resolution: {integrity: sha512-7z4MDfbYUBeMW2XyDzcpEh5FtDYaXmuERBCdmeDOkcsrOuLe0NJb97tAKoqoe+qll17fX9C5V8zgU1z+7hIWMg==}
+    engines: {node: '>=18.0.0'}
 
   '@astrojs/check@0.9.9':
     resolution: {integrity: sha512-A5UW8uIuErLWEoRQvzgXpO1gTjUFtK8r7nU2Z7GewAMxUb7bPvpk11qaKKgxqXlHJWlAvaaxy+Xg28A6bmQ1Tg==}
@@ -837,6 +847,10 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
+
+  '@marbec/web-auto-extractor@2.2.1':
+    resolution: {integrity: sha512-xfUFMFH9+XoW/0vOknCcGtHSQMpwuzN/udMB1ZM8lHGOPxMlgPj0mAbpCQxdxlZ/BcgRKprVK4FZOL1+O7EO0A==}
+    engines: {node: '>=18.0.0'}
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -2305,6 +2319,8 @@ packages:
 
 snapshots:
 
+  '@adobe/structured-data-validator@1.7.0': {}
+
   '@astrojs/check@0.9.9(prettier@3.8.4)(typescript@6.0.3)':
     dependencies:
       '@astrojs/language-server': 2.16.10(prettier@3.8.4)(typescript@6.0.3)
@@ -2852,6 +2868,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@marbec/web-auto-extractor@2.2.1': {}
 
   '@oslojs/encoding@1.1.0': {}
 
