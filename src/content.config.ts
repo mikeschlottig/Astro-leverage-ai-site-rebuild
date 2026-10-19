@@ -17,6 +17,8 @@ const metric = z.object({
   value: z.string(),
   label: z.string(),
   detail: z.string().optional(),
+  /** Shown in the homepage and portfolio results strip. */
+  headline: z.boolean().default(false),
 });
 
 const flowStep = z.object({

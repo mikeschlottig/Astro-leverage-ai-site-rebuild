@@ -21,12 +21,15 @@ relatedLocations:
 stats:
   - value: "#1"
     label: Google result for "Daley Organics"
+    headline: true
   - value: Top 3
     label: Soil, compost, and bark near-me intent searches
+    headline: true
   - value: 4000%
     label: Year-over-year growth in high-intent search clicks
   - value: 40x
     label: Monthly SEO clicks versus the prior year
+    headline: true
 challenge:
   title: The problem
   paragraphs:

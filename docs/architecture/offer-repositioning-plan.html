@@ -99,10 +99,37 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.88rem}
   </div>
 </div>
 
+<section id="status">
+  <div class="shell">
+    <p class="eyebrow">Status &middot; 2026-10-18, after decisions D1&ndash;D7</p>
+    <h2>Implemented on the branch, and what is still open</h2>
+    <div class="callout bad">
+      <h3>Not done</h3>
+      <ul>
+        <li><b>No real-estate page.</b> The research contains no real-estate data (searched both files). The Specialist tier is narrowed to legal until that research exists.</li>
+        <li><b>The eight posts are first drafts</b>, shorter than the briefs&rsquo; word counts, and need an attorney and compliance read before publishing. Briefs&rsquo; links to older posts that are not in this repo were omitted.</li>
+        <li><b>Intake copy is owner-attested.</b> The confirmation-to-lead, business-URL alert, SMS option and five-minute window are worded as Mike described them. This repo&rsquo;s own contact worker (<code>worker/contact.ts:225-255</code>) writes D1 and sends one owner email only, so the claim must not be presented as something this site&rsquo;s own form does. Bringing it to parity is a separate task.</li>
+        <li>Contract and ownership terms are out of scope; the site states the position only.</li>
+        <li>Not pushed, not deployed. Header nav now wraps to two rows at 1280px with ten items.</li>
+        <li>Response-time, connect-rate and AI-citation figures are still absent from the proof strip, by design.</li>
+      </ul>
+    </div>
+    <div class="tablewrap" style="margin-top:1.2rem"><table style="min-width:46rem">
+      <thead><tr><th>Phase</th><th>Commit</th><th>State</th></tr></thead>
+      <tbody>
+      <tr><td>P1 hygiene + workers.dev noindex</td><td class="mono">63937a7</td><td><span class="tag t-ok">Done</span> noindex has a unit test; meta rewritten in three files</td></tr>
+      <tr><td>P2 hub restructure</td><td class="mono">c95d042</td><td><span class="tag t-ok">Done</span> old hub archived; 12 redirects checked, 0 chained, all targets built</td></tr>
+      <tr><td>P3 pricing + P7 demotions</td><td class="mono">d227731</td><td><span class="tag t-ok">Done</span> new audit range, three retainer tiers, ownership language; retainer-theater copy removed</td></tr>
+      <tr><td>P4 industries, P5 intake, P6 proof, posts</td><td class="mono">next commit</td><td><span class="tag t-warn">Partial</span> law-firms page, intake service level, results strip, eight drafts; real estate not built</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
 <section id="open">
   <div class="shell">
-    <p class="eyebrow">Read first</p>
-    <h2>What is not done, and what blocks it</h2>
+    <p class="eyebrow">Original open items (all answered by Mike 2026-10-18)</p>
+    <h2>What was blocked, and how each decision resolved</h2>
     <div class="callout bad">
       <h3>Nothing is implemented. This branch holds the plan only.</h3>
       <ul>

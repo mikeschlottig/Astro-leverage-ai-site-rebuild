@@ -1,7 +1,7 @@
 ---
 title: "AI Search Optimization in Southern Oregon"
 description: "Make your Southern Oregon business easy for ChatGPT, Gemini, Perplexity and Google AI Overviews to find, understand and cite, using clear answers and schema."
-summary: "Be the business the AI assistant names."
+summary: "Be the business AI names."
 heroTitle: "AI search optimization: be the business ChatGPT, Gemini and Perplexity describe correctly"
 kind: hub
 phrase: "AI Search Optimization"

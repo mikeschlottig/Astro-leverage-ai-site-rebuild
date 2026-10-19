@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+
+const caseStudies = await getCollection("caseStudies");
+const results = caseStudies.flatMap((entry) =>
+  entry.data.stats
+    .filter((stat) => stat.headline)
+    .map((stat) => ({ ...stat, client: entry.data.client, href: `/portfolio/${entry.id}/` })),
+);
+---
+
+{results.length > 0 && (
+  <section class="section" aria-labelledby="results-strip-heading">
+    <div class="shell stack">
+      <div class="stack">
+        <p class="eyebrow">Measured Results</p>
+        <h2 id="results-strip-heading">Numbers from real Oregon projects.</h2>
+      </div>
+      <div class="case-study-stat-band">
+        {results.map((result) => (
+          <article class="case-study-stat">
+            <p class="case-study-stat__value">{result.value}</p>
+            <p class="case-study-stat__label">{result.label}</p>
+            <p class="case-study-stat__detail"><a href={result.href}>{result.client}</a></p>
+          </article>
+        ))}
+      </div>
+      <p class="form-note">
+        These are observations from two projects, not promises. Search results change over time.
+        Response-time and AI-citation measurements are added here once they are logged.
+      </p>
+    </div>
+  </section>
+)}

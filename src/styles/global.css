@@ -1990,3 +1990,14 @@ button:disabled,
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Service hub cards sit five across; long hub names must wrap instead of clipping. */
+.hub-card {
+  min-width: 0;
+}
+
+.hub-card h2 {
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}

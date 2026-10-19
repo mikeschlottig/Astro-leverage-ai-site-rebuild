@@ -1,7 +1,7 @@
 ---
 title: "Lead Capture and AI Follow-Up"
-description: Capture every inbound lead and respond before attention collapses or a competitor gets there first.
-summary: Speed to lead is a revenue system.
+description: A speed-to-lead system with a stated service level - each form saved first, the lead confirmed, the business alerted, all within five minutes.
+summary: Every inquiry saved, confirmed and routed within five minutes.
 heroTitle: "Lead capture and AI follow-up: answer every inquiry before it goes cold"
 kind: hub
 phrase: "Lead Capture and AI Follow-Up"
@@ -9,7 +9,8 @@ navLabel: "Lead Capture and AI Follow-Up"
 order: 3
 methodName: Lead Capture & AI Follow-Up
 outcomes:
-  - Faster response times
+  - Every form saved to a database before anything else
+  - Lead confirmation and business alerts within five minutes
   - Fewer lost forms and calls
   - Better qualification and scheduling
 capabilities:
@@ -28,6 +29,8 @@ diagnosticQuestions:
   - Where are missed calls, inbox gaps, or slow acknowledgement quietly turning into lost revenue?
   - Can the business actually see response speed, handoff quality, and recovery performance clearly enough to improve them?
 deliverables:
+  - Form submissions written to a database, with a confirmation to the lead and alerts to the business within five minutes
+  - Optional text-message (SMS) notifications
   - Cleaner form routing and lead capture
   - Missed-call recovery and immediate acknowledgment workflows
   - Qualification and scheduling handoff logic
@@ -86,6 +89,29 @@ That is why this service focuses on:
 - immediate acknowledgment
 - qualification and routing
 - response-time visibility
+
+## The service level
+
+This is what happens when someone submits a form on a site we build, in order:
+
+1. **The submission is saved first.** It is written to a database before any email is attempted, so the lead survives a failed send.
+2. **The lead is confirmed.** They receive a message at the address they gave, confirming we have their request and will be in touch.
+3. **The business is alerted.** The business is notified at the contact points it provides, including its own URL, and Leverage AI is notified too, so a stalled lead is seen by a person.
+4. **Text messages are available.** SMS notifications can be switched on through an SMS provider.
+
+All of this completes within five minutes of the submission. It runs without staff, so a Saturday-night inquiry is handled like a Tuesday-morning one. Because every submission is stored, response time can be checked afterward instead of taken on trust.
+
+Phone is the next layer. Research on legal intake treats answering in under 30 seconds, with direct calendar booking in the call flow, as the benchmark. We cite it as a benchmark for what good looks like, not as a promise about any one deployment.
+
+| Benchmark (U.S. law firms, 2026) | Figure |
+| --- | --- |
+| Inbound calls missed in business hours | up to 35% |
+| Generated leads not captured | 60% |
+| Conversion lift for a response within five minutes, against after an hour | 400% |
+| Conversion increase when AI intake cuts response under 30 seconds | 40% |
+| Qualified callers connected with direct scheduling, against without (personal injury, Smith.ai) | 69.3% against 15.3% |
+
+These figures come from legal-sector studies, where intake is unusually measurable. The direction applies to any service business that wins work by phone and form; the exact numbers will differ. See how they apply to a law firm on our [law firm page](/industries/law-firms/).
 
 ## Why speed matters so much
 

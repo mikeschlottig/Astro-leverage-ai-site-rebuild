@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import CaseStudyPreviewCard from "../../components/case-studies/CaseStudyPreviewCard.astro";
+import ResultsStrip from "../../components/site/ResultsStrip.astro";
 
 const caseStudies = await getCollection("caseStudies");
 ---
@@ -21,6 +22,13 @@ const caseStudies = await getCollection("caseStudies");
         </p>
       </div>
 
+    </div>
+  </section>
+
+  <ResultsStrip />
+
+  <section class="section">
+    <div class="shell stack">
       <div class="grid">
         {caseStudies.map((entry) => <CaseStudyPreviewCard entry={entry} />)}
       </div>

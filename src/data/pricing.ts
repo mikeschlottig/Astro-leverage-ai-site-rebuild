@@ -101,14 +101,14 @@ export const retainerTiers: readonly RetainerTier[] = [
   {
     name: "Specialist",
     range: "$5,000-$10,000/mo",
-    tagline: "Vertical work for law firms and real estate teams, with review built in.",
-    summary: "For regulated or high-value verticals where intake speed and verified content decide the result.",
-    setup: "Monthly. Includes everything in Growth. Scoped to one vertical.",
+    tagline: "Vertical work for law firms, with attorney review built in.",
+    summary: "For law firms, where intake speed and verified content decide the result.",
+    setup: "Monthly. Includes everything in Growth. Legal is the first vertical.",
     details: [
       "Everything in Growth",
-      "Legal or real estate GEO",
+      "Legal GEO",
       "AI intake and follow-up",
-      "Compliance-aware editorial workflow",
+      "Compliance-aware editorial workflow with attorney sign-off",
     ],
   },
 ];

@@ -22,6 +22,7 @@ relatedLocations:
 stats:
   - value: 15K+
     label: Oregon business listings generated and structured
+    headline: true
   - value: "1"
     label: Operator building the system in one focused week
   - value: 12 x 12

@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import HomeHero from "../components/site/HomeHero.astro";
 import CaseStudyPreviewCard from "../components/case-studies/CaseStudyPreviewCard.astro";
+import ResultsStrip from "../components/site/ResultsStrip.astro";
 
 const serviceTree = buildServiceTree(await getCollection("services"));
 const services = hubsOf(serviceTree);
@@ -27,6 +28,8 @@ const knowledgeBase = (await getCollection("knowledgeBase")).sort(
     </div>
   </section>
 
+  <ResultsStrip />
+
   <section class="section">
     <div class="shell stack">
       <div class="surface stack">
@@ -41,7 +44,7 @@ const knowledgeBase = (await getCollection("knowledgeBase")).sort(
       </div>
       <div class="grid">
         {services.map((service) => (
-          <article class="surface stack">
+          <article class="surface stack hub-card">
             <p class="eyebrow">{service.entry.data.summary}</p>
             <h2>{service.entry.data.navLabel}</h2>
             <p>{service.entry.data.description}</p>
