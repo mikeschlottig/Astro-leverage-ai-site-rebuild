@@ -3,6 +3,16 @@
 **Newest first. Append; never edit an older entry.** `AGENTS.md` says how to operate this project. This says what
 state the work is in and what happens next, which a fresh agent cannot derive from the tree.
 
+## 2026-10-19 — corrections from Mike: intake wording, no external read, token length
+
+**What:** Mike confirmed the intake pipeline works (form saved to D1; the submitter and Mike each get an email within five minutes), so the
+hedged "owner-attested" wording in `AGENTS.md`, `tasks.md`, the plan and the publishing plan is replaced by the fact, with the note that
+`worker/contact.ts` sends only the owner email and the submitter's email comes from outside this repo (do not add a second one). Mike read
+posts 5 and 7 and approved all eight; the "lawyer's read" gate and its open item are removed and all eight stay on the schedule. Mike asked
+for a one-month release token; not changed, because the existing token is valid for 365 days (Cloudflare API: issued 2026-10-19, expires
+2027-10-19) and a one-month token would stop the daily release in a month.
+**Next:** unchanged: first automatic publish 2026-10-20 15:00 UTC.
+
 ## 2026-10-19 — merged, released, pushed; automatic release added
 
 **What:** `dev/offer-repositioning` fast-forwarded into `main` (`f1c8573`) and pushed to GitHub. Released through the staged path:

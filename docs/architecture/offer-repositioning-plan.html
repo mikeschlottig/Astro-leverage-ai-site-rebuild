@@ -107,8 +107,8 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.88rem}
       <h3>Not done</h3>
       <ul>
         <li><b>No real-estate page.</b> The research contains no real-estate data (searched both files). The Specialist tier is narrowed to legal until that research exists.</li>
-        <li><b>The eight posts are first drafts</b>, shorter than the briefs&rsquo; word counts, and need an attorney and compliance read before publishing. Briefs&rsquo; links to older posts that are not in this repo were omitted.</li>
-        <li><b>Intake copy is owner-attested.</b> The confirmation-to-lead, business-URL alert, SMS option and five-minute window are worded as Mike described them. This repo&rsquo;s own contact worker (<code>worker/contact.ts:225-255</code>) writes D1 and sends one owner email only, so the claim must not be presented as something this site&rsquo;s own form does. Bringing it to parity is a separate task.</li>
+        <li><b>The eight posts</b> are shorter than the briefs&rsquo; word counts. Mike read and approved them (2026-10-19); all eight stay on the release schedule. Briefs&rsquo; links to older posts that are not in this repo were omitted.</li>
+        <li><b>Intake pipeline works</b> (Mike, 2026-10-19): the form is saved to D1 and the submitter and Mike each get an email within five minutes. <code>worker/contact.ts</code> writes D1 and sends the owner email; the submitter&rsquo;s email is sent outside this repo, so the contact worker is left as it is.</li>
         <li>Contract and ownership terms are out of scope; the site states the position only.</li>
         <li>Not pushed, not deployed. Header nav now wraps to two rows at 1280px with ten items.</li>
         <li>Response-time, connect-rate and AI-citation figures are still absent from the proof strip, by design.</li>

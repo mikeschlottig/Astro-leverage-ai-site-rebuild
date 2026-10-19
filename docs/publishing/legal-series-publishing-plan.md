@@ -42,13 +42,13 @@ matters, move 4 and 8 by changing `publishedAt` (one line each), keeping the ord
 
 | # | read for | why |
 |---|---|---|
-| 1 | the intake service-level wording; every figure against `docs/research/` | the five-minute pipeline is owner-attested; this site's own form does not yet confirm to the submitter |
+| 1 | every figure against `docs/research/` | the intake pipeline itself works (Mike, 2026-10-19); only the research figures need tracing |
 | 2 | no Oregon-specific claim | the figures are U.S. legal search |
 | 3 | the FAQPage JSON-LD example is valid schema.org | it is shown as code in the article |
 | 4 | the 526% ROI caveat survives editing | it applies to firms spending $120,000 to $150,000 a year |
-| 5 | **a lawyer's read** of statements about Internet Brands, KKR and FindLaw | reported facts and market commentary about named companies; keep the attribution |
+| 5 | statements about Internet Brands, KKR and FindLaw keep their attribution | reported facts and market commentary about named companies. Read and approved by Mike, 2026-10-19 |
 | 6 | the "forecast, not measurement" labels | 2028 to 2031 figures are inferences |
-| 7 | **a lawyer's read**; check current text of Florida 24-1, Rule 2.515, California SB 574 and *Heppner* | the most legally sensitive post; it is general information, not legal advice |
+| 7 | the "not legal advice" framing and the "consult the current text" source line stay | the post explains ethics rules and cites cases. Read and approved by Mike, 2026-10-19 |
 | 8 | the Tier 3 retainer line ("starting around $15,000") | the source cell is garbled; confirm or soften |
 
 All eight are first drafts, shorter than the original briefs. Nothing in this plan assumes they are final.
@@ -84,7 +84,7 @@ A failed run emails the repo owner through GitHub's normal Actions notifications
 
 - **`main` is the release candidate.** Whatever is on `main` at 15:00 UTC is released the first morning a post becomes eligible. Keep unfinished work off `main`.
 - **Gates:** the known answer (`GET /api/contact` is 405); proof the override reaches the new build, by contrast (each added page is 404 in production and 200 staged, each retired page the reverse); then every URL in the build's own sitemap answers 200, staged and again in production. A staged run with no page-set change cannot prove the override and says so; that only happens on a forced run.
-- **Credential:** a dedicated token `astro-site-release-20261019b` (Workers Scripts Write and Account Settings Read, nothing else; **expires 2027-10-19**) held in keyring project `astro-site-release` and in the GitHub secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Verified: it lists deployments, and R2 is refused (code 10000). Rotate before it expires.
+- **Credential:** a dedicated token `astro-site-release-20261019b` (Workers Scripts Write and Account Settings Read, nothing else; **valid for 365 days, until 2027-10-19**, confirmed from the Cloudflare API on 2026-10-19) held in keyring project `astro-site-release` and in the GitHub secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Verified: it lists deployments, and R2 is refused (code 10000). Nothing to do until a year from now.
 - **Not automated:** Search Console "request indexing", distribution (LinkedIn, Facebook), and the Rich Results Test remain manual.
 - **Manual fallback:** the runbook above still works if the workflow is disabled.
 
@@ -100,4 +100,6 @@ Remove it from other posts' `relatedPosts` only if you want it gone from their l
 3. `Person.sameAs` keeps the Leverage AI LLC Facebook page: Mike is the company.
 4. Merged and released: `main` at `f1c8573`, Worker version `8697aa1f`, live 2026-10-19 05:38 UTC. Post 1 is live; posts 2 to 8 publish on their dates.
 
-**Still open:** who does the lawyer's read of posts 5 and 7, and by when. Post 5 publishes 2026-10-26 and nothing in the workflow waits for that read.
+5. Posts 5 and 7 read and approved by Mike; all eight stay on the schedule. No external review is planned or required.
+
+**Nothing is open.**

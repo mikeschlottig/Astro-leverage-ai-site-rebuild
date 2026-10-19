@@ -80,4 +80,4 @@ Worker tests: `node --test worker/noindex.test.ts worker/booking-slots.test.ts`.
 
 ## Open items
 
-See `tasks.md`. The contract and ownership terms, the real-estate page and a compliance read of the legal blog posts are each their own piece of work.
+See `tasks.md`. The contract and ownership terms and the real-estate page are each their own piece of work.

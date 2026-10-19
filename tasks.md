@@ -6,7 +6,7 @@ Gate: `SITE_URL=https://leverageai.network pnpm verify` (SITE_URL is required by
 ## Decisions (Mike, 2026-10-18)
 - [x] D1 retainer floor: new numbers published  - [x] D2 audit credit applies with or without a retainer
 - [x] D3 Specialist published (narrowed to legal; no real-estate research exists)
-- [x] D4 research imported to docs/research; speed-to-lead infrastructure cited as owner-attested
+- [x] D4 research imported to docs/research; speed-to-lead pipeline confirmed working by Mike (2026-10-19)
 - [x] D5 social parent local-seo  - [x] D6 software renamed in place  - [x] D7 workers.dev noindex
 
 ## Done
@@ -23,14 +23,13 @@ Gate: `SITE_URL=https://leverageai.network pnpm verify` (SITE_URL is required by
 
 ## Open
 - [ ] Real-estate industry page: own session, needs research first (none in docs/research)
-- [ ] Attorney + compliance read of the 8 posts before publishing; extend to the briefs' word counts only where the sources support it
-- [ ] Bring this site's own contact worker to parity with the described pipeline (confirmation to lead, business-URL alert, SMS option); then the intake claim is demonstrable on our own form
+- [x] Legal posts read and approved by Mike (2026-10-19); all eight stay on the release schedule
+- [ ] Optional: extend the posts toward the briefs' word counts only where the sources support it
 - [ ] Contract / ownership terms: own session
 - [x] Header nav wrap at two rows: accepted by Mike
 - [ ] Post-deploy: Google Rich Results Test on /, a service hub, a blog post; confirm workers.dev x-robots-tag live
 - [x] Publish the legal series: automated daily; decisions recorded in the plan
-- [ ] Lawyer read of legal posts 5 (FindLaw/Internet Brands) and 7 (compliance) before 2026-10-26 / 2026-10-30
 - [x] Merged to main, pushed, released (version 8697aa1f; later 9ebc0122 via the forced workflow run), 2026-10-19
 - [x] Automatic release: .github/workflows/scheduled-release.yml + scripts/release-gates.mjs; forced run green end to end
 - [ ] Confirm the first automatic publish: 2026-10-20 15:00 UTC should release post 2 (gate log should show the override proved by contrast)
-- [ ] Rotate the release token (astro-site-release, expires 2027-10-19) and update GitHub secret CLOUDFLARE_API_TOKEN
+- [ ] A year from now: rotate the release token (astro-site-release, valid 365 days from 2026-10-19) and update the GitHub secret CLOUDFLARE_API_TOKEN

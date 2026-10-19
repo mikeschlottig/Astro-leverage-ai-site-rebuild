@@ -129,7 +129,7 @@ Project invariants and what cost time to learn. Detail lives in `docs/architectu
 - Never argue against retainers. The position is for retainers and against lock-in: when a contract period ends the client owns the code and digital assets. Contract terms are not published.
 - Every number on a page carries its source. Research lives in `docs/research/`. Say what a figure covers (legal sector, one study); do not generalise it.
 - `guard:phrases` fails the build on drafting language such as "as an AI" or "per the brief".
-- The intake service level is owner-attested. This site's own contact worker saves to D1 and emails the owner only; it does not confirm to the submitter (checked 2026-10-18).
+- The intake pipeline works (Mike, 2026-10-19): a form submission is saved to D1, and the submitter and Mike each get an email within five minutes. `worker/contact.ts` writes D1 and sends the owner email; the submitter's email is sent outside this repo (the inbox Workers). Do not add a second confirmation to the contact worker without checking, or the submitter gets two.
 
 **Working in this repo**
 
