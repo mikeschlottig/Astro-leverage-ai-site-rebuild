@@ -3,8 +3,7 @@ title: "AI Search Optimization in Southern Oregon"
 description: "Make your Southern Oregon business easy for ChatGPT, Gemini, Perplexity and Google AI Overviews to find, understand and cite, using clear answers and schema."
 summary: "Be the business the AI assistant names."
 heroTitle: "Why Leverage AI LLC is the best choice for AI search optimization for local Southern Oregon service businesses"
-kind: subhub
-parent: internet-marketing-services
+kind: hub
 phrase: "AI Search Optimization"
 navLabel: "AI Search Optimization"
 order: 1
@@ -39,6 +38,8 @@ faqs:
     answer: "Local SEO focuses on rankings in Google Maps and local results. AI search optimization focuses on being described and cited accurately in generated answers. The two share the same foundation of consistent facts and clear pages."
   - question: "Can anyone guarantee an AI assistant will recommend my business?"
     answer: "No. Assistants choose their sources on their own. What can be done is to make your facts consistent, your pages clear and your markup valid, which raises the chance of accurate mentions."
+  - question: "Which service should a small business start with?"
+    answer: "Start with the constraint costing you the most. If customers cannot find you or AI assistants describe you wrongly, begin here. If they find you but do not call, start with lead capture and AI follow-up. The diagnostic audit ranks these for your business."
 relatedReports:
   - "entity-strength-and-ai-search-visibility-for-local-service-businesses"
   - "local-visibility-map-pack-ai-overviews-report"
@@ -65,12 +66,16 @@ For a Grants Pass or Medford service business, that means one correct name, addr
 
 ## What does the work cover?
 
-It covers four connected pieces, each with its own page below: search data architecture, AI citation optimization, schema markup development and custom JSON-LD integration.
+It covers entity and profile consistency, direct-answer page structure, schema markup and citation-ready content. Search data architecture, linked below, sets the structure and the measurement.
 
-Search data architecture sets the structure. Schema markup and JSON-LD integration put it into machine-readable form. Citation work shapes the content so assistants can quote it.
+Schema markup and JSON-LD put that structure into machine-readable form. Citation work shapes the content so assistants can quote it.
 
 ## How do you know if it is working?
 
 Ask the same set of customer questions in several assistants before and after the work, and record what each says about your business. Track branded search, direct visits and calls alongside that.
 
 Results vary by assistant and change over time, so we report observations and trends, not promises.
+
+## How does it fit with the rest of the system?
+
+Being cited is only the first step. Local SEO keeps the map listing and service-area pages consistent with what assistants read, and lead capture and AI follow-up answers the inquiry once it arrives. If customers already reach you but replies are slow, start with lead capture instead. The diagnostic audit ranks all three so you spend on the biggest constraint first.

@@ -29,9 +29,11 @@ type Env = {
 const allowedServices = new Set([
   "local-seo",
   "website-design",
-  "internet-marketing-services",
+  "ai-search-optimization",
+  "lead-capture-and-ai-follow-up",
   "software-development",
   // Legacy values kept so forms rendered before the hub reorganization still submit.
+  "internet-marketing-services",
   "local-visibility",
   "custom-web-design",
   "lead-capture-ai-follow-up",

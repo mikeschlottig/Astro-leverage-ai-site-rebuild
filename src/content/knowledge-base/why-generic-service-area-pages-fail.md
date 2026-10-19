@@ -84,7 +84,7 @@ That can mean:
 - tighter links between location pages, service pages, and proof surfaces
 - cleaner separation between broad service-area claims and city-specific positioning
 
-This is also why [Local Visibility](/services/local-seo/) and [Search Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) belong in the same conversation.
+This is also why [Local Visibility](/services/local-seo/) and [Search Data Architecture](/services/ai-search-optimization/search-data-architecture/) belong in the same conversation.
 
 The issue is not only what gets published. It is whether the published structure makes sense.
 

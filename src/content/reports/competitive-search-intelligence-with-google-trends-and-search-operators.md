@@ -147,7 +147,7 @@ That is a different kind of research than generic keyword export work.
 
 It is more strategic because it can feed:
 
-- the [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) service
+- the [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/) service
 - the [Local Visibility Systems](/services/local-seo/) service
 - the [locations](/locations/) cluster
 - the [pricing](/pricing/) and diagnostic conversation
@@ -189,7 +189,7 @@ This report should reinforce the rebuild in three ways.
 
 ### For services
 
-It gives [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) a stronger public rationale than "we do analytics and schema."
+It gives [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/) a stronger public rationale than "we do analytics and schema."
 
 ### For reports
 

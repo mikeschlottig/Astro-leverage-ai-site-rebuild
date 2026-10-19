@@ -74,7 +74,7 @@ That is why the audit should look beyond rankings and profile completeness into 
 
 This is also where the audit begins to separate a shallow lead-generation problem from a deeper trust problem.
 
-If the business wants to strengthen the visibility layer itself, [Local Visibility Systems](/services/local-seo/) is part of that path. If the issue is that structure, semantics, and entity clarity are weak underneath the surface, [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) becomes the more important lever.
+If the business wants to strengthen the visibility layer itself, [Local Visibility Systems](/services/local-seo/) is part of that path. If the issue is that structure, semantics, and entity clarity are weak underneath the surface, [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/) becomes the more important lever.
 
 ## Response handling belongs inside the audit, not outside it
 
@@ -152,7 +152,7 @@ If the goal is to understand how the business is being interpreted across search
 
 That broader lens is what makes the next step cleaner. It reduces wasted spend, improves scope decisions, and gives the business a more defensible foundation before execution starts.
 
-If that is the level of clarity you need, review the options on [Pricing](/pricing/), explore the related service paths in [Local Visibility Systems](/services/local-seo/) and [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/), or [get in touch](/contact/) to start the conversation.
+If that is the level of clarity you need, review the options on [Pricing](/pricing/), explore the related service paths in [Local Visibility Systems](/services/local-seo/) and [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/), or [get in touch](/contact/) to start the conversation.
 
 ## Sources And Further Reading
 

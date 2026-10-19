@@ -6,7 +6,7 @@ heroTitle: "Why Leverage AI LLC is the best choice for software development for 
 kind: hub
 phrase: "Software Development"
 navLabel: "Software Development"
-order: 4
+order: 5
 outcomes:
   - "Manual work replaced by reliable automation"
   - "Systems that connect your forms, data and tools"

@@ -52,7 +52,7 @@ A business does not need national-scale analytics to see the pattern. It only ne
 2. How many of them cool off before a real response?
 3. What is that worth over a month or a year?
 
-That is why [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/) belongs in the public service stack. It is not there to sound modern. It is there because many businesses are already paying to generate leads they never operationally convert.
+That is why [Lead Capture And AI Follow-Up](/services/lead-capture-and-ai-follow-up/) belongs in the public service stack. It is not there to sound modern. It is there because many businesses are already paying to generate leads they never operationally convert.
 
 ## Response delay changes the opportunity
 
@@ -97,8 +97,8 @@ Faster follow-up works best when the rest of the customer journey supports it:
 | --- | --- |
 | [Local Visibility](/services/local-seo/) | Brings in the high-intent searcher in the first place. |
 | [Custom Web Design](/services/website-design/) | Helps the visitor trust the business fast enough to reach out. |
-| [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/) | Shortens the gap between inquiry and real contact. |
-| [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) | Shows where the handoff is leaking and whether changes are actually working. |
+| [Lead Capture And AI Follow-Up](/services/lead-capture-and-ai-follow-up/) | Shortens the gap between inquiry and real contact. |
+| [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/) | Shows where the handoff is leaking and whether changes are actually working. |
 
 This is the difference between talking about "lead response" as a tactic and treating it like infrastructure.
 

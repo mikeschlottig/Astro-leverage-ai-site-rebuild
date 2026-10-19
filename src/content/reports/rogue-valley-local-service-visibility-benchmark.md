@@ -76,7 +76,7 @@ That is why stronger operators tend to combine:
 - clearer location and service specificity
 - less friction between inquiry and reply
 
-This is the practical lane for [Local Visibility](/services/local-seo/) and [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/). The systems matter most when they make the business easier to confirm, not when they try to imitate big-city marketing theater.
+This is the practical lane for [Local Visibility](/services/local-seo/) and [Lead Capture And AI Follow-Up](/services/lead-capture-and-ai-follow-up/). The systems matter most when they make the business easier to confirm, not when they try to imitate big-city marketing theater.
 
 ## Visibility gaps are still common in Medford, Grants Pass, and Ashland
 

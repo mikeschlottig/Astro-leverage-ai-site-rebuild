@@ -35,10 +35,22 @@ It is synthesized from:
 
 ### Outcome-led service routes
 
-- `/services/local-visibility`
-- `/services/custom-web-design`
-- `/services/lead-capture-ai-follow-up`
-- `/services/search-data-architecture`
+Hubs are `kind: hub` entries in `src/content/services`; a child's URL nests under its parent. The slug
+must equal the slugified `phrase` (enforced in `src/lib/services.ts`). Old URLs are 301-redirected from
+`src/data/service-redirects.ts`. Structure as of 2026-10-18:
+
+- `/services/ai-search-optimization/` (hub, the front door)
+  - `/services/ai-search-optimization/search-data-architecture/`
+- `/services/local-seo/` (hub)
+  - `/services/local-seo/google-business-profile-optimization/`
+  - `/services/local-seo/local-seo-consultant/`
+  - `/services/local-seo/social-media-management/` (add-on, last)
+- `/services/lead-capture-and-ai-follow-up/` (hub, the intake product)
+- `/services/website-design/` (hub)
+- `/services/software-development/` (hub; renamed in the same branch, see redirects)
+
+The retired Internet Marketing Services hub is archived at
+`/home/mikes/_archive/internet-marketing-services.md.20261018-213400`.
 
 ### Supporting route families
 

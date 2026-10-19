@@ -61,8 +61,8 @@ Those layers map directly to the public service architecture:
 
 - [Local Visibility Systems](/services/local-seo/)
 - [Custom Web Design](/services/website-design/)
-- [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/)
-- [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/)
+- [Lead Capture And AI Follow-Up](/services/lead-capture-and-ai-follow-up/)
+- [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/)
 
 ## Which touchpoints the audit should pressure-test
 

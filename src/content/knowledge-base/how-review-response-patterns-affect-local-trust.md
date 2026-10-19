@@ -58,7 +58,7 @@ For example:
 - a med spa can show professionalism and discretion while still sounding human
 - a local professional service firm can acknowledge concern, explain process, and show that follow-through exists
 
-This is where review replies start connecting to [Search Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/). They are small public texts, but they still help shape how the business is interpreted across platforms.
+This is where review replies start connecting to [Search Data Architecture](/services/ai-search-optimization/search-data-architecture/). They are small public texts, but they still help shape how the business is interpreted across platforms.
 
 ## Weak patterns versus stronger ones
 

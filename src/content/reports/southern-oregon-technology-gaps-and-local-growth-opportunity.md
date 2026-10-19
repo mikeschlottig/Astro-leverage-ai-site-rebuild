@@ -80,7 +80,7 @@ All of that weakens the return on every other part of the system.
 
 The business may still be getting seen. The buyer may still be interested. But the handoff breaks before the job gets booked.
 
-That is why [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/) belongs inside the same broader conversation as search visibility and trust.
+That is why [Lead Capture And AI Follow-Up](/services/lead-capture-and-ai-follow-up/) belongs inside the same broader conversation as search visibility and trust.
 
 ## Southern Oregon buyers still choose differently than bigger Oregon markets
 

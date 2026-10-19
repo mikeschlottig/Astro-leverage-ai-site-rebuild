@@ -59,7 +59,7 @@ The cleaner pattern is:
 2. list the actual services inside the profile
 3. support those services with real pages on the site
 
-That is where [Search Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) starts becoming practical instead of abstract.
+That is where [Search Data Architecture](/services/ai-search-optimization/search-data-architecture/) starts becoming practical instead of abstract.
 
 ## Photos, reviews, and Q&A are trust surfaces
 

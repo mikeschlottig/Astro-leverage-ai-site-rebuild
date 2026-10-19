@@ -129,7 +129,7 @@ The stronger review looks at:
 | Competitive position | comparison against the businesses already owning high-intent queries | shows where authority and opportunity gaps actually are |
 | Underperformance and opportunity | weak pages, weak categories, thin content, missing assets, trust gaps | turns the audit into a roadmap instead of a diagnosis only |
 
-That is why this work fits [Local Visibility](/services/local-seo/), [Search Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/), [Custom Web Design](/services/website-design/), and [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/) at the same time.
+That is why this work fits [Local Visibility](/services/local-seo/), [Search Data Architecture](/services/ai-search-optimization/search-data-architecture/), [Custom Web Design](/services/website-design/), and [Lead Capture And AI Follow-Up](/services/lead-capture-and-ai-follow-up/) at the same time.
 
 ## Specific service and location pages still matter because they anchor intent
 

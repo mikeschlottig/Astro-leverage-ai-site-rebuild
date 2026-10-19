@@ -34,7 +34,7 @@ That includes:
 
 If the profile says you are a contractor serving Medford and Grants Pass, but the website is vague, generic, or built around different service language, the system becomes harder to trust.
 
-That is why [Local Visibility](/services/local-seo/) and [Search Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) should be treated as one system rather than two disconnected tasks.
+That is why [Local Visibility](/services/local-seo/) and [Search Data Architecture](/services/ai-search-optimization/search-data-architecture/) should be treated as one system rather than two disconnected tasks.
 
 ## Why does this matter more now than it used to?
 

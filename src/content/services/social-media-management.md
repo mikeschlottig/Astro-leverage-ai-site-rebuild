@@ -4,10 +4,10 @@ description: "We run your business's Facebook, Instagram, X and YouTube profiles
 summary: "Your social profiles, run for you and kept consistent."
 heroTitle: "Why Leverage AI LLC is the best choice for social media management for local Southern Oregon service businesses"
 kind: subhub
-parent: internet-marketing-services
+parent: local-seo
 phrase: "Social Media Management"
 navLabel: "Social Media Management"
-order: 2
+order: 4
 outcomes:
   - "Active, accurate profiles on the platforms your customers use"
   - "Consistent business details across every profile"

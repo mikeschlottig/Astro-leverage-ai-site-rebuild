@@ -123,7 +123,7 @@ That does not automatically tell you **why** they are winning, but it gives you 
 
 This type of research should feed directly into:
 
-- [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/), because the intelligence has to become structure and measurement
+- [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/), because the intelligence has to become structure and measurement
 - [Local Visibility Systems](/services/local-seo/), because local demand patterns should change how pages and service areas are expressed
 - the [locations](/locations/) cluster, because markets do not behave the same way
 - the diagnostic-audit conversation on [pricing](/pricing/), because diagnosis should include competitive context

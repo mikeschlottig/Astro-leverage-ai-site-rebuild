@@ -85,7 +85,7 @@ That usually looks like:
 - forms that ask too little or too much
 - mobile contact experiences that make the simplest action harder than it should be
 
-Conversion path problems often sit between [Custom Web Design](/services/website-design/) and [Lead Capture & AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/). One makes the action feel obvious. The other makes sure the action does not die after it happens.
+Conversion path problems often sit between [Custom Web Design](/services/website-design/) and [Lead Capture & AI Follow-Up](/services/lead-capture-and-ai-follow-up/). One makes the action feel obvious. The other makes sure the action does not die after it happens.
 
 ## Response infrastructure
 
@@ -108,7 +108,7 @@ That usually means:
 - missed calls quietly turn into lost revenue
 - there is no clear process separating serious inquiries from low-fit noise
 
-This is why [Lead Capture & AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/) belongs inside the public service stack. It is not there to sound modern. It is there because speed to lead is often where otherwise good marketing quietly fails.
+This is why [Lead Capture & AI Follow-Up](/services/lead-capture-and-ai-follow-up/) belongs inside the public service stack. It is not there to sound modern. It is there because speed to lead is often where otherwise good marketing quietly fails.
 
 ## Measurement
 
@@ -128,7 +128,7 @@ When measurement is weak, the business gets stuck in opinion loops:
 - reporting focuses on vanity instead of business movement
 - nobody can tell whether the problem is visibility, trust, response, or all three
 
-This is where [Search & Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) becomes essential. It is the layer that ties visibility, proof, structure, and conversion signals back to evidence.
+This is where [Search & Data Architecture](/services/ai-search-optimization/search-data-architecture/) becomes essential. It is the layer that ties visibility, proof, structure, and conversion signals back to evidence.
 
 ## Why the pillars have to connect
 

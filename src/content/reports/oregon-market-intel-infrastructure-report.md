@@ -71,8 +71,8 @@ The closed-loop system model connects the site's four operating layers:
 | --- | --- | --- |
 | Presence | [Local Visibility](/services/local-seo/) | Wins map intent, branded search, and service-area discoverability |
 | Quality | [Custom Web Design](/services/website-design/) | Converts attention into trust and action |
-| Capture | [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/) | Reduces reply lag and missed-opportunity leakage |
-| Measurement | [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) | Maps outcomes back to revenue, not impressions |
+| Capture | [Lead Capture And AI Follow-Up](/services/lead-capture-and-ai-follow-up/) | Reduces reply lag and missed-opportunity leakage |
+| Measurement | [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/) | Maps outcomes back to revenue, not impressions |
 
 The insight here is simple: none of those layers should be sold or built in isolation.
 
@@ -125,8 +125,8 @@ This report is best used as a cluster anchor, not as a standalone dead-end PDF r
 
 - [Local Visibility](/services/local-seo/)
 - [Custom Web Design](/services/website-design/)
-- [Lead Capture And AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/)
-- [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/)
+- [Lead Capture And AI Follow-Up](/services/lead-capture-and-ai-follow-up/)
+- [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/)
 - [Why Speed Wins](/reports/why-speed-wins/)
 - [Daley Organics](/portfolio/daley-organics/)
 - [Oregon SMB Directory](/portfolio/oregon-smb-directory/)

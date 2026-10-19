@@ -21,7 +21,7 @@ That is why the stronger framing is not "write for robots." It is:
 
 > write for real buyers in a way both search crawlers and answer engines can understand clearly
 
-This fits directly with [Local Visibility Systems](/services/local-seo/) and [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/).
+This fits directly with [Local Visibility Systems](/services/local-seo/) and [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/).
 
 ## What does GEO mean in a local service-business context?
 
@@ -194,7 +194,7 @@ For business owners, the key takeaway is:
 - FAQPage schema helps question-and-answer sections
 - LocalBusiness and related entity signals support service and location pages
 
-Structured data works best when it confirms what the page already says clearly. That is why [Custom Web Design](/services/website-design/) and [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/) have to work together.
+Structured data works best when it confirms what the page already says clearly. That is why [Custom Web Design](/services/website-design/) and [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/) have to work together.
 
 ## What types of pages benefit most from GEO optimization?
 

@@ -77,7 +77,7 @@ It should:
 - collect enough context to support a useful handoff
 - reassure them that the inquiry landed and will be handled
 
-That is where [Custom Web Design](/services/website-design/) and [Lead Capture & AI Follow-Up](/services/internet-marketing-services/lead-capture-and-ai-follow-up/) connect. One shapes the public trust and conversion path. The other protects the speed and consistency of the response.
+That is where [Custom Web Design](/services/website-design/) and [Lead Capture & AI Follow-Up](/services/lead-capture-and-ai-follow-up/) connect. One shapes the public trust and conversion path. The other protects the speed and consistency of the response.
 
 ## What better website decisions look like
 

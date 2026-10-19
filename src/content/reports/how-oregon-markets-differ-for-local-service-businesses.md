@@ -53,7 +53,7 @@ This maps directly to:
 
 - [Local Visibility Systems](/services/local-seo/)
 - [Custom Web Design](/services/website-design/)
-- [Search And Data Architecture](/services/internet-marketing-services/ai-search-optimization/search-data-architecture/)
+- [Search And Data Architecture](/services/ai-search-optimization/search-data-architecture/)
 
 For these markets, trust often looks like evidence:
 
