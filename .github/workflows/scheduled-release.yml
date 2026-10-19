@@ -1,0 +1,88 @@
+name: scheduled-release
+
+# Publishes scheduled blog posts. A post is built once its publishedAt date arrives, so each morning
+# (15:00 UTC, 8:00 am Pacific) this builds main, and if the set of published pages differs from the live
+# site it releases through the staged path from the workers-staged-release skill: upload a version, stage
+# it at 0%, gate it on the real hostname, promote, gate production, roll back on any failure.
+# Whatever is on main at that moment is what gets released. Docs: docs/publishing/legal-series-publishing-plan.md
+
+on:
+  schedule:
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Release even if the published page set is unchanged"
+        type: boolean
+        default: false
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: https://leverageai.network
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.2.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.19.0
+          cache: pnpm
+      - name: Install
+        run: pnpm install --frozen-lockfile
+      - name: Verify (check, build, every guard)
+        run: pnpm verify
+      - name: Has the published page set changed?
+        id: diff
+        run: node scripts/release-gates.mjs changed
+      - name: Note the rollback version
+        id: current
+        if: steps.diff.outputs.changed == 'true' || inputs.force
+        run: |
+          CUR=$(pnpm exec wrangler deployments list --json | jq -r '.[-1].versions[] | select(.percentage == 100) | .version_id')
+          test -n "$CUR"
+          echo "version=$CUR" >> "$GITHUB_OUTPUT"
+          echo "rollback target: $CUR"
+      - name: Upload a version (production untouched)
+        id: upload
+        if: steps.diff.outputs.changed == 'true' || inputs.force
+        run: |
+          OUT=$(pnpm exec wrangler versions upload --message "scheduled release ${GITHUB_SHA::7}" 2>&1)
+          echo "$OUT"
+          NEW=$(echo "$OUT" | grep -oP 'Worker Version ID: \K[0-9a-f-]{36}')
+          test -n "$NEW"
+          echo "version=$NEW" >> "$GITHUB_OUTPUT"
+      - name: Stage at 0%
+        id: stage
+        if: steps.upload.outcome == 'success'
+        run: |
+          pnpm exec wrangler versions deploy "${{ steps.current.outputs.version }}@100%" "${{ steps.upload.outputs.version }}@0%" -y --message "stage ${{ steps.upload.outputs.version }} for gates"
+          sleep 35
+      - name: Gate the staged version on the real hostname
+        if: steps.stage.outcome == 'success'
+        run: node scripts/release-gates.mjs staged "${{ steps.upload.outputs.version }}"
+      - name: Promote
+        id: promote
+        if: steps.stage.outcome == 'success'
+        run: |
+          pnpm exec wrangler versions deploy "${{ steps.upload.outputs.version }}@100%" -y --message "promote ${{ steps.upload.outputs.version }}"
+          sleep 20
+      - name: Gate production
+        if: steps.promote.outcome == 'success'
+        run: node scripts/release-gates.mjs live
+      - name: Roll back
+        if: failure() && steps.stage.outcome == 'success'
+        run: pnpm exec wrangler versions deploy "${{ steps.current.outputs.version }}@100%" -y --message "rollback after failed gate"

@@ -3,6 +3,22 @@
 **Newest first. Append; never edit an older entry.** `AGENTS.md` says how to operate this project. This says what
 state the work is in and what happens next, which a fresh agent cannot derive from the tree.
 
+## 2026-10-19 — merged, released, pushed; automatic release added
+
+**What:** `dev/offer-repositioning` fast-forwarded into `main` (`f1c8573`) and pushed to GitHub. Released through the staged path:
+uploaded `8697aa1f`, staged at 0% beside the live `2b3f8f8f`, 23 gates passed on the real hostname through the override header (including
+a page that exists only in the new build), promoted, 23 gates passed again in production, 50 invocations all `ok`. Post 1 is live; posts
+2 to 8 return 404 until their dates. Added `.github/workflows/scheduled-release.yml` (daily 15:00 UTC; builds `main`, releases through the
+same staged path only when the published page set changed, rolls back on a failed gate) and `scripts/release-gates.mjs`.
+**Evidence:** the gate script's negative control: a bogus version id with real page differences fails (exit 1); found and fixed that a
+bogus id passes silently when nothing differs, because Cloudflare ignores an unknown override. The "removed page" half of the contrast
+was added after that.
+**Incident:** while minting the CI token I piped the mint script's stderr into `keyring add` (`2>&1`), so the stored value was malformed
+and wrangler's error message printed the token into the session. It had been minted minutes earlier and used nowhere. Revoked within
+minutes (`DELETE /user/tokens/{id}`, then verified HTTP 401) and replaced by a clean token (`astro-site-release-20261019b`, 53 characters,
+active). The old value remains in this session's transcript and one wrangler log, both worthless now.
+**Next:** first automatic publish is 2026-10-20 15:00 UTC (post 2). Confirm it happened. Rotate the release token before 2027-10-19.
+
 ## 2026-10-19 — blog dates, byline, X removed, publishing plan
 
 **What:** The eight legal posts are dated two days apart (2026-10-18 to 2026-11-01) and only posts whose date has arrived are built

@@ -37,7 +37,7 @@ pnpm verify     # check + build + every guard (needs SITE_URL, see Verification)
 | `src/components/`, `src/layouts/` | UI; `BaseLayout.astro` builds each page's SEO head and JSON-LD |
 | `packages/site-standard/` | shared SEO, canonical and JSON-LD generator plus the post-build guards; used by other properties, kept dependency-free |
 | `worker/` | the Cloudflare Worker: `contact.ts` (entry, contact form, redirects), `booking.ts`, `posthog-relay.ts`, `noindex.ts` |
-| `scripts/` | `validate-structured-data.mjs` (the JSON-LD gate), `generate-brand-assets.mjs` |
+| `scripts/` | `validate-structured-data.mjs` (the JSON-LD gate), `release-gates.mjs` (gates for the scheduled release), `generate-brand-assets.mjs` |
 | `migrations/` | D1 migrations (booking tables) |
 | `docs/architecture/` | design and audit documents, see below |
 | `docs/research/` | source research for the legal vertical (imported 2026-10-18, unchanged) |

@@ -53,9 +53,9 @@ matters, move 4 and 8 by changing `publishedAt` (one line each), keeping the ord
 
 All eight are first drafts, shorter than the original briefs. Nothing in this plan assumes they are final.
 
-## Runbook: every publish day
+## Runbook: every publish day (manual fallback)
 
-1. `git pull`; `SITE_URL=https://leverageai.network pnpm verify`. Confirm the new post is in `dist/blog/` and in `dist/sitemap-0.xml`, and that none of the later posts are.
+1. (Manual fallback; the scheduled workflow does steps 1 to 3 itself.) `git pull`; `SITE_URL=https://leverageai.network pnpm verify`. Confirm the new post is in `dist/blog/` and in `dist/sitemap-0.xml`, and that none of the later posts are.
 2. Release with the `workers-staged-release` skill (`/mnt/c/Dev/_skills/store/workers-staged-release/SKILL.md`): note the rollback
    version, `wrangler versions upload`, stage at 0%, gate on the real hostname, promote, read the logs. Not `wrangler deploy`.
 3. Gate the live URL: HTTP 200; one `Article` JSON-LD block with `author.name`, `author.sameAs` and the right `datePublished`; the byline
@@ -73,22 +73,31 @@ All eight are first drafts, shorter than the original briefs. Nothing in this pl
 | Newsletter | post 8's tier table suits a newsletter; no list exists yet |
 | X | **none.** The account was compromised and banned; a new account is outside this plan |
 
-## Option A (default) and Option B
+## Automatic release (chosen by Mike, 2026-10-19)
 
-- **Option A, manual:** the runbook above, seven more times. Simplest, nothing new to build, and each release is gated by a person.
-- **Option B, scheduled:** a daily workflow that runs `pnpm verify` and the staged release at about 15:00 UTC, so posts publish with no
-  hands. It needs a Cloudflare API token as a CI secret and a decision about unattended production releases. **Not built.** Recommended
-  only after Option A has run cleanly twice; say if you want it.
+`.github/workflows/scheduled-release.yml` runs every day at **15:00 UTC (8:00 am Pacific)** and on demand
+(Actions, "scheduled-release", optional `force`). It checks out `main`, runs `pnpm verify`, then compares the built sitemap with the live one
+(`scripts/release-gates.mjs changed`). If a post has become eligible (or one was pulled) it releases through the staged path from the
+`workers-staged-release` skill: note the rollback version, `wrangler versions upload`, stage at 0%, gate on the real hostname through the
+version-override header, promote, gate production, and **roll back automatically on any failed gate**. If nothing changed it stops after the compare.
+A failed run emails the repo owner through GitHub's normal Actions notifications.
+
+- **`main` is the release candidate.** Whatever is on `main` at 15:00 UTC is released the first morning a post becomes eligible. Keep unfinished work off `main`.
+- **Gates:** the known answer (`GET /api/contact` is 405); proof the override reaches the new build, by contrast (each added page is 404 in production and 200 staged, each retired page the reverse); then every URL in the build's own sitemap answers 200, staged and again in production. A staged run with no page-set change cannot prove the override and says so; that only happens on a forced run.
+- **Credential:** a dedicated token `astro-site-release-20261019b` (Workers Scripts Write and Account Settings Read, nothing else; **expires 2027-10-19**) held in keyring project `astro-site-release` and in the GitHub secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Verified: it lists deployments, and R2 is refused (code 10000). Rotate before it expires.
+- **Not automated:** Search Console "request indexing", distribution (LinkedIn, Facebook), and the Rich Results Test remain manual.
+- **Manual fallback:** the runbook above still works if the workflow is disabled.
 
 ## Rollback
 
 To pull a post: set its `publishedAt` to a later date, `pnpm verify`, and release. The page stops existing (404) and leaves the sitemap.
 Remove it from other posts' `relatedPosts` only if you want it gone from their lists; an unpublished id is simply skipped.
 
-## Decisions for Mike
+## Decisions (Mike, 2026-10-19)
 
-1. Move posts 4 and 8 off the weekend?
-2. Who does the lawyer's read of posts 5 and 7, and by when (post 5 is 2026-10-26)?
-3. Option A or Option B?
-4. First release: merging `dev/offer-repositioning` and releasing publishes post 1 immediately (its date is 2026-10-18).
-5. `Person.sameAs` includes the Leverage AI LLC Facebook page, which identifies the company, not you. It is correct under `Organization.sameAs`; keep, or move to the organization only?
+1. Weekend posts (4 and 8) stay as dated.
+2. Automatic release, built (above).
+3. `Person.sameAs` keeps the Leverage AI LLC Facebook page: Mike is the company.
+4. Merged and released: `main` at `f1c8573`, Worker version `8697aa1f`, live 2026-10-19 05:38 UTC. Post 1 is live; posts 2 to 8 publish on their dates.
+
+**Still open:** who does the lawyer's read of posts 5 and 7, and by when. Post 5 publishes 2026-10-26 and nothing in the workflow waits for that read.

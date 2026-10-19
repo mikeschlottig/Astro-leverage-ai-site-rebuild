@@ -120,7 +120,7 @@ Project invariants and what cost time to learn. Detail lives in `docs/architectu
 
 **Blog publishing**
 
-- A blog post is published when the build date reaches its `publishedAt`; later posts are not built (`src/lib/blog.ts`). A published post links only to earlier-dated posts; forward references go in `relatedPosts` frontmatter. `PUBLISH_AS_OF=YYYY-MM-DD pnpm verify` builds as of that day. Plan and runbook: `docs/publishing/legal-series-publishing-plan.md`.
+- A blog post is published when the build date reaches its `publishedAt`; later posts are not built (`src/lib/blog.ts`). A published post links only to earlier-dated posts; forward references go in `relatedPosts` frontmatter. `PUBLISH_AS_OF=YYYY-MM-DD pnpm verify` builds as of that day. Plan and runbook: `docs/publishing/legal-series-publishing-plan.md`. A daily workflow (`.github/workflows/scheduled-release.yml`, 15:00 UTC) releases `main` through the staged path when the published page set changes, so `main` is the release candidate: keep unfinished work off it.
 - Every post shows a byline (`ArticleByline.astro`) and the author box; `Article.author` in JSON-LD carries `name` and `sameAs`.
 - No X link anywhere: the account was compromised and banned (2026-10-18). Do not re-add one until Mike gives the new handle.
 
