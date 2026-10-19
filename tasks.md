@@ -28,6 +28,9 @@ Gate: `SITE_URL=https://leverageai.network pnpm verify` (SITE_URL is required by
 - [ ] Contract / ownership terms: own session
 - [x] Header nav wrap at two rows: accepted by Mike
 - [ ] Post-deploy: Google Rich Results Test on /, a service hub, a blog post; confirm workers.dev x-robots-tag live
-- [ ] Publish the legal series: one staged release per publish day, 2026-10-20 to 2026-11-01 (docs/publishing/legal-series-publishing-plan.md); decisions listed at the end of the plan
+- [x] Publish the legal series: automated daily; decisions recorded in the plan
 - [ ] Lawyer read of legal posts 5 (FindLaw/Internet Brands) and 7 (compliance) before 2026-10-26 / 2026-10-30
-- [ ] Push branch / merge / deploy (not requested yet)
+- [x] Merged to main, pushed, released (version 8697aa1f; later 9ebc0122 via the forced workflow run), 2026-10-19
+- [x] Automatic release: .github/workflows/scheduled-release.yml + scripts/release-gates.mjs; forced run green end to end
+- [ ] Confirm the first automatic publish: 2026-10-20 15:00 UTC should release post 2 (gate log should show the override proved by contrast)
+- [ ] Rotate the release token (astro-site-release, expires 2027-10-19) and update GitHub secret CLOUDFLARE_API_TOKEN
