@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Offer Repositioning Plan | LEVERAGEAI LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Familjen+Grotesk:wght@500;600;700&display=swap">
+<style>
+:root{
+  --bg:#0c0d10; --surface:#131418; --surface-strong:#1a1b21; --ink:#f3f1ec; --muted:#9a9890; --line:#2a2b32;
+  --accent:#f0a02e; --accent-strong:#d4871a; --accent-glow:rgba(240,160,46,.12);
+  --ok:#6fcf97; --warn:#f0a02e; --bad:#ef6f6c; --info:#7aa7e8;
+  --max:78rem;
+}
+@supports (color:oklch(0 0 0)){
+  :root{
+    --bg:oklch(0.1 0.008 265); --surface:oklch(0.13 0.008 265); --surface-strong:oklch(0.16 0.007 265);
+    --ink:oklch(0.96 0.005 80); --muted:oklch(0.65 0.008 80); --line:oklch(0.22 0.007 265);
+    --accent:oklch(0.74 0.165 68); --accent-strong:oklch(0.64 0.145 68); --accent-glow:oklch(0.74 0.165 68 / .12);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 "Barlow",system-ui,sans-serif}
+h1,h2,h3{font-family:"Familjen Grotesk",system-ui,sans-serif;line-height:1.15;margin:0 0 .6rem;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:700}
+h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:600}
+h3{font-size:1.1rem;font-weight:600}
+a{color:var(--accent)}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.84em}
+code{background:var(--surface-strong);border:1px solid var(--line);border-radius:.2rem;padding:.05rem .35rem;color:var(--ink);word-break:break-word}
+.shell{max-width:var(--max);margin:0 auto;padding:0 1rem}
+header.top{border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:5}
+header.top .shell{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.7rem;padding-bottom:.7rem;flex-wrap:wrap}
+.brand{font-family:"Familjen Grotesk",sans-serif;font-weight:700;letter-spacing:.02em}
+.brand span{color:var(--accent)}
+nav.toc{display:flex;gap:1rem;flex-wrap:wrap;font-size:.9rem}
+nav.toc a{color:var(--muted);text-decoration:none}
+nav.toc a:hover{color:var(--accent)}
+.hero{padding:3.5rem 0 2rem;border-bottom:1px solid var(--line);background:radial-gradient(60rem 18rem at 10% -10%,var(--accent-glow),transparent)}
+.eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:600;margin:0 0 .6rem}
+.lead{color:var(--muted);max-width:62ch;font-size:1.1rem}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.pill{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:.2rem .7rem;font-size:.82rem;color:var(--muted)}
+.pill b{color:var(--ink);font-weight:600}
+section{padding:2.6rem 0;border-bottom:1px solid var(--line)}
+.surface{background:var(--surface);border:1px solid var(--line);border-radius:.45rem;padding:1.1rem 1.2rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+.callout{border-left:3px solid var(--accent);background:var(--accent-glow);padding:1rem 1.2rem;border-radius:0 .45rem .45rem 0}
+.callout.bad{border-left-color:var(--bad);background:rgba(239,111,108,.09)}
+.callout h3{margin-bottom:.4rem}
+.callout ul{margin:.4rem 0 0 1.1rem;padding:0}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:.45rem;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:62rem;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:.7rem .8rem;border-bottom:1px solid var(--line)}
+th{position:sticky;top:0;background:var(--surface-strong);font-family:"Familjen Grotesk",sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td.id{font-family:ui-monospace,monospace;color:var(--accent);white-space:nowrap}
+td.file{min-width:15rem}
+td.lines{white-space:nowrap;font-family:ui-monospace,monospace;font-size:.84em}
+.tag{display:inline-block;border-radius:.2rem;padding:.05rem .45rem;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-right:.3rem}
+.t-ok{background:rgba(111,207,151,.14);color:var(--ok)}
+.t-warn{background:rgba(240,160,46,.16);color:var(--warn)}
+.t-bad{background:rgba(239,111,108,.15);color:var(--bad)}
+.t-info{background:rgba(122,167,232,.15);color:var(--info)}
+.phase{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;margin:2rem 0 .8rem}
+.phase .n{font-family:"Familjen Grotesk",sans-serif;font-weight:700;color:var(--accent);font-size:1.5rem}
+.phase p{margin:0;color:var(--muted)}
+ol.dec{padding-left:1.2rem}
+ol.dec li{margin-bottom:.6rem}
+.small{font-size:.86rem;color:var(--muted)}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.88rem}
+@media (max-width:40rem){.hero{padding-top:2.2rem}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="shell">
+    <div class="brand">LEVERAGE<span>AI</span> LLC</div>
+    <nav class="toc" aria-label="Sections">
+      <a href="#open">Open items</a><a href="#verdicts">Pushback</a><a href="#plan">Change table</a><a href="#order">Sequence</a><a href="#gates">Gates</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="shell">
+    <p class="eyebrow">Plan of record &middot; 2026-10-18</p>
+    <h1>Offer repositioning plan</h1>
+    <p class="lead">Seven recommendations, checked against the real repo and the live site. Four rest on a premise the code contradicts, one cannot ship as written because the build forbids it, and the numbers that carry the intake and legal offers are not in the repo yet.</p>
+    <div class="meta">
+      <span class="pill">Repo <b>Astro-leverage-ai-site-rebuild</b></span>
+      <span class="pill">Branch <b>dev/offer-repositioning</b></span>
+      <span class="pill">Base <b>5911377</b> = origin/main (0 ahead / 0 behind)</span>
+      <span class="pill">Line numbers valid at <b>5911377</b></span>
+    </div>
+  </div>
+</div>
+
+<section id="open">
+  <div class="shell">
+    <p class="eyebrow">Read first</p>
+    <h2>What is not done, and what blocks it</h2>
+    <div class="callout bad">
+      <h3>Nothing is implemented. This branch holds the plan only.</h3>
+      <ul>
+        <li>P3 (pricing), P4 (industries) and P5 (intake product) cannot be written honestly until the research file is located. Brief 1, Brief 3, the eight legal posts and every benchmark in 4.3 are absent from the repo (searched <code>src</code> and <code>docs</code>; only incidental &ldquo;legal&rdquo; hits in privacy/terms).</li>
+        <li>The intake service level (&lt;30 seconds, 24/7, calendar in the call flow) is a claim about a system that is not yet measured. It ships labelled, or it waits.</li>
+        <li>The response-time, connect-rate and AI-citation figures for the proof strip do not exist anywhere in the repo.</li>
+      </ul>
+    </div>
+    <h3 style="margin-top:1.4rem">Decisions needed</h3>
+    <ol class="dec">
+      <li><b>D1 &mdash; Retainer floor.</b> Today&rsquo;s top recurring price is $400&ndash;$800/mo (<code>pricing.astro:38</code>). The recommendation publishes $1,500&ndash;$10,000. That is a business call, not a copy edit. Replace the old tier, or keep it as a fourth &ldquo;Maintenance&rdquo; rung for existing clients?</li>
+      <li><b>D2 &mdash; Audit credit.</b> The page credits the audit into <em>implementation</em> (<code>pricing.astro:11</code>). The recommendation credits it against the first <em>retainer quarter</em>. Pick one; both cannot be true.</li>
+      <li><b>D3 &mdash; Specialist tier.</b> It sells legal and real-estate GEO, and neither vertical page nor proof exists. Recommend publishing Foundation and Growth now and showing Specialist as &ldquo;by application&rdquo; until a vertical page is live.</li>
+      <li><b>D4 &mdash; Research location.</b> Give the path to the file holding the briefs, the eight post outlines and the cited statistics. Every number on a public page needs a source line.</li>
+      <li><b>D5 &mdash; Social parent.</b> Recommend <code>local-seo</code> (its work is profile and NAP consistency). Alternative: leave it under the new AI Search hub.</li>
+      <li><b>D6 &mdash; Software development.</b> Recommend rename in place to &ldquo;Automation and AI Systems&rdquo; (stays a hub, last in order). Alternative: fold under the intake hub.</li>
+      <li><b>D7 &mdash; workers.dev origin.</b> It serves a full duplicate with no noindex. Recommend a non-canonical-host <code>X-Robots-Tag</code>, not disabling the host (<code>PUBLIC_SITE_ORIGIN</code> is used at <code>worker/contact.ts:149</code>).</li>
+    </ol>
+  </div>
+</section>
+
+<section id="verdicts">
+  <div class="shell">
+    <p class="eyebrow">Pushback, with citations</p>
+    <h2>Recommendation vs. what the repo says</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Rec</th><th>Claim</th><th>Verdict</th><th>Evidence (file:line)</th><th>Consequence for the plan</th></tr></thead>
+      <tbody>
+      <tr><td class="id">4.1</td><td>Audit is not priced or packaged.</td><td><span class="tag t-bad">Contradicted</span></td>
+        <td><code>pricing.astro:5-17</code> &ldquo;Tier 1 &hellip; $500-$1,200 &hellip; Diagnostic Audit &hellip; A paid diagnosis&rdquo;</td>
+        <td>Real change is a re-price ($750&ndash;$1,500), a new credit target (D2), and fixed written deliverables. Not a new offer.</td></tr>
+      <tr><td class="id">4.2</td><td>Retainers implied, prices absent.</td><td><span class="tag t-bad">Contradicted</span></td>
+        <td><code>pricing.astro:37-38</code> &ldquo;Tier 3 &hellip; $400-$800/mo &hellip; Ongoing Adaptation&rdquo;; <code>:40</code> &ldquo;without sliding into retainer theater&rdquo;</td>
+        <td>Real change is a 2&ndash;4x price jump and a tone reversal (the page currently sells <em>against</em> retainers, <code>:54</code>). Needs D1.</td></tr>
+      <tr><td class="id">4.3</td><td>Intake is one line inside Internet Marketing.</td><td><span class="tag t-warn">Partly wrong</span></td>
+        <td><code>lead-capture-and-ai-follow-up.md</code> is a 141-line subhub with its own page (<code>:6</code> <code>kind: subhub</code>, <code>:10</code> <code>order: 3</code>)</td>
+        <td>Gap is promotion to a hub, a stated service level and numbers. The service-level claim must be backed or labelled (see below).</td></tr>
+      <tr><td class="id">4.4</td><td>Software is a co-equal hub; demote from primary nav.</td><td><span class="tag t-warn">Partly wrong</span></td>
+        <td>Primary nav has no software item (<code>site.ts:21-31</code>). It appears via <code>kind: hub</code> on the home grid (<code>index.astro:43</code>) and <code>/services/</code>.</td>
+        <td>Nothing to remove from nav. Reframe the hub; <code>serviceHubSlugs</code> (<code>data/services.ts:2-7</code>) has no importer, so it is hygiene only.</td></tr>
+      <tr><td class="id">4.5</td><td>Neither vertical appears on the site.</td><td><span class="tag t-ok">Correct</span></td>
+        <td>Only <code>contractors.md</code>, <code>home-services.md</code>, <code>local-services.md</code> in <code>src/content/industries/</code>; <code>/industries/</code> routes already exist</td>
+        <td>Add two content files, no new routing. Blocked on D4 for substance.</td></tr>
+      <tr><td class="id">4.6</td><td>Social is a sub-service with its own page.</td><td><span class="tag t-ok">Correct</span></td>
+        <td><code>social-media-management.md:6-10</code>. Its FAQ (<code>:38-39</code>) says each platform &ldquo;has its own page in this section&rdquo;; no such files exist.</td>
+        <td>Demote, and fix a false claim on the page regardless. Keep the URL; removing it breaks inbound links.</td></tr>
+      <tr><td class="id">4.7</td><td>Numbers appear once (Daley).</td><td><span class="tag t-warn">Partly wrong</span></td>
+        <td>Daley stats <code>daley-organics.md:21-29</code>; directory &ldquo;15K+&rdquo; <code>oregon-smb-directory.md:21-22</code>. Homepage has no numbers (<code>index.astro:55-63</code> shows cards only).</td>
+        <td>Strip can ship with these two sources today. Response time, connect rate and AI-citation deltas have no data; they stay out until measured.</td></tr>
+      <tr><td class="id">P1</td><td>Stale meta description.</td><td><span class="tag t-warn">Reframe</span></td>
+        <td>Live <code>&lt;meta name="description"&gt;</code> equals <code>index.astro:21</code> byte for byte (fetched 2026-10-18)</td>
+        <td>Not drift. The text leads with &ldquo;websites&rdquo; and contradicts the GEO story. Rewrite, three files.</td></tr>
+      <tr><td class="id">P1</td><td>Indexed dev subdomain.</td><td><span class="tag t-info">Resolved</span></td>
+        <td>Mike, this session: &ldquo;i already deleted the subdomain&rdquo;. Residual: <code>*.workers.dev</code> returns 200, canonical &rarr; main, no robots meta or header.</td>
+        <td>Verify removal in DNS and Search Console; optional hardening D7.</td></tr>
+      <tr><td class="id">P2</td><td>Rename Internet Marketing Services to AI Search Optimization.</td><td><span class="tag t-bad">Cannot ship as a rename</span></td>
+        <td><code>ai-search-optimization.md</code> already exists as a subhub. <code>services.ts:41-60</code> (<code>assertPhraseSync</code>) throws unless slug = <code>slugifyPhrase(phrase)</code> and title and H1 contain the phrase.</td>
+        <td>Two entries cannot share a phrase. Restructure: promote the existing subhub, retire the old hub, move 43 link lines in 26 files.</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="grid" style="margin-top:1.2rem">
+      <div class="surface"><h3>Claims that need a source line</h3>
+        <p class="small">35% of calls missed, 60% of leads lost, 400% lift, 69.3% vs 15.3% connect, 40% conversion, 77% AI Overview trigger, 2.1%/2.2% social. None is in the repo. Each gets an inline citation or does not publish.</p></div>
+      <div class="surface"><h3>Negative claims</h3>
+        <p class="small">&ldquo;No sub-scale local competitor owns this layer&rdquo; is true of the places someone looked. Name the check (query, date, market) or cut the sentence.</p></div>
+      <div class="surface"><h3>Draft-language lint</h3>
+        <p class="small"><code>guard:phrases</code> fails the build on drafting language such as &ldquo;per the brief&rdquo;. Public copy cannot say &ldquo;Brief 1&rdquo; or &ldquo;Brief 3&rdquo;; it cites the underlying source.</p></div>
+      <div class="surface"><h3>Service level vs. the site&rsquo;s own framing</h3>
+        <p class="small">The rec asks to keep &ldquo;observations and trends, not promises&rdquo; and also to state &ldquo;answer in under 30 seconds, 24/7&rdquo;. Resolve by publishing the target with a visible status label until response time is logged.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="shell">
+    <p class="eyebrow">Implementation</p>
+    <h2>Change table: file, lines, change, reasoning</h2>
+    <p class="small">All paths relative to <code>/home/mikes/Astro-leverage-ai-site-rebuild</code>. &ldquo;Lines&rdquo; are at base 5911377. New files show &ldquo;new&rdquo;.</p>
+
+    <!-- P1 -->
+    <div class="phase"><span class="n">P1</span><h3>Hygiene</h3><p>Hours of work. No dependencies.</p></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>ID</th><th>File</th><th>Lines</th><th>Change</th><th>Reasoning</th></tr></thead>
+      <tbody>
+      <tr><td class="id">1.1</td><td class="file"><code>src/pages/index.astro</code></td><td class="lines">21</td>
+        <td>Replace <code>description</code> with: &ldquo;AI search optimization, local SEO and 24/7 lead intake for Oregon service businesses. Get found, get chosen, get the call answered.&rdquo;</td>
+        <td>Current text leads with &ldquo;High-performance websites&rdquo;. A business selling entity consistency should state its differentiator first. Stays inside <code>MAX_META_DESCRIPTION</code> (<code>services.ts</code>).</td></tr>
+      <tr><td class="id">1.2</td><td class="file"><code>src/lib/site.ts</code></td><td class="lines">8-9</td>
+        <td>Same wording as 1.1 for <code>SITE.description</code>.</td>
+        <td>One string feeds the default meta, the schema graph (<code>:51</code> <code>IDENTITY.description</code>) and the footer (<code>SiteFooter.astro:12</code>). Fixing only the homepage leaves three surfaces disagreeing.</td></tr>
+      <tr><td class="id">1.3</td><td class="file"><code>src/pages/services/index.astro</code></td><td class="lines">11, 17</td>
+        <td>Description and H1 currently &ldquo;Local SEO, web design, and lead generation built to work together.&rdquo; Reword to lead with AI search and intake.</td>
+        <td>Same entity-consistency argument; the services index is the page the new hub structure (P2) is explained on.</td></tr>
+      <tr><td class="id">1.4</td><td class="file"><code>worker/contact.ts</code></td><td class="lines">~132-149 (read handler first)</td>
+        <td><span class="tag t-warn">D7</span> When <code>url.host</code> is not <code>leverageai.network</code>, add <code>X-Robots-Tag: noindex</code> to the response.</td>
+        <td>Verified: workers.dev serves a 200 duplicate with no noindex. Canonical already points at main, so risk is low; the header closes it. <b>UNTESTED</b> until the fetch handler is read. Do not set <code>workers_dev:false</code>: <code>PUBLIC_SITE_ORIGIN</code> is used (<code>contact.ts:149</code>).</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- P2 -->
+    <div class="phase"><span class="n">P2</span><h3>Hub restructure: AI Search Optimization becomes the front door</h3><p>Restructure, not a rename. Largest blast radius; do it as one commit.</p></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>ID</th><th>File</th><th>Lines</th><th>Change</th><th>Reasoning</th></tr></thead>
+      <tbody>
+      <tr><td class="id">2.1</td><td class="file"><code>src/content/services/ai-search-optimization.md</code></td><td class="lines">6, 7, 10, 35-41</td>
+        <td><code>kind: subhub</code> &rarr; <code>hub</code>; delete <code>parent: internet-marketing-services</code>; keep <code>order: 1</code>. Add the old hub&rsquo;s &ldquo;Which service should a small business start with?&rdquo; FAQ.</td>
+        <td>The page, phrase and slug already exist. Promoting it satisfies <code>assertPhraseSync</code> without a collision and moves its URL from <code>/services/internet-marketing-services/ai-search-optimization/</code> to <code>/services/ai-search-optimization/</code>.</td></tr>
+      <tr><td class="id">2.2</td><td class="file"><code>src/content/services/internet-marketing-services.md</code></td><td class="lines">1-76 (whole file)</td>
+        <td>Move to <code>/home/mikes/_archive/internet-marketing-services.md.&lt;YYYYMMDD-HHMMSS&gt;</code> and log in <code>ARCHIVE-LOG.md</code>. Remove from the collection.</td>
+        <td>Two hubs claiming the same ground is the confusion the rec wants gone. House rule: archive with a timestamp, never delete.</td></tr>
+      <tr><td class="id">2.3</td><td class="file"><code>src/content/services/lead-capture-and-ai-follow-up.md</code></td><td class="lines">6, 7</td>
+        <td><code>kind: subhub</code> &rarr; <code>hub</code>; delete <code>parent:</code>. Set <code>order: 3</code> (already <code>:10</code>).</td>
+        <td>Rec: &ldquo;local SEO and intake as sibling hubs&rdquo;. New URL <code>/services/lead-capture-and-ai-follow-up/</code>.</td></tr>
+      <tr><td class="id">2.4</td><td class="file"><code>src/content/services/social-media-management.md</code></td><td class="lines">7</td>
+        <td><span class="tag t-warn">D5</span> <code>parent: internet-marketing-services</code> &rarr; <code>parent: local-seo</code>.</td>
+        <td>Old parent is gone; this work is profile and NAP consistency, which is Local SEO&rsquo;s territory.</td></tr>
+      <tr><td class="id">2.5</td><td class="file"><code>src/content/services/website-design.md</code><br><code>src/content/services/software-development.md</code></td><td class="lines">9 (both)</td>
+        <td><code>website-design</code> order 3&rarr;4; <code>software-development</code> order 4&rarr;5.</td>
+        <td><code>hubsOf</code> sorts hubs by <code>order</code> (<code>lib/services.ts:152-155</code>). Four hubs now share slots 1-4; keep the sort deterministic.</td></tr>
+      <tr><td class="id">2.6</td><td class="file"><code>src/data/service-redirects.ts</code></td><td class="lines">11-14, add 5 entries</td>
+        <td>Retarget the two entries that point at old paths (<code>:11-12</code>, <code>:13-14</code>) to the new URLs. Add: <code>/services/internet-marketing-services/</code> &rarr; <code>/services/ai-search-optimization/</code>; <code>&hellip;/ai-search-optimization/</code>; <code>&hellip;/ai-search-optimization/search-data-architecture/</code>; <code>&hellip;/lead-capture-and-ai-follow-up/</code>; <code>&hellip;/social-media-management/</code> &rarr; <code>/services/local-seo/social-media-management/</code>.</td>
+        <td>Served by <code>worker/contact.ts:132</code>. Retargeting avoids two-hop chains; new entries keep indexed URLs and inbound links alive (301).</td></tr>
+      <tr><td class="id">2.7</td><td class="file">26 files (regenerate: <code>rg -l '/services/internet-marketing-services' src</code>)</td><td class="lines">43 lines at base</td>
+        <td>Rewrite links to the new paths. Includes <code>pricing.astro:137</code>, <code>locations/index.astro:22</code>, <code>locations/[slug].astro:31,37</code>, <code>reports/index.astro:24,30</code>, plus reports, knowledge-base and blog markdown.</td>
+        <td>Redirects are a safety net, not the plan: internal links to a 301 cost crawl budget and <code>guard:links</code> is the gate. Re-run the <code>rg</code> for the live count; do not trust this one.</td></tr>
+      <tr><td class="id">2.8</td><td class="file"><code>src/components/contact/ContactForm.astro</code><br><code>worker/contact.ts</code></td><td class="lines">21<br>31</td>
+        <td>Option value <code>internet-marketing-services</code> &rarr; <code>ai-search-optimization</code> (&ldquo;AI Search Optimization&rdquo;). In <code>allowedServices</code> add the new value and keep the old one under the existing legacy comment (<code>:33</code>).</td>
+        <td>A cached form posting the old value must still submit; the file already uses this exact pattern for earlier renames.</td></tr>
+      <tr><td class="id">2.9</td><td class="file"><code>src/data/services.ts</code></td><td class="lines">2-7</td>
+        <td>Replace <code>internet-marketing-services</code> with <code>ai-search-optimization</code>; add <code>lead-capture-and-ai-follow-up</code>.</td>
+        <td>No importer today (only defined), so it is documentation that would silently go stale.</td></tr>
+      <tr><td class="id">2.10</td><td class="file"><code>docs/architecture/site-ontology.md</code></td><td class="lines">25-43 (&ldquo;Route Families&rdquo;)</td>
+        <td>Update the service route family to the new hubs.</td>
+        <td><code>AGENTS.md</code> names this a primary planning artifact; leaving it stale sends the next agent to the old structure.</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- P3 -->
+    <div class="phase"><span class="n">P3</span><h3>Publish the audit and three priced retainer tiers</h3><p>Blocked on D1, D2, D3.</p></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>ID</th><th>File</th><th>Lines</th><th>Change</th><th>Reasoning</th></tr></thead>
+      <tbody>
+      <tr><td class="id">3.1</td><td class="file"><code>src/pages/pricing.astro</code></td><td class="lines">7, 11, 12-18</td>
+        <td><code>range</code> &rarr; <code>$750-$1,500</code>. <code>setup</code> credit wording per D2. Add fixed deliverables to <code>details</code>: cross-LLM baseline (ChatGPT, Gemini, Perplexity, AI Overviews), entity and NAP check, schema validation, intake and response-speed review.</td>
+        <td>Deliverables already half-exist (<code>:15</code> lead-response audit, <code>:16</code> schema/entity). Naming them as written and fixed is what makes a paid audit comparable and filters low-intent inquiries.</td></tr>
+      <tr><td class="id">3.2</td><td class="file"><code>src/data/pricing.ts</code> <span class="tag t-info">new</span></td><td class="lines">new</td>
+        <td>Export typed <code>retainerTiers</code>: Foundation $1,500-$3,000, Growth $3,000-$6,000, Specialist $5,000-$10,000, each with <code>contents[]</code>. Import in <code>pricing.astro</code>.</td>
+        <td>Types before markup (house contract rule). A shared constant makes tier drift a build error instead of a stale page.</td></tr>
+      <tr><td class="id">3.3</td><td class="file"><code>src/pages/pricing.astro</code></td><td class="lines">37-51, 53-57, 300-330</td>
+        <td>Replace the Tier 3 object (<code>:37-51</code>) with the three named tiers and render them in the stage loop. Rewrite <code>pricingPrinciples</code> (<code>:54</code> &ldquo;not for a vague retainer promise&rdquo;) and the &ldquo;retainer theater&rdquo; copy (<code>:40-41</code>).</td>
+        <td>Floor argument from the research: retainers under $2,000 rarely fund real architecture. The page&rsquo;s current voice argues against retainers; leaving it makes the page contradict its own tiers.</td></tr>
+      <tr><td class="id">3.4</td><td class="file"><code>src/pages/pricing.astro</code></td><td class="lines">85, 88-92, 158-159, 169</td>
+        <td>FAQ price sentence (<code>:85</code>), &ldquo;Do I need a monthly retainer?&rdquo; answer, page title/description (<code>:158-159</code> &ldquo;Local SEO &amp; Web Design Pricing&rdquo;), H1 (<code>:169</code>).</td>
+        <td>Title and H1 still sell web design and local SEO; align with P1/P2. Keep the &ldquo;not automatically&rdquo; honesty in the FAQ; it is a trust asset.</td></tr>
+      <tr><td class="id">3.5</td><td class="file"><code>src/content/guides/website-redesign-cost-for-local-business.md</code><br><code>src/pages/locations/[slug].astro</code></td><td class="lines">29-31<br>264</td>
+        <td>Mirror the new audit and monthly figures. <code>&ldquo;$500+&rdquo;</code> &rarr; <code>&ldquo;$750+&rdquo;</code>.</td>
+        <td>Two prices live at once is a trust leak. Markdown cannot import the constant, so this is a manual sync; <code>rg '\$[0-9]'</code> after the edit is the check.</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- P4 -->
+    <div class="phase"><span class="n">P4</span><h3>/industries/ legal and real-estate wedge</h3><p>Blocked on D4. Routing already exists.</p></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>ID</th><th>File</th><th>Lines</th><th>Change</th><th>Reasoning</th></tr></thead>
+      <tbody>
+      <tr><td class="id">4.1</td><td class="file"><code>src/content/industries/law-firms.md</code> <span class="tag t-info">new</span></td><td class="lines">new</td>
+        <td>Frontmatter per <code>content.config.ts:166-173</code> (<code>title</code>, <code>description</code>, <code>heroTitle</code>, <code>summary</code>, <code>relatedServices</code>). Body H2 order: intake economics, AI Overview trigger rate, GEO architecture. Model sections on <code>contractors.md:17,28,34,40</code>.</td>
+        <td>Rec lead order. Needs sources (D4). Attorney advertising is regulated: no outcome guarantees, no unsupported &ldquo;best&rdquo; claims; run the copy past the compliance-aware editorial rule before publishing.</td></tr>
+      <tr><td class="id">4.2</td><td class="file"><code>src/content/industries/real-estate.md</code> <span class="tag t-info">new</span></td><td class="lines">new</td>
+        <td>Same schema; <code>relatedServices</code>: ai-search-optimization, lead-capture-and-ai-follow-up, local-seo.</td>
+        <td>Rec 4.5. Keep it parallel to the legal page so the template stays one pattern.</td></tr>
+      <tr><td class="id">4.3</td><td class="file"><code>src/pages/industries/index.astro</code></td><td class="lines">9-10, 15</td>
+        <td>Title, description and H1 name contractors, home-service and &ldquo;local businesses&rdquo;; add legal and real estate.</td>
+        <td>The index copy otherwise denies the new pages exist.</td></tr>
+      <tr><td class="id">4.4</td><td class="file"><code>src/lib/site.ts</code></td><td class="lines">21-31</td>
+        <td>Add <code>{ href: "/industries/", label: "Industries" }</code> after Services. Footer shows <code>nav.slice(0,7)</code> (<code>SiteFooter.astro:25</code>), so position decides footer visibility.</td>
+        <td>Industries is not in primary nav today; a vertical wedge nobody can navigate to is not a wedge.</td></tr>
+      <tr><td class="id">4.5</td><td class="file"><code>src/content/blog/*.md</code> &times;8 <span class="tag t-info">new</span></td><td class="lines">new</td>
+        <td>Eight legal posts, Brief 1 (intake leak) and Brief 3 (77% AI Overviews) first. Blog schema at <code>content.config.ts:132</code>.</td>
+        <td>Separate content workstream; each post is one unit, dispatched one at a time.</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- P5 -->
+    <div class="phase"><span class="n">P5</span><h3>Intake as a named product with a stated service level</h3><p>Blocked on D4 and on a measured response time.</p></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>ID</th><th>File</th><th>Lines</th><th>Change</th><th>Reasoning</th></tr></thead>
+      <tbody>
+      <tr><td class="id">5.1</td><td class="file"><code>src/content/services/lead-capture-and-ai-follow-up.md</code></td><td class="lines">2-5, 11, 12-35</td>
+        <td>Retitle and reword around the product (phrase and slug must still sync, <code>services.ts:41-60</code>; if the phrase changes, add a redirect). Put the service level into <code>outcomes</code> / <code>deliverables</code> as text, with a status label.</td>
+        <td>Simplest path first: frontmatter and body only, no schema change. Adding a new frontmatter field would force edits in <code>content.config.ts:47-70</code> and the service template for no gain.</td></tr>
+      <tr><td class="id">5.2</td><td class="file"><code>src/content/services/lead-capture-and-ai-follow-up.md</code></td><td class="lines">75-141 (body)</td>
+        <td>Add a &ldquo;Service level&rdquo; section: target answer time, hours, calendar scheduling in the call flow, how it is measured. Cited benchmark table underneath.</td>
+        <td>The research numbers turn &ldquo;response speed&rdquo; into something a buyer can purchase. Each carries its source (D4). Status reads &ldquo;target, measured from &lt;date&gt;&rdquo; until the log exists.</td></tr>
+      <tr><td class="id">5.3</td><td class="file">Gate (no file)</td><td class="lines">&mdash;</td>
+        <td>Do not publish &ldquo;under 30 seconds, 24/7&rdquo; as a promise until the call flow behind <code>call.leverageai.network</code> logs real answer times.</td>
+        <td>The voice-agent work is still in the working tree of a different repo. Memory rule: a UI claim is backed by data or labelled; this site&rsquo;s own framing is observations, not promises.</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- P6 -->
+    <div class="phase"><span class="n">P6</span><h3>De-duplicate intros, add quantified proof</h3><p>Proof strip can ship now with two sources.</p></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>ID</th><th>File</th><th>Lines</th><th>Change</th><th>Reasoning</th></tr></thead>
+      <tbody>
+      <tr><td class="id">6.1</td><td class="file">8 files in <code>src/content/services/</code> (regenerate: <code>rg -l 'best choice' src/content/services</code>)</td><td class="lines">5 (each)</td>
+        <td>Replace <code>heroTitle: "Why Leverage AI LLC is the best choice for &hellip;"</code> with a question-led H1 that still contains the phrase.</td>
+        <td>Same sentence frame on every service page; the site&rsquo;s own AI-search guidance is one question per page. Constraint: H1 must contain <code>phrase</code> (<code>services.ts:57-60</code>) or the build fails. Self-praise also conflicts with 4.7 (&ldquo;sells adjectives&rdquo;).</td></tr>
+      <tr><td class="id">6.2</td><td class="file"><code>src/components/site/ResultsStrip.astro</code> <span class="tag t-info">new</span></td><td class="lines">new</td>
+        <td>Read <code>caseStudies</code> <code>stats</code> (shape: <code>content.config.ts:16</code>). Render value + label + case-study link. Sources today: <code>#1</code>, <code>Top 3</code>, <code>4000%</code>, <code>40x</code> (Daley); <code>15K+</code> (directory).</td>
+        <td>Data stays in the case studies, so the strip cannot drift from them. Components that render real data only; missing metrics are not shown as placeholders.</td></tr>
+      <tr><td class="id">6.3</td><td class="file"><code>src/pages/index.astro</code></td><td class="lines">insert after 28; section at 55-63</td>
+        <td>Mount <code>&lt;ResultsStrip /&gt;</code> between hero and the services grid; keep &ldquo;Real Proof&rdquo; cards below.</td>
+        <td>Numbers earn their place above the fold; the cards explain them.</td></tr>
+      <tr><td class="id">6.4</td><td class="file"><code>src/pages/portfolio/index.astro</code></td><td class="lines">after 17</td>
+        <td>Mount the same component.</td>
+        <td>Rec asks for homepage and portfolio. One component, two mounts.</td></tr>
+      <tr><td class="id">6.5</td><td class="file">Deferred</td><td class="lines">&mdash;</td>
+        <td>Response time, connect-rate change and AI-citation before/after join the strip only after they are measured and logged.</td>
+        <td>No data in the repo. Inventing figures would break the honest &ldquo;observations and trends&rdquo; framing the rec itself praises. Note the 4000% figure is a growth rate off a small base; label the baseline in the case study.</td></tr>
+      </tbody>
+    </table></div>
+
+    <!-- P7 -->
+    <div class="phase"><span class="n">P7</span><h3>Demote social media and general software</h3><p>After P2 so parents resolve.</p></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>ID</th><th>File</th><th>Lines</th><th>Change</th><th>Reasoning</th></tr></thead>
+      <tbody>
+      <tr><td class="id">7.1</td><td class="file"><code>src/content/services/social-media-management.md</code></td><td class="lines">3, 4, 10, 38-41</td>
+        <td>Description and summary reframed as an add-on; <code>order</code> moved to last among siblings; FAQ at <code>:38-39</code> stops promising per-platform pages that do not exist.</td>
+        <td>Rec 4.6. Keep the URL: removal breaks inbound links and needs a redirect with no benefit. The false FAQ claim is a defect independent of the strategy.</td></tr>
+      <tr><td class="id">7.2</td><td class="file"><code>src/content/services/software-development.md</code> &rarr; <code>automation-and-ai-systems.md</code></td><td class="lines">2, 3, 4, 5, 8, 13-19, 34-40</td>
+        <td><span class="tag t-warn">D6</span> Rename file, <code>phrase</code>, <code>title</code>, <code>navLabel</code>, <code>heroTitle</code> to &ldquo;Automation and AI Systems&rdquo;. Lead capabilities with intake, reporting and integrations; drop Rails/crawler framing from the front.</td>
+        <td>Slug must equal <code>slugifyPhrase(phrase)</code>, so a rename moves the file. &ldquo;Sell the intake system, not Rails.&rdquo; Capability stays visible as the engine behind the intake product.</td></tr>
+      <tr><td class="id">7.3</td><td class="file"><code>src/data/service-redirects.ts</code></td><td class="lines">add 1 entry</td>
+        <td><code>/services/software-development/</code> &rarr; <code>/services/automation-and-ai-systems/</code>.</td>
+        <td>Existing URL; may be indexed.</td></tr>
+      <tr><td class="id">7.4</td><td class="file"><code>src/components/contact/ContactForm.astro</code><br><code>worker/contact.ts</code><br><code>src/data/services.ts</code></td><td class="lines">22<br>32<br>6</td>
+        <td>New option value; keep <code>software-development</code> in <code>allowedServices</code> as legacy; update the hub list.</td>
+        <td>The only three references to the old slug in <code>src</code> and <code>worker</code> (verified by <code>rg</code>); no content links need rewriting.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="shell">
+    <p class="eyebrow">Sequence</p>
+    <h2>Order of work, one unit at a time</h2>
+    <div class="grid">
+      <div class="surface"><h3>1. P1 hygiene</h3><p class="small">No blockers. Land first. <code>pnpm verify</code>.</p></div>
+      <div class="surface"><h3>2. P2 hub restructure</h3><p class="small">One commit. Archive old hub, move frontmatter, redirects, links, form values, ontology. Gate: build + <code>guard:links</code>.</p></div>
+      <div class="surface"><h3>3. P6 proof strip</h3><p class="small">Ships with real data only. Independent of D1&ndash;D4.</p></div>
+      <div class="surface"><h3>4. P7 demotions</h3><p class="small">Needs P2 so parents resolve. D5, D6.</p></div>
+      <div class="surface"><h3>5. P3 pricing</h3><p class="small">After D1&ndash;D3. Types first (<code>pricing.ts</code>), then markup, then mirrors.</p></div>
+      <div class="surface"><h3>6. P4 then P5</h3><p class="small">After D4. Legal page and posts, then the intake service level once a response time is logged.</p></div>
+    </div>
+    <p class="small" style="margin-top:1rem">The pasted priority order puts the legal wedge (4) ahead of the intake product (5). Kept. Where it differs: proof strip (6) moves up because it needs nothing from the research, and pricing (3) waits on three decisions, so it follows the demotions.</p>
+  </div>
+</section>
+
+<section id="gates">
+  <div class="shell">
+    <p class="eyebrow">Verification</p>
+    <h2>Gates and predictions</h2>
+    <div class="tablewrap"><table style="min-width:46rem">
+      <thead><tr><th>Gate</th><th>Command</th><th>Pass condition</th></tr></thead>
+      <tbody>
+      <tr><td>Types and phrase sync</td><td><code>pnpm check &amp;&amp; pnpm build</code></td><td>Exit 0; no <code>ServiceTreeError</code>. Predicted to fail if a parent is orphaned or a phrase collides (hypothesis H1, H3).</td></tr>
+      <tr><td>Internal links</td><td><code>pnpm guard:links</code></td><td>Clean. Predicted to fail until all 43 lines are rewritten (H2).</td></tr>
+      <tr><td>Canonicals and schema</td><td><code>pnpm guard:canonicals &amp;&amp; pnpm guard:schema</code></td><td>Clean on moved hub pages.</td></tr>
+      <tr><td>Draft language</td><td><code>pnpm guard:phrases</code></td><td>Clean; no &ldquo;Brief 1&rdquo; style labels in public copy.</td></tr>
+      <tr><td>Price consistency</td><td><code>rg '\$[0-9,]+' src</code></td><td>Every audit and monthly figure matches <code>pricing.ts</code> and 3.1.</td></tr>
+      <tr><td>Redirects</td><td>request each old URL on the preview</td><td>301 to the new path, single hop.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small" style="margin-top:1rem">Predictions and their outcomes: <code>hypothesis.md</code>. Task checklist: <code>tasks.md</code>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">LEVERAGEAI LLC &middot; Grants Pass, Oregon &middot; internal planning document, not for publication.</div>
+</footer>
+</body>
+</html>
