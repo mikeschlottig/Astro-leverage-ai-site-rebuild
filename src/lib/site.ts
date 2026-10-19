@@ -6,7 +6,7 @@ export const SITE = {
   legalName: "Leverage AI LLC",
   siteUrl: "https://leverageai.network",
   description:
-    "Outcome-led websites, local visibility systems, and lead-response infrastructure for Oregon service businesses.",
+    "AI search optimization, local SEO and fast lead response for Oregon service businesses. Get found, get chosen, get the inquiry answered.",
   location: "Grants Pass, Oregon",
   email: "mike@leverageai.network",
   phone: "541-450-2082",

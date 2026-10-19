@@ -1,6 +1,7 @@
 import { handleRelay, isRelayPath, type RelayEnv, type WaitUntilContext } from "./posthog-relay";
 import { SERVICE_REDIRECTS, normalizeServicePath } from "../src/data/service-redirects";
 import { handleBooking, type BookingEnv } from "./booking";
+import { withNoindex } from "./noindex";
 
 type EmailBinding = {
   send: (message: {
@@ -120,7 +121,7 @@ const redirectResponse = (location: string) =>
     },
   });
 
-export default {
+const worker = {
   async fetch(request: Request, env: Env, ctx: WaitUntilContext): Promise<Response> {
     const url = new URL(request.url);
 
@@ -285,5 +286,11 @@ export default {
     }
 
     return env.ASSETS.fetch(request);
+  },
+};
+
+export default {
+  async fetch(request: Request, env: Env, ctx: WaitUntilContext): Promise<Response> {
+    return withNoindex(request, await worker.fetch(request, env, ctx));
   },
 };
